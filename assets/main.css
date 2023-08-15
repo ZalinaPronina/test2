@@ -375,3 +375,6 @@ body .MediaText__textWrapper>div.tranform-none{
     height: 88vw;
   }
 }
+body{
+  background-color: red;
+}
