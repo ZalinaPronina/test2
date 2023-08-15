@@ -1,0 +1,251 @@
+{% liquid
+  assign logos = section.blocks | where: "type", "logo"
+  assign texts = section.blocks | where: "type", "text"
+  assign button = section.blocks | where: "type", "button" | first
+
+  assign has_image = false
+  if section.settings.image != blank or section.settings.image_mobile != blank
+    assign has_image = true
+  endif
+%}
+<style>
+  #{{section.id}}.FeaturedBundle{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.FeaturedBundle{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<section class="FeaturedBundle" id="{{section.id}}">
+  <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+    <div class="FeaturedBundle__Container">
+      <div class="relative bg-white rounded-2xl sm:flex">
+        {% if has_image %}
+          <div class="FeaturedBundle__Image">
+            {% if section.settings.image != blank %}
+              {% liquid
+                assign className = ""
+                if section.settings.image_mobile != blank
+                  assign className = "sm-down:hidden"
+                endif
+              %}
+
+              {{ section.settings.image | image_url: width: 1200 | image_tag:
+                loading: "lazy",
+                class: className,
+                sizes: "(min-width: 768px) 640w, 1280w",
+                widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                alt: section.settings.image.alt | escape
+              }}
+            {% endif %}
+
+            {% if section.settings.image_mobile != blank %}
+              {% liquid
+                assign className = ""
+                if section.settings.image != blank
+                  assign className = "sm:hidden"
+                endif
+              %}
+
+              {{ section.settings.image_mobile | image_url: width: 1200 | image_tag:
+                loading: "lazy",
+                class: className,
+                sizes: "(min-width: 768px) 640w, 1280w",
+                widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                alt: section.settings.image_mobile.alt | escape
+              }}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div class="FeaturedBundle__Content">
+          <div class="{% if logos.size > 0 %}sm:pr-20 lg:pr-60{% endif %}">
+            {% if section.settings.sub_title != blank %}
+              <h3 class="font-body font-normal text-brand-tertiary text-20 uppercase mb-4 sm:mb-0">
+                {{ section.settings.sub_title }}
+              </h3>
+            {% endif %}
+
+            {% if section.settings.title != blank %}
+              <h2 class="text-48 uppercase{% if logos.size > 0 %} sm:text-48{% else %} sm:text-50{% endif %}">
+                {{ section.settings.title }}
+              </h2>
+            {% endif %}
+          </div>
+
+          {% if texts.size > 0 %}
+            <div class="grid gap-y-8 gap-x-10 mt-8 sm:mt-16 md:grid-cols-2">
+              {% for block in texts %}
+                <div class="rte" {{ block.shopify_attributes }}>
+                  {{ block.settings.text }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if button.settings.text != blank %}
+            <div class="mt-8 sm:mt-7 sm-down:text-center">
+              <a href="{{ button.settings.url }}" class="Button Button--{{ button.settings.style }} Button--large sm:!w-auto">
+                {{ button.settings.text }}
+              </a>
+            </div>
+          {% endif %}
+
+          {% if logos.size > 0 %}
+            <div class="absolute top-8 right-8 grid gap-4 items-center lg:grid-cols-{{ logos.size }} lg:top-10 lg:right-10">
+              {% for logo in logos %}
+                {% if logo.settings.image != blank %}
+                  {{ logo.settings.image | image_url: width: 200 | image_tag:
+                    loading: "lazy",
+                    class: "w-20 h-auto lg:w-28",
+                    widths: "100, 200",
+                    alt: logo.settings.image.alt | escape
+                  }}
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured bundle",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image for mobile devices"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured bundle",
+      "settings": {
+        "title": "Featured bundle"
+      }
+    }
+  ]
+}
+{% endschema %}

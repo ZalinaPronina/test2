@@ -1,0 +1,42 @@
+<article class="" role="article" itemscope itemtype="http://schema.org/Article">
+  <div class="rounded-8 overflow-hidden">
+    {% if article.image != blank %}
+      {% assign image_url = article.image | image_url: width: 600 %}
+
+      <a class="block" href="{{ article.url }}" title="{{ article.title }}">
+        {%
+          render "component-image",
+          image: article.image,
+          src: image_url,
+          alt: article.image.alt,
+          aspect: "square",
+          className: ""
+        %}
+      </a>
+    {% else %}
+      <a class="block" href="{{ article.url }}" title="{{ article.title }}">
+        {{ "image" | placeholder_svg_tag }}
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="mt-4 space-y-1">
+    <div class="text-12 font-bold">
+      <span>{{ article.author }}</span>
+      <span>- {{ article.published_at | time_tag: format: "month_day_year" }}</span>
+    </div>
+
+    <a class="block" href="{{ article.url }}" title="{{ article.title }}">
+      <h4 class="text-20 sm:text-24">{{ article.title }}</h4>
+    </a>
+
+    <div class="font-medium">
+      {{ article.excerpt | default: article.content | strip_html | truncatewords: 50, ' ..' }}
+    </div>
+
+    <a href="{{ article.url }}" class="flex items-center space-x-2">
+      <span class="font-bold">{{ "articles.general.read_more" | t }}</span>
+      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="6" fill="#000"/><path d="m5 4 3 2-3 2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</article>

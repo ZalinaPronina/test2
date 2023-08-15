@@ -1,0 +1,185 @@
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  assign sort_options = "manual, created-descending, price-descending, price-ascending"
+  assign sort_options = sort_options | split: ", "
+
+  if results.url
+    assign results_url = results.url
+  else 
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+-%}
+
+<section class="Facets py-4 sm-down:hidden" data-component="FacetsDesktop">
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+    <div class="flex items-center">
+      {% if enable_filter %}
+        <div>
+          <form class="text-12 text-brand-tertiary-500 flex items-center space-x-4">
+            {% if results.terms %}
+              <input type="hidden" name="q" value="{{ results.terms | escape }}">
+              <input name="options[prefix]" type="hidden" value="last">
+            {% endif %}
+
+            {% for filter in results.filters %}
+              {%- liquid
+                assign filter_label = filter.label
+
+                if filter_label == "Product type" or filter_label == "Produkttyp"
+                  assign filter_label = "collections.filter.product_type" | t
+                endif
+              -%}
+
+              <details class="Details Facets__Disclosure relative" id="Details-{{ forloop.index }}-{{ section.id }}">
+                <summary class="flex items-center space-x-1">
+                  <div>
+                    <span>{{ filter_label }}</span>
+
+                    {% if filter.active_values.size > 0 %}
+                      <span>({{ filter.active_values.size }})</span>
+                    {% elsif filter.type == "price_range" %}
+                      {% if filter.min_value.value != nil or filter.max_value.value != nil %}
+                        <span>({{ filter.min_value.value | default: 0 | money }} - {{ filter.max_value.value | default: filter.range_max | money }})</span>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+
+                  {% render "icons", icon: "chevron-down", size: "xsmall" %}
+                </summary>
+
+                <div class="absolute top-5 left-0 z-2 min-w-[160px] w-max bg-brand-body p-4 space-y-4 shadow-xl shadow-black/25" id="DetailsDropdown-{{ forloop.index }}-{{ section.id }}">
+                  {% if filter.active_values.size > 0 %}
+                    <a class="text-12 text-red-400" href="{{ filter.url_to_remove }}" class="">{{ "collections.filter.reset" | t }}</a>
+                  {% endif %}
+
+                  {% case filter.type %}
+                    {% when "list" %}
+                      <ul class="space-y-2">
+                        {% for filter_value in filter.values %}
+                          <li class="cursor-pointer">
+                            <input
+                              type="checkbox"
+                              class="mr-2 cursor-pointer sr-only peer"
+                              name="{{ filter_value.param_name }}"
+                              value="{{ filter_value.value }}"
+                              id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                              {% if filter_value.active %}checked{% endif %}
+                              {% if filter_value.count == 0 and filter_value.active == false %}disabled{% endif %}
+                            >
+
+                            <label
+                              class="cursor-pointer peer-checked:font-semibold"
+                              for="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                            >{{ filter_value.label }}</label>
+                          </li>
+                        {% endfor %}
+                      </ul>
+
+                    {% when "price_range" %}
+                      <div class="flex items-center space-x-4">
+                        <div>
+                          <label for="Filter-{{ filter.min_value.param_name }}">{{ "collections.filter.price_range.from" | t }}</label>
+                          <span>{{ cart.currency.symbol }}</span>
+
+                          <input
+                            class="text-12"
+                            name="{{ filter.min_value.param_name }}"
+                            id="Filter-{{ filter.min_value.param_name }}"
+                            {% if filter.min_value.value %}
+                              value="{{ filter.min_value.value | money_without_currency | replace: ".", "" | replace: ",", "." }}"
+                            {% endif %}
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ".", "" | replace: ",", "." }}"
+                          >
+                        </div>
+
+                        <div>
+                          <label for="Filter-{{ filter.max_value.param_name }}">{{ "collections.filter.price_range.to" | t }}</label>
+                          <span>{{ cart.currency.symbol }}</span>
+
+                          <input
+                            class="text-12"
+                            name="{{ filter.max_value.param_name }}"
+                            id="Filter-{{ filter.max_value.param_name }}"
+                            {% if filter.max_value.value %}
+                              value="{{ filter.max_value.value | money_without_currency | replace: ".", "" | replace: ",", "." }}"
+                            {% endif %}
+                            type="number"
+                            placeholder="{{ filter.range_max | money_without_currency | replace: ".", "" | replace: ",", "." }}"
+                            min="0"
+                            max="{{ filter.range_max | money_without_currency | replace: ".", "" | replace: ",", "." }}"
+                          >
+                        </div>
+                      </div>
+                  {% endcase %}
+
+                  <noscript><button type="submit">{{ "collections.filter.apply" | t }}</noscript>
+                </div>
+              </details>
+            {% endfor %}
+
+            {%- liquid
+              assign has_active_filters = false
+
+              for filter in results.filters
+                if filter.active_values != blank
+                  assign has_active_filters = true
+                  break
+                elsif filter.type == "price_range"
+                  if filter.min_value.value != nil or filter.max_value.value != nil
+                    assign has_active_filters = true
+                    break
+                  endif
+                endif
+              endfor
+            -%}
+
+            {% if has_active_filters %}
+              <a class="text-red-400" href="{{ results_url }}" data-clear>{{ "collections.filter.clear" | t }}</a>
+            {% endif %}
+          </form>
+        </div>
+      {% endif %}
+
+      {% if enable_sorting %}
+        <div class="ml-auto">
+          <details class="Details Facets__Disclosure relative text-12 text-brand-tertiary-500" id="Details-sorting">
+            <summary class="flex items-center space-x-1">
+              <span>{{ "collections.sorting.title" | t }}</span>
+              {% render "icons", icon: "chevron-down", size: "xsmall" %}
+            </summary>
+
+            <div class="absolute top-5 right-0 z-2 min-w-[160px] w-max bg-brand-body p-4 shadow-xl shadow-black/25" id="DetailsDropdown-sorting">
+              <ul class="space-y-2">
+                {% for option in sort_options %}
+                  {%- liquid
+                    assign option_value = option
+                    assign option_name = "collections.sorting.options." | append: option_value | t
+                  -%}
+
+                  <li class="space-x-1 cursor-pointer">
+                    <input
+                      class="cursor-pointer sr-only peer"
+                      type="radio"
+                      name="sort_by"
+                      id="SortBy-{{ option_value }}"
+                      value="{{ option_value }}"
+                      {% if option_value == sort_by %}checked{% endif %}
+                    >
+
+                    <label class="cursor-pointer peer-checked:font-semibold" for="SortBy-{{ option_value }}">
+                      {{ option_name }}
+                    </label>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </details>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

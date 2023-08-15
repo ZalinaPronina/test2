@@ -1,0 +1,60 @@
+<div class="max-w-screen-sm mx-auto px-8">
+  <div class="py-12">
+    {% form "contact" %}
+      {% if form.posted_successfully? %}
+        <p class="text-green-400 mb-8">
+          {{ "contact.form.post_success" | t }}
+        </p>
+      {% endif %}
+
+      {{ form.errors | default_errors }}
+
+      <label class="uppercase text-base font-semibold mb-4 inline-block" for="ContactFormName">{{ "contact.form.name" | t }} *</label>
+      <input type="text"
+        class="w-full mb-8 text-base"
+        required
+        name="contact[name]"
+        id="ContactFormName"
+        value="{% if form.first_name %}{{ form.first_name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+      >
+
+      <label class="uppercase text-base font-semibold mb-4 inline-block" for="ContactFormEmail">{{ "contact.form.email" | t }} *</label>
+      <input type="email"
+        class="w-full mb-8 text-base"
+        required
+        name="contact[email]"
+        id="ContactFormEmail"
+        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+        spellcheck="false"
+        autocomplete="off"
+        autocapitalize="off"
+      >
+
+      <label class="uppercase text-base font-semibold mb-4 inline-block" for="ContactFormPhone">{{ "contact.form.phone" | t }} *</label>
+      <input type="tel"
+        class="w-full mb-8 text-base"
+        required
+        name="contact[phone]"
+        id="ContactFormPhone"
+        value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+        pattern="[0-9\-]*"
+      >
+
+      <label class="uppercase text-base font-semibold mb-4 inline-block" for="ContactFormMessage">{{ "contact.form.message" | t }} *</label>
+      <textarea rows="10"
+        name="contact[body]"
+        class="w-full mb-8 text-base mt1"
+        required
+        id="ContactFormMessage"
+      >
+        {%- if form.body -%}{{ form.body }}{%- endif -%}
+      </textarea>
+
+      <div class="">
+        <button type="submit" class="Button Button--primary">
+          <span>{{ "contact.form.send" | t }}</span>
+        </button>
+      </div>
+    {% endform %}
+  </div>
+</div>

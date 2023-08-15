@@ -1,0 +1,324 @@
+<style>
+  #{{section.id}}.video-banner-full{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.video-banner-full{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+  .video-banner-full{
+    text-align: center;
+  }
+  .video-banner-full .TextVideo__Media{
+    max-width: {{section.settings.width}}px;
+    margin: 0 auto;
+  }
+  .video-banner-full .hero__container-btn{
+    margin-top: 50px;
+    padding: 10px 75px;
+  }
+  .video-banner-full-subtitle{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 124%;
+  }
+  .video-banner-full-flex{
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 45px;
+  }
+  .video-banner-full-flex img{
+    height: 22px;
+  }
+  #{{section.id}} .TextVideo__Media{
+    border-radius:{{section.settings.border_radius}}
+  }
+  @media (max-width: 939px) {
+    .video-banner-full .TextVideo__Media{
+      border-radius: 0;
+    }
+    .video-banner-full .hero__container-btn{
+      margin-top: 34px;
+    }
+    .video-banner-full-flex img{
+      display: none;
+    }
+  }
+</style>
+<section id={{section.id}} class="video-banner-full Hero{% if section.settings.active_color == blank %} style--{{ section.settings.style }}{% endif %}"  {% if section.settings.color and section.settings.active_color != blank %}style="background:{{section.settings.color}}"{% endif %}>
+  <div class="md-down:space-y-10">
+    <div>
+      {% if section.settings.subtitle != blank %}
+        <p class="video-banner-full-subtitle">{{section.settings.subtitle}}</p>
+      {% endif %}
+      {% if section.settings.title != blank or section.settings.image_heading != blank %}
+        <div class="flex video-banner-full-flex">
+          {% if section.settings.image_heading %}
+              <img src="{{ section.settings.image_heading | img_url: 'master' }}"
+              alt="{{ section.settings.image_heading.alt }}">
+          {% endif %}
+          {% if section.settings.title != blank %}
+            {% liquid
+              assign title_tag = "h2"
+              if section.settings.title_as_h1
+                assign title_tag = "h1"
+              endif
+            %}
+            <{{ title_tag }} class="h1 uppercase [&_em]:text-brand-tertiary [&_em]:not-italic{% if section.settings.title_not_uppercase_mobile %} xs-down:text-40 xs-down:-mx-5 xs-down:normal-case md:-mr-20{% endif %} {% if section.settings.title_small %} md:text-60 md:-mr-15{% endif %}">
+          {{ section.settings.title | replace: "+", "<em>+</em>" }}
+            </{{ title_tag }}>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if text.settings.text != blank %}
+        <div class="rte font-medium mt-2 max-w-[28em] sm-down:mx-auto{% unless text.settings.show_on_mobile %} md-down:hidden{% endunless %}">
+          {{ text.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+    {% if section.settings.image != blank or section.settings.video != blank or section.settings.video_iframe != blank %}
+      <div class="TextVideo__Media" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}">
+        <div class="w-full video-content shrink-0 aspect-w-16 aspect-h-9">
+          {% if section.settings.image != blank %}
+            {{ section.settings.image | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              sizes: sizes,
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image.alt | escape
+            }}
+          {% elsif section.settings.video != blank and section.settings.video_popup != blank %}
+            <img
+              src="https://i.ytimg.com/vi_webp/{{ section.settings.video.id }}/maxresdefault.webp"
+              width="1280"
+              height="720"
+              alt="{{ section.settings.title }}"
+              loading="lazy"
+            >
+          {% elsif section.settings.video != blank and section.settings.video_popup == blank %}
+            <iframe src="https://www.youtube.com/embed/{{ section.settings.video.id }}?rel=0&amp;showinfo=0&amp{% if section.settings.video_autoplay %};autoplay=1{% endif %}" {% if section.settings.video_autoplay %}allow="autoplay"{% endif %} allowfullscreen="" class="video__media"></iframe>
+          {% endif %}
+          {% if section.settings.video_iframe != blank %}
+            <iframe src="{{section.settings.video_iframe}}?autoplay=0&loop=1&muted=1"
+            frameborder="0" playsinline controls ></iframe>
+          {% endif %}
+        </div>
+        {% if section.settings.video != blank and section.settings.image == blank %}
+          {% if section.settings.video_popup != blank %}
+            <button
+              type="button"
+              class="absolute z-2 text-brand-tertiary"
+              data-modal-trigger="text-with-video-{{ section.id }}"
+              aria-label="Play video"
+            >
+              {% render "icons", icon: "play", size: "large", className: "!w-18 !h-18 sm:!w-22 sm:!h-22" %}
+            </button>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <a href="{{ section.settings.url }}" class="hero__container-btn Button Button--{{ section.settings.style_btn }}">
+        {{ section.settings.text }}
+      </a>
+    {% endif %}
+  </div>
+
+</section>
+
+{% if section.settings.video != blank and section.settings.video_popup != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="text-with-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Video Banner Full",
+  "settings": [
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Container px",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "default": 840
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 95
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "checkbox",
+      "id": "active_color",
+      "label": "Active Color Input"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Choose Color"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_heading",
+      "label": "Image Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_as_h1",
+      "label": "Heading as H1 tag",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Main",
+      "info": "if the picture is active, the video will not be shown"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_popup",
+      "label": "The video will be in a pop-up window",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay Video",
+      "default": true
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_iframe",
+      "accept": [
+        "vimeo"
+      ],
+      "label": "Video Iframe"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius media",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "style_btn",
+      "label": "Style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "sale",
+          "label": "Sale"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text Btn"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link Btn"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Banner Full"
+    }
+  ]
+}
+{% endschema %}

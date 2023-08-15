@@ -1,0 +1,8 @@
+.Newsletter {
+  [data-newsletter-background="true"] & {
+    @apply bg-brand-primary;
+  }
+  .Button--primary {
+    width: 8rem;
+  }
+}

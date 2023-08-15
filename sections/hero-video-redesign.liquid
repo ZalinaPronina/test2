@@ -1,0 +1,303 @@
+{% liquid
+  assign button = section.blocks | where: "type", "button" | first
+  assign text = section.blocks | where: "type", "text" | first
+  assign video = section.blocks | where: "type", "video" | first
+%}
+<style>
+  #{{section.id}}.HeroVideo{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.HeroVideo{
+      background: radial-gradient(200% 37% at 40% 100%, #012130 70%, #000000 91%);
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<section id="{{section.id}}" class="Hero HeroVideo ModalVideo style--{{ section.settings.style }}" {% if video.settings.video != blank %} data-component="ModalVideo" data-video-id="{{ video.settings.video.id }}" {% endif %}>
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]"> 
+    <div class="Hero__Container Hero-{{section.settings.media_position}}">
+      <div class="relative z-3 sm:w-3/5 sm:py-20 Hero-text">
+        {% if section.settings.sub_title != blank %}
+          <h3 class="font-body font-normal text-20 uppercase mb-10 sm:mb-2">
+            {{ section.settings.sub_title }}
+          </h3>
+        {% endif %}
+
+        {% liquid
+          assign title_tag = "h2"
+          if section.settings.title_as_h1
+            assign title_tag = "h1"
+          endif
+        %}
+        {% if section.settings.image_title != blank %}
+          <img class="HeroVideo-title-image" src="{{ section.settings.image_title | img_url: '1000x' }}" loading="lazy" alt=""/>
+        {% else %}
+          {% if section.settings.title != blank %}
+            <{{ title_tag }} class="text-48 uppercase max-w-[10em] sm:text-60 text-24">
+              {{ section.settings.title }}
+            </{{ title_tag }}>
+          {% endif %}
+        {% endif %}
+        {% if section.settings.subtitle != blank %}
+          <div class="font-bold mt-8 sm:mt-10 text-24 sm-down:text-center">
+            {{ section.settings.subtitle }}
+          </div>
+        {% endif %}
+        {% if text.settings.text != blank %}
+          <div class="rte font-medium mt-8 HeroVideo-title-width sm:mt-10">
+            {{ text.settings.text }}
+          </div>
+        {% endif %}
+        {% if button.settings.text != blank %}
+          <div class="sm:flex sm:items-end sm-down:hidden mt-10">
+            <a class="HeroVideo-title-image-btn Button Button--{{ button.settings.style }} pt-4 pb-4" href="{{ button.settings.url }}">
+              {{ button.settings.text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      {% if section.settings.image != blank %}
+        <div class="relative flex justify-center w-auto top-0 right-0 bottom-0 z-2 -mx-5 sm:absolute sm:w-1/2 sm:mx-0 sm-down:hidden Hero-image">
+          {{ section.settings.image | image_url: width: 1200 | image_tag:
+            loading: "lazy",
+            class: "w-full h-auto sm:w-auto sm:h-full",
+            sizes: "(min-width: 768px) 640w, 1280w",
+            widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+            alt: section.settings.image.alt | escape
+          }}
+        </div>
+      {% endif %}
+      {% if section.settings.image_mobile != blank or section.settings.video_iframe != blank%}
+        <div class="relative flex justify-center w-auto top-0 right-0 bottom-0 z-2 -mx-5 sm:absolute sm:w-1/2 sm:mx-0 sm:hidden">
+            {% if section.settings.video != blank %}
+              <div class="HeroVideo-video-block" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}">
+                <button
+                  type="button"
+                  data-modal-trigger="HeroVideo-{{ section.id }}"
+                  aria-label="Play video"
+                  class="text-brand-tertiary"
+                >
+                  {% render "icons", icon: "play", size: "large", className: "!w-20 !h-20 sm:!w-35 sm:!h-35" %}
+                </button>
+                <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+              </div>
+            {% endif %}
+          {{ section.settings.image_mobile | image_url: width: 1000 | image_tag:
+            loading: "lazy",
+            class: "w-full h-auto sm:w-auto sm:h-full",
+            sizes: "(min-width: 768px) 640w, 1280w",
+            widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+            alt: section.settings.image_mobile.alt | escape
+          }}
+        </div>
+      {% endif %}
+      {% if button.settings.text != blank %}
+        <div class="sm:flex sm:items-end sm:pb-6 sm:hidden mt-4 sm-down:w-full">
+          <a class="Button Button--{{ button.settings.style }} HeroVideo-title-image-btn pt-4 pb-4" href="{{ button.settings.url }}">
+            {{ button.settings.text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="HeroVideo-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero with video redesign",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_title",
+      "label": "Image Title",
+      "info": "If an image is selected, the text title will be hidden"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_as_h1",
+      "label": "Heading as H1 tag",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle Under Title"
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "image-right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero with video redesign",
+      "settings": {
+        "title": "Hero heading"
+      }
+    }
+  ]
+}
+{% endschema %}

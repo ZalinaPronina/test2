@@ -1,0 +1,88 @@
+{% liquid
+  assign per_page = section.settings.per_page | default: 16
+  assign className = 'Collection'
+
+  if section.settings.top_padding
+    assign className = className | append: ' pt-15'
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: ' pb-15'
+  endif
+%}
+
+{% paginate collection.products by per_page %}
+  <div
+    class="{{ className }}"
+    data-component="Collection"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="space-y-4 sm:space-y-7">
+      <header>
+        <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+          <div class="pb-4 border-b border-solid sm:pb-5">
+            <h1 class="text-24 text-center font-body tracking-normal">
+              {{ collection.title }}
+            </h1>
+          </div>
+        </div>
+      </header>
+
+      <section
+        class="max-w-screen-lg mx-auto px-5 grid grid-cols-2 gap-x-4 gap-y-12.5 md:gap-x-5 md:gap-y-15 md:grid-cols-4 lg:px-[25px]"
+        data-insertable-content
+      >
+        {% for product in collection.products %}
+          {% if product.metafields.seo.hidden == 1 %}
+            {% continue %}
+          {% endif %}
+
+          <div class="w-full" data-product-item>
+            {%
+              render 'product-item-simple',
+              product: product,
+              image_sizes: '(min-width: 1280px) 300px, (min-width: 940px) calc(25vw - ((60px / 4) + (40px / 4))), calc(50vw - (8px + 20px))'
+            %}
+          </div>
+        {% else %}
+          <div>{{ 'collections.general.no_matches' | t }}</div>
+        {% endfor %}
+      </section>
+
+      {% if paginate.pages > 1 %}
+        <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+          {% render 'pagination', paginate: paginate %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Product grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 32,
+      "step": 1,
+      "default": 8
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,487 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/Frame_560.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "Using a Football GPS Tracker",
+        "title_as_h1": true,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": "Grassroots to Professional Football"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GPS_Tracker_Football_1.png",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Imagine if you or your team had access to football GPS tracker vests. Track your fitness, set performance goals and allow every player to reach their potential.",
+        "title_position": "inside",
+        "bold_text": "",
+        "text": "<p>For years stars of the Premier League have used football gps trackers. Now it’s your turn!<\/p><p>PitcheroGPS is making it more affordable for non-professional and junior football teams to use GPS football trackers.<\/p><p>Why is this a game-changer? The data collected is about you and your teammates. Top speed, total distance and tactical positioning.<\/p><p>With football GPS trackers, you’ll know how you perform in training and matches.<\/p><p>Who’s the fastest? Who can run all day? Were your tactics right? <\/p><p>Get fitter and stronger for when it really matters. Smash your personal best and learn as a squad.<\/p><p><strong>Let’s explain what football gps trackers measure and how to use them.<\/strong><\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "bca5a755-0a9f-4541-82af-6bcfd9cd5323": {
+      "type": "bundles",
+      "blocks": {
+        "80ad01d3-941d-466f-aff0-4be7f3ea7a17": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "eb897689-a9f8-4f14-81c7-6aa8d027d4e5": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "80ad01d3-941d-466f-aff0-4be7f3ea7a17",
+        "eb897689-a9f8-4f14-81c7-6aa8d027d4e5"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "e583f855-6fe1-4a50-8994-24c587b1455f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats_710a7893-df4b-48e0-961b-38fb72b4e4cf.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity_0b9b4972-f862-4849-8d48-bde45107a900.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e583f855-6fe1-4a50-8994-24c587b1455f",
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9",
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What is a football GPS vest?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>GPS is already in our cars, phones and watches. Football GPS works the same way by receiving a signal from a GPS satellite orbiting our planet.<\/strong><\/p>",
+        "text": "<p>Pretty smart when you think about it. This calculates your location and can track movement, speed and other measurements.<\/p><p>When used by football teams, it helps clubs transform on-field performance by analysing the stats post training or match. <\/p><p>Metrics like top speed or intensity of exercise can be measured at the start.<\/p><p>This ‘benchmark’ is the baseline figure before you look to step up.<\/p><p>Find out how fast your striker can sprint. Or, how much ground your left-back covered. Armed with this insight, football coaches can adapt training for the best results.<\/p><p>Looking after player fitness and conditioning is a key benefit. You can quickly see how hard each session was.<\/p><p>Players need to be healthy and performing at their best. Using this tech helps footballers and coaches stay ahead.<\/p><p>Using football gps tracker vests isn’t just for pro teams. We’ve designed a football gps system for everyone - and priced it sensibly.<\/p><p>With PitcheroGPS, our <a href=\"\/products\/new-gps-team-bundle\" title=\"New Team Bundle\"><strong>Team Bundle<\/strong><\/a> has football GPS trackers and football GPS vests for 20 players - perfect for any team.<\/p><p>It has a protective carry case that charges each tracker and transfers data to a computer in minutes.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How are football players tracked?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>A GPS tracker is a small device worn by a footballer in a GPS vest. It sits in a small pocket between the shoulder blades and doesn’t affect movement.<\/strong><\/p>",
+        "text": "<p>A PitcheroGPS tracker weighs just 37g. It has a 100Hz accelerometer that captures all movements.<\/p><p>It can be charged in less than 60 minutes with unlimited storage as well as being water-resistant.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Distance.png",
+            "title": "Total Distance",
+            "text": "<p>Measuring distance is always going to be important. Assess stamina, fatigue and recovery. Building kilometres in the legs will show at the end of a match.<\/p><p>Longer periods of running can be tracked for footballers, alongside sprint work and other aerobic alternatives.<\/p><p>Football coaches might blend types of running over a week. However, GPS football trackers can show who keeps going the longest.<\/p><p>Tracking total distance isn’t just about long runs. It relates to a player’s workload. Just aiming to run more isn’t always smart. Make decisions for each player based on intensity AND total distance.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Time.png",
+            "title": "Total Active Time",
+            "text": "<p>Total active time is how long a footballer spends exercising.<\/p><p>It can be used with other metrics like ‘high speed running.’  Coaches get an overview of how active players are. They can also tailor exercise for individual players or groups. <\/p><p>Is your winger in danger of burnout? Has your full-back done too little after her ankle injury?<\/p><p>GPS in football adds a new dimension. It shows how your players train and what edge they can gain in future. <\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Speed.png",
+            "title": "Top Speed",
+            "text": "<p>Who are the fastest players in your team? A football GPS tracker can settle that debate. It will spark friendly competition in squads too.<\/p><p>This isn’t just about bragging rights. Speed matters. <\/p><p>It could mean a goal-saving tackle, out running a defender or beating the goalkeeper to score. Top speed might give new ideas for tactics.<\/p><p>Football clubs using PitcheroGPS tells us that players <em>really<\/em> want to know their GPS data. How did they do? Plus, how do they match up against others? <\/p><p>Healthy competition can push up standards.<\/p><p>Plus, PitcheroGPS is searching for the fastest players in grassroots and semi-pro sport!<\/p><p>Check out our <a href=\"\/pages\/hero\" title=\"Hero\"><strong>#HERO Speed Challenge<\/strong><\/a> to get ranked.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "High Speed Running",
+            "text": "<p>High speed running shows intensity. Of course, footballers can’t just jog. Coaches want to replicate the speed of a match in training.<\/p><p>With PitcheroGPS, you can easily see stats for types of exercise. Standing, walking, jogging or sprinting, plus how long for each.<\/p><p>How productive has training been? Did players heart rates increase? How many bursts of high speed running? <br\/><br\/>You may be surprised how much of a training session is spent stand still or walking!<\/p><p>Football coaches can set up ‘custom speed zones.’ This tracks the levels of intensity and for how long. These can be customised for current fitness and age\/ability of player.<\/p><p>Sure, you want to build speed and stamina. But, you also want to keep players fresh for matches. And avoid injuries due to over-training.<\/p><p>That’s where GPS trackers in football are fantastic. You don’t have to guess. Or just make a judgement based on a player’s feedback.<\/p>"
+          }
+        },
+        "fa49ef11-adf5-420a-957d-267b8d088063": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dec.png",
+            "title": "Accelerations \/ Decelerations",
+            "text": "<p>Why do football players wear GPS? As you’ll now know, it’s not one piece of analysis. Each PitcheroGPS metric complements others. <\/p><p>This brings us to accelerations and decelerations.<\/p><p>How do footballers speed up and slow down over short distances? Working on this will bring rewards in matches.<\/p><p>Football is a stop-start sport with free kicks, corners and throw-ins. Breaks in play are an opportunity for your team. How can you speed off to create space for a pass? Are you the first to a 50-50 ball?<\/p><p>By measuring movement, all players can get better for those first few seconds. Or slowing down to change direction and turn.<\/p>"
+          }
+        },
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Heatmap.png",
+            "title": "Positioning Heatmaps",
+            "text": "<p>In football, knowing where your players spend their time on the pitch matters.<\/p><p>This is where the GPS football tracker in the vest comes into its own.<\/p><p>Heatmaps allow coaches and players to easily visualise player position.<\/p><p>Are your players in the right areas of the field at the right time?<\/p><p>Our heatmaps will show dark red areas as more time in an area. Lighter green or no colour will mean the opposite.<\/p><p>Did your centre-half stay too far up the field? Are both wingers being too defensive?<\/p><p>We learn in different ways too. Seeing a heatmap gets the point across quicker than describing a tactical situation.<\/p>"
+          }
+        },
+        "9b23853b-3fda-4153-9214-9e240533a184": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Injury.png",
+            "title": "Injury Prevention",
+            "text": "<p>GPS football trackers have a role to play with injury prevention. Stop injuries from occurring in the first place due to over-training. Help a comeback from injury by measuring exercise regimes.<\/p><p>View the number of ‘impacts’ a player had in any training session or match.<\/p><p>PitcheroGPS can show a football coach the number of ‘impacts’. As a contact sport, footballers receive lots of impacts. That could be heavy tackles or a crash landing. Measuring these is important for player welfare.<\/p><p>Coaches might decide to switch training after viewing GPS data. Injuries can and will always be part of football. But coaches can reduce the chance of them happening. <\/p><p>Many things come together to produce results and success - but you need your best players fit and firing for as long as possible.<\/p>"
+          }
+        },
+        "8fd9c877-9c44-4bbd-aa83-584ffc877836": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Impact.png",
+            "title": "Impacts",
+            "text": "<p>Measuring impacts is an important part of using PitcheroGPS.<\/p><p>Anyone wearing a football gps tracker vest can see the number of instances they received an 'impact' - i.e.) involved in a heavy collision.<\/p><p>In football, strong tackles are common. Our GPS tracker shows how hard and often a player is hit.<\/p><p>The coach can decide the limit beforehand. The tracker will log any moments where the g-force goes beyond that.<\/p><p>What counts as an impact can be changed for different age groups.<\/p><p>It will assist coaches to make decisions on player welfare. When players should rest, have lighter training or could be at risk of injury.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3",
+        "fa49ef11-adf5-420a-957d-267b8d088063",
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1",
+        "9b23853b-3fda-4153-9214-9e240533a184",
+        "8fd9c877-9c44-4bbd-aa83-584ffc877836"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "text": ""
+      }
+    },
+    "770a7817-6892-42d2-b9ca-36acfce9cde9": {
+      "type": "bundles",
+      "blocks": {
+        "1feedb60-228c-4ec1-a10d-b4d516994a16": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "68c611e7-9dc5-4b75-991e-31850141c932": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "1feedb60-228c-4ec1-a10d-b4d516994a16",
+        "68c611e7-9dc5-4b75-991e-31850141c932"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe": {
+      "type": "text-with-media",
+      "blocks": {
+        "7143614b-af79-401b-a534-6cbd87fe4dd5": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/a7FQ797ci44"
+          }
+        }
+      },
+      "block_order": [
+        "7143614b-af79-401b-a534-6cbd87fe4dd5"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help improve team performance",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Mansfield Town FC's academy are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>It’s an investment in your club for players and coaches over years. <\/p><p>An asset for one team or multiple squads.<\/p><p>Using PitcheroGPS is all about optimising performances. Personalised data right after training.<\/p><p>Mansfield Town FC's Academy coaches review the GPS player data regularly. They can then modify training for the group or certain players.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0": {
+      "type": "reviews",
+      "blocks": {
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mansfield_Town_FC_1.png",
+            "title": "Mansfield Town FC told us what they think",
+            "text": "We've worked with different GPS systems and for me, it's the best in terms of the metrics we get out. You can spend thousands and thousands of pounds on the more expensive systems but we get the same data for a very much reduced cost!"
+          }
+        }
+      },
+      "block_order": [
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "1173bfe6-f275-4920-a795-66aa53e1f134": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Which is the best GPS tracker vest for soccer or football?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>The answer lies in suitability, features, price and feedback from clubs. The superior product combines all of these.<\/strong><\/p>",
+        "text": "<p>Our football gps tracker has been rigorously tested by football coaches. You do not need a PhD or maths degree to understand your team metrics.<\/p><p>No confusion or complexity, just absolute pinpoint accuracy.<\/p><p>Cameron Wilson is the Strength and Conditioning Coach of West Bromwich Albion Women’s FC. <\/p><p>His feedback was: <em>‘The PitcheroGPS system is brilliant. It’s one that us, as coaches, understand really well. The players understand it well too. It uploads really quickly, it’s easy, it’s a really good system to use.’<\/em><\/p><p>The <a href=\"\/products\/new-gps-team-bundle\" title=\"New Team Bundle\"><strong>PitcheroGPS Team Bundle<\/strong><\/a> includes:<\/p><ul><li>20 x GPS football Trackers<\/li><li>20 x GPS football Vests<\/li><li>1 x Carry Case (Includes charging and data transfer)<\/li><li>1 x 1-yr Software Subscription<\/li><\/ul>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "disabled": true,
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "1edbf8a9-1579-4d8e-9b77-a1aac49e0fc4": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "1edbf8a9-1579-4d8e-9b77-a1aac49e0fc4"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS football gps tracker is approved by FIFA and quickly sold out to football customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    },
+    "7e92a5f5-e751-4d7a-9285-5a183cb3b32e": {
+      "type": "bundles",
+      "blocks": {
+        "7e2eacfd-6805-473c-b6c2-c8f448d3d8a8": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "8abe194a-2554-45a3-856b-f8e6401f6acd": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "7e2eacfd-6805-473c-b6c2-c8f448d3d8a8",
+        "8abe194a-2554-45a3-856b-f8e6401f6acd"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "bca5a755-0a9f-4541-82af-6bcfd9cd5323",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "770a7817-6892-42d2-b9ca-36acfce9cde9",
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe",
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0",
+    "1173bfe6-f275-4920-a795-66aa53e1f134",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8",
+    "7e92a5f5-e751-4d7a-9285-5a183cb3b32e"
+  ]
+}

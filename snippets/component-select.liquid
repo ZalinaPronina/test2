@@ -1,0 +1,42 @@
+{%- liquid
+  assign id = id | default: blank
+  assign style = style | default: blank
+  assign label = label | default: blank
+  assign name = name | default: blank
+  assign required = required | default: false
+  assign value = value | default: ""
+  assign placeholder = placeholder | default: blank
+  assign options = options | default: ""
+  assign attributes = attributes | default: ""
+  assign show_label = show_label | default: false
+-%}
+
+{%- capture uid -%}
+  select{{ name | default: label }}
+{%- endcapture -%}
+
+{%- capture cx -%}
+  w-full {{ className }}
+{%- endcapture -%}
+
+<div class="{{ cx }}"{% if style != blank %} style="{{ style }}"{% endif %}>
+  {% if label != blank %}
+    <label for="{{ id | default: uid | strip }}" class="{% if show_label %}inline-block mb-2 text-base{% else %}hidden{% endif %}">
+      {{ label }}
+    </label>
+  {% endif %}
+
+  <div>
+    <select
+      class="w-full text-base rounded-8 px-3.5 py-3"
+      id="{{ id | default: uid | strip }}"
+      name="{{ name | default: label | strip }}"
+      {{ attributes }}
+      {% if required %}required{% endif %}
+    >
+      {% if placeholder != blank %}<option disabled selected>{{ placeholder }}</option>{% endif %}
+
+      {{ options }}
+    </select>
+  </div>
+</div>

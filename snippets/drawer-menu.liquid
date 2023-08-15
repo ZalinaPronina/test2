@@ -1,0 +1,34 @@
+{% assign menu_main = linklists[menu_main] %}
+
+{% if menu_main != blank %}
+  <div class="Drawer MenuDrawer text-brand-text" data-component="MenuDrawer">
+    <div class="Drawer__Overlay" data-drawer-overlay></div>
+    <div class="Drawer__Inner">
+      <div class="Drawer__Header">
+        <button type="button" class="Drawer__Close" data-drawer-close>
+          {% render "icons", icon: "close", size: "large" %}
+        </button>
+      </div>
+
+      <div class="pb-10">
+        {% render "drawer-menu-nav", menu: menu_main %}
+
+        {% assign actions = section.blocks | where: "type", "action" %}
+
+        {% if actions.size > 0 %}
+          <ul>
+            {% for block in actions %}
+              {% if block.settings.text != blank %}
+                <li class="px-5">
+                  <a href="{{ block.settings.url }}" class="flex items-center uppercase py-3{% if link.active or has_active_link %} underline underline-offset-8 decoration-2 decoration-brand-tertiary{% endif %}">
+                    {{ block.settings.text }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,201 @@
+{% liquid
+  assign className = ""
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-20 md:pt-30"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-20 md:pb-30"
+  endif
+%}
+{{section.settings.bottom_padding}}test
+<style>
+  {% if section.settings.top_padding == blank or section.settings.top_padding == false %}
+    #{{section.id}}.columns-with-icon{
+      padding-top: {{section.settings.padding_top}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.columns-with-icon{
+        padding-top: {{section.settings.padding_top_mobile}}px;
+      }
+    }
+  {% endif %}
+  {% if section.settings.bottom_padding == blank or section.settings.bottom_padding == 'false' %}
+    #{{section.id}}.columns-with-icons{
+      padding-bottom: {{section.settings.padding_bottom}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.columns-with-icon{
+        padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+      }
+    }
+  {% endif %}
+</style>
+
+<section class="{{ className }} columns-with-icon" id="{{section.id}}">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="space-y-7 mb-9 sm:mb-12 md:space-y-5 md:text-center">
+        {% if section.settings.title != blank %}
+          <h3 class="text-24 font-body font-normal uppercase md:text-20">
+            {{ section.settings.title }}
+          </h3>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="rte md:text-24">{{ section.settings.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="grid gap-y-15 sm:grid-cols-2 sm:gap-x-15">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank or block.settings.text != blank %}
+            <div class="space-y-3 md:space-y-5 lg:pr-15 xl:pr-[90px]" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <div class="">
+                  {{ block.settings.image | image_url: width: 100 | image_tag:
+                    loading: "lazy",
+                    class: "w-auto h-12",
+                    widths: "100",
+                    alt: block.settings.image.alt | escape
+                  }}
+                </div>
+              {% endif %}
+
+              <div class="space-y-5">
+                {% if block.settings.title != blank %}
+                  <h3 class="text-24 font-body font-bold">
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Columns with Icon",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "label": "Padding Bottom px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Columns with Icon",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

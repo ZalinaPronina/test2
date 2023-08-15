@@ -1,0 +1,7 @@
+.Social {
+  @apply space-x-4;
+
+  &__Item {
+    @apply font-bold transition-opacity duration-200 ease-in-out hover:opacity-75;
+  }
+}

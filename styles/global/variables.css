@@ -1,0 +1,30 @@
+@layer base {
+  :root {
+    --header-height: 60px;
+    --announcement-height: calc(45px * var(--announcement));
+  }
+
+  @media (--sm) {
+    :root {
+      --header-height: 88px;
+    }
+  }
+
+  @custom-media --mobile (min-width: 375px);
+  @custom-media --xs (min-width: 480px);
+  @custom-media --sm (min-width: 768px);
+  @custom-media --md (min-width: 940px);
+  @custom-media --lg (min-width: 1200px);
+  @custom-media --laptop (min-width: 1360px);
+  @custom-media --xl (min-width: 1440px);
+  @custom-media --xxl (min-width: 1600px);
+
+  @custom-media --mobileDown (max-width: 374px);
+  @custom-media --xsDown (max-width: 479px);
+  @custom-media --smDown (max-width: 767px);
+  @custom-media --mdDown (max-width: 939px);
+  @custom-media --lgDown (max-width: 1199px);
+  @custom-media --laptopDown (max-width: 1359px);
+  @custom-media --xlDown (max-width: 1439px);
+  @custom-media --xxlDown (max-width: 1599px);
+}

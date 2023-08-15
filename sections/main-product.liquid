@@ -1,0 +1,244 @@
+<section class="Product py-5 md:py-20" data-component="Product">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    <div class="mb-4 md:hidden">
+      {% if product.metafields.meta.subtitle != blank %}
+        <div class="text-16 text-brand-tertiary font-bold">
+          {{ product.metafields.meta.subtitle }}
+        </div>
+      {% endif %}
+
+      <h1 class="text-24 font-body font-bold tracking-normal">
+        {{ product.title }}
+      </h1>
+    </div>
+
+    <div class="md:flex">
+      <div class="Product__Gallery" data-component="ProductCarousel">
+        <div class="GalleryMain" data-gallery="main">
+          <ul class="GalleryMain__Wrapper">
+            {% for media in product.media %}
+              <li class="GalleryMain__Slide">
+                {% if media.media_type == 'image' %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{
+                      media
+                      | image_url: width: 1200
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'object-cover',
+                        sizes: '(min-width: 768px) 640w, 1280w',
+                        widths: '400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800'
+                    }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == 'external_video' %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{
+                      media
+                      | external_video_tag:
+                        class: 'object-cover',
+                        loop: '1',
+                        muted: '1',
+                        autoplay: '1',
+                        loading: 'lazy'
+                    }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == 'video' %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{
+                      media
+                      | video_tag:
+                        class: 'object-cover',
+                        loop: '1',
+                        muted: '1',
+                        autoplay: '1',
+                        loading: 'lazy'
+                    }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == 'model' %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{ media | model_viewer_tag }}
+                  </div>
+                {% endif %}
+              </li>
+            {% else %}
+              <li class="GalleryMain__Slide">
+                <div class="aspect-h-10 aspect-w-12">
+                  {{ 'product-1' | placeholder_svg_tag }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="GalleryThumbs" data-gallery="thumbs">
+          <ul class="GalleryThumbs__Wrapper">
+            {% for media in product.media %}
+              {% liquid
+                assign is_video = false
+                if media.media_type == 'external_video' or media.media_type == 'video'
+                  assign is_video = true
+                endif
+              %}
+
+              <li class="GalleryThumbs__Slide{% if is_video %} relative isVideo{% endif %}">
+                <div class="aspect-h-10 aspect-w-12">
+                  {{
+                    media
+                    | image_url: width: 400
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'object-cover',
+                      sizes: '',
+                      widths: '200, 400'
+                  }}
+                </div>
+
+                {% if is_video %}
+                  <div class="absolute z-20 top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4 text-brand-tertiary">
+                    {% render 'icons',
+                      icon: 'play',
+                      size: 'large',
+                      className: 'sm-down:!w-9 sm-down:!h-9'
+                    %}
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+
+          <button
+            type="button"
+            class="GalleryThumbs__Button GalleryThumbs__Button--previous"
+          >
+            &lt;
+          </button>
+
+          <button
+            type="button"
+            class="GalleryThumbs__Button GalleryThumbs__Button--next"
+          >
+            &gt;
+          </button>
+        </div>
+      </div>
+
+      <div class="Product__Info">
+        {% if product.metafields.meta.subtitle != blank %}
+          <div class="text-16 font-bold text-brand-tertiary md-down:hidden">
+            {{ product.metafields.meta.subtitle }}
+          </div>
+        {% endif %}
+
+        <h2 class="text-24 font-body font-bold tracking-normal md-down:hidden">
+          {{ product.title }}
+        </h2>
+
+        {% if product.description != blank %}
+          <div class="Product__Description rte">
+            {{ product.description }}
+          </div>
+        {% endif %}
+
+        {% if product.metafields.meta.list != blank %}
+          <div class="flex flex-wrap mt-6">
+            {% for item in product.metafields.meta.list.value %}
+              <div class="font-bold w-full md:w-auto">{{ item }}</div>
+
+              {% unless forloop.last %}
+                <span
+                  class="w-0.5 h-3 bg-brand-tertiary mx-4 self-center md-down:hidden"
+                ></span>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% form 'product', product, class: 'space-y-7 md:max-w-[335px]' %}
+          {% render 'product-price', highest_price: true %}
+          {% render 'product-options' %}
+          {% render 'product-quantity' %}
+
+          <button
+            type="submit"
+            class="Button Button--primary Button--large !uppercase md:!w-auto"
+          >
+            {{ 'products.product.add_to_cart' | t }}
+          </button>
+        {% endform %}
+
+        {% if product.metafields.meta.text != blank %}
+          <div class="text-16 font-bold mt-6 sm:mt-4">
+            {{ product.metafields.meta.text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% liquid
+  assign video = section.blocks | where: 'type', 'video' | first
+  assign details = section.blocks | where: 'type', 'details'
+  assign blank_details = details | map: 'settings' | where: 'text', ''
+
+  unless blank_details.size == details.size
+    render 'product-details', blocks: details
+  endunless
+
+  if video
+    render 'product-video', section: section, block: video
+  endif
+%}
+
+{% schema %}
+{
+  "name": "Product",
+  "blocks": [
+    {
+      "type": "details",
+      "name": "Details",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Product details"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Video Title"
+        },
+        {
+          "type": "video_url",
+          "id": "video",
+          "accept": [
+            "youtube"
+          ],
+          "label": "Video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

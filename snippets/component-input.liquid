@@ -1,0 +1,54 @@
+{%- liquid
+  assign type = type | default: blank
+  assign autocomplete = autocomplete | default: blank
+  assign autocapitalize = autocapitalize | default: blank
+  assign spellcheck = spellcheck | default: blank
+  assign required = required | default: false
+
+  if type == blank
+    assign type = "text"
+  endif
+
+  if autocomplete == blank
+    assign autocomplete = "off"
+  endif
+
+  if autocapitalize == blank
+    assign autocapitalize = "off"
+  endif
+
+  if spellcheck == blank
+    assign spellcheck = "false"
+  endif
+
+  if required == false
+    assign required = "false"
+  endif
+-%}
+
+{%- capture id -%}
+  {{type}}{{name}}{{ className | replace: " ", "" }}
+{%- endcapture -%}
+
+{%- capture cx -%}
+  input-wrapper x {{ className }}
+{%- endcapture -%}
+
+<div class="{{ cx }} input" data-component="input-text">
+  {% if label %}
+    <label for="{{ id }}" class="inline-block mb-2 text-base">{{ label }}</label>
+  {% endif %}
+
+  <input
+    id="{{ id }}"
+    class="w-full text-base rounded-8 px-3.5 py-3"
+    type="{{ type }}"
+    name="{{ name }}"
+    placeholder="{{ placeholder }}"
+    value="{{ value }}"
+    autocomplete="{{ autocomplete }}"
+    autocapitalize="{{ autocapitalize }}"
+    spellcheck="{{ spellcheck }}"
+    required="{{ required }}"
+  >
+</div>

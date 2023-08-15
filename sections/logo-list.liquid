@@ -1,0 +1,159 @@
+{% liquid
+  assign className = "LogoList LogoList-" | append: section.id
+
+  if section.settings.top_spacing
+    assign className = className | append: " pt-15 sm:pt-20"
+  endif
+
+  if section.settings.bottom_spacing
+    assign className = className | append: " pb-15 sm:pb-20"
+  endif
+%}
+
+{% if section.blocks.size > 0 or section.settings.title != blank %}
+  <section class="{{ className }}" data-component="LogoList">
+    <div
+      class="pt-8 pb-10 sm:pt-13"
+      style="
+        --background-color: {{ section.settings.background_color | default: 'transparent' }};
+        color: {{ section.settings.text_color | default: 'inherit' }};
+        background-color: var(--background-color);
+      "
+    >
+      <div class="max-w-screen-lg mx-auto">
+        {% if section.settings.title != blank %}
+          <div class="text-center mb-7 px-3.5 sm:mb-15 lg:px-[25px]">
+            {% if section.settings.title != blank %}
+              <h2 class="text-24 font-body tracking-normal">
+                {{ section.settings.title }}
+              </h2>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="relative flex flex-col justify-center overflow-hidden px-5 xs:px-10 md:px-20 xl:px-30" data-slider="container">
+            <div class="LogoList__Wrapper{% if section.blocks.size < 4 %} flex justify-center gap-10 sm:gap-15{% endif %}">
+              {% for block in section.blocks %}
+                {% if block.settings.image != blank %}
+                  {% assign image_width = block.settings.image_width | times: 2 %}
+
+                  <div class="LogoList__Item LogoList__Item--{{ block.id }}" {{ block.shopify_attributes }}>
+                    <div class="bg-white flex items-center justify-center overflow-hidden w-20 h-20 md:w-30 md:h-30">
+                      <img
+                        src="{{ block.settings.image | image_url: width: image_width }}"
+                        alt="{{ block.settings.title }}"
+                        loading="lazy"
+                        width="{{ block.settings.image_width }}"
+                        height="auto"
+                      >
+
+                      <style>
+                        @media (max-width: 767px) {
+                          .LogoList-{{ section.id }} .LogoList__Item--{{ block.id }} img {
+                            width: {{ block.settings.image_width | minus: 20 }}px;
+                          }
+                        }
+                      </style>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            {% unless section.blocks.size < 4 %}
+              <button class="LogoList__Navigation LogoList__Navigation--previous" type="button" aria-label="Previous logo">
+                {% render "icons", icon: "arrow-circle-left", className: "!w-16 !h-16" %}
+              </button>
+              <button class="LogoList__Navigation LogoList__Navigation--next" type="button" aria-label="Next logo">
+                {% render "icons", icon: "arrow-circle-right", className: "!w-16 !h-16" %}
+              </button>
+
+              <div class="hidden absolute left-0 top-0 bottom-0 md:w-20 xl:w-30 bg-[color:var(--background-color)] z-1 md:block"></div>
+              <div class="hidden absolute right-0 top-0 bottom-0 md:w-20 xl:w-30 bg-[color:var(--background-color)] z-1 md:block"></div>
+
+              <div class="LogoList__Pagination"></div>
+            {% endunless %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Logo List",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_spacing",
+      "label": "Add top spacing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_spacing",
+      "label": "Add bottom spacing",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F2F2F2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 40,
+          "max": 150,
+          "step": 2,
+          "unit": "px",
+          "label": "Image width",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Company Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo List",
+      "settings": {
+        "title": "Our Customers"
+      }
+    }
+  ]
+}
+{% endschema %}

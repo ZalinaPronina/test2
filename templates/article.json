@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "text_color": "",
+        "background_color": "linear-gradient(90deg, rgba(248, 204, 176, 1), rgba(255, 173, 141, 1) 100%)"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

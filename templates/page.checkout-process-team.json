@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": false,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "checkout_main": {
+      "type": "checkout-process-team",
+      "settings": {
+        "membership_title": "Select Tracker Quantity",
+        "agree_checkbox": false
+      }
+    },
+    "checkout_steps": {
+      "type": "checkout-process-steps",
+      "blocks": {
+        "19ada674-da68-4154-98fa-a32e2aac38d6": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Payment.png",
+            "name": "Step 01",
+            "title": "",
+            "subtitle": "Pay Deposit",
+            "text": "<p>Choose the right number of trackers for your team with a range of 20 to 40 trackers to select from. If your team requires more, simply complete the form that appears when you try to select over 40 trackers. Once you've made your selection, a £200 deposit secures your purchase. This is a pre-order. The product will be deliverd in July 2023.<\/p>"
+          }
+        },
+        "690ed2ad-c9a8-4456-800d-9dbe79ed84a7": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Vest_1944fe40-39d3-455c-98b5-a8dacf0653d5.png",
+            "name": "Step 02",
+            "title": "",
+            "subtitle": "Choose Vest  Sizes",
+            "text": "<p>After you've paid your deposit, an email with a link to select vest sizes will be sent to you. With 8 vest size options, ranging from Youth Small to XXL, you can choose the right fit for each of your players. A size chart will be included in the email, making it easy for you to select the correct sizes for your team.<\/p>"
+          }
+        },
+        "602cbc7e-f4e1-45c0-8e18-fbf62bc2a7d1": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Cart.png",
+            "name": "Step 03",
+            "title": "",
+            "subtitle": "Pay Remaining Balance ",
+            "text": "<p>Once you have placed your order we will send you an automated invoice to be paid by bank transfer for the cost of the Team Bundle minus your £200 deposit. This must be paid before July in order to receive your Team Bundle on time.<\/p>"
+          }
+        },
+        "a28d8f73-42d3-457c-bc1c-9ce9f013a55d": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Team_bundle.png",
+            "name": "Step 04",
+            "title": "",
+            "subtitle": "Receive Your  Team Bundle",
+            "text": "<p>Your PitcheroGPS Team Bundle will be delivered in July 202. The bundle includes the number of trackers you selected at checkout along with the same number of Player Vests. You will also receive a secure carry case for charging and data transfer. Before delivery, we will be in contact to help set your team up on our web app.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "19ada674-da68-4154-98fa-a32e2aac38d6",
+        "690ed2ad-c9a8-4456-800d-9dbe79ed84a7",
+        "602cbc7e-f4e1-45c0-8e18-fbf62bc2a7d1",
+        "a28d8f73-42d3-457c-bc1c-9ce9f013a55d"
+      ],
+      "settings": {
+        "dropdown_mobile": true,
+        "dropdown_desktop": true,
+        "title": "How it works"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "checkout_main",
+    "checkout_steps"
+  ]
+}

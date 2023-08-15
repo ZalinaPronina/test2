@@ -1,0 +1,252 @@
+{% liquid
+  assign button = section.blocks | where: "type", "button" | first
+  assign text = section.blocks | where: "type", "text" | first
+  assign video = section.blocks | where: "type", "video" | first
+%}
+
+<section class="Hero HeroVideo ModalVideo style--{{ section.settings.style }}" data-component="ModalVideo" data-video-id="{{ video.settings.video.id }}">
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+    <div class="Hero__Container">
+      <div class="relative z-3 py-8 sm:w-3/5 sm:py-20">
+        {% if section.settings.sub_title != blank %}
+          <h3 class="font-body font-normal text-20 uppercase mb-10 sm:mb-2">
+            {{ section.settings.sub_title }}
+          </h3>
+        {% endif %}
+
+        {% liquid
+          assign title_tag = "h2"
+          if section.settings.title_as_h1
+            assign title_tag = "h1"
+          endif
+        %}
+
+        {% if section.settings.title != blank %}
+          <{{ title_tag }} class="text-48 uppercase max-w-[10em] sm:text-60">
+            {{ section.settings.title }}
+          </{{ title_tag }}>
+        {% endif %}
+
+        {% if text.settings.text != blank %}
+          <div class="rte font-medium mt-8 max-w-[28em] sm:mt-11">
+            {{ text.settings.text }}
+          </div>
+        {% endif %}
+
+        {% if video.settings.video != blank or button.settings.text != blank %}
+          <div class="mt-8 sm-down:space-y-10 sm:space-x-10 sm:flex">
+            {% if video.settings.title != blank or video.settings.video != blank %}
+              <div class="shrink-0">
+                {% if video.settings.title != blank %}
+                  <h3 class="text-16 font-body tracking-normal mb-10 sm:mb-8">{{ video.settings.title }}</h3>
+                {% endif %}
+
+                {% if video.settings.video != blank %}
+                  <button type="button" class="p-0 w-full text-brand-tertiary" data-modal-trigger="hero-video-{{ section.id }}">
+                    <div class="relative w-full shrink-0 flex items-center justify-center sm:w-[136px]">
+                      <div class="relative z-2 w-full rounded-xl overflow-hidden">
+                        <div class="w-full aspect-w-16 aspect-h-9">
+                          <img
+                            src="https://i.ytimg.com/vi_webp/{{ video.settings.video.id }}/mqdefault.webp"
+                            width="720"
+                            height="480"
+                            alt="{{ section.settings.title }}"
+                            loading="lazy"
+                          >
+                        </div>
+                      </div>
+
+                      <div class="absolute inset-0 z-1 border border-brand-tertiary"></div>
+
+                      {% render "icons", icon: "play", size: "large", className: "absolute z-3 sm-down:!w-32 sm-down:!h-32" %}
+                    </div>
+
+                    {% if video.settings.button != blank %}
+                      <span class="flex items-center justify-center text-white text-14 font-semibold border border-brand-tertiary rounded-r-8 h-10 pl-5 pr-6 -ml-px sm-down:hidden">
+                        {{ video.settings.button }}
+                      </span>
+                    {% endif %}
+                  </button>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if button.settings.text != blank %}
+              <div class="sm:flex sm:items-end sm:pb-6">
+                <a class="Button Button--{{ button.settings.style }}" href="{{ button.settings.url }}">
+                  {{ button.settings.text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.settings.image != blank %}
+        <div class="relative flex justify-center w-auto top-0 right-0 bottom-0 z-2 -mx-5 sm:absolute sm:w-1/2 sm:mx-0">
+          {{ section.settings.image | image_url: width: 1200 | image_tag:
+            loading: "lazy",
+            class: "w-full h-auto sm:w-auto sm:h-full",
+            sizes: "(min-width: 768px) 640w, 1280w",
+            widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+            alt: section.settings.image.alt | escape
+          }}
+
+          {% if section.settings.image_decoration %}
+            <svg class="absolute -z-1 top-2 w-11/12 sm:w-full lg:w-5/6" fill="none" viewBox="0 0 483 594" aria-hidden="true"><rect x="207.691" y="224.108" width="64.371" height="145.329" rx="32.185" stroke="#43CD9E" stroke-width="2.131"/><rect x="166.704" y="183.122" width="146.345" height="227.303" rx="54.849" stroke="#43CD9E" stroke-width="1.115"/><rect x="125.971" y="130.822" width="226.944" height="331.418" rx="85.325" stroke="#43CD9E"/><rect x="87.569" y="88.661" width="307.507" height="416.78" rx="115.442" stroke="#43CD9E" stroke-width=".8"/><rect x="44.339" y="45.828" width="393.946" height="501.83" rx="147.946" stroke="#43CD9E" stroke-width=".6"/><rect x=".845" y=".888" width="481.267" height="592.643" rx="180.655" stroke="#43CD9E" stroke-width=".4"/></svg>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if video.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="hero-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero with video",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_decoration",
+      "label": "Show image decoration",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_as_h1",
+      "label": "Heading as H1 tag",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "video_url",
+          "id": "video",
+          "accept": [
+            "youtube"
+          ],
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default": "Watch video"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero with video",
+      "settings": {
+        "title": "Hero heading"
+      }
+    }
+  ]
+}
+{% endschema %}

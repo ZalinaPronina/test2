@@ -1,0 +1,396 @@
+{% liquid
+  assign className = 'MediaText'
+
+  if section.settings.top_padding
+    assign className = className | append: ' pt-5 md:pt-20'
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: ' pb-5 md:pb-20'
+  endif
+
+  if section.blocks.size > 0
+    assign className = className | append: ' hasSlider'
+  endif
+%}
+<style>
+  #{{section.id}}.MediaText{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.MediaText{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+{% stylesheet %}
+  @media (min-width: 426px) {
+    .MediaText__WrapperText {
+      display: flex;
+    }
+    .MediaText__Icon {
+      transform: translate(50px, 0px);
+    }
+    .MediaText__textWrapper {
+      margin-top: 12px !important;
+    }
+    .MediaText__textWrapper > div:first-child {
+      transform: translate(70px, 0px);
+    }
+    .MediaText__textWrapper > div:last-child {
+      margin-top: 30px !important;
+    }
+  }
+  .MediaText__textWrapper {
+    margin-top: 12px !important;
+  }
+{% endstylesheet %}
+{% if section.settings.title != blank or section.settings.text != blank or section.blocks.size > 0 %}
+  <section
+    id="{{section.id}}"
+    class="{{ className }} {% if section.settings.background != blank %} MediaText__Container-Background{% endif %}"
+    data-component="MediaText"
+  >
+    <div
+      class="MediaText__Container"
+      {% if section.settings.background != blank %}
+        style="padding: 0; background-color: {{section.settings.background}}; border-radius:{{section.settings.border_radius}}px"
+      {% endif %}
+    >
+      <div class="items-center {{ section.settings.media_position }} md-down:space-y-7.5 md:flex">
+        {% if section.blocks.size > 0 %}
+          <div class="shrink-0{% if section.settings.background != blank %} w-1/2{% else %} md:w-[calc(50%+20px)]{% endif %}">
+            <div class="MediaText__Slider" data-slider="container">
+              <div class="MediaText__SliderWrapper">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'image' %}
+                      {% if block.settings.image != blank %}
+                        <div class="MediaText__Slide">
+                          <div class="aspect-w-16 aspect-h-9">
+                            {% if block.settings.image_mobile != blank %}
+                              {{
+                                block.settings.image
+                                | image_url: width: 1200
+                                | image_tag:
+                                  loading: 'lazy',
+                                  class: 'object-cover sm-down:hidden',
+                                  sizes: '(min-width: 768px) 640w, 1280w',
+                                  widths: '800, 1200, 1600, 2000, 2400, 3200, 3800',
+                                  alt: block.settings.image.alt
+                                | escape
+                              }}
+                              {{
+                                block.settings.image_mobile
+                                | image_url: width: 1200
+                                | image_tag:
+                                  loading: 'lazy',
+                                  class: 'object-cover sm:hidden',
+                                  sizes: '(min-width: 768px) 640w, 1280w',
+                                  widths: '400, 600, 800',
+                                  alt: block.settings.image_mobile.alt
+                                | escape
+                              }}
+                            {% else %}
+                              {{
+                                block.settings.image
+                                | image_url: width: 1200
+                                | image_tag:
+                                  loading: 'lazy',
+                                  class: 'object-cover',
+                                  sizes: '(min-width: 768px) 640w, 1280w',
+                                  widths: '400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800',
+                                  alt: block.settings.image.alt
+                                | escape
+                              }}
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% when 'video' %}
+                      {% if block.settings.video != blank %}
+                        <div
+                          class="MediaText__Slide"
+                          data-component="ModalVideo"
+                          data-video-id="{{ block.settings.video.id }}"
+                        >
+                          <div class="relative flex items-center justify-center rounded-2xl overflow-hidden">
+                            <div class="w-full aspect-w-16 aspect-h-9">
+                              {% if block.settings.video_popup == blank %}
+                                <iframe src="https://www.youtube.com/embed/{{ block.settings.video.id }}?rel=0&amp;showinfo=0&amp" allowfullscreen="" class="video__media"></iframe>
+                              {% else %}
+                                <img
+                                  src="https://i.ytimg.com/vi_webp/{{ block.settings.video.id }}/maxresdefault.webp"
+                                  width="720"
+                                  height="480"
+                                  alt="{{ section.settings.title }}"
+                                  loading="lazy"
+                                >
+                              {% endif %}
+                              {% if section.settings.video_iframe != blank %}
+                                <iframe src="{{section.settings.video_iframe}}?autoplay=0&loop=1&muted=1"
+                                frameborder="0" playsinline controls ></iframe>
+                              {% endif %}
+                            </div>
+                            {% if block.settings.video_popup != blank %}
+                              <button
+                                  type="button"
+                                  class="absolute z-3 text-brand-tertiary"
+                                  aria-label="Play video"
+                                  data-modal-trigger="media-text-{{ section.id }}-{{ block.settings.video.id }}"
+                              >
+                                {% render 'icons',
+                                  icon: 'play',
+                                  size: 'large',
+                                  className: '!w-20 !h-20 md:!w-35 md:!h-35'
+                                %}
+                              </button>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                  {% endcase %}
+                {% endfor %}
+              </div>
+
+              <div class="MediaText__Pagination"></div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank or section.settings.text != blank %}
+          <div
+            class="MediaText__WrapperText text-content space-y-8 {% if section.settings.background != blank %} w-1/2 pr-24 pl-24{% else %} md:w-full md:px-10 {% endif %} {% if section.settings.media_position == "flex-row" %}lg:pl-18{% else %}lg:pr-18{% endif %}"
+            style="color: {{section.settings.text_color}};"
+          >
+            {% if section.settings.icon != blank %}
+              {{
+                section.settings.icon
+                | image_url: width: 100
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'MediaText__Icon w-auto h-12 icon-center',
+                  widths: '100',
+                  alt: section.settings.icon.alt
+                | escape
+              }}
+            {% endif %}
+
+            <div class="MediaText__textWrapper space-y-8 sm:space-y-3 md:max-w-sm text-content-small">
+              <div class="flex{% if section.settings.title_left != blank %} tranform-none{% endif %}">
+                {% if section.settings.icon_heading != blank %}
+                  {{
+                    section.settings.icon_heading
+                    | image_url: width: 60
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'w-auto h-12',
+                      widths: '60',
+                      alt: section.settings.icon_heading.alt
+                    | escape
+                  }}
+                {% endif %}
+                {% if section.settings.title != blank %}
+                  <h2 class="text-24 font-body font-bold tracking-normal">
+                    {{ section.settings.title }}
+                  </h2>
+                {% endif %}
+              </div>
+              {% if section.settings.text != blank %}
+                <div class="rte">{{ section.settings.text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% for block in section.blocks %}
+    {% if block.type == 'video' and block.settings.video != blank and block.settings.video_popup != blank %}
+      <div
+        class="Modal"
+        data-component="Modal"
+        data-modal-id="media-text-{{ section.id }}-{{ block.settings.video.id }}"
+      >
+        <div class="Modal__Overlay" data-modal-overlay></div>
+        <div class="Modal__Inner max-w-[800px] !bg-transparent">
+          <button
+            type="button"
+            class="Modal__Close z-1 text-white"
+            data-modal-close
+            aria-label="Close modal"
+          >
+            {% render 'icons', icon: 'close', size: 'large' %}
+          </button>
+
+          <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Media with text Redesign",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_left",
+      "label": "Align Title to the left"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_heading",
+      "label": "Icon Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Media with text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Media position",
+      "options": [
+        {
+          "value": "flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "flex-row-reverse",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video",
+          "label": "Video",
+          "accept": ["youtube"]
+        },
+        {
+          "type": "checkbox",
+          "id": "video_popup",
+          "label": "The video will be in a pop-up window",
+          "default": false
+        },
+        {
+          "type": "video_url",
+          "id": "video_iframe",
+          "accept": [
+            "vimeo"
+          ],
+          "label": "Video Iframe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media with text Redesign"
+    }
+  ]
+}
+{% endschema %}

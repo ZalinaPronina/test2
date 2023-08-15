@@ -1,0 +1,143 @@
+{% liquid
+  assign className = "CollectionPromo"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-15"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-15"
+  endif
+%}
+
+{% if section.blocks.size > 0 %}
+  <section class="{{ className }}">
+    <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+      <div class="space-y-4 sm:space-y-7">
+        {% if section.settings.title != blank %}
+          <div class="pb-4 border-b border-solid sm:pb-5">
+            <h2 class="text-24 text-center font-body tracking-normal">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        {% endif %}
+
+        <div class="grid grid-cols-2 gap-4 sm:gap-5">
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank %}
+              <div class="space-y-4" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank or block.settings.image_mobile != blank %}
+                  {% liquid
+                    assign tag = 'div'
+                    if block.settings.url != blank
+                      assign tag = 'a'
+                    endif
+                  %}
+
+                  <{{ tag }}
+                    class="block aspect-w-3 aspect-h-4 sm:aspect-w-11 sm:aspect-h-7"
+                    {% if tag == 'a' %}
+                      href="{{ block.settings.url }}"
+                    {% endif %}
+                  >
+                    {% if block.settings.image != blank %}
+                      {% liquid
+                        assign className = "w-full h-full object-cover"
+                        if block.settings.image_mobile != blank
+                          assign className = className | append: " sm-down:hidden"
+                        endif
+                      %}
+
+                      {{ block.settings.image | image_url: width: 1200 | image_tag:
+                        loading: "lazy",
+                        class: className,
+                        sizes: "(min-width: 1280px) 600px, calc(50vw - (8px + 20px))",
+                        widths: "400, 600, 800, 1200",
+                        alt: block.settings.image.alt | escape
+                      }}
+                    {% endif %}
+
+                    {% if block.settings.image_mobile != blank %}
+                      {% liquid
+                        assign className = "w-full h-full object-cover"
+                        if block.settings.image != blank
+                          assign className = className | append: " sm:hidden" 
+                        endif
+                      %}
+
+                      {{ block.settings.image_mobile | image_url: width: 1200 | image_tag:
+                        loading: "lazy",
+                        class: className,
+                        sizes: "(min-width: 1280px) 600px, calc(50vw - (8px + 20px))",
+                        widths: "400, 600, 800, 1200",
+                        alt: block.settings.image_mobile.alt | escape
+                      }}
+                    {% endif %}
+                  </{{ tag }}>
+                {% endif %}
+
+                <h3 class="text-base font-body font-normal tracking-normal sm:text-20">
+                  {{ block.settings.title }}
+                </h3>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Promo products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile devices"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Product title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

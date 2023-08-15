@@ -1,0 +1,498 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/Frame_560_2_-2.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "GPS in schools - Improving player performance",
+        "title_as_h1": false,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": "For schools"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Schools.png",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Introduction",
+        "title_position": "inside",
+        "bold_text": "<p><strong>Using GPS in schools for sport helps in a variety of ways - and in this guide, we’ll look at how players, coaches, teachers and students can all benefit.<\/strong><\/p>",
+        "text": "<p>There’s the knowledge that comes from player data where speed, distance and many other metrics can be benchmarked and improved over time.<\/p><p>Whether it’s studying fitness, stamina, injury recovery or tactical awareness, GPS tracking opens up a world of exciting insights to support players, coaches and teams.<\/p><p>There’s also learning opportunities for A-level students and we’ll dive into how PitcheroGPS Player Vests can be a valuable tool for Physical Education (PE) lessons.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "blocks": {
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "e25bb3d9-6135-42ff-b995-a8c75ad8dd83": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Team<br>bundle",
+            "sub_title": "New",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0",
+        "e25bb3d9-6135-42ff-b995-a8c75ad8dd83"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "e583f855-6fe1-4a50-8994-24c587b1455f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats_710a7893-df4b-48e0-961b-38fb72b4e4cf.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity_0b9b4972-f862-4849-8d48-bde45107a900.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e583f855-6fe1-4a50-8994-24c587b1455f",
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9",
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How can students and teachers track progress?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>A GPS sports tracker is worn in a player vest and records GPS data which can be saved to the Cloud for discussion later.<\/strong><\/p>",
+        "text": "<p>The appeal is that every student at your school who wears a GPS vest with a tracker can view precise and personalised GPS data.<\/p><p><strong>No more generic training for everyone.<\/strong><\/p><p>Work out the areas where players excel and those where there’s room for improvement. That can then shape future preparation in training and performances in matches.<\/p><p>Players and coaches can view a player’s baseline GPS readings to start from (e.g. top speed covered in the first game versus two months later).<\/p><p>By tracking location, speed, direction and distance, teachers and players can study the data on a mobile device or computer.<\/p><p>With PitcheroGPS, players and coaches can look at heatmaps via the mobile or web app to see which areas of the field or court they spent time in.<\/p><p>Understanding training load is another important GPS metric to watch closely. It supports player welfare so pupils don’t do too much or too little!<\/p><p>GPS Sports Trackers can be used by different sports teams across age groups, to maximise the benefits for the school.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What can you measure with a GPS Player Vest?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>GPS Player Vests help those involved with school sports to measure, analyse and learn from physical performance.<\/strong><\/p>",
+        "text": "<p>Coaches at school can offer bespoke training in future according to different needs, rather than everyone doing all the drills in the same way.<\/p><p>Here are 6 measurements provided by GPS Sports Trackers that can prove beneficial for schools:<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Speed.png",
+            "title": "Speed",
+            "text": "<p>Understanding speed is not just about the quickest player - though that can add a fun, inter-squad dimension.<\/p><p>Speed might influence your team’s tactics or could involve changing players to new positions. As with all of the GPS data, you can look to increase your personal best and aim to get faster as a squad.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Location.png",
+            "title": "Location",
+            "text": "<p>Location tracking is the most common feature of GPS and its application in sport is literally a game-changer. With smartwatches or personal fitness trackers, knowing where you ran or cycled is more about documenting exercise.<\/p><p>For school sport, the use of heatmaps shows coaches and players exactly where players spent their time in training or matches - and for how long.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Distance.png",
+            "title": "Distance",
+            "text": "<p>Stamina is a key component so players need to be fit enough to comfortably last a match. With PitcheroGPS, viewing the distance a player has run for a training session or a match is easy. It can give pointers as to whether someone needs to increase their running time to work on fitness - or scale back if they’re over-doing things.<\/p><p>Total distance is one part of the equation but it’s not everything. The number of kilometres ties in with the intensity and frequency. The results from the pitch or the court might surprise you. They’re a visual aid that will help to improve tactics and performance.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Injury.png",
+            "title": "Injury Reduction",
+            "text": "<p>Of course, players don’t want to miss games through injury and coaches want to select their strongest sides. Using GPS Player Vests, schools can monitor the workload of players much more accurately which has two clear benefits. Firstly, it’s an injury-prevention measure. Injuries will always happen, particularly with contact sports or just plain bad luck, but knowing your players’ limits can keep them healthier for longer. Secondly, recovery from injury is a careful, measured approach. <\/p><p>The more data you have on how a player is responding to a return to training, it can be scaled up or back accordingly.<\/p>"
+          }
+        },
+        "fa49ef11-adf5-420a-957d-267b8d088063": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "Intensity",
+            "text": "<p>A high-intensity session is one with more strenuous exercise. In the PitcheroGPS app, coaches can programme custom speed zones to track how often a certain speed is reached. It might be walking, jogging, running or sprinting. The values of each can be changed for every player or kept the same as a group.<\/p>"
+          }
+        },
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dec.png",
+            "title": "Accelerations \/ Decelerations",
+            "text": "<p>Changing speed suddenly is an asset across all sports. This is an area that GPS trackers can measure - with a view to getting better. Teams can introduce specific training exercises to work on accelerations and decelerations.<\/p><p>Speeding up and slowing down suddenly tie directly into fatigue but also potential for injuries too. With PitcheroGPS, acceleration and deceleration figures are set in advance and measured as metres per second squared m\/s²).<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3",
+        "fa49ef11-adf5-420a-957d-267b8d088063",
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "text": ""
+      }
+    },
+    "65325632-a2f5-4f1e-b50b-bf851d6264bc": {
+      "type": "bundles",
+      "blocks": {
+        "3e1b36b3-c235-4b03-9814-013ae597e8f9": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "fe852cfb-368c-4717-942b-daf2bd9da5c4": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Team<br>bundle",
+            "sub_title": "New",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "3e1b36b3-c235-4b03-9814-013ae597e8f9",
+        "fe852cfb-368c-4717-942b-daf2bd9da5c4"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "1173bfe6-f275-4920-a795-66aa53e1f134": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Benefits to A-Level PE",
+        "title_position": "outside",
+        "bold_text": "<p><strong>The use of GPS Sports Trackers in school sports isn’t limited to performance on the field. It can be a valuable teaching tool in the classroom.<\/strong><\/p>",
+        "text": "<p>England’s biggest exam board, AQA, refers to the ‘role of technology in sport’ as part of A-level PE, stating that motion tracking, quantitative and qualitative data collection, game analysis, skill and technique development and the monitoring of fitness are aspects that can be asked directly in the exam.<\/p><p>In the OCR specification, technology is included as a socio-cultural topic under the description of ‘improved equipment and the monitoring of exercise’. Such topics can be taught using GPS tracking systems as a learning aid.<\/p><p>Students are required to understand how GPS and technology systems can provide analysis for players in the form of match analysis.<\/p><p>Game analysis using GPS systems will show the movement of specific players during a game or competitive situation.<\/p><p>Speed, distance covered and position on the pitch can give data on match involvement and intensity.  Heat maps and graphs of game involvement including sprinting, jogging and direction of movement are methods used to display the data.<\/p><p>The power of GPS Player Vests for sport in schools partly lie in gathering GPS data over time. It builds up a picture; of fluctuations that can be explored and students can compare GPS metrics over time periods.<\/p><p>GPS used in training sessions can show distances covered in specific times for each individual. Increases in training intensity, speed and the attainment and maintenance of pre-set training zone velocities can be displayed for the class to study.<\/p><p>Links with the energy systems and types of training can be highlighted here in class discussions.<\/p><p>A player heat map can highlight positional play and could be used to discuss tactics or demonstrate the individual player qualities.<\/p><p>Elite sports are using GPS technology to help in player recruitment where the study of GPS data helps to identify the players who have the physical attributes in terms of speed and fitness required by coaches in professional teams.<\/p><p>Demonstrating such levels of professionalism has the bonus of being attractive to the players being scouted by the club or team.<\/p><p>The benefits of GPS technology can be highlighted to show how coaches could <a href=\"\/pages\/performance\" title=\"Performance\">improve player performance<\/a> by using data, player heat maps and the level of player involvement in the game.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "38952d4f-608a-48ae-8758-e76eb97939c5": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Teaching ideas with GPS for A-Level PE",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Teaching A-level PE with GPS Player Vests offers a breadth of educational opportunities.<\/strong><\/p>",
+        "text": "<p>In elite sport, pre-season training tends to be intense and challenging, but during the season the focus will change to maintaining fitness and ensuring players do not become too fatigued.<\/p><p>With GPS tracking systems, the limits and parameters on speed and distance can be set and adjusted throughout the season. These benefits to players and coaches could be pointed out using data from GPS tracking systems as examples.<\/p><p>The teacher could then explain how sport benefits from such improvements in performance by increasing standards and attracting more spectators.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "a4cc87f7-a315-4041-beb8-0f73d94ae7dc": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Anaerobic and aerobic systems",
+        "title_position": "outside",
+        "bold_text": "<p><strong>The example lesson here could be to set up a training session that includes both a continuous run and some interval training. <\/strong><\/p>",
+        "text": "<p>The GPS trackers will then produce data regarding the intensity levels and distances covered during the session.<\/p><p>That data, easily downloaded for display in the classroom, can then be used to explain the differing intensities, training levels and times that utilise the ATP-PC or Glycolytic systems, or the Aerobic energy system.<\/p><p>The energy continuum can then be introduced as a concept using the data from the lesson.<\/p><p>A-level classes could discuss types of training and the role of GPS data in that. In this section of the exam specification, students need to understand how data can be used to plan, monitor and evaluate different types of training.<\/p><p>The data used could be any from a recent school or college game and it might add a personal touch to include data from a student in the class. Even better, allow the class to play a game and then use the data from that game in the class discussions.<\/p><p>Macro, Meso and Micro cycles can be explained and then included in the planning of a training schedule of an individual player from a team, discussed by a group of students.<\/p><p>All in all, GPS tracking systems have a multi-functional role in the A-level classroom and the data they can provide is useful in providing examples and demonstrating concepts.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "d67918c9-2375-4c70-a5d9-3876aedb065b": {
+      "type": "text-with-media",
+      "blocks": {
+        "b343948e-c141-453c-9921-198797673340": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/mAhn1Hy-808"
+          }
+        }
+      },
+      "block_order": [
+        "b343948e-c141-453c-9921-198797673340"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your school",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Schools, academies and clubs (like Cambridge RFU and West Bromwich Albion Women) are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>It’s an investment in your school for players and coaches, an asset across multiple sports at the same school - but also offers clear benefits for teachers and pupils of A-level PE.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf": {
+      "type": "reviews",
+      "blocks": {
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1526-2205110239_1.png",
+            "title": "Cambridge RUFC told us what they think",
+            "text": "We’ve found using the PitcheroGPS has been massively beneficial for us as a club. It’s cost-effective compared to other brands that are currently available. It’s something I would recommend to any clubs at our level, the National Leagues below and community clubs to purchase."
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "922fa8f7-a6dd-4b65-8201-3cd3d0f5df9a": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "922fa8f7-a6dd-4b65-8201-3cd3d0f5df9a"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Player Vest is approved by FIFA and quickly sold out to <a href=\"\/pages\/football-gps-tracker\" title=\"Football\">football<\/a> and <a href=\"\/pages\/rugby-gps-tracker\" title=\"Rugby\">rugby<\/a> customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    },
+    "5a7b1635-be8d-4c00-aa7c-9b36f2793cf5": {
+      "type": "bundles",
+      "blocks": {
+        "491969b1-3251-48d2-9d7f-4ccdc43e4ca6": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "d6e334ac-009b-482a-99fe-a5626c04a26a": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Team<br>bundle",
+            "sub_title": "New",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "491969b1-3251-48d2-9d7f-4ccdc43e4ca6",
+        "d6e334ac-009b-482a-99fe-a5626c04a26a"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "65325632-a2f5-4f1e-b50b-bf851d6264bc",
+    "1173bfe6-f275-4920-a795-66aa53e1f134",
+    "38952d4f-608a-48ae-8758-e76eb97939c5",
+    "a4cc87f7-a315-4041-beb8-0f73d94ae7dc",
+    "d67918c9-2375-4c70-a5d9-3876aedb065b",
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8",
+    "5a7b1635-be8d-4c00-aa7c-9b36f2793cf5"
+  ]
+}

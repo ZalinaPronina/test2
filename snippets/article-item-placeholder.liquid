@@ -1,0 +1,27 @@
+<article class="" role="article" itemscope itemtype="http://schema.org/Article">
+  <div class="rounded-8 overflow-hidden">
+    <a class="block" href="#" title="Article Title">
+      {{ 'image' | placeholder_svg_tag }}
+    </a>
+  </div>
+
+  <div class="mt-4 space-y-1">
+    <div class="text-12 font-bold">
+      <span>Author</span>
+      <span>- {{ "now" | time_tag: format: "month_day_year" }}</span>
+    </div>
+
+    <a class="block" href="#" title="Article Title">
+      <h4 class="text-20 sm:text-24">Article Title</h4>
+    </a>
+
+    <div class="font-medium">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi at sint ipsa laudantium, aliquid amet a. Voluptates deserunt consectetur illo ipsam hic numquam, sint tempora et excepturi quae doloribus unde quaerat exercitationem obcaecati, id porro omnis delectus dolore rem...</p>
+    </div>
+
+    <a href="#" class="flex items-center space-x-2">
+      <span class="font-bold">{{ "articles.general.read_more" | t }}</span>
+      <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="6" fill="#000"/><path d="m5 4 3 2-3 2" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</article>

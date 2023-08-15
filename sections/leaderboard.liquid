@@ -1,0 +1,139 @@
+{% liquid
+  assign className = "Table"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-20 sm:pt-15"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-20 sm:pb-15"
+  endif
+%}
+
+<section class="{{ className }}">
+  <div>
+    {% if section.settings.title != blank %}
+      <div class="lg-down:bg-brand-primary">
+        <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-20">
+          <div class="text-center bg-brand-primary text-white py-10">
+            <h2 class="text-24 font-body tracking-normal">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="">
+      <div class="max-w-screen-lg mx-auto lg:px-20">
+        <div class="relative flex items-center justify-center min-h-[500px]">
+          {% if section.settings.image_mobile != blank %}
+            {{ section.settings.image_mobile | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              class: "shrink-0 w-full h-auto sm:hidden",
+              sizes: "100vw",
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image_mobile.alt | escape
+            }}
+          {% endif %}
+
+          {% if section.settings.image != blank %}
+            {{ section.settings.image | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              class: "shrink-0 w-full h-auto sm-down:hidden",
+              sizes: "(min-width: 1280px) 1000px, 100vw",
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image.alt | escape
+            }}
+          {% endif %}
+
+          {% if section.settings.popup_title != blank or section.settings.popup_text != blank %}
+            <div class="absolute z-1 rounded-16 overflow-hidden bg-white border border-solid border-brand-accent p-10 max-w-[calc(100vw-60px)] max-h-[calc(100vh-60px)] text-center flex flex-col items-center xs-down:px-5 md:w-full md:max-w-[840px] lg:py-20" style="box-shadow: 0px 28px 20px rgba(0, 0, 0, 0.25);">
+              {% if section.settings.popup_title != blank %}
+                <h3 class="text-24 md-down:font-body md-down:tracking-normal md:text-40 md:tracking-widest">
+                  {{ section.settings.popup_title }}
+                </h3>
+              {% endif %}
+
+              {% if section.settings.popup_text != blank %}
+                <div class="rte max-w-[32em] mt-5">{{ section.settings.popup_text }}</div>
+              {% endif %}
+
+              {% if section.settings.popup_button != blank %}
+                <a href="{{ section.settings.popup_button_url }}" class="Button Button--primary mt-6 !w-auto">
+                  {{ section.settings.popup_button }}
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Leaderboard",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image for mobile devices"
+    },
+    {
+      "type": "header",
+      "content": "Popup"
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "popup_button",
+      "label": "Button"
+    },
+    {
+      "type": "url",
+      "id": "popup_button_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Leaderboard"
+    }
+  ]
+}
+{% endschema %}

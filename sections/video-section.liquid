@@ -1,0 +1,118 @@
+<style>
+  .video-section{
+    margin-top: 18px;
+    margin-bottom: 68px;
+    padding: 0;
+    background-color: transparent;
+  }
+  .video-section svg{
+    width: 20.2vw !important;
+    height: 20.2vw !important;
+  }
+  .video-content{
+    padding-bottom: 60.5%;
+  }
+  .video-content img{
+    object-fit: cover;
+  }
+  @media (max-width: 767px) {
+    .video-section svg{
+      width: 27.2vw !important;
+      height: 27.2vw !important;
+    }
+  }
+</style>
+<section class="TextVideo video-section">
+  <div class="container-main">
+    <div class="md-down:space-y-10 md:flex md:items-center">
+      {% if section.settings.image != blank or section.settings.video != blank %}
+        <div class="TextVideo__Media" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}">
+          <div class="w-full video-content shrink-0 aspect-w-16 aspect-h-9">
+            {% if section.settings.image != blank %}
+              {{ section.settings.image | image_url: width: 1200 | image_tag:
+                loading: "lazy",
+                sizes: sizes,
+                widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                alt: section.settings.image.alt | escape
+              }}
+            {% elsif section.settings.video != blank %}
+              <img
+                src="https://i.ytimg.com/vi_webp/{{ section.settings.video.id }}/maxresdefault.webp"
+                width="1280"
+                height="720"
+                alt="{{ section.settings.title }}"
+                loading="lazy"
+              >
+            {% endif %}
+            
+          </div>
+
+          {% if section.settings.video != blank %}
+            <button
+              type="button"
+              class="absolute z-2 text-brand-tertiary"
+              data-modal-trigger="text-with-video-{{ section.id }}"
+              aria-label="Play video"
+            >
+              {% render "icons", icon: "play", size: "large", className: "!w-18 !h-18 sm:!w-22 sm:!h-22" %}
+            </button>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% if section.settings.video_iframe != blank %}
+      <div class="TextVideo__Media">
+        <div class="w-full video-content shrink-0 aspect-w-16 aspect-h-9">
+          <iframe src="{{section.settings.video_iframe}}?autoplay=0&loop=1&muted=1"
+            frameborder="0" playsinline controls ></iframe>
+        </div>
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="text-with-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Video Section",
+  "settings": [
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_iframe",
+      "accept": [
+        "vimeo"
+      ],
+      "label": "Video Iframe"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Section"
+    }
+  ]
+}
+{% endschema %}

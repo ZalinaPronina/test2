@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "show_title": true,
+        "show_filter": true,
+        "show_last_viewed_article": true,
+        "image_overlay": true,
+        "per_page": 8,
+        "text_color": "#ffffff",
+        "background_color": "linear-gradient(90deg, rgba(248, 204, 176, 1), rgba(255, 173, 141, 1) 100%)",
+        "button_color": "#f8ccb0"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

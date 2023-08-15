@@ -1,0 +1,79 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "global/variables.css";
+@import "global/reset.css";
+@import "global/typography.css";
+
+@import "components/button.css";
+@import "components/collapsible-content.css";
+@import "components/details.css";
+@import "components/drawer.css";
+@import "components/facets.css";
+@import "components/footer.css";
+@import "components/icon.css";
+@import "components/header.css";
+@import "components/image.css";
+@import "components/link.css";
+@import "components/modal.css";
+@import "components/product-item.css";
+@import "components/radio.css";
+@import "components/social.css";
+@import "components/tabs.css";
+@import "components/account-address-modal.css";
+@import "components/marquee.css";
+@import "components/video-grid.css";
+@import "components/section-form.css";
+
+@import "pages/article.css";
+@import "pages/blog.css";
+@import "pages/cart.css";
+@import "pages/product.css";
+@import "pages/challenge.css";
+
+@import "sections/columns.css";
+@import "sections/columns-slider.css";
+@import "sections/featured-bundle.css";
+@import "sections/hero.css";
+@import "sections/hero-video.css";
+@import "sections/logo-list.css";
+@import "sections/media-slider.css";
+@import "sections/media-text.css";
+@import "sections/metrics.css";
+@import "sections/metrics-grid.css";
+@import "sections/newsletter.css";
+@import "sections/offer-app.css";
+@import "sections/offer-box.css";
+@import "sections/player-grid.css";
+@import "sections/page-header.css";
+@import "sections/product-navigation.css";
+@import "sections/promo-box.css";
+@import "sections/register.css";
+@import "sections/reviews.css";
+@import "sections/sign-up.css";
+@import "sections/size-guide.css";
+@import "sections/table.css";
+@import "sections/text-with-media.css";
+@import "sections/text-with-video.css";
+@import "sections/text-blocks-border.css";
+
+html {
+  padding-bottom: 0 !important;
+}
+
+#preview-bar-iframe,
+.locale-selectors__container {
+  display: none !important;
+}
+
+#dynamic-checkout-cart.dynamic-checkout__content {
+  * {
+    @apply !ml-0 !mr-0 !mb-0 !rounded-8 !overflow-hidden;
+    flex-basis: 100% !important;
+  }
+
+  li {
+    @apply sm:!mb-3;
+  }
+}

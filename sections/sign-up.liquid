@@ -1,0 +1,167 @@
+<section class="SignUp pt-13 md:pt-30{% if section.settings.image == blank %} pb-13 md:pb-30{% endif %}">
+  <div class="max-w-4xl mx-auto px-5 xs:px-10">
+    <div class="text-center text-white space-y-10 sm:space-y-16">
+      {% if section.settings.logo != blank %}
+        <a href="{{ routes.root_url }}" class="inline-block mt-10" aria-label="{{ shop.name }}">
+          {{ section.settings.logo | image_url: width: 600 | image_tag:
+            loading: "lazy",
+            class: "w-auto h-8 sm:h-12",
+            widths: "200, 300, 400, 600",
+            alt: section.settings.logo.alt | escape
+          }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="h1 sm:text-60">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      {% assign form_id = "sign-up" %}
+
+      {% form "customer", class: "max-w-2xl mx-auto", id: form_id %}
+        {{ form.errors | default_errors }}
+
+        {% if form.posted_successfully? %}
+          {% assign default_thank_you_text = "sections.sign_up.success" | t %}
+
+          <p class="text-brand-accent font-bold">
+            {{ section.settings.thank_you_text | default: default_thank_you_text }}
+          </p>
+        {% else %}
+          <input type="hidden" name="contact[tags]" value="{{ section.settings.form_tag | default: page.handle }}">
+
+          <div class="items-center sm:flex">
+            <input
+              class="w-full h-13.5 text-20 font-medium text-black rounded-8 border-0 shadow-input px-4 py-0 placeholder:opacity-50 placeholder:text-current sm:rounded-r-none"
+              type="email"
+              name="contact[email]"
+              id="{{ form_id }}-email"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              placeholder="{{ 'sections.sign_up.email_placeholder' | t }}"
+              required
+            >
+
+            <button type="submit" class="Button Button--primary Button--medium max-w-[260px] whitespace-nowrap mt-9 sm:mt-0 sm:rounded-l-none">
+              {% if section.settings.button != blank %}
+                {{ section.settings.button }}
+              {% else %}
+                {{ "sections.sign_up.submit" | t }}
+              {% endif %}
+            </button>
+          </div>
+
+          {% if section.settings.disclaimer_text != blank %}
+            <div class="rte text-12 mt-2">{{ section.settings.disclaimer_text }}</div>
+          {% endif %}
+        {% endif %}
+      {% endform %}
+
+      {% if section.settings.text != blank %}
+        <div class="text-16 font-bold xs-down:px-2.5 sm:text-32">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.image != blank or section.settings.image_mobile != blank %}
+      <div class="w-full flex justify-center mt-6 h-[320px] sm:h-[520px]">
+        {% if section.settings.image != blank %}
+          {% liquid
+            assign className = "shrink-0 w-auto h-full"
+            if section.settings.image_mobile != blank
+              assign className = className | append: " sm-down:hidden"
+            endif
+          %}
+
+          {{ section.settings.image | image_url: width: 1200 | image_tag:
+            loading: "lazy",
+            class: className,
+            sizes: "calc(100vw - 5rem)",
+            widths: "400, 600, 800, 1200",
+            alt: section.settings.image.alt | escape
+          }}
+        {% endif %}
+
+        {% if section.settings.image_mobile != blank %}
+          {% liquid
+            assign className = "shrink-0 w-auto h-full"
+            if section.settings.image != blank
+              assign className = className | append: " sm:hidden" 
+            endif
+          %}
+
+          {{ section.settings.image_mobile | image_url: width: 1200 | image_tag:
+            loading: "lazy",
+            class: className,
+            sizes: "calc(100vw - 5rem)",
+            widths: "400, 600, 800, 1200",
+            alt: section.settings.image_mobile.alt | escape
+          }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sign-Up",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image for mobile devices"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Sign-Up"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text"
+    },
+    {
+      "type": "text",
+      "id": "thank_you_text",
+      "label": "Thank you text"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Submit button"
+    },
+    {
+      "type": "text",
+      "id": "form_tag",
+      "label": "Form tag"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sign-Up"
+    }
+  ]
+}
+{% endschema %}

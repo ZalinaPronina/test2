@@ -1,0 +1,188 @@
+<div class="min-h-view py-5">
+  {% render "account-titles" %}
+
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+    <div class="border-0 border-b border-solid border-black border-opacity-30">
+      {% assign details_title = "customer.account.details.title" | t %}
+
+      {% capture details_content %}
+        <div class="w-full space-y-3">
+          <div class="items-center sm:flex">
+            <div class="font-semibold w-full sm:max-w-[160px] sm:pr-4">{{ "customer.account.details.first_name" | t }}</div>
+            <div>{{ customer.first_name }}</div>
+          </div>
+
+          <div class="items-center sm:flex">
+            <div class="font-semibold w-full sm:max-w-[160px] sm:pr-4">{{ "customer.account.details.last_name" | t }}</div>
+            <div>{{ customer.last_name }}</div>
+          </div>
+
+          <div class="items-center sm:flex">
+            <div class="font-semibold w-full sm:max-w-[160px] sm:pr-4">{{ "customer.account.details.email" | t }}</div>
+            <div>{{ customer.email }}</div>
+          </div>
+        </div>
+      {% endcapture %}
+
+      {% render "component-collapsible-item", title: details_title, content: details_content %}
+    </div>
+
+    <div class="border-0 border-b border-solid border-black border-opacity-30">
+      {% assign address_title = "customer.account.address.title" | t %}
+
+      {% capture address_content %}
+        {% paginate customer.addresses by 100 %}
+          <div class="w-full space-y-3">
+
+            <div class="space-y-6">
+              {% for address in customer.addresses %}
+                {%- liquid
+                  assign default_addy = false
+
+                  if customer.default_address == address
+                    assign default_addy = true
+                  endif
+                -%}
+
+                {%
+                  render "account-address",
+                  address: address,
+                  default: default_addy
+                %}
+              {% endfor %}
+
+              <div class="mt-5 sm:flex sm:justify-end sm:mt-10">
+                <button class="Button Button--primary !text-base relative sm:max-w-[220px]" data-modal-trigger="account-new-address-form">
+                  <span>{{ "customer.account.address.add" | t }}</span>
+                  {% render "icons", icon: "plus", size: "xsmall", className: "absolute right-5" %}
+                </button>
+              </div>
+            </div>
+
+            {% if customer.addresses == empty %}
+              <p>You have no saved address.</p>
+            {% endif %}
+          </div>
+        {% endpaginate %}
+      {% endcapture %}
+
+      {% render "component-collapsible-item", title: address_title, content: address_content %}
+    </div>
+
+    <div>
+      <span class="inline-block font-semibold py-4">{{ "customer.account.orders.title" | t }}</span>
+
+      <div class="w-full max-w-screen-md">
+        {% paginate customer.orders by 99 %}
+          {% if customer.orders.size != 0 %}
+            <p class="mb-4">{{ "customer.account.orders.info" | t }}</p>
+
+            <ul class="space-y-2.5">
+              {% for order in customer.orders %}
+                <li class="relative w-full block border border-solid rounded-8">
+                  <div class="p-4 flex flex-col space-y-6 sm:flex-row sm:items-center sm:space-y-0">
+                    <div class="sm:w-1/4">
+                      <p class="font-semibold">{{ "customer.orders.date" | t }}</p>
+                      <p>{{ order.created_at | date: "%b %d, %Y" }}</p>
+                    </div>
+
+                    <div class="sm:w-1/3">
+                      <p class="font-semibold">{{ "customer.orders.number" | t }}</p>
+                      <p>{{ order.name }}</p>
+                    </div>
+
+                    <div class="sm:w-1/4">
+                      <p class="font-semibold">{{ "customer.orders.status" | t }}</p>
+
+                      {% if order.cancelled %}
+                        <p>{{ "customer.orders.cancelled" | t }}</p>
+                      {% elsif order.financial_status %}
+                        <p>{{ order.financial_status }}</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="shrink-0 sm:w-[235px]">
+                      <a href="{{ order.customer_url }}" class="Button Button--primary !max-w-none relative z-2">
+                        {{ "customer.orders.view" | t }}
+                      </a>
+                    </div>
+
+                    <a href="{{ order.customer_url }}" class="absolute inset-0 z-1" aria-label="{{ order.name }}"></a>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+
+          {% else %}
+            <p class="px-4 text-center">{{ "customer.orders.none" | t }}</p>
+          {% endif %}
+
+          {% render "pagination" %}
+        {% endpaginate %}
+      </div>
+    </div>
+
+    <div class="text-center font-semibold pb-5 pt-10 sm:pb-10 sm:pt-14">
+      <span>{{ "layout.customer.logged_in_as" | t: name: customer.name }}</span>
+      <a class="underline hover:no-underline" href="{{ routes.account_logout_url }}">{{ "layout.customer.log_out" | t }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="Modal AccountAddressModal" data-component="Modal" data-modal-id="account-new-address-form">
+  <div class="Modal__Overlay" data-modal-overlay></div>
+  <div class="Modal__Inner AccountAddressModal__Inner">
+    <button type="button" class="AccountAddressModal__Close Modal__Close" data-modal-close aria-label="Close modal">
+      {%
+        render "icons",
+        icon: "close",
+        size: "large"
+      %}
+    </button>
+
+    <div>
+      <h3 class="text-30 font-bold mb-6">{{ "customer.addresses.add" | t }}</h3>
+
+      <div>
+        {% assign add_address_label = "customer.addresses.add_submit" | t %}
+
+        {%
+          render "account-address-form",
+          id: "new",
+          action: customer.new_address,
+          cta: add_address_label
+        %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% for address in customer.addresses %}
+  <div class="Modal AccountAddressModal" data-component="Modal" data-modal-id="address-{{ address.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner AccountAddressModal__Inner">
+      <button type="button" class="AccountAddressModal__Close Modal__Close" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div>
+        <h3 class="text-30 font-bold mb-6">{{ "customer.addresses.edit" | t }}</h3>
+
+        <div>
+          {% assign edit_address_label = "customer.addresses.edit_submit" | t %}
+
+          {%
+            render "account-address-form",
+            id: address.id,
+            action: address,
+            cta: edit_address_label
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

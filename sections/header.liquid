@@ -1,0 +1,274 @@
+{%- liquid
+  assign show_announcement = false
+
+  if section.settings.show_announcement and section.settings.announcement != blank
+    assign show_announcement = true
+  endif
+
+  assign className = 'Header'
+
+  if show_announcement
+    assign className = className | append: ' hasAnnouncement'
+  endif
+
+  if section.settings.transparent and template == 'index'
+    assign className = className | append: ' isTransparent'
+  endif
+-%}
+
+<style>
+  :root {
+    --announcement: {% if show_announcement %}1{% else %}0{% endif %};
+  }
+</style>
+
+<header role="banner" data-component="Header" class="{{ className }}">
+  {% if show_announcement %}
+    <div class="Header__Announcement px-5 sm:px-6">
+      <div class="h-full flex items-center justify-start overflow-x-auto whitespace-nowrap">
+        <div class="w-full text-center">
+          {{ section.settings.announcement }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="Header__Inner">
+    <div class="Header__Logo h2">
+      <a class="flex leading-none" href="{{ routes.root_url }}">
+        {% if section.settings.logo != blank %}
+          <img
+            width="{{ section.settings.logo.width }}"
+            height="{{ section.settings.logo.height }}"
+            loading="eager"
+            class="LogoImage w-auto h-4 xs:h-5"
+            src="{{ section.settings.logo | image_url }}"
+            alt="{{ shop.name }}"
+          >
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="ml-15 sm-down:hidden">
+      {% render 'header-nav', menu: section.settings.menu_main, label: 'Primary' %}
+    </div>
+
+    <div class="Header__Actions">
+      {% if section.settings.search %}
+        <a
+          href="{{ routes.search_url }}"
+          class="flex transition-opacity duration-200 ease-in-out hover:opacity-75 sm-down:hidden"
+          aria-label="{{ 'layout.header.search.title' | t }}"
+        >
+          {% render 'icons', icon: 'search' %}
+        </a>
+      {% endif %}
+
+      {% if shop.customer_accounts_enabled and section.settings.account %}
+        {% if customer %}
+          <a
+            class="text-14 font-medium flex transition-opacity duration-200 ease-in-out sm-down:hidden hover:opacity-75"
+            href="{{ routes.account_url }}"
+          >
+            {{ 'layout.header.account.title' | t }}
+          </a>
+        {% else %}
+          <a
+            class="text-14 font-medium flex transition-opacity duration-200 ease-in-out sm-down:hidden hover:opacity-75"
+            href="{{ routes.account_register_url }}"
+          >
+            {{ 'layout.header.account.sign_in' | t }}
+          </a>
+        {% endif %}
+      {% endif %}
+
+      {% for block in section.blocks %}
+        {% if block.type == 'action' and block.settings.text != blank %}
+          {% liquid
+            assign show_block_index = false
+            if block.settings.index and template == 'index' and cart.item_count == 0
+              assign show_block_index = true
+            endif
+          %}
+          {% if block.settings.style == 'link' %}
+            <a
+              class="{% unless block.settings.mobile %} sm-down:hidden{% endunless %}"
+              href="{{ block.settings.url }}"
+            >
+              {{ block.settings.text }}
+            </a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if section.settings.cart %}
+        {% liquid
+          assign hide_cart_index = false
+          if section.settings.hide_cart_index and template == 'index'
+            assign hide_cart_index = true
+          endif
+        %}
+
+          <a
+            class="Button Button--primary relative xs-down:!px-3 Button--blue"
+            href="{{ routes.cart_url }}"
+          >
+            <span>{{ 'layout.header.cart.title' | t }}</span>
+            <span
+              class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-brand-sale text-none"
+              data-cart-count
+              {% if cart.item_count == 0 %}
+                style="display: none"
+              {% endif %}
+            >
+              {{- cart.item_count -}}
+            </span>
+          </a>
+      {% endif %}
+
+      {% if section.settings.menu_mobile != blank %}
+        <button
+          type="button"
+          class="p-0 text-inherit sm:hidden"
+          aria-label="{{ 'layout.header.menu_trigger' | t }}"
+          data-drawer-toggle="menuDrawer"
+        >
+          {% render 'icons', icon: 'menu', className: '!w-10 !h-9' %}
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+{% render 'drawer-menu', menu_main: section.settings.menu_mobile %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "transparent",
+      "label": "Transparent on Homepage",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "search",
+      "label": "Show search icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "account",
+      "label": "Show account icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cart",
+      "label": "Show cart icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_cart_index",
+      "label": "Hide cart icon only on home page",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "<p>Free shipping with any purchases before June!</p>"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Image Logo"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_main",
+      "label": "Menu main",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_mobile",
+      "label": "Menu mobile",
+      "default": "main-menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "action",
+      "name": "Action",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            },
+            {
+              "value": "link",
+              "label": "Link"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "index",
+          "label": "Show only on home page",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

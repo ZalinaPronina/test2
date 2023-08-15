@@ -1,0 +1,114 @@
+{% if section.settings.show_section %}
+  <section class="Newsletter{% if section.settings.image != blank %} overflow-hidden md:pt-28 md:pb-20 md:-mb-20{% endif %}">
+    <div class="bg-brand-gray">
+      <div class="relative flex items-center max-w-screen-lg mx-auto px-3.5 pt-9 pb-15 sm:pt-15 lg:px-[25px]">
+        <div class="relative z-1 text-center max-w-2xl mx-auto px-7 sm:px-0">
+          {% if section.settings.title != blank %}
+            <h2 class="text-24 font-body font-medium tracking-normal sm:font-bold">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="text-16 mt-2">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+
+          {% assign form_id = "newsletter" %}
+
+          {% form "customer", class: "mt-6 sm:mt-7", id: form_id %}
+            {{ form.errors | default_errors }}
+
+            {% if form.posted_successfully? %}
+              <p class="text-brand-accent font-bold">{{ "sections.newsletter.success" | t }}</p>
+            {% else %}
+              <input type="hidden" name="contact[tags]" value="{{ section.settings.form_tag | default: 'newsletter' }}">
+
+              <div class="items-center sm:flex">
+                <input
+                  class="w-full h-10 text-16 rounded-8 border-0 shadow-input px-4 py-0 placeholder:opacity-50 placeholder:text-current"
+                  type="email"
+                  name="contact[email]"
+                  id="{{ form_id }}-email"
+                  spellcheck="false"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  placeholder="{{ 'sections.newsletter.email_placeholder' | t }}"
+                  required
+                >
+
+                <button type="submit" class="Button Button--primary max-w-[180px] sm-down:mt-6 sm:ml-6">
+                  {{ "sections.newsletter.submit" | t }}
+                </button>
+              </div>
+            {% endif %}
+          {% endform %}
+        </div>
+
+        {% if section.settings.image != blank %}
+          <div class="absolute top-0 bottom-0 right-0 w-80 flex items-center justify-center md-down:hidden">
+            {% if section.settings.image_decoration %}
+              <svg class="absolute w-100" fill="none" aria-hidden="true" viewBox="0 0 428 429"><path d="M174.874 213.418c0-20.682 16.77-37.449 37.453-37.449 20.683 0 37.453 16.767 37.453 37.449 0 20.683-16.77 37.45-37.453 37.45-20.683 0-37.453-16.767-37.453-37.45Z" stroke="#43CD9E" stroke-width="2"/><path d="M127.463 213.579c0-46.87 37.996-84.868 84.866-84.868s84.865 37.998 84.865 84.868-37.995 84.868-84.865 84.868-84.866-37.998-84.866-84.868Z" stroke="#43CD9E" stroke-width=".8"/><path d="M80.55 213.724c0-72.776 59.002-131.772 131.778-131.772 72.775 0 131.778 58.996 131.778 131.772 0 72.776-59.003 131.772-131.778 131.772-72.776 0-131.779-58.996-131.779-131.772Z" stroke="#43CD9E" stroke-width=".6"/><path d="M40.976 212.878c0-94.937 78.419-171.902 173.36-171.902 94.941 0 173.361 76.965 173.361 171.902 0 94.938-78.42 171.903-173.361 171.903-94.941 0-173.36-76.965-173.36-171.903Z" stroke="#43CD9E" stroke-width=".3"/><path d="M.1 214.001C.1 95.868 95.866.1 214 .1s213.9 95.768 213.9 213.901c0 118.134-95.766 213.901-213.9 213.901S.1 332.135.1 214.001Z" stroke="#43CD9E" stroke-width=".2"/></svg>
+            {% endif %}
+
+            {{ section.settings.image | image_url: width: 800 | image_tag:
+              loading: "lazy",
+              class: "absolute bottom-0 w-auto h-[calc(100%+80px)]",
+              sizes: "360px",
+              widths: "400, 600, 800",
+              alt: section.settings.image.alt | escape
+            }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_decoration",
+      "label": "Show image decoration",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Heading",
+      "default": "<p>NEWSLETTER</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Subsribe to newsletter!</p>"
+    },
+    {
+      "type": "text",
+      "id": "form_tag",
+      "label": "Form tag"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

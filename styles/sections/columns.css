@@ -1,0 +1,46 @@
+.Columns {
+  @apply overflow-hidden;
+
+  &__Wrapper {
+    @apply flex items-start sm:grid sm:grid-cols-2 sm:gap-y-9 sm:gap-x-6 sm:items-stretch;
+  }
+
+  &__Item {
+    @apply w-full shrink-0 p-px rounded-16 overflow-hidden;
+    background: rgb(67, 205, 158);
+    background: -moz-linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+    background: linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+  }
+
+  &__Pagination {
+    @apply flex items-center justify-center space-x-2.5 mt-10 sm:hidden;
+
+    &.swiper-pagination-lock {
+      @apply hidden;
+    }
+
+    .swiper-pagination-bullet {
+      border-radius: 10px;
+      width: 20px;
+      height: 5px;
+      background-color: #d9d9d9;
+
+      &-active {
+        @apply bg-brand-tertiary;
+      }
+    }
+  }
+}

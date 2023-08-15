@@ -1,0 +1,335 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Sport_x3_-_Football.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "USING GPS PLAYER VESTS FOR UNIVERSITIES",
+        "show_heading_decoration": false,
+        "title_small": true,
+        "sub_title": "For UNIVERSITIES"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_58.jpg",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Introduction",
+        "title_position": "inside",
+        "bold_text": "<p><strong>Using GPS trackers that collect performance metrics can be a game-changer for University sport.<\/strong><\/p>",
+        "text": "<p>Universities have a proud history of competitive sport, including through British Universities & Colleges Sport (BUCS).<\/p><p>In this guide, we’ll explain how the data-driven world of sports analytics can make a huge difference to outcomes in university sport. For a university sports team, a squad wearing GPS trackers will get personalised insights to first benchmark and improve on.<\/p><p><\/p><p>Let's dive into the details below...<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "e583f855-6fe1-4a50-8994-24c587b1455f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats_710a7893-df4b-48e0-961b-38fb72b4e4cf.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity_0b9b4972-f862-4849-8d48-bde45107a900.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e583f855-6fe1-4a50-8994-24c587b1455f",
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9",
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What can you measure?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Whether it's distance a player covers or their top speed in a match, as well as positioning on the pitch through coloured heatmaps, get ready for a professional experience.<\/strong><\/p>",
+        "text": "<p><br\/>- Total distance covered<\/p><p><\/p><p>- Total Active Time<\/p><p><\/p><p>- Top Speed<\/p><p><\/p><p>- Activity Zones - Walking, Jogging, Running<\/p><p><\/p><p>- Accelerations<\/p><p><\/p><p>- Decelerations<\/p><p><\/p><p>- Impacts\/Changes in Direction<\/p><p><\/p><p>- Field Position\/Heatmaps <\/p><p><br\/>Working on strength, stamina or speed are common GPS metrics to improve but university coaches can also ensure player welfare by monitoring their training load across the weeks.<\/p><p>Seeking to stop the likelihood of injuries through over-exertion and managing those making a comeback is another side to using GPS in university sport.<\/p><p>Students wear a GPS tracker in a GPS vest to take baseline readings for a variety of physical challenges to see how fit, strong and fast they are.<\/p><p>This ‘benchmarking’ is then something coaches will work on with their squad, alongside individual feedback to tailor their training.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Using GPS data for sports coaching",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Gathering GPS metrics is most helpful when it supports coaches in making informed decisions quickly.<\/strong><\/p>",
+        "text": "<p>A well-designed dashboard online that shows the results in a way everyone can understand, as offered by the PitcheroGPS web app, is important too.<\/p><p>Your university coaching team and the players must be able to view that on any device quickly.<\/p><p>How that information is displayed, the ease through the app as you explore the findings, and the speed of a data sync (from tracker to app) all matter.<\/p><p>With PitcheroGPS, you can see manage training sessions, players and coaches on a device like a laptop or phone. Just login to your account in a browser to get started. See all the numbers for any single training session in one place, plus the complete data for all players who took part.<\/p><p>Compare players’ GPS statistics so coaches can make the right decision for training or match selection.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_History.png",
+            "title": "Past Performances",
+            "text": "<p>An advantage to GPS trackers is that the more you monitor students involved with university sport, the more data is gathered and there's a better understanding over time.<\/p><p>The PitcheroGPS web app shows a historical chart so coaches or players can view daily, weekly or monthly stats for any metric.<\/p><p>Features like this are useful in all kinds of scenarios such as a gradual return from injury that takes 3-6 months.<\/p><p>With a complete record of GPS data, every player can see how they did going back years.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Track_e7938454-c768-4b21-a96b-3c4b826b4350.png",
+            "title": "Coach Education",
+            "text": "<p>Coach education is a benefit to embracing GPS for sports teams at university.<br\/><br\/>Using scientific data, coaches can see how players respond to training sessions and how their tactics play out in matches.<br\/><br\/>Coaches are always learning too. Was Thursday's training too long or complicated? Were there too many periods of inactivity?<\/p><p>Using GPS trackers adds a new dimension to how they can help players but also how they become better coaches using technology alongside traditional methods.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Compete.png",
+            "title": "Attracting Talent",
+            "text": "<p>Naturally, universities want to attract the best sporting talent and using GPS trackers is a definite recruitment tool.<\/p><p>From a sports perspective, choosing a university will be down to opportunities, facilities and quality of coaching.<\/p><p>Investing in GPS player trackers is another sign to parents and students that performance and player welfare is taken seriously.<\/p><p>It may ultimately be a point of difference with other universities and a talking point when demonstrating what the sports experience on campus is like.<\/p><p>The ability to assign trackers to different players means that the value across a university doesn’t have to be limited to a single team.<br\/><br\/>Clubs could use the features for different squads to find out:<\/p><p>- How <strong>fast<\/strong> can they run?<\/p><p>- What <strong>distance<\/strong> is possible?<\/p><p>- What <strong>impacts<\/strong> are being recorded?<\/p><p>- How <strong>active<\/strong> are players in sessions?<\/p><p>- What <strong>areas of the field<\/strong> do players spend most time in?<br\/> <\/p><p>Using GPS trackers can help a range of university sports, whether you’re a striker, a goalkeeper or a prop seeking that competitive edge.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Tracker.png",
+            "title": "GPS Tracker: Pocket-sized Power",
+            "text": "<p>A GPS tracker does lots more than just log where a player is while wearing a GPS vest.<\/p><p>All that smart technology is encased in a small unit that is secured in the vest worn around the torso.<\/p><p>A PitcheroGPS tracker is lightweight at just 37g and contains a 100Hz accelerometer that records all movements.<\/p><p>The accelerometer inside helps university clubs to track the number of ‘impacts’. With more understanding of concussion and the physical toll during sport, GPS can support students involved with contact sports such as football and rugby union.<br\/><br\/>It also tracks accelerations and decelerations to tell you: <\/p><p>Who is <strong>quickest<\/strong> from a standing start?<\/p><p>Which players have the best <strong>change of speed<\/strong>?<br\/><br\/><\/p><p>Then there's the injury perspective. Risk of injuries can increase with deceleration - or acceleration - as the biomechanical load is absorbed in joints like the knee.<br\/><br\/>To an extent, injuries are part of playing sport but the GPS data can be checked and then the coach might scale back or alter training if required. <\/p><p>But first you need to know - which is where your GPS trackers come in.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "text": ""
+      }
+    },
+    "d67918c9-2375-4c70-a5d9-3876aedb065b": {
+      "type": "text-with-media",
+      "blocks": {
+        "b343948e-c141-453c-9921-198797673340": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/a7FQ797ci44"
+          }
+        }
+      },
+      "block_order": [
+        "b343948e-c141-453c-9921-198797673340"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your university",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Mansfield Town FC's Academy are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>It would be investment in your university for players and coaches over years; an asset across multiple squads.<br\/><br\/>Using PitcheroGPS is all about optimising performances by being in the know. Tap into personalised, up-to-date intelligence.<\/p><p>The coaches at Mansfield Town FC's Academy<strong> <\/strong>review the GPS player data weekly. This allows them to modify training for the group or just certain players.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf": {
+      "type": "reviews",
+      "blocks": {
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mansfield_Town_FC_1.png",
+            "title": "Mansfield Town FC's Academy use PitcheroGPS",
+            "text": "‘We’ve worked with different GPS systems and for me, it’s the best in terms of the metrics we get out. You can spend thousands and thousands of pounds on the more expensive systems but we get the same data for a very much reduced cost!’"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "blocks": {
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_f00c905e-e67f-4417-b5f6-70c0ddcf57ac.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "GPS Team Bundle",
+            "sub_title": "LAUNCHING July 2023",
+            "text": "20X",
+            "button": "GET PRIORITY NOW",
+            "button_url": "https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "cd019d2b-2338-42d3-a645-d650bd56516f": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "cd019d2b-2338-42d3-a645-d650bd56516f"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Player Vest is approved by FIFA and quickly sold out to football and rugby customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "d67918c9-2375-4c70-a5d9-3876aedb065b",
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8"
+  ]
+}

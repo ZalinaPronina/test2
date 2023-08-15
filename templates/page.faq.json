@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": true,
+        "background_image": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "8e5f30ce-c741-4d94-9fa1-63f876000c4a": {
+          "type": "tab_1",
+          "settings": {
+            "title": "When will my Player Bundle be delivered?",
+            "text": "<p>Anyone who pre-orders their PitcheroGPS Player Bundle will receive the product in July 2023.<\/p>"
+          }
+        },
+        "420df993-4de0-4c65-ba98-18378b9a5d4b": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Is there a discount available?",
+            "text": "<p>The current pre-order price for the product and membership is discounted. The overall price will increase by 20% before July 2023.<\/p>"
+          }
+        },
+        "36d7be91-6ef0-4fae-ad30-84cc82eac279": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Do I need to pay for my membership now?",
+            "text": "<p>To pre-order, you only pay for the Player Bundle today, but you will need to select a membership option to start when you activate your tracker. If you purchase the Gift Membership, this comes with an annual membership included in the price.<\/p>"
+          }
+        },
+        "db00ae51-4f4c-4b3c-a62a-2adeff0aabc3": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Can I use my Tracker during matches?",
+            "text": "<p>Yes, you can wear the PitcheroGPS tracker during matches. It is approved by FIFA and World Rugby.<\/p>"
+          }
+        },
+        "ea558704-a24a-49d4-87ed-c5647772255a": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Is my tracker approved by FIFA and World Rugby?",
+            "text": "<p>Yes PitcheroGPS is approved by both FIFA and World Rugby.<\/p>"
+          }
+        },
+        "fa9e9496-4100-40e7-9738-dff9bb639678": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Will my tracker work inside?",
+            "text": "<p>As with all GPS trackers, PitcheroGPS only works outside.<\/p>"
+          }
+        },
+        "345a1ec7-1669-4f6d-9cd7-438df2581131": {
+          "type": "tab_1",
+          "settings": {
+            "title": "What metrics can I measure using PitcheroGPS?",
+            "text": "<p>Activity is processed and separated into 3 categories; speed, distance and intensity providing a detailed overview of performance, player health and fatigue.<\/p>"
+          }
+        },
+        "6fafa870-635a-4953-bb50-06b9a33c5011": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Can I reduce my Membership cost?",
+            "text": "<p>Paying for your Membership annually instead of monthly reduces the cost by 50%.<\/p>"
+          }
+        },
+        "97d047ba-96a2-4593-9682-581850a6efa7": {
+          "type": "tab_1",
+          "settings": {
+            "title": "How do I activate my Membership?",
+            "text": "<p>You can activate your membership in the PitcheroGPS mobile app once you have received your Player Bundle.<\/p>"
+          }
+        },
+        "dcedd8be-6476-474f-b9d7-51dfc20153d7": {
+          "type": "tab_1",
+          "settings": {
+            "title": "What happens when my Membership runs out?",
+            "text": "<p>Your Membership automatically renews unless you choose to cancel.<\/p>"
+          }
+        },
+        "b2627937-d5f3-4921-bdf9-32206a3a392c": {
+          "type": "tab_1",
+          "settings": {
+            "title": "What if I want to purchase more than one Player Bundle?",
+            "text": "<p>If you need to purchase more than 1 Player you should make two separate purchases of the Gift Membership. To avoid paying for shipping twice, please contact us on live chat after you have purchased the first membership. We will send over a discount code for free shipping that can be used for your second purchase.<\/p>"
+          }
+        },
+        "2371f4d4-0658-41ca-b4a1-94b44f1050c1": {
+          "type": "tab_1",
+          "settings": {
+            "title": "What is included in the PitcheroGPS Membership",
+            "text": "<p>Membership gives you access to the PitcheroGPS Player App. You can view all your session data recording by your tracker in the app.<\/p>"
+          }
+        },
+        "0d1f0a3a-9a49-4f19-a926-17dff9604e13": {
+          "type": "tab_1",
+          "settings": {
+            "title": "How long are the membership plans?",
+            "text": "<p>There are 2 membership plans. Annual priced at £48 per year (£4 per month) and Monthly which costs £8 per month.<\/p>"
+          }
+        },
+        "eb6795ad-be69-4ef6-a288-510891fb94be": {
+          "type": "tab_2",
+          "settings": {
+            "title": "When will my Team Bundle be delivered?",
+            "text": "<p>Anyone who pre-orders their PitcheroGPS Team Bundle will receive the product in July 2023<\/p>"
+          }
+        },
+        "1044e148-f6f8-4c1c-ae50-d21eea3b809b": {
+          "type": "tab_2",
+          "settings": {
+            "title": "What is the cost of the PitcheroGPS Team Bundle?",
+            "text": "<p>The cost of a 20-tracker Team bundle is £2000 per year. Every additional tracker will cost an additional £100 per year. If you are looking for more than 40 trackers, please get in contact with us <a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">here<\/a><\/p>"
+          }
+        },
+        "cade1fab-851d-4638-b678-89bd943ee073": {
+          "type": "tab_2",
+          "settings": {
+            "title": "Do I need to pay the full cost of the PitcheroGPS Team Bundle today?",
+            "text": "<p>You only have to pay a £200 deposit to secure your PitcheroGPS Team Bundle. The remaining balance can be paid by invoice or card payment before delivery in July 2023.<\/p>"
+          }
+        },
+        "670bc918-6626-4333-b0c9-f2ba38753ed8": {
+          "type": "tab_2",
+          "settings": {
+            "title": "How do I choose my vest sizes?",
+            "text": "<p>After you pre-order the PitcheroGPS Team Bundle we will email you with instructions on how to select your vest sizes.<\/p>"
+          }
+        },
+        "892e28f5-37ef-497a-8f41-6939e258ec37": {
+          "type": "tab_2",
+          "settings": {
+            "title": "Will PitcheroGPS trackers work inside?",
+            "text": "<p>As with all GPS trackers, PitcheroGPS only works outside.<\/p>"
+          }
+        },
+        "a5ea68ef-924a-44df-b2b6-521516b99066": {
+          "type": "tab_2",
+          "settings": {
+            "title": "What metrics can I measure using PitcheroGPS?",
+            "text": "<p>Activity is processed and separated into 3 categories; speed, distance and intensity providing a detailed overview of performance, player health and fatigue.<\/p>"
+          }
+        },
+        "7ac68238-7b05-4d40-9d1c-9407fa8dd365": {
+          "type": "tab_2",
+          "settings": {
+            "title": "Can my team use PitcheroGPS trackers during matches?",
+            "text": "<p>Yes, you can wear the PitcheroGPS tracker during matches. It is approved by FIFA and World Rugby.<\/p>"
+          }
+        },
+        "08726156-d3d1-4303-9e46-da4a9b6b08aa": {
+          "type": "tab_2",
+          "settings": {
+            "title": "Is my tracker approved by FIFA and World Rugby?",
+            "text": "<p>Yes PitcheroGPS is approved by both FIFA and World Rugby.<\/p>"
+          }
+        },
+        "1dff4a2c-f482-469e-8a55-aa2a86430ed6": {
+          "type": "tab_2",
+          "settings": {
+            "title": "How do I activate my Membership?",
+            "text": "<p>We will email you instructions on how to activate your membership before delivery in July 2023.<\/p>"
+          }
+        },
+        "9208f12c-4e56-446c-9232-c0a6ea0c1dc0": {
+          "type": "tab_2",
+          "settings": {
+            "title": "What happens when my Membership runs out?",
+            "text": "<p>We will send you an invoice to pay for your next year's membership before you reach the end of your current years membership. If membership is not renewed then you will no longer be able to access our web app to analyse your players performance.<\/p>"
+          }
+        },
+        "31d67045-bf82-4290-8ea1-3403ce86be95": {
+          "type": "tab_2",
+          "settings": {
+            "title": "What is included in the PitcheroGPS Membership",
+            "text": "<p>Membership gives you access to the PitcheroGPS Web App. You can view all your player's session data recorded by your trackers.<\/p>"
+          }
+        },
+        "0e93ccd1-8689-45fc-a6d5-95d180e20d06": {
+          "type": "tab_2",
+          "settings": {
+            "title": "How long are the membership plans?",
+            "text": "<p>The Team Bundle Membership is annual.<\/p>"
+          }
+        },
+        "8aed9e32-98d6-41e2-9996-742d6a7630cb": {
+          "type": "tab_1",
+          "settings": {
+            "title": "How can I track my order?",
+            "text": "<p>To track your order and manage your membership, you can <a href=\"https:\/\/www.pitcherogps.com\/tools\/recurring\/get-subscription-access\" target=\"_blank\" title=\"https:\/\/www.pitcherogps.com\/tools\/recurring\/get-subscription-access\">login here<\/a> using the email address you used to place your order.<\/p>"
+          }
+        },
+        "8369ce6f-ca1d-436b-830d-d50b771ea206": {
+          "type": "tab_1",
+          "settings": {
+            "title": "Is this product suitable for children?",
+            "text": "<p>Yes, we have child vest sizes available. Please refer to <a href=\"https:\/\/help.pitchero.com\/hubfs\/PitcheroGPS%20Website%20Assets\/Pitcherogps-vest-size-guide-02-23.jpg\" target=\"_blank\" title=\"https:\/\/help.pitchero.com\/hubfs\/PitcheroGPS%20Website%20Assets\/Pitcherogps-vest-size-guide-02-23.jpg\">this size guide<\/a> for more info on the appropriate size vest for your child.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8e5f30ce-c741-4d94-9fa1-63f876000c4a",
+        "420df993-4de0-4c65-ba98-18378b9a5d4b",
+        "36d7be91-6ef0-4fae-ad30-84cc82eac279",
+        "db00ae51-4f4c-4b3c-a62a-2adeff0aabc3",
+        "ea558704-a24a-49d4-87ed-c5647772255a",
+        "fa9e9496-4100-40e7-9738-dff9bb639678",
+        "345a1ec7-1669-4f6d-9cd7-438df2581131",
+        "6fafa870-635a-4953-bb50-06b9a33c5011",
+        "97d047ba-96a2-4593-9682-581850a6efa7",
+        "dcedd8be-6476-474f-b9d7-51dfc20153d7",
+        "b2627937-d5f3-4921-bdf9-32206a3a392c",
+        "2371f4d4-0658-41ca-b4a1-94b44f1050c1",
+        "0d1f0a3a-9a49-4f19-a926-17dff9604e13",
+        "eb6795ad-be69-4ef6-a288-510891fb94be",
+        "1044e148-f6f8-4c1c-ae50-d21eea3b809b",
+        "cade1fab-851d-4638-b678-89bd943ee073",
+        "670bc918-6626-4333-b0c9-f2ba38753ed8",
+        "892e28f5-37ef-497a-8f41-6939e258ec37",
+        "a5ea68ef-924a-44df-b2b6-521516b99066",
+        "7ac68238-7b05-4d40-9d1c-9407fa8dd365",
+        "08726156-d3d1-4303-9e46-da4a9b6b08aa",
+        "1dff4a2c-f482-469e-8a55-aa2a86430ed6",
+        "9208f12c-4e56-446c-9232-c0a6ea0c1dc0",
+        "31d67045-bf82-4290-8ea1-3403ce86be95",
+        "0e93ccd1-8689-45fc-a6d5-95d180e20d06",
+        "8aed9e32-98d6-41e2-9996-742d6a7630cb",
+        "8369ce6f-ca1d-436b-830d-d50b771ea206"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "tab_1_title": "Player bundle",
+        "tab_1_image": "shopify:\/\/shop_images\/69bc18a754e588c2e9a442b0a5b6441e.png",
+        "tab_2_title": "Team bundle",
+        "tab_2_image": "shopify:\/\/shop_images\/2a11572f559f7084737d98461ee5462b.png"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "faq"
+  ]
+}

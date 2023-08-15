@@ -1,0 +1,13 @@
+.Details {
+  @apply relative;
+
+  &[open] {
+    summary {
+      @apply before:block before:fixed before:inset-0 before:z-2 before:cursor-default;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+}

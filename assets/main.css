@@ -1,0 +1,377 @@
+.container-main{
+  max-width: 1267px;
+  padding: 0 17px;
+  margin: 0 auto;
+}
+.hero__container-btn{
+  max-width: max-content;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 38px;
+  padding: 20px 24px;
+  height: auto;
+}
+.Hero-redesign .Hero__Container-image{
+  max-width: 47%;
+}
+.Hero-redesign .Hero__Container-image img{
+  max-width: 100%;
+}
+.Hero-redesign .Hero__Container{
+  align-items: start;
+  flex-direction: row;
+}
+.Hero-redesign .hero-image-background img{
+  max-width: 100%;
+  object-fit: contain;
+}
+.hero-image-background{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero-image-background img{
+  object-fit: cover;
+}
+.hero-container-title-block{
+  padding-top: 5vw;
+  padding-bottom: 10vw;
+  display: flex;
+  justify-content: space-between;
+}
+.hero-container-video-block{
+  width: 50%;
+  min-height: calc(100% - 100px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.hero-container-video-block button{
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  bottom: 0;
+}
+.hero-container-title-block .h1{
+  margin-bottom: 22px;
+}
+.hero-container-title-block-flex{
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.hero-container-title img{
+  max-width: 450px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+@media (max-width: 939px) {
+  .Hero-redesign{
+    padding-bottom: 70px;
+  }
+  .Hero-redesign .Hero__Container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .Hero-redesign .Button{
+    max-width: max-content;
+  }
+  .Hero-redesign .Hero__Container-image{
+    max-width: 100%;
+  }
+  .hero-container-video-block, .hero-container-video-block button{
+    width: 100%;
+    height: 60%;
+  }
+  .Hero-video .hero__container-btn .Button--primary{
+    display: none;
+  }
+  .hero-container-title-block{
+    padding: 35px 40px 59px;
+    height: 100%;
+  }
+  .hero-container-title{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-image-background{
+    height: 123vw;
+  }
+  .hero-image-background{
+    background-size: contain;
+    background-position: bottom;
+  }
+  .hero-container-title-block .h1{
+    margin-bottom: 32px;
+  }
+  .hero-image-background-transparent{
+    height: 130vw;
+    margin-top: 60px;
+  }
+  .hero-image-background-transparent .hero-container-title-block .h1{
+    margin-bottom: 20px;
+  }
+  .hero-image-background-transparent .hero-container-title-block{
+    padding: 35px 30px 30px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .Product .Product__Info .Button.buy_gift{
+    margin-bottom: 27px;
+  }
+}
+.MediaText__Container-Background{
+  max-width: 1300px;
+  position: relative;
+  padding-right: 34px;
+  padding-left: 34px;
+  margin: 0 auto;
+}
+.MediaText__Container-Background .text-content{
+  padding: 0;
+}
+.MediaText__Container-Background .space-y-8{
+  margin: 0 auto !important;
+  width: 100%;
+  position: relative;
+}
+.MediaText__Container-Background .flex{
+  gap: 15px;
+  margin-bottom: 25px;
+}
+body .MediaText__textWrapper>div.tranform-none{
+  transform: none;
+}
+.MediaText__Container-Background .flex img{
+  max-height: 30px;
+}
+.MediaText__Container-Background .icon-center{
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 92px;
+  height: 92px;
+  position: absolute;
+}
+.MediaText__Container-Background p{
+  line-height: 27px;
+}
+.MediaText__Container-Background .MediaText__Slide .aspect-w-16{
+  --tw-aspect-w: 15.4;
+}
+.MediaText__Container-Background .MediaText__Slide::before{
+    content: '';
+    background-color: #00A0D1;
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.MediaText__Container-Background .MediaText__Container{
+  overflow: hidden;
+}
+.TextMedia-list-background ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #FFFFFF;
+  outline: 1px solid black;
+}
+.TextMedia-list-background ul li{
+  padding: 21px 14px;
+  outline: 0.5px solid black;
+  text-align: center;
+  margin-top: 0 !important;
+}
+.TextMedia-list-background ul li::before{
+  content: none;
+}
+.TextMedia-medium .TextMedia-medium-container{
+  border-radius: 16px;
+  padding: 50px 69px;
+  max-width: 1230px;
+}
+.TextMedia-medium-container .flex-row-reverse .sm\:pr-7\.5{
+  padding-right: 0;
+}
+.TextMedia-medium .TextMedia-medium-container .flex-between{
+  justify-content: space-between;
+  gap: 50px;
+}
+.TextMedia-medium .TextMedia-medium-container ul{
+  padding-left: 45px;
+  list-style-type: disc;
+}
+.TextMedia-medium .TextMedia-medium-container ul li::before{
+  content: none;
+}
+.TextMedia-medium .TextMedia-medium-container .TextMedia-heading-flex {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.TextMedia-heading-bold{
+  line-height: normal;
+}
+.TextMedia-text{
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1280px) {
+  .hockey-gps-tracker .lg\:pt-30{
+    padding-top: 3rem;
+  }
+  .hockey-gps-tracker .lg\:pb-30{
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .MediaText__Container-Background{
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+  .TextMedia-medium{
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+}
+@media (min-width: 940px) {
+  .hockey-gps-tracker .md\:pt-20{
+    padding-top: 3rem;
+  }
+  .hockey-gps-tracker .md\:pb-20{
+    padding-bottom: 3rem;
+  }
+  .MediaText__Container-Background .flex-row .MediaText__Slide:before{
+    right: 0;
+    left: initial;
+  }
+  .MediaText__Container-Background .flex-row .icon-center{
+    left: 0;
+    right: inherit;
+    transform: translate(-50%,-50%);
+  }
+}
+@media (max-width: 939px) {
+  .TextMedia-medium .TextMedia-medium-container{
+    padding: 50px 21px;
+  }
+  .MediaText__Container-Background{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .MediaText__Container-Background .icon-center{
+    top: 0;
+    right: 50%;
+  }
+  .MediaText__Container-Background .text-content-small{
+    padding: 64px 34px 41px;
+  }
+  .MediaText__Container-Background .shrink-0{
+    width: 100%;
+  }
+  .MediaText__Container-Background .MediaText__Slide .aspect-w-16{
+    --tw-aspect-w: 9;
+  }
+  .MediaText__Container-Background .flex{
+    margin-bottom: 10px;
+  }
+  .MediaText__Container-Background .text-content-small .rte{
+    margin-top: 10px;
+  }
+  .MediaText__Container-Background .MediaText__Slide::before{
+    top: initial;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+  }
+}
+@media (min-width: 768px) {
+  .hockey-gps-tracker .sm\:pt-20{
+    padding-top: 3rem;
+  }
+}
+.blue-style .Button, .blue-style .Header__Actions .Button{
+  border: none;
+}
+.blue-style .Hero__Container svg path, .blue-style .Hero svg path{
+  fill: #00F0FF;
+}
+.blue-style .OfferBox__Content-text strong, .OfferBox__Product span{
+  color: #00F0FF;
+}
+.blue-style .OfferBox__Product{
+  background: linear-gradient(293.58deg, #00F0FF 8.3%, #FFFFFF 84.97%);
+  border-radius: 1rem;
+  padding: 3px;
+}
+[data-template="index"] .OfferBox__Product-container{
+  background-color: #012130;
+  border-radius: 1rem;
+  padding: 25px 0;
+}
+.blue-style .border-brand-accent{
+  border-color: #00F0FF;
+}
+.blue-style .peer:checked ~ .peer-checked\:border-brand-accent{
+  --tw-shadow: inset 0 0 0 2px #00F0FF;
+  --tw-shadow-colored: inset 0 0 0 4px #00F0FF;
+  border-color: #00F0FF;
+}
+.blue-style .Product .selling-plan-group{
+  background: #00F0FF;
+  color: #000;
+}
+.productPage .px-5, .productPage .lg\:px-14{
+  padding: 0;
+}
+.blue-style .FeaturedBundle__Container{
+  background: #00F0FF;
+}
+.blue-style .ColumnsSlider__ItemContent{
+  background-color: #00F0FF;
+  color:#000;
+}
+
+[data-template="index"] .OfferBox__Content>div{
+  background-image: none;
+  background-color: #012130;
+}
+.why-use-a-gps-player-vest-performance .hero-image-background, .why-use-a-gps-player-vest .hero-image-background{
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .FeaturedBundle{
+    padding-top: 7rem;
+  }
+  [data-template="index"] .Hero .max-w-screen-lg{
+    padding: 0 35px;
+  }
+  [data-template="index"] .Hero .max-w-screen-lg .h1{
+    font-weight: 400;
+  }
+  [data-template="index"] .FeaturedBundle__Container h2{
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  [data-template="index"] .OfferBox__Content>div, [data-template="index"] .OfferBox__Product-container{
+    background-color: #000;
+  }
+  [data-template="index"] .ColumnsSlider{
+    padding-top: 16rem;
+  }
+  [data-template="index"] .OfferBox__Media{
+    height: 88vw;
+  }
+}

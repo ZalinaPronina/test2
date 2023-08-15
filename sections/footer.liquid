@@ -1,0 +1,159 @@
+{%- liquid
+  assign menu = section.blocks | where: "type", "menu" | first
+  assign contacts = section.blocks | where: "type", "contacts" | first
+  assign logo = section.blocks | where: "type", "logo" | first
+-%}
+
+<footer class="Footer text-white bg-brand-primary py-12 sm:py-20">
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+    <div class="flex flex-col items-center md:grid md:grid-cols-footer md:gap-x-5 md:gap-y-8 md:items-start">
+      {% if logo.settings.image != blank %}
+        <div>
+          <a class="flex transition-opacity duration-200 ease-in-out hover:opacity-75" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+            <img
+              width="{{ logo.settings.image.width }}"
+              height="{{ logo.settings.image.height }}"
+              loading="eager"
+              class="w-auto h-7 md:h-5"
+              src="{{ logo.settings.image | image_url }}"
+              alt="{{ shop.name }}"
+            >
+          </a>
+        </div>
+      {% endif %}
+
+      {% if contacts.settings.text != blank %}
+        <div class="md-down:mt-6">
+          <div class="rte text-center md:text-18 md:text-left">
+            {{ contacts.settings.text }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_social %}
+        <div class="md-down:mt-6 md:row-start-2">
+          {% render "social-media" %}
+        </div>
+      {% endif %}
+
+      <div class="w-full md-down:mt-15">
+        <div class="flex flex-col items-center space-y-8 md:items-end md:space-y-4">
+          {% if menu.settings.menu.links.size > 0 %}
+            <ul class="list-none w-full flex flex-wrap items-center justify-around space-x-4 md:justify-start md:w-auto">
+              {% for link in menu.settings.menu.links %}
+                <li class="text-center">
+                  <a class="font-medium text-18 transition-opacity duration-200 ease-in-out hover:opacity-75 md:text-14 " href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          
+          </a>
+        </div>
+      </div>
+
+      {% if section.settings.show_payments or section.settings.credits_text != blank %}
+        <div class="md-down:mt-15">
+          {% if section.settings.show_payments and shop.enabled_payment_types != empty %}
+            <ul class="flex flex-wrap items-center justify-center -mb-2 space-x-2 md:justify-start">
+              {% for type in shop.enabled_payment_types %}
+                <li class="mb-2">{{ type | payment_type_svg_tag: class: "!w-12 !h-auto md:!w-9" }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <div class="flex flex-wrap items-center justify-center mt-15 md:justify-start md:mt-7">
+            {% if section.settings.menu != blank %}
+              <ul class="list-none flex items-center space-x-4 md:ml-6 md:space-x-6">
+                {% for link in section.settings.menu.links %}
+                  <li class="text-14 md:text-10">
+                    <a href="{{ link.url }}" class="text-parent transition-opacity duration-200 ease-in-out hover:opacity-75">
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% if section.settings.credits_text != blank %}
+              <div class="text-14 text-center w-full mt-6 md:order-first md:text-10 md:w-auto md:mt-0">
+                {{ section.settings.credits_text }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_payments",
+        "label": "Show payments logo",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "label": "Show social icons",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "credits_text",
+        "label": "Credits text"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }
+        ]
+      },
+      {
+        "type": "logo",
+        "name": "Logo",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      },
+      {
+        "type": "contacts",
+        "name": "Contacts",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

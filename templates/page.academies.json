@@ -1,0 +1,335 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_556_3e29d750-6ea7-49bd-8dcb-d0cca2cc9c4b.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "USING GPS PLAYER VESTS FOR ACADEMIES",
+        "show_heading_decoration": false,
+        "title_small": true,
+        "sub_title": "For academies"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_58.jpg",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Introduction",
+        "title_position": "inside",
+        "bold_text": "<p><strong>A sports performance tracker that collects GPS data can be a revelation for Academy training sessions and matches. <\/strong><\/p>",
+        "text": "<p>Along with use for first teams, clubs recognise the value in measuring the performances of every Academy player too.<\/p><p>In this guide, we’ll explain how the constantly evolving world of analytics can make a huge difference with incremental gains across a year and beyond. For a sports club’s Academy, a GPS tracker will show you all kinds of real-life insights to assess and improve on.<\/p><p><\/p><p>Let's dive into the details below...<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "e583f855-6fe1-4a50-8994-24c587b1455f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats_710a7893-df4b-48e0-961b-38fb72b4e4cf.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity_0b9b4972-f862-4849-8d48-bde45107a900.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e583f855-6fe1-4a50-8994-24c587b1455f",
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9",
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What can you measure?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>From distance covered to the top speed achieved, as well as positioning on the pitch through coloured heatmaps, there is plenty to discover.<\/strong><\/p>",
+        "text": "<p>- Total distance covered<\/p><p><\/p><p>- Total Active Time<\/p><p><\/p><p>- Top Speed<\/p><p><\/p><p>- Activity Zones - Walking, Jogging, Running<\/p><p><\/p><p>- Accelerations<\/p><p><\/p><p>- Decelerations<\/p><p><\/p><p>- Impacts\/Changes in Direction<\/p><p><\/p><p>- Field Position\/Heatmaps <\/p><p><br\/>Boosting strength, stamina and speed might be the goal but Academy coaches can also give a safer experience for players by managing their training load week to week.<\/p><p>Preventing injuries through burnout and carefully monitoring those making a comeback is easier when you have the GPS tools to guide you.<\/p><p>In order for this to work properly, Academy players can wear a GPS tracker in a GPS vest to take baseline readings for different types of exercise.<\/p><p>This ‘benchmarking’ then allows coaches to give specific feedback to each player and tailor their training. <\/p><p>That might depend on the level of intensity they’ve been working at or certain weaknesses that need a focus.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Making smart decisions",
+        "title_position": "outside",
+        "bold_text": "<p><strong>GPS data for your Academy is most useful when it helps your coaches to make informed decisions quickly.<\/strong><\/p>",
+        "text": "<p>A clear interface that shows the results in a way everyone can understand, as with the PitcheroGPS web app, is important too.<\/p><p>Wearing the GPS tracker in a vest to activate certain features is just the first step. Your coaching team and the players must be able to view that on any device quickly.<\/p><p>How that information is displayed, the user journey through the app as you explore the findings, and the speed of a data sync (from tracker to app) all matter.<\/p><p>With PitcheroGPS, you can see manage training sessions, players and coaches on a device like a laptop or phone. Just login to your account in a browser and away you go. See all the key metrics for any single training session in one place, as well as the full data for all players who took part.<\/p><p>Compare players’ GPS statistics so coaches have all of the tools necessary to make the right decision for training or team selection.<\/p><p>Though there will always be context beyond the numbers, a sports performance tracker tells it how it is.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_History.png",
+            "title": "History Lessons",
+            "text": "<p>A plus point of using GPS trackers is that the more you monitor players, the greater volume of data and better understanding over time.<\/p><p>The PitcheroGPS web app shows a historical chart and the ability to pick any player and see daily, weekly or monthly stats for any metric.<\/p><p>Features like this come into their own in all kinds of scenarios such as a gradual return from injury that takes 6-12 months.<\/p><p>With a comprehensive record of GPS data, every player can see how they performed going back years.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Track_e7938454-c768-4b21-a96b-3c4b826b4350.png",
+            "title": "Coach Improvement",
+            "text": "<p>While the obvious use of buying GPS trackers for a team is player performance, there are advantages for coaches too.<br\/><br\/>Injury prevention and elevating how players do might be common goals but using GPS tracking in sports can make coaches become better.<br\/><br\/>Armed with scientific data, coaches can see how players respond to training sessions and how successful they’ve been.<br\/><br\/>Could they be structured better? Were there too many periods of inactivity? It improves their own knowledge and helps to make sure that sessions are as good as they can be.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Compete.png",
+            "title": "Recruitment Tool",
+            "text": "<p>At all standards and across sports, player retention and recruitment is an ongoing challenge. Standing out will partly be about a blend of playing opportunities allied with facilities for members.<br\/><br\/>Using GPS trackers is exciting for players and coaches as well as signalling how professional the set-up is. It’s an investment in the future and is a selling point to anyone looking to join a club or team.<\/p><p>The ability to assign trackers to different players means that the value across a club doesn’t have to be limited to a single team.<br\/><br\/>Clubs can use the features for both first team and Academy squads to find out:<\/p><p>- How <strong>fast<\/strong> can they run?<\/p><p>- What <strong>distance<\/strong> is possible?<\/p><p>- What <strong>impacts<\/strong> are being recorded?<\/p><p>- How <strong>active<\/strong> are players in sessions?<\/p><p>- What <strong>areas of the field<\/strong> do players spend most time in?<br\/> <\/p><p>Using GPS trackers can benefit a range of sports, whether you’re a <strong>football<\/strong> club, a <strong>hockey<\/strong> squad or <strong>rugby<\/strong> players looking for that competitive edge.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Tracker.png",
+            "title": "GPS Tracker: Small But Mighty",
+            "text": "<p>As you’ll now know, a GPS tracker does far more than just track positioning of a player while wearing a GPS vest.<br\/><br\/>The magic happens in a very small unit housed within a vest that’s worn around the torso.<br\/><br\/>With a PitcheroGPS tracker, it is just 37g and contains a 100Hz accelerometer that captures all movements.<br\/><br\/>The accelerometer inside allows sports clubs to track the number of ‘impacts’. This is of most interest in contact sports such as football and rugby union where the physical forces involved for tackles or scrums affects players.<br\/><br\/>It also tracks accelerations and decelerations to tell you: <\/p><p>Who is quickest off the blocks?<\/p><p>Which players have the best change of speed?<br\/><br\/><\/p><p>There is also an injury perspective here. Risk of injuries can increase with deceleration - or acceleration - as the biomechanical load transfers to joints like the knee.<br\/><br\/>To an extent this is part of playing sport but it can be monitored and then scaled up or back in training. But first you need to know - which is where your GPS trackers come in.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "text": ""
+      }
+    },
+    "d67918c9-2375-4c70-a5d9-3876aedb065b": {
+      "type": "text-with-media",
+      "blocks": {
+        "b343948e-c141-453c-9921-198797673340": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/a7FQ797ci44"
+          }
+        }
+      },
+      "block_order": [
+        "b343948e-c141-453c-9921-198797673340"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your academy",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Mansfield Town FC's Academy are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>It’s an investment in your club for players and coaches over years; an asset across multiple squads.<br\/><br\/>Using PitcheroGPS is all about optimising performances by being in the know. Tap into personalised, up-to-date intelligence. <\/p><p>The coaches at Mansfield Town FC's Academy<strong> <\/strong>review the GPS player data weekly. This allows them to modify training for the group or just certain players.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf": {
+      "type": "reviews",
+      "blocks": {
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mansfield_Town_FC_1.png",
+            "title": "Mansfield Town FC's Academy use PitcheroGPS",
+            "text": "‘We’ve worked with different GPS systems and for me, it’s the best in terms of the metrics we get out. You can spend thousands and thousands of pounds on the more expensive systems but we get the same data for a very much reduced cost!’"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__46f4d87f-307c-45a2-b654-0f56aaf635cf-1666781872d1a9dbec-0"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "blocks": {
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_f00c905e-e67f-4417-b5f6-70c0ddcf57ac.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "GPS Team Bundle",
+            "sub_title": "LAUNCHING July 2023",
+            "text": "20X",
+            "button": "GET PRIORITY NOW",
+            "button_url": "https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__501381f8-44e6-416d-b520-8c770d0f0e5e-1666696825a39bb8fa-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "cd019d2b-2338-42d3-a645-d650bd56516f": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "cd019d2b-2338-42d3-a645-d650bd56516f"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Player Vest is approved by FIFA and quickly sold out to football and rugby customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "d67918c9-2375-4c70-a5d9-3876aedb065b",
+    "46f4d87f-307c-45a2-b654-0f56aaf635cf",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8"
+  ]
+}

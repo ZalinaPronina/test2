@@ -1,0 +1,19 @@
+{%- liquid
+  assign cta = cta | default: blank
+  assign name = name | default: blank
+  assign href = href | default: blank
+  assign tag = tag | default: "a"
+  assign type = type | default: "button"
+  assign disabled = disabled | default: false
+-%}
+
+<{{ tag }}
+  {% if href %}href="{{ href }}"{% endif %}
+  {% if name %}name="{{ name }}"{% endif %}
+  {% if disabled %}disabled{% endif %}
+  {% if tag == "button" %}type="{{ type }}"{% endif %}
+  class="{{ className | strip }}"
+  role="button"
+>
+  <span>{{ cta | strip }}</span>
+</{{ tag }}>

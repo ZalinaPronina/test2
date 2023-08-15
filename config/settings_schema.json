@@ -1,0 +1,227 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Pitchero GPS",
+    "theme_version": "1.4.0",
+    "theme_author": "Medito Digital",
+    "theme_documentation_url": "https:\/\/meditodigital.com",
+    "theme_support_url": "https:\/\/meditodigital.com\/contact"
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "font_size_base",
+        "label": "t:settings_schema.typography.settings.font_size_base.label",
+        "default": "1rem",
+        "options": [
+          {
+            "value": "0.875rem",
+            "label": "14px"
+          },
+          {
+            "value": "0.9375rem",
+            "label": "15px"
+          },
+          {
+            "value": "1rem",
+            "label": "16px"
+          },
+          {
+            "value": "1.0625rem",
+            "label": "17px"
+          },
+          {
+            "value": "1.125rem",
+            "label": "18px"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_heading_font",
+        "default": "raleway_n4",
+        "label": "t:settings_schema.typography.settings.type_heading_font.label",
+        "info": "t:settings_schema.typography.settings.type_heading_font.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__2.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "raleway_n4",
+        "label": "t:settings_schema.typography.settings.type_body_font.label",
+        "info": "t:settings_schema.typography.settings.type_body_font.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_text_body",
+        "label": "t:settings_schema.colors.settings.color_text_body.label",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_background_body",
+        "label": "t:settings_schema.colors.settings.color_background_body.label",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "background_btn",
+        "label": "Background Button",
+        "default": "#36A383"
+      },
+      {
+        "type": "color",
+        "id": "color_btn",
+        "label": "Color Button",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "background_btn_redesign",
+        "label": "Background Button Redesign",
+        "default": "#00F0FF"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_redesign",
+        "label": "Color Button Redesign",
+        "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social_media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social_media.settings.header__1.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "t:settings_schema.social_media.settings.social_sharing_blog.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_facebook",
+        "label": "t:settings_schema.social_media.settings.share_facebook.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_twitter",
+        "label": "t:settings_schema.social_media.settings.share_twitter.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_pinterest",
+        "label": "t:settings_schema.social_media.settings.share_pinterest.label",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social_media.settings.header__2.content"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social_media.settings.social_facebook_link.label"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:settings_schema.social_media.settings.social_twitter_link.label"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social_media.settings.social_instagram_link.label"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social_media.settings.social_youtube_link.label"
+      },
+      {
+        "type": "text",
+        "id": "social_spotify_link",
+        "label": "t:settings_schema.social_media.settings.social_spotify_link.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.products.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.products.settings.header__1"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_secondary_image_on_hover",
+        "label": "t:settings_schema.products.settings.show_secondary_image_on_hover.label",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.products.settings.header__2"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_preorder",
+        "label": "t:settings_schema.products.settings.enable_preorder.label",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.cart.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "t:settings_schema.cart.settings.cart_notes_enable.label",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.pages.name",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "landing_pages",
+        "label": "t:settings_schema.pages.settings.landing_pages.label",
+        "info": "t:settings_schema.pages.settings.landing_pages.info",
+        "placeholder": "t:settings_schema.pages.settings.landing_pages.placeholder"
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+<style>
+  .register-section{
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+  .register-section.style--black{
+    background:#000
+  }
+  .register-section label{
+    display: none;
+  }
+</style>
+<section class="main-container register-section style--{{ section.settings.style }}" data-component="Register" data-section-id="{{ section.id }}">
+  <div class="max-w-xl mx-auto px-3.5 xs:px-7.5 lg:px-10">
+    {% if section.settings.title != blank %}
+      <h2 class="font-body tracking-normal text-24 text-center register-section">{{ section.settings.title }}</h2>
+    {% endif %}
+    {{ section.settings.html }}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Register One Form",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "html",
+      "id": "html",
+      "label": "HTML code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Register one form"
+    }
+  ]
+}
+{% endschema %}

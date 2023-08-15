@@ -1,0 +1,68 @@
+{% liquid
+  assign className = ""
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-10 md:pt-20"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-10 md:pb-20"
+  endif
+%}
+
+{% if section.settings.title != blank or section.settings.text != blank %}
+  <section class="{{ className }}">
+    <div class="max-w-6xl mx-auto px-5 xs:px-10">
+      <div class="space-y-8 sm:text-center">
+        {% if section.settings.title != blank %}
+          <h2 class="h1 sm:text-60">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="text-16 font-bold sm:text-32">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Rich text",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text"
+    }
+  ]
+}
+{% endschema %}

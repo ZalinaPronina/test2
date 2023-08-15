@@ -1,0 +1,27 @@
+.Radio {
+  label {
+    @apply bg-transparent text-black border border-black cursor-pointer;
+  }
+
+  input {
+    &:checked {
+      + label {
+        @apply bg-black text-white;
+      }
+    }
+
+    &:disabled {
+      + label {
+        @apply cursor-default bg-gray-300 text-gray-300 border-gray-300;
+        background: linear-gradient(
+          to top left,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) calc(50% - 0.5px),
+          rgba(0, 0, 0, 1) 50%,
+          rgba(0, 0, 0, 0) calc(50% + 0.5px),
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+    }
+  }
+}

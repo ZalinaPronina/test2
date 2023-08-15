@@ -1,0 +1,506 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/Frame_559_1.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "Using a Rugby GPS Tracker",
+        "title_as_h1": false,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": "Grassroots to International Rugby"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GPS_Tracker_Rugby-2.png",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "915c0a11-52e0-427d-9676-f798b0428e3f": {
+          "type": "image",
+          "settings": {
+            "image_max_width": 410,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106",
+        "915c0a11-52e0-427d-9676-f798b0428e3f"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Introduction",
+        "title_position": "inside",
+        "bold_text": "<p><strong>A Rugby GPS Tracker can be a game-changer.<\/strong><\/p>",
+        "text": "<p>Are you a club, school or university? This is how to up your game. Discover performance data for every player every time.<\/p><p>By wearing a rugby gps vest, players learn their speed, stamina and positioning. <\/p><p>GPS rugby trackers record a variety of metrics to help coaches. Far more than how much ground your prop covers on a Saturday.<\/p><p>Go faster and further for when it really matters. Crush your personal best and learn as a squad.<\/p><p>Monitor how you perform in training and matches. Use the tech professional rugby teams use to get ahead.<\/p><p>Let’s explain what PitcheroGPS trackers do and how to use them.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "b9898fb2-0f3e-4f47-8132-ff63fa144655": {
+      "type": "bundles",
+      "blocks": {
+        "template--15669326676173__b9898fb2-0f3e-4f47-8132-ff63fa144655-1670495843732e71ed-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "template--15669326676173__b9898fb2-0f3e-4f47-8132-ff63fa144655-1670495843732e71ed-1": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "template--15669326676173__b9898fb2-0f3e-4f47-8132-ff63fa144655-1670495843732e71ed-0",
+        "template--15669326676173__b9898fb2-0f3e-4f47-8132-ff63fa144655-1670495843732e71ed-1"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "e583f855-6fe1-4a50-8994-24c587b1455f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats_710a7893-df4b-48e0-961b-38fb72b4e4cf.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity_0b9b4972-f862-4849-8d48-bde45107a900.png",
+            "image_max_width": 370,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "e583f855-6fe1-4a50-8994-24c587b1455f",
+        "ba29b982-6f03-4d83-89fb-a3b48e6d2be9",
+        "dbfa56d6-71c2-4cca-a646-e911a47e8dc0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What does GPS in rugby mean?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>GPS is common in our cars, phones and watches. For rugby, it shows your exact location and tracks your movement.<\/strong><\/p>",
+        "text": "<p>But location is just the start. A GPS rugby tracker in a vest shows speed, distance, impacts and so much more.<\/p><p>Find out how fast your winger can sprint. How far your centres can run in training. Where your number eight spent the first half. Coaches can adapt a training session and set future goals.<\/p><p>Player welfare is a valuable use of GPS in rugby. Understanding collisions in contact sports keeps players safe. It can help prevent injuries so everyone performs at their best.<\/p><p>We’ve designed a GPS system for grassroots rugby. Whatever standard you play at. Why shouldn’t you have the same tech as professional teams?<\/p><p>PitcheroGPS is World Rugby approved which means it has been independently tested and meets strict criteria. The governing body has given its seal of approval around accuracy and reliability.<\/p><p>Our <a href=\"\/products\/new-gps-team-bundle\" title=\"New Team Bundle\"><strong>Team Bundle<\/strong><\/a> has rugby GPS trackers and rugby GPS vests for 20 players. Enough for a rugby squad to train or play together.<\/p><p>It includes a protective case that charges the trackers and transfers data in minutes.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How are rugby players tracked?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>A rugby GPS tracker is worn in a rugby GPS vest. It sits between the shoulder blades and won’t affect movement.<\/strong><\/p>",
+        "text": "<p>Our PitcheroGPS tracker weighs just 37g. Inside, its 100Hz accelerometer logs all movements. It can be charged in under an hour, with unlimited storage as well as being water-resistant.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Distance.png",
+            "title": "Total Distance",
+            "text": "<p>Tracking your distance is a key measurement. Understand stamina, fatigue and when to recover. Clocking up kilometres can drive up your fitness.<\/p><p>Log how far you run. Then, compare speeds and intensity in a session to get the full picture.<\/p><p>Rugby coaches will blend types of running and exercise. Total distance is vital to know as the starting point.<\/p><p>Your training aims might be speed trials or stamina. Either way, distance helps to explain a player’s workload. <\/p><p>It can be adapted for different purposes. Or, compared over time to get a broader picture.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Time.png",
+            "title": "Total Active Time",
+            "text": "<p>Total active time shows how long a rugby player spends exercising. Coaches can see how active their squad is during training.<\/p><p>A 60-minute session might only be 45 minutes of active time. There could be rest periods. Or setting up drills. Or a pause to highlight a coaching point.<\/p><p>Total active timing won't be the same for each player even in the same training session. Your second row trained for 10 minutes longer than your scrum half. But your scrum half exercised at a higher tempo.<\/p><p>By knowing these metrics, coaches track workload and perhaps make changes. It all depends on the goals for each session. <\/p><p>Understanding how your players train is an exciting development. <\/p><p>Gather data and offer bespoke training to get the results you want.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Speed.png",
+            "title": "Top Speed",
+            "text": "<p>Who are the fastest players in your team? A GPS rugby tracking vest ends that debate. It livens up training and adds friendly competition.<\/p><p>Clubs using PitcheroGPS tell us their players always want their GPS stats. How did they do? How did they compare to their team-mates?<\/p><p>Speed is about winning key moments in a match. Chasing the kick-off. A sprint to the try line. Tracking back for a game-saving tackle.<\/p><p>Top speed helps your rugby team find their edge. <\/p><p>Plus, PitcheroGPS wants to discover the fastest players in grassroots and semi-pro rugby!<\/p><p>Check out our <a href=\"https:\/\/www.pitcherogps.com\/pages\/hero\"><span style=\"text-decoration:underline\"><strong>#HERO Speed Challenge<\/strong><\/span><\/a> to get ranked.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "High Speed Running",
+            "text": "<p>High speed running defines the level of exercise your players reach.<\/p><p>With PitcheroGPS, you can track standing, walking, jogging or sprinting and view the amount of time spent doing each.<\/p><p>Training becomes more precise with specific outcomes. Coaches can set up custom speed zones for their rugby players. This measures the intensity of exercise. Periods of recovery or more demanding drills can be built in. <\/p><p>Default speed zones are below (in kilometres per hour)<\/p><ul><li>Walking is &lt;6 kmph<\/li><li>Jogging is 6-12 kmph<\/li><li>Running is 12-18 kmph<\/li><li>Sprinting is &gt;18 kmph<\/li><\/ul>"
+          }
+        },
+        "fa49ef11-adf5-420a-957d-267b8d088063": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dec.png",
+            "title": "Accelerations \/ Decelerations",
+            "text": "<p>It’s not all about how fast or far you run. You can work on speeding up and slowing down over short distances too.<\/p><p>Rugby is a very stop-start sport. Scrums, lineouts and breaks in play are an opportunity. How you chase a kick. Or, launch into a tackle from a standing position.<\/p><p>Become quicker off the blocks. Work on agility to slow, turn and pivot. These moments give a rugby team momentum, front-foot ball and line breaks.<\/p><p>It helps with monitoring player fatigue and injury risks too.<\/p><p>Decide the limits for accelerations and decelerations in advance (metres per second squared m\/s²). This can be altered before future training.<\/p><p>Log how often players exceed that figure (accelerations) or go below it (decelerations).<\/p>"
+          }
+        },
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Heatmap.png",
+            "title": "Positioning Heatmaps",
+            "text": "<p>Use GPS to track exactly where your players are positioned. Review scenarios from matches or tactics after training.<\/p><p>It’s one thing having a tactical plan and another delivering it.<\/p><p>Both in defence and attack, heatmaps show how players are reacting at any time.<\/p><p>It’s where a GPS vest for rugby comes into its own.<\/p><p>At line-outs, penalties or scrums, how does your team react? What can be improved?<\/p><p>Coaches get to see how tactics actually unfold after game-time. It's also a visual aid for players to understand their successes and see their mistakes.<\/p>"
+          }
+        },
+        "9b23853b-3fda-4153-9214-9e240533a184": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Injury.png",
+            "title": "Injury Prevention",
+            "text": "<p>A GPS rugby tracker shows how much a player is doing, the effort exerted and the levels reached.<\/p><p>It’s useful when an individual is returning to rugby after injury. Or, coaches are assessing workloads to prevent over-training.<\/p><p>A player's training schedule can also be looked at and compare it over time.<\/p><p>Rugby union is an impact-heavy sport in terms of tackles, rucks, mauls and scrums.<\/p><p>PitcheroGPS can measure ‘impacts’ or forceful blows to the head or body. Head injuries need monitoring at grassroots, as well as professional rugby.<\/p><p>Sure, injuries happen all of the time and for many reasons. But GPS helps flag up the warning signs to take action early.<\/p>"
+          }
+        },
+        "3bb60cd3-5180-4258-ba84-c05db0ab35e2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Impact.png",
+            "title": "Impacts",
+            "text": "<p>Measuring force is a major benefit of PitcheroGPS, particularly with contact sports.<\/p><p>Anyone wearing a rugby GPS vest can see the number of 'impacts’ or collisions.<\/p><p>A GPS rugby tracker will show exactly how hard and often a player is being hit. It’s a vital metric to consider player safety.<\/p><p>The coach can define the impact, based on age and standard. A tracker will register when the g-force exceeds that.<\/p><p>Rugby coaches can make informed decisions confidently about player safety.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3",
+        "fa49ef11-adf5-420a-957d-267b8d088063",
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1",
+        "9b23853b-3fda-4153-9214-9e240533a184",
+        "3bb60cd3-5180-4258-ba84-c05db0ab35e2"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "title": "",
+        "text": ""
+      }
+    },
+    "a86dc4e5-fd23-46d3-b2fb-54913bbb0a0f": {
+      "type": "bundles",
+      "blocks": {
+        "39ed6f0e-5eeb-4354-9607-25b36cbd7f6c": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "b78ce479-800f-4dad-9573-2076be6a6b63": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "39ed6f0e-5eeb-4354-9607-25b36cbd7f6c",
+        "b78ce479-800f-4dad-9573-2076be6a6b63"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe": {
+      "type": "text-with-media",
+      "blocks": {
+        "7143614b-af79-401b-a534-6cbd87fe4dd5": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/mAhn1Hy-808"
+          }
+        }
+      },
+      "block_order": [
+        "7143614b-af79-401b-a534-6cbd87fe4dd5"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your club",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Clubs (like Cambridge RFU and West Bromwich Albion Women) are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>With PitcheroGPS, you have the tools to learn more about your squad. Personalised data right after training. <\/p><p>Cambridge RFU coaches regularly review GPS player data. They can then modify training for the group or specific players.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0": {
+      "type": "reviews",
+      "blocks": {
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1526-2205110239_1.png",
+            "title": "Cambridge RUFC told us what they think",
+            "text": "We’ve found using the PitcheroGPS has been massively beneficial for us as a club. It’s cost-effective compared to other brands that are currently available. It’s something I would recommend to any clubs at our level, the National Leagues below and community clubs to purchase."
+          }
+        }
+      },
+      "block_order": [
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "1173bfe6-f275-4920-a795-66aa53e1f134": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Which is the best rugby gps tracker?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>You should review the features, price and feedback from clubs. You’re looking for one that combines all of these positives.<\/strong><\/p>",
+        "text": "<p>Our rugby GPS tracking vest has been rigorously tested by coaches. You don’t need a PhD or maths degree to understand your team metrics. No confusion or complexity, just absolute pinpoint accuracy. <\/p><p>Cameron Wilson is the Strength and Conditioning Coach of West Bromwich Albion Women’s FC. <\/p><p>His feedback was: ‘The PitcheroGPS system is brilliant. It’s one that us, as coaches, understand really well. The players understand it well too. It uploads really quickly, it’s easy, it’s a really good system to use.’<\/p><p><\/p><p>The <a href=\"\/products\/team-bundle\" title=\"Team Bundle\"><span style=\"text-decoration:underline\"><strong>PitcheroGPS Team Bundle<\/strong><\/span><\/a> includes:<\/p><ul><li>20 x GPS Rugby Trackers<\/li><li>20 x Rugby GPS tracking Vests<\/li><li>1 x Charging Case<\/li><li>1 x 1-yr Software Subscription<\/li><\/ul>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "disabled": true,
+      "blocks": {
+        "93bed3c2-b2c9-499e-8f4f-5469fdf37b6b": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        },
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        }
+      },
+      "block_order": [
+        "93bed3c2-b2c9-499e-8f4f-5469fdf37b6b",
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by World Rugby & FIFA",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Rugby GPS Tracker is approved by FIFA and quickly sold out to rugby customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    },
+    "d0bde1d6-cc26-4697-b19a-3e47feb4ef6f": {
+      "type": "bundles",
+      "blocks": {
+        "3f1cc1cd-4ed3-4864-a940-b296323e73e5": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "2f3f164c-b65d-4903-8bd0-0ec8b256eb0e": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "3f1cc1cd-4ed3-4864-a940-b296323e73e5",
+        "2f3f164c-b65d-4903-8bd0-0ec8b256eb0e"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "b9898fb2-0f3e-4f47-8132-ff63fa144655",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "a86dc4e5-fd23-46d3-b2fb-54913bbb0a0f",
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe",
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0",
+    "1173bfe6-f275-4920-a795-66aa53e1f134",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8",
+    "d0bde1d6-cc26-4697-b19a-3e47feb4ef6f"
+  ]
+}

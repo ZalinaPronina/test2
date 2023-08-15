@@ -1,0 +1,86 @@
+<article role="article" itemscope itemtype="http://schema.org/Article" class="Article">
+  <header
+    role="banner"
+    class="{% if article.image != blank %}mb-40{% endif %}"
+    style="
+      color: {{ section.settings.text_color | default: 'inherit' }};
+      background: {{ section.settings.background_color | default: 'transparent' }};
+    "
+  >
+    <div class="max-w-screen-xl mx-auto px-5 lg:px-20">
+      <div class="pb-10 pt-5 md:pt-10">
+        <div class="relative">
+          <a href="{{ blog.url }}" class="flex items-center space-x-2 text-20 font-bold md-down:mb-5 md:absolute md:left-0 md:top-4">
+            {% render "icons", icon: "arrow-left" %}
+            <span>{{ "articles.general.back" | t }}</span>
+          </a>
+
+          <div class="max-w-screen-md mx-auto md:px-20">
+            <h1 class="text-30 md:text-48">{{ article.title }}</h1>
+
+            <div class="text-12 font-bold mt-3">
+              <span>{{ article.author }}</span>
+              <span>- {{ article.published_at | time_tag: format: "month_day_year" }}</span>
+            </div>
+          </div>
+
+          {% if article.image != blank %}
+            {% assign image_url = article.image | image_url %}
+
+            <div class="h-[432px] mt-5 -mb-[180px] md:px-12">
+              {%
+                render "component-image",
+                image: article.image,
+                src: image_url,
+                alt: article.title,
+                fill: true,
+                className: "rounded-8 overflow-hidden"
+              %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-screen-md mx-auto px-5 md:px-20">
+    <div class="py-10 md:pt-16 md:pb-12">
+      <div class="rte" itemprop="articleBody" data-component="Article">
+        {{ article.content }}
+      </div>
+
+      {% if settings.social_sharing_blog %}
+        <div class="mt-8">
+          {%
+            render "social-sharing",
+            share_title: article.title,
+            share_permalink: article.url,
+            share_image: article.image
+          %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>
+
+{% schema %}
+  {
+    "name": "Article",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "color_background",
+        "id": "background_color",
+        "label": "Background color"
+      }
+    ]
+  }
+{% endschema %}

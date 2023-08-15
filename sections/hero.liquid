@@ -1,0 +1,375 @@
+{% liquid
+  assign image = section.blocks | where: "type", "image" | first
+  assign text = section.blocks | where: "type", "text" | first
+  assign title = section.blocks | where: "type", "title" | first
+  assign marquee = section.blocks | where: "type", "marquee" | first
+  assign button = section.blocks | where: "type", "button" | first
+%}
+  <style>
+    #{{section.id}} .button-mobile{
+      transform: translateX(-50%);
+    }
+    {% if section.settings.image_left %}
+        @media (min-width: 1500px) {
+          #{{section.id}} .Hero__Container{
+            position: inherit;
+          }
+          #{{section.id}} .hero-image-background{
+            justify-content: flex-start;
+          }
+        }
+    {% endif %}
+  </style>
+
+<section class="Hero style--{{ section.settings.style }}" id={{section.id}}>
+  <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+    <div class="Hero__Container">
+      <div class="relative z-3 mt-[var(--header-height)] pt-6 sm-down:text-center sm:w-3/5 sm:pb-24 sm:pt-15 lg:w-1/2 lg:pb-36{% if section.settings.show_heading_decoration %} sm:pl-26{% endif %}{% unless section.settings.show_image_on_mobile %} pb-6{% endunless %}">
+        {% if section.settings.sub_title != blank %}
+          <div class="text-24 font-bold uppercase mb-2">
+            {{ section.settings.sub_title }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          {% liquid
+            assign title_tag = "h2"
+            if section.settings.title_as_h1
+              assign title_tag = "h1"
+            endif
+          %}
+
+          <{{ title_tag }} class="relative h1 uppercase [&_em]:text-brand-tertiary [&_em]:not-italic{% if section.settings.title_not_uppercase_mobile %} xs-down:text-40 xs-down:-mx-5 xs-down:normal-case md:-mr-20{% endif %} {% if section.settings.title_small %} md:text-60 md:-mr-15{% endif %}">
+            {{ section.settings.title | replace: "+", "<em>+</em>" }}
+
+            {% if section.settings.show_heading_decoration %}
+              <div class="absolute right-full top-[0.5em] text-brand-tertiary mr-7.5 leading-[0] sm-down:hidden">
+                <svg width="70" height="23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.828 9.46c1.287.743 1.287 2.6 0 3.344L2.897 22.002C1.609 22.745 0 21.816 0 20.33V1.933C0 .447 1.61-.482 2.897.262l15.93 9.197Zm25.103 0c1.287.743 1.287 2.6 0 3.344L28 22.002c-1.287.743-2.896-.186-2.896-1.672V1.933C25.104.447 26.712-.482 28 .262l15.931 9.197Zm25.103 3.344c1.288-.743 1.288-2.601 0-3.345L53.104.262c-1.288-.744-2.897.185-2.897 1.672v18.395c0 1.487 1.609 2.416 2.896 1.673l15.931-9.198Z" fill="currentColor"/></svg>
+              </div>
+            {% endif %}
+          </{{ title_tag }}>
+        {% endif %}
+
+        {% if image.settings.image != blank %}
+          <div class="mt-25 sm-down:hidden">
+            {{ image.settings.image | image_url: width: 600 | image_tag:
+              loading: "lazy",
+              class: "w-full h-auto max-w-[280px]",
+              widths: "300, 600",
+              alt: section.settings.image.alt | escape
+            }}
+
+            {% if image.settings.text != blank %}
+              <div class="text-16 font-bold mt-4">
+                {{ image.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if button.settings.text != blank %}
+          <a href="{{ button.settings.url }}" class="hero__container-btn Button Button--{{ button.settings.style }} {% if image %}mt-5{% else %}mt-64{% endif %} !text-20 !h-15 sm-down:hidden sm:!w-auto">
+            {{ button.settings.text }}
+          </a>
+        {% endif %}
+
+        {% if title.settings.title != blank %}
+          <div class="text-20 font-heading font-bold tracking-wider uppercase mt-4">
+            {{ title.settings.title }}
+          </div>
+        {% endif %}
+
+        {% if text.settings.text != blank %}
+          <div class="rte font-medium mt-2 max-w-[28em] sm-down:mx-auto{% unless text.settings.show_on_mobile %} md-down:hidden{% endunless %}">
+            {{ text.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+      {% if section.settings.image != blank %}
+        <div class="hero-image-background w-auto top-0 right-0 bottom-0 z-2 -mx-5 flex justify-center relative sm:absolute sm:w-1/2 sm:mx-0 md:mt-[var(--header-height)] {% unless section.settings.show_image_on_mobile %} md-down:hidden{% endunless %}">
+          {% if section.settings.image_mobile != blank %}
+            {{ section.settings.image | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              class: "w-full h-auto sm:w-auto sm:h-full  sm-down:hidden",
+              sizes: "(min-width: 768px) 640w, 1280w",
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image.alt | escape
+            }}
+            {% else %}
+            {{ section.settings.image | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              class: "w-full h-auto sm:w-auto sm:h-full",
+              sizes: "(min-width: 768px) 640w, 1280w",
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image.alt | escape
+            }}
+          {% endif %}
+     
+          {% if section.settings.image_mobile != blank %}
+            {{ section.settings.image_mobile | image_url: width: 700 | image_tag:
+              loading: "lazy",
+              class: "w-full h-auto sm:hidden",
+              sizes: "(min-width: 368px) 640w, 1280w",
+              widths: "400, 600, 800",
+              alt: section.settings.image_mobile.alt | escape
+            }}
+          {% endif %}
+          {% if section.settings.show_image_decoration %}
+            <svg class="absolute top-16 w-[640px] -z-1" fill="none" aria-hidden="true" viewBox="0 0 567 568"><path d="M231.343 282.729c0-27.579 22.362-49.936 49.941-49.936 27.579 0 49.942 22.357 49.942 49.936s-22.363 49.937-49.942 49.937-49.941-22.358-49.941-49.937Z" stroke="#43CD9E" stroke-width="2"/><path d="M168.728 282.942c0-62.163 50.394-112.56 112.557-112.56 62.164 0 112.557 50.397 112.557 112.56 0 62.164-50.393 112.56-112.557 112.56-62.163 0-112.557-50.396-112.557-112.56Z" stroke="#43CD9E" stroke-width=".8"/><path d="M106.612 283.134c0-96.465 78.208-174.665 174.672-174.665 96.465 0 174.673 78.2 174.673 174.665 0 96.465-78.208 174.665-174.673 174.665-96.464 0-174.672-78.2-174.672-174.665Z" stroke="#43CD9E" stroke-width=".6"/><path d="M54.236 282.014c0-125.797 103.91-227.78 229.711-227.78 125.8 0 229.711 101.983 229.711 227.78S409.747 509.793 283.947 509.793c-125.801 0-229.711-101.982-229.711-227.779Z" stroke="#43CD9E" stroke-width=".3"/><path d="M.1 283.502C.1 126.984 126.983.1 283.5.1s283.4 126.884 283.4 283.402c0 156.517-126.883 283.401-283.4 283.401S.1 440.019.1 283.502Z" stroke="#43CD9E" stroke-width=".2"/></svg>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if button.settings.text != blank %}
+        <a href="{{ button.settings.url }}" class="Button button-mobile Button--{{ button.settings.style }} mt-5 !text-20 !h-15 absolute bottom-10 z-3 mobile-down:!text-16 sm:hidden right-0">
+          {{ button.settings.text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if marquee.settings.text != blank %}
+    <div class="Marquee !absolute bottom-10 z-1 opacity-50{% unless marquee.settings.show_on_mobile %} md-down:hidden{% endunless %}">
+      <div class="Marquee__Inner" aria-hidden="true">
+        <div>
+          {% for i in (1..20) %}
+            {{ marquee.settings.text }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% assign image_object = image.settings.image_mobile | default: image.settings.image %}
+
+{% if image_object != blank and image.settings.show_on_mobile and section.settings.hide_text_mobile == blank %}
+  <div class="mt-5 sm:hidden">
+    <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+      <div class="px-3 py-6 border border-solid border-brand-accent rounded-10">
+        <div class="text-center">
+          {{ image_object | image_url: width: 600 | image_tag:
+            loading: "lazy",
+            class: "w-full h-auto max-w-[160px] mx-auto",
+            widths: "300, 600",
+            alt: section.settings.image.alt | escape
+          }}
+
+          {% if image.settings.text != blank %}
+            <div class="text-16 font-bold mt-4">
+              {{ image.settings.text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_left",
+      "label": "Position Image Left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_text_mobile",
+      "label": "Hide Text Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_decoration",
+      "label": "Show image decoration",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_on_mobile",
+      "label": "Show image on mobile devices",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_as_h1",
+      "label": "Heading as H1 tag",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading_decoration",
+      "label": "Show heading decoration",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "title_small",
+      "label": "Small heading",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_not_uppercase_mobile",
+      "label": "Heading in lowercase on mobile",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "marquee",
+      "name": "Marquee text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "settings": {
+        "title": "Hero heading"
+      }
+    }
+  ]
+}
+{% endschema %}

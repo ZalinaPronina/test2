@@ -1,0 +1,18 @@
+.Tabs {
+  &__Trigger {
+    @apply relative px-0 py-3 font-bold opacity-40;
+
+    &.isActive {
+      @apply opacity-100;
+
+      &::after {
+        content: "";
+        @apply block absolute -bottom-px left-0 right-0 h-0.5 bg-black;
+      }
+    }
+  }
+
+  &__Content {
+    @apply py-8;
+  }
+}

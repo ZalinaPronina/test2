@@ -1,0 +1,23 @@
+.ProductItem {
+  @apply flex flex-col h-full;
+
+  &__Carousel {
+    &Pagination {
+      @apply flex items-center justify-center space-x-2.5 mt-5;
+
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 5px;
+        border-radius: 10px;
+        @apply bg-brand-gray cursor-pointer;
+      }
+
+      .swiper-pagination-bullet-active {
+        @apply bg-brand-tertiary;
+      }
+    }
+  }
+  .Button.block {
+    display: block;
+  }
+}

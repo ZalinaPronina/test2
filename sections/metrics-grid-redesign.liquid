@@ -1,0 +1,281 @@
+
+<style>
+  #{{section.id}}.MetricsGrid{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.MetricsGrid{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<section id="{{section.id}}" class="MetricsGrid" data-component="MetricsGrid" style="background-color:{{section.settings.background}}">
+  <div class="max-w-6xl mx-auto px-3.5 xs:px-7.5 md:space-y-0 lg:px-16">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="space-y-12 MetricsGrid-title-block">
+        {% if section.settings.title != blank %}
+          <h2 class="text-24 text-center font-body tracking-normal">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="rte max-w-[50em] mx-auto text-center">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div data-slider="container">
+        <div class="MetricsGrid__Wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank or block.settings.title != blank %}
+              <div class="MetricsGrid__Item items-center relative md:flex{% if block.settings.image_position == "right" %} md:flex-row-reverse{% endif %}{% unless forloop.first %}{% if block.settings.grid_spacing == "small" %} md:mt-17{% endif %}{% endunless %}" {{ block.shopify_attributes }} {% if forloop.first %} style="margin-top:0;"{% endif %}>
+                {% if block.settings.icon != blank or block.settings.title != blank %}
+                  <div class="flex items-center justify-center space-x-4 md:mb-8 md:hidden MetricsGrid-title">
+                    {% if block.settings.icon != blank %}
+                      <div class="">
+                        {{ block.settings.icon | image_url: width: 100 | image_tag:
+                          loading: "lazy",
+                          class: "w-auto h-12",
+                          widths: "100",
+                          alt: block.settings.icon.alt | escape
+                        }}
+                      </div>
+                    {% endif %}
+  
+                    {% if block.settings.title != blank %}
+                      <h3 class="text-24 font-body font-bold">
+                        {{ block.settings.title }}
+                      </h3>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.image != blank %}
+                  <div class="shrink-0 md:w-1/2 md-down:mb-12">
+                    <div class="flex justify-center w-full">
+                      <div class="relative">
+                        {{ block.settings.image | image_url: width: 1200 | image_tag:
+                          loading: "lazy",
+                          class: "w-auto h-full image-main",
+                          sizes: "(min-width: 940px) 600px, 100vw",
+                          widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                          alt: block.settings.image.alt | escape
+                        }}
+                        {% if block.settings.image_second != blank %} 
+                          <div class="absolute image-absolute-{{block.settings.image_second_position}}{% if block.settings.image_shadow != blank %} image-shadow{% endif %}">
+                            {{ block.settings.image_second | image_url: width: 800 | image_tag:
+                              loading: "lazy",
+                              class: "w-auto h-full",
+                              sizes: "(min-width: 940px) 600px, 100vw",
+                              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                              alt: block.settings.image_second.alt | escape
+                            }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+
+                {% if block.settings.title != blank or block.settings.text != blank %}
+                  <div class="space-y-8 md:w-1/2 MetricsGrid-text {% if block.settings.image_position == "right" %}md:pr-30{% else %}MetricsGrid__item-padding{% endif %}">
+                    {% if block.settings.icon != blank %}
+                      <div class="md-down:hidden">
+                        {{ block.settings.icon | image_url: width: 100 | image_tag:
+                          loading: "lazy",
+                          class: "w-auto h-12",
+                          widths: "100",
+                          alt: block.settings.icon.alt | escape
+                        }}
+                      </div>
+                    {% endif %}
+
+                    <div class="text-center md:text-left md:space-y-3">
+                      {% if block.settings.title != blank %}
+                        <h3 class="text-24 font-body font-bold md-down:hidden">
+                          {{ block.settings.title }}
+                        </h3>
+                      {% endif %}
+
+                      {% if block.settings.text != blank %}
+                        <div class="rte">{{ block.settings.text }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="MetricsGrid__Pagination"></div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.show_border %}
+    <div class="md-down:hidden">
+      <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+        <div class="h-0.5 bg-[color:#BABABA]"></div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Metrics Grid Redesign",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_second_position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            }
+          ],
+          "default": "top"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_second",
+          "label": "Image Second"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_shadow",
+          "label": "Image Second Shadow"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metrics Grid Redesign",
+      "settings": {
+        "title": "Heading"
+      }
+    }
+  ]
+}
+{% endschema %}

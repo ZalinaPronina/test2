@@ -1,0 +1,163 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "disabled": true,
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        },
+        "a50ba5a9-3e13-4265-9d06-3739ea1be571": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>Compare your Speed against thousands of players across the World. Compare your speed by age, position and sport - or across the entire field of players!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695",
+        "a50ba5a9-3e13-4265-9d06-3739ea1be571"
+      ],
+      "settings": {
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Hero_header.png",
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "#Hero Speed Challenge",
+        "title_as_h1": false,
+        "show_heading_decoration": false,
+        "title_small": false,
+        "title_not_uppercase_mobile": false,
+        "sub_title": ""
+      }
+    },
+    "71e40eba-0f7d-4fde-b792-37743ddf92b9": {
+      "type": "text-with-video",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_847-2.png",
+        "video": "",
+        "text": "<p><strong>PitcheroGPS is searching for the fastest players in grassroots and semi-pro sport!<\/strong><\/p>",
+        "small_text": "<p>Players wearing the <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">PitcheroGPS Player Vest<\/a> have the option to compare their top speed against players across the World.<\/p><p><strong>Terms<\/strong><br\/>Open to all players; all sports, all ages, all competitions and all locations. <\/p><p><strong>How to enter?<\/strong><br\/>Wear the <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">PitcheroGPS Player Vest<\/a> at training and matches. Opt-in to the #HERO Speed Challenge and your data will be automatically ranked.<\/p>"
+      }
+    },
+    "53377b73-1222-455b-b8ab-0908dab78b96": {
+      "type": "steps",
+      "blocks": {
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-0": {
+          "type": "step",
+          "settings": {
+            "title": "Get scouted by a professional team",
+            "url": "shopify:\/\/pages\/why-use-a-gps-player-vest-performance"
+          }
+        },
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-1": {
+          "type": "step",
+          "settings": {
+            "title": "Compete against team mates and rivals",
+            "url": ""
+          }
+        },
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-2": {
+          "type": "step",
+          "settings": {
+            "title": "Maximise your match day performance",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-0",
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-1",
+        "template--15662458339533__53377b73-1222-455b-b8ab-0908dab78b96-1666093710276cdd34-2"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false
+      }
+    },
+    "795a80cf-1135-4fc9-9b6a-114ed0bcef79": {
+      "type": "bundles",
+      "blocks": {
+        "template--15662458339533__795a80cf-1135-4fc9-9b6a-114ed0bcef79-1666093714b93e1b8d-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "d5bdab5b-cf77-47e0-b1be-42293f99a1cd": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "template--15662458339533__795a80cf-1135-4fc9-9b6a-114ed0bcef79-1666093714b93e1b8d-0",
+        "d5bdab5b-cf77-47e0-b1be-42293f99a1cd"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "small",
+        "title": ""
+      }
+    },
+    "d9888e43-11a8-4228-9aa8-a5212c5becfb": {
+      "type": "leaderboard",
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "title": "PitcheroGPS #HERO Speed Challenge Leaderboard",
+        "image": "shopify:\/\/shop_images\/Table_2022-2_e231997a-4372-4152-81f9-211c7e6170ff.png",
+        "image_mobile": "shopify:\/\/shop_images\/Table_2.png",
+        "popup_title": "Coming Soon.",
+        "popup_text": "<p>Launching in 2023, the global leaderboard of grassroots speed. Secure your position today!<\/p>",
+        "popup_button": "PRE-ORDER",
+        "popup_button_url": "shopify:\/\/products\/new-gps-player-bundle"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "71e40eba-0f7d-4fde-b792-37743ddf92b9",
+    "53377b73-1222-455b-b8ab-0908dab78b96",
+    "795a80cf-1135-4fc9-9b6a-114ed0bcef79",
+    "d9888e43-11a8-4228-9aa8-a5212c5becfb"
+  ]
+}

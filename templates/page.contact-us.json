@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": false,
+        "background_newsletter": false,
+        "show_header": true,
+        "background_image": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_content": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {}
+    },
+    "577f843d-83d2-45cf-a673-5cc928745d67": {
+      "type": "text-with-media",
+      "blocks": {
+        "5b264db9-0bc2-4ae2-b671-f6c5c1c3b9f9": {
+          "type": "image",
+          "settings": {
+            "image_max_width": 410,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "5b264db9-0bc2-4ae2-b671-f6c5c1c3b9f9"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Global Headquarters",
+        "title_position": "inside",
+        "bold_text": "<p>Sterling House<br\/>Capitol Park East<br\/>Tingley<br\/>LEEDS<br\/>WF3 1DR<br\/>United Kingdom<\/p>",
+        "text": "<p><\/p><p><\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "form",
+    "577f843d-83d2-45cf-a673-5cc928745d67"
+  ]
+}

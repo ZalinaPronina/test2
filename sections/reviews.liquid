@@ -1,0 +1,201 @@
+{% liquid
+  assign className = "Reviews"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-10 md:pt-20"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-10 md:pb-20"
+  endif
+%}
+<style>
+  {% if section.settings.top_padding == blank %}
+    #{{section.id}}.Reviews{
+      padding-top: {{section.settings.padding_top}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.Reviews{
+        padding-top: {{section.settings.padding_top_mobile}}px;
+      }
+    }
+  {% endif %}
+  {% if section.settings.bottom_padding == blank %}
+    #{{section.id}}.Reviews{
+      padding-bottom: {{section.settings.padding_bottom}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.Reviews{
+        padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+      }
+    }
+  {% endif %}
+</style>
+<section
+  class="{{ className }}"
+  id="{{section.id}}"
+  data-component="Reviews"
+  style="
+    --accent-color: {{ section.settings.accent_color | default: 'inherit' }};
+    color: {{ section.settings.text_color | default: 'inherit' }};
+    background-color: {{ section.settings.background_color | default: 'transparent' }};
+  "
+>
+  <div class="max-w-3xl mx-auto px-3.5 overflow-hidden xs:px-7.5 sm:px-10">
+    {% if section.blocks.size > 0 %}
+      <div class="Reviews__Container" data-reviews="container">
+        <div class="Reviews__Wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="Reviews__Slide" {{ block.shopify_attributes }}>
+                <div class="space-y-18 sm:space-y-8">
+                  {% if block.settings.title != blank %}
+                    <h3 class="text-24 font-body tracking-normal sm:text-center">
+                      {{ block.settings.title }}
+                    </h3>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="rte italic text-center sm:text-20{% if block.settings.image == blank %} sm-down:pb-8{% endif %}">
+                      <p>{{ block.settings.text }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+
+                {% if block.settings.image != blank %}
+                  <div class="text-center">
+                    {{ block.settings.image | image_url: width: 200 | image_tag:
+                      loading: "lazy",
+                      class: "w-auto h-24",
+                      widths: "100, 200",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="Reviews__Pagination"></div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "label": "Padding Bottom px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#00A0D1"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews",
+      "blocks": [
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

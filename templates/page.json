@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "show_header": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": true
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main"
+  ]
+}

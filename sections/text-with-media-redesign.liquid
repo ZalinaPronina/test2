@@ -1,0 +1,447 @@
+{% liquid
+  assign className = "TextMedia"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-10 sm:pt-20 lg:pt-30"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-10 sm:pb-20 lg:pb-30"
+  endif
+%}
+<style>
+  #{{section.id}} .TextMedia__Wrapper-width{
+    padding: 0;
+    width: 100%;
+    max-width: {{ section.settings.image_max_width }}px;
+  }
+  {% if section.settings.top_padding == blank %}
+    #{{section.id}}{
+      padding-top: {{section.settings.padding_top}}px;
+    }
+  {% endif %}
+  {% if section.settings.bottom_padding == blank %}
+    #{{section.id}}{
+      padding-bottom: {{section.settings.padding_bottom}}px;
+    }
+  {% endif %}
+  {% if section.settings.top_padding == blank %}
+    @media (max-width: 939px) {
+      #{{section.id}}{
+        padding-top: {{section.settings.padding_top_mobile}}px;
+      }
+    }
+  {% endif %}
+  {% if section.settings.bottom_padding == blank %}
+    @media (max-width: 939px) {
+      #{{section.id}}{
+        padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+      }
+    }
+  {% endif %}
+  #{{section.id}} .TextMedia-heading-bold{
+    font-family: var(--font-heading-family);
+    letter-spacing: 1px;
+    font-size: {{section.settings.bold_text_size}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}} .TextMedia-heading-bold{
+      font-size: {{section.settings.bold_text_size | minus: 10}}px;
+    }
+  }
+</style>
+{% if section.blocks.size > 0 or section.settings.title != blank or section.settings.text != blank or section.settings.bold_text != blank or section.settings.bold_text_mobile != blank %}
+  <section
+    class="{{ className }}{% if section.settings.medium_size != blank %} TextMedia-medium{% endif %}"
+    {% if section.settings.medium_size == blank %}
+      style="
+        color: {{ section.settings.text_color | default: 'inherit' }};
+        background-color: {{ section.settings.background_color | default: 'transparent' }};
+      "
+    {% endif %}
+    data-component="TextMedia"
+    id="{{section.id}}"
+  >
+    <div class="TextMedia-medium-container max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]"
+      {% if section.settings.medium_size != blank %}
+      style="color: {{ section.settings.text_color | default: 'inherit' }};
+        background-color: {{ section.settings.background_color | default: 'transparent' }};"
+      {% endif %}>
+      {% if section.settings.title_position == "outside" and section.settings.title != blank %}
+        <h2 class="font-body tracking-normal text-24 mb-6 sm:mb-14{% if section.settings.title_center != blank %} text-center{% endif %}">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      <div class="sm-down:space-y-10 sm-down:hidden sm:flex sm:items-center justify-between {{ section.settings.media_position }}" {% if section.settings.bold_text_center != blank %} style="justify-content: center;"{% endif %}>
+        {% if section.settings.title != blank or section.settings.text != blank or section.settings.bold_text != blank or section.settings.bold_text_mobile != blank %}
+          <div class="sm:text-center{% if section.blocks.size > 0 %}sm:w-1/2 sm:pr-7.5{% endif %}">
+            {% if section.settings.title_position == "inside" and section.settings.title != blank %}
+              <h2 class="font-body tracking-normal text-24 mb-6 sm:mb-14{% if section.settings.title_center != blank %} text-center{% endif %}">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% if section.settings.bold_text != blank %}
+              <div class="rte sm:text-20 TextMedia-heading-flex{% if section.settings.bold_text_center != blank %} text-center{% endif %}">
+                {% if section.settings.icon_heading != blank %}
+                  {{ section.settings.icon_heading | image_url: width: 60 | image_tag:
+                    loading: "lazy",
+                    class: "w-auto h-12",
+                    widths: "60",
+                    alt: section.settings.icon_heading.alt | escape
+                  }}
+                {% endif %}
+                <div class="TextMedia-heading-bold {% if section.settings.bold_text_center != blank %} text-center{% endif %}">
+                  <div class="md-down:hidden">{{ section.settings.bold_text }}</div>
+                  <div class="md:hidden">{{ section.settings.bold_text_mobile }}</div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if section.settings.text != blank %}
+              <div class="rte mt-4{% if section.settings.text_list_background %} TextMedia-list-background{% endif %}">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+            
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div
+            class="{{section.id}} TextMedia__Wrapper-width sm:w-1/2 sm:px-7.5"
+          >
+            <div class="TextMedia__Wrapper">
+                {% assign count = 0 %}
+                {% for block in section.blocks %}
+                  {% assign count = count | plus: 1 %}
+                  {% if block.settings.image != blank %}
+                    <div class="TextMedia__block">
+                      <div class="flex justify-center">
+                        <div
+                          class="w-full shrink-0"
+                          style="
+                            {% if block.settings.rounded %}
+                              border-radius: 12px;
+                              overflow: hidden;
+                            {% endif %}
+                            background-color: {{ block.settings.background_color | default: 'transparent' }};
+                            max-width: {{ block.settings.image_max_width }}px;
+                          "
+                        >
+                          {{ block.settings.image | image_url: width: 1200 | image_tag:
+                            class: "w-full h-auto",
+                            loading: "lazy",
+                            sizes: "(min-width: 940px) 600px, 100vw",
+                            widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                            alt: block.settings.image.alt | escape
+                          }}
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if count == 1 %}
+                      {% break %}
+                  {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="sm-down:space-y-10 sm:hidden sm:flex sm:items-center justify-between {{ section.settings.media_position }}" {% if section.settings.bold_text_center != blank %} style="justify-content: center;"{% endif %}>
+        {% if section.settings.title != blank or section.settings.text != blank or section.settings.bold_text != blank or section.settings.bold_text_mobile != blank %}
+          <div class="text-center{% if section.blocks.size > 0 %} sm:w-1/2 sm:pr-7.5{% endif %}">
+            {% if section.settings.title_position == "inside" and section.settings.title != blank %}
+              <h2 class="font-body tracking-normal text-24 mb-6 sm:mb-14{% if section.settings.title_center != blank %} text-center{% endif %}">{{ section.settings.title }}</h2>
+            {% endif %}
+
+            {% if section.settings.bold_text != blank %}
+              <div class="rte sm:text-20 TextMedia-heading-flex{% if section.settings.bold_text_center != blank %} text-center{% endif %}">
+                {% if section.settings.icon_heading != blank %}
+                  {{ section.settings.icon_heading | image_url: width: 60 | image_tag:
+                    loading: "lazy",
+                    class: "w-auto h-12",
+                    widths: "60",
+                    alt: section.settings.icon_heading.alt | escape
+                  }}
+                {% endif %}
+                <div class="TextMedia-heading-bold {% if section.settings.bold_text_center != blank %} text-center{% endif %}">
+                  <div class="md-down:hidden">{{ section.settings.bold_text }}</div>
+                  <div class="md:hidden">{{ section.settings.bold_text_mobile }}</div>
+                </div>
+              </div>
+            {% endif %}
+            {% if section.settings.text_mobile != blank %}
+              <div class="rte mt-4 TextMedia-text">
+                {{ section.settings.text_mobile }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div
+            class="{{section.id}} TextMedia__Wrapper-width overflow-hidden sm:w-1/2 sm:px-7.5"
+            data-text-media="container"
+          >
+            <div class="TextMedia__Wrapper">
+              {% for block in section.blocks %}
+                {% if block.settings.image != blank %}
+                  <div class="TextMedia__Slide">
+                    <div class="flex justify-center mb-2">
+                      <div
+                        class="w-full shrink-0"
+                        style="
+                          {% if block.settings.rounded %}
+                            border-radius: 12px;
+                            overflow: hidden;
+                          {% endif %}
+                          background-color: {{ block.settings.background_color | default: 'transparent' }};
+                          max-width: {{ block.settings.image_max_width }}px;
+                        "
+                      >
+                        {{ block.settings.image | image_url: width: 1200 | image_tag:
+                          class: "w-full h-auto",
+                          loading: "lazy",
+                          sizes: "(min-width: 940px) 600px, 100vw",
+                          widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                          alt: block.settings.image.alt | escape
+                        }}
+                      </div>
+                    </div>
+                    {% if block.settings.text != blank %}
+                      <div class="rte mb-2 text-center mt-12 TextMedia-text">
+                        {{ block.settings.text }}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <div class="TextMedia__Pagination"></div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Text with Media Redesign",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing auto",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing auto",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "image_max_width",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Max width",
+      "default": 620
+    },
+    {
+      "type": "checkbox",
+      "id": "medium_size",
+      "label": "Medium Size"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_heading",
+      "label": "Icon Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_center",
+      "label": "Title Position Center"
+    },
+    {
+      "type": "select",
+      "id": "title_position",
+      "label": "Heading position",
+      "options": [
+        {
+          "value": "inside",
+          "label": "Inside"
+        },
+        {
+          "value": "outside",
+          "label": "Outside"
+        }
+      ],
+      "default": "outside"
+    },
+    {
+      "type": "richtext",
+      "id": "bold_text",
+      "label": "Bold Text"
+    },
+    {
+      "type": "richtext",
+      "id": "bold_text_mobile",
+      "label": "Bold Text Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "bold_text_center",
+      "label": "Bold Text Center"
+    },
+    {
+      "type": "range",
+      "id": "bold_text_size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Bold Text Size",
+      "default": 20
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "text_mobile",
+      "label": "Text Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_list_background",
+      "label": "Add background to List"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Media position",
+      "options": [
+        {
+          "value": "flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "flex-row-reverse",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_max_width",
+          "min": 300,
+          "max": 800,
+          "step": 10,
+          "unit": "px",
+          "label": "Max width",
+          "default": 410
+        },
+        {
+          "type": "checkbox",
+          "id": "rounded",
+          "label": "Rounded",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with Media Redesign"
+    }
+  ]
+}
+{% endschema %}

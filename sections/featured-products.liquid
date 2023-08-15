@@ -1,0 +1,85 @@
+{% liquid
+  assign collection = section.settings.collection
+  assign className = "FeaturedProducts"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-18"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-18"
+  endif
+%}
+
+{% if section.settings.title != blank or collection != blank %}
+  <section class="{{ className }}">
+    <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+      <div class="space-y-5 sm:space-y-10">
+        {% if section.settings.title != blank %}
+          <h2 class="font-body tracking-normal text-24 sm:text-center">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if collection != blank %}
+          <div class="grid gap-8 sm:grid-cols-2 md:gap-12.5 md:grid-cols-3">
+            {% for product in collection.products limit: section.settings.product_count %}
+              {%
+                render 'product-item-simple',
+                product: product,
+                image_sizes: '(min-width: 1280px) 300px, (min-width: 940px) calc(25vw - ((60px / 4) + (40px / 4))), calc(50vw - (8px + 20px))'
+              %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_count",
+      "label": "Product count",
+      "min": 3,
+      "max": 24,
+      "step": 3,
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "settings": {
+        "title": "Featured products"
+      }
+    }
+  ]
+}
+{% endschema %}

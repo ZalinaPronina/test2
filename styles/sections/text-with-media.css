@@ -1,0 +1,31 @@
+.TextMedia,
+.TextBlocks,
+.ImageBlocks {
+  &__Wrapper {
+    @apply flex items-start;
+  }
+
+  &__Slide {
+    @apply shrink-0;
+  }
+
+  &__Pagination {
+    @apply flex items-center justify-center space-x-2.5 mt-10 sm:mt-12;
+
+    &.swiper-pagination-lock {
+      @apply hidden;
+    }
+
+    .swiper-pagination-bullet {
+      border-radius: 10px;
+      width: 20px;
+      height: 5px;
+      background-color: #d9d9d9;
+      cursor: pointer;
+
+      &-active {
+        @apply bg-brand-tertiary;
+      }
+    }
+  }
+}

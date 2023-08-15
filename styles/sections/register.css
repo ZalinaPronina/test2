@@ -1,0 +1,38 @@
+.Register {
+  @apply pt-4 pb-12 sm:py-16;
+
+  &__Trigger {
+    @apply flex flex-col text-16 text-center p-0 space-y-2.5;
+
+    * {
+      @apply pointer-events-none;
+    }
+
+    img {
+      @apply grayscale transition-all duration-150 opacity-60;
+    }
+
+    span {
+      @apply transition-colors duration-150;
+    }
+
+    &.isActive,
+    &:hover {
+      span {
+        @apply text-brand-tertiary;
+      }
+
+      img {
+        @apply grayscale-0 opacity-100;
+      }
+    }
+  }
+
+  &__Content {
+    @apply hidden;
+
+    &.isActive {
+      @apply block;
+    }
+  }
+}

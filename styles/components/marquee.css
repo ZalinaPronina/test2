@@ -1,0 +1,25 @@
+.Marquee {
+  @apply relative overflow-hidden;
+
+  &__Inner {
+    @apply will-change-transform font-heading text-20 tracking-wider whitespace-nowrap;
+    animation: marquee 30s linear infinite;
+    animation-play-state: running;
+  }
+
+  &:hover {
+    .Marquee__Inner {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

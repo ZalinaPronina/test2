@@ -1,0 +1,57 @@
+.MediaSlider,
+.ImageBlocks {
+  @apply overflow-hidden;
+
+  &__Container {
+    @apply relative flex flex-col justify-center;
+    perspective: 1200px;
+  }
+
+  &__Wrapper {
+    @apply flex w-full shrink-0;
+    transform-style: preserve-3d;
+  }
+
+  &__Item {
+    @apply w-full shrink-0 rounded-16 overflow-hidden;
+  }
+
+  &__Button {
+    @apply hidden absolute text-brand-tertiary p-0 md-down:hidden;
+
+    &--previous {
+      @apply -left-8;
+    }
+
+    &--next {
+      @apply -right-8;
+    }
+
+    .swiper-initialized & {
+      @apply md:flex;
+    }
+
+    &:disabled {
+      @apply hidden;
+    }
+  }
+
+  &__Pagination {
+    @apply flex items-center justify-center space-x-2.5 mt-5 md:mt-7.5;
+
+    &.swiper-pagination-lock {
+      @apply hidden;
+    }
+
+    .swiper-pagination-bullet {
+      border-radius: 10px;
+      width: 20px;
+      height: 5px;
+      background-color: #d9d9d9;
+
+      &-active {
+        @apply bg-brand-tertiary;
+      }
+    }
+  }
+}

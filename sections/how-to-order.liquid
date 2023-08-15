@@ -1,0 +1,176 @@
+{% liquid
+  assign className = ""
+
+  if section.settings.top_spacing
+    assign className = className | append: " pt-15 sm:pt-20"
+  endif
+
+  if section.settings.bottom_spacing
+    assign className = className | append: " pb-15 sm:pb-20"
+  endif
+%}
+
+{% if section.blocks.size > 0 or section.settings.title != blank %}
+  <section
+    class="{{ className }}"
+    style="
+      --text-color: {{ section.settings.text_color | default: 'inherit' }};
+      --background-color: {{ section.settings.background_color | default: 'transparent' }};
+    "
+  >
+    <div class="max-w-screen-xl mx-auto sm:px-5 lg:px-15">
+      <div
+        class="py-12 px-6 sm:rounded-16 md:py-7.5 md:px-16"
+        style="
+          color: var(--text-color);
+          background-color: var(--background-color);
+        "
+      >
+        {% if section.settings.title != blank %}
+          <div class="text-center">
+            {% if section.settings.title != blank %}
+              <h2 class="text-24 font-body tracking-normal">
+                {{ section.settings.title }}
+              </h2>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="mt-10 md:mt-6 md:flex md:items-center md:justify-center">
+            {% for block in section.blocks %}
+              <div class="border border-solid border-brand-accent rounded-16 px-7.5 py-6 sm:py-5 md:w-1/2" {{ block.shopify_attributes }}>
+                <h3 class="text-center font-body font-normal uppercase text-20 tracking-normal">
+                  <div>{{ block.settings.title }}</div>
+                  <div class="h-px opacity-50 bg-[var(--text-color)] mt-2.5 mx-7.5 lg:mx-0{% if section.blocks.size > 2 %} lg:mx-7.5{% endif %}"></div>
+                </h3>
+
+                {% if block.settings.text != blank or block.settings.bold_text != blank %}
+                  <div class="flex flex-col items-center text-center mt-5 lg:flex-row lg:text-left{% if section.blocks.size > 2 %} lg:flex-col lg:text-center{% endif %}">
+                    {% if block.settings.text != blank %}
+                      <div class="text-20 font-bold max-w-[280px] {% if section.blocks.size > 2 %} md:max-w-none{% endif %}">
+                        {{ block.settings.text }}
+                      </div>
+                    {% endif %}
+
+                    {% if block.settings.bold_text != blank %}
+                      <div class="shrink-0 flex items-center space-x-2 mt-5{% if section.blocks.size > 2 %} lg:ml-0 lg:pl-0 lg:mt-5{% else %} lg:mt-0 lg:ml-auto lg:pl-5{% endif %}">
+                        <span class="font-heading font-bold text-48">
+                          {{ block.settings.bold_text }}
+                        </span>
+
+                        {% if block.settings.bold_text_separator != blank %}
+                          <span class="text-brand-accent text-50">/</span>
+                          <span class="text-24 text-left font-bold leading-none max-w-[90px]">
+                            {{ block.settings.bold_text_separator }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+
+              {% unless forloop.last %}
+                <div class="text-brand-accent text-center p-4{% if section.blocks.size > 2 %} md:pl-0 md:pr-2{% endif %}">
+                  {% render "icons", icon: "arrow-long-right", size: "large", className: "md-down:hidden" %}
+                  {% render "icons", icon: "arrow-long-down", size: "medium", className: "md:hidden" %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="mt-6 rte text-center md:mt-10 md:text-24">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "How To Order",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_spacing",
+      "label": "Add top spacing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_spacing",
+      "label": "Add bottom spacing",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#012130"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Today"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "bold_text",
+          "label": "Bold Text"
+        },
+        {
+          "type": "text",
+          "id": "bold_text_separator",
+          "label": "Bold Text after separator"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How To Order",
+      "settings": {
+        "title": "How to Order"
+      }
+    }
+  ]
+}
+{% endschema %}

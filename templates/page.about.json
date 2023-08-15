@@ -1,0 +1,225 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "page_style_blue": false,
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        },
+        "67e10729-bf07-4e98-bef0-b8e080bcdd6c": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>PitcheroGPS is a world-class technology company designing and manufacturing <a href=\"\/products\/new-gps-player-bundle\" title=\"New Player Bundle\">GPS Player Vests<\/a> approved by FIFA and World Rugby.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695",
+        "67e10729-bf07-4e98-bef0-b8e080bcdd6c"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image_left": false,
+        "image": "shopify:\/\/shop_images\/Mask_group_4.png",
+        "hide_text_mobile": false,
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "About",
+        "title_as_h1": false,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": ""
+      }
+    },
+    "180fa0e4-49e5-4a89-aa55-60ca867e4911": {
+      "type": "media-with-text",
+      "blocks": {
+        "9a90f211-3bb5-496d-bd9d-1f90ba6e33f6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/The_Worlds_First_B.png"
+          }
+        },
+        "255e77b1-02b7-4eb6-87d8-290f6af3c560": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/The_Worlds_First.png"
+          }
+        }
+      },
+      "block_order": [
+        "9a90f211-3bb5-496d-bd9d-1f90ba6e33f6",
+        "255e77b1-02b7-4eb6-87d8-290f6af3c560"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "The World's First",
+        "text": "<p>PitcheroGPS is the World's first GPS Player Vest built from the grassroots up. Our innovative technology serves everyone from grassroots to academy players, college and university players, to semi-professionals and professional players.<\/p><p>Our innovative, proprietary technology provides laser-sharp accuracy with easy-to-understand performance data at a price all players can afford.<\/p><p><\/p><p><\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "302d84e1-2365-4c46-9ac8-8b26f1db555a": {
+      "type": "media-with-text",
+      "blocks": {
+        "c64561a4-47d7-428f-becd-5b1215e25fc6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Our_Mission.png"
+          }
+        }
+      },
+      "block_order": [
+        "c64561a4-47d7-428f-becd-5b1215e25fc6"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "Our Mission",
+        "text": "<p>To empower all players, regardless of age, gender or competition, to improve improve their performance and reach their true potential.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    },
+    "671950a8-5d93-4931-bcdd-406a9bdca920": {
+      "type": "media-with-text",
+      "blocks": {
+        "17f3d85c-a098-4bee-b773-7e4d132ec3f4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/How_It_Started.png"
+          }
+        }
+      },
+      "block_order": [
+        "17f3d85c-a098-4bee-b773-7e4d132ec3f4"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "How It Started",
+        "text": "<p>Millions of athletes use GPS tracking devices every day whilst cycling or running. These are often small computers fixed to the bike's frame or a smartwatch worn on the runner's wrist. In most cases, they record four key statistics:<\/p><ul><li><strong>Speed<\/strong> - how fast you travel<\/li><li><strong>Distance<\/strong> - how far you travel<\/li><li><strong>Intensity<\/strong> - how hard you work<\/li><li><strong>Position<\/strong> - your location whilst travelling<\/li><\/ul><p>If you can do this whilst cycling or running, why not when playing team contact sports like football, rugby or hockey? If players can measure their performance, they can track their progress, set targets and reach goals. Improving performance every game, week in and week out.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "a2fed78b-e3c6-4dc8-8076-802bd71406c3": {
+      "type": "media-with-text",
+      "blocks": {
+        "52e243fa-6769-4e08-96b0-efb96416c689": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Why_GPS_Header_V1_4_6f55b3b0-21f8-4d03-a26c-7321949b4d68.png"
+          }
+        }
+      },
+      "block_order": [
+        "52e243fa-6769-4e08-96b0-efb96416c689"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "The Player Vest",
+        "text": "<p>The PitcheroGPS Player Vest is no different to a Smartwatch or bike computer - except the tracker is worn in a padded Player Vest, and the data is displayed on a mobile device post-game. <\/p><p>The Player Vest is worn under a playing shirt, is lite and breathable and holds the tracker safely between the shoulder blades.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    },
+    "748f2e01-c62d-42f9-8c6e-70ac351c688b": {
+      "type": "media-with-text",
+      "blocks": {
+        "2e87124c-1565-4fbd-a680-9c2ceaff8b98": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pros.png"
+          }
+        }
+      },
+      "block_order": [
+        "2e87124c-1565-4fbd-a680-9c2ceaff8b98"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "The Same Data As The Pros",
+        "text": "<p>Until now, GPS Player Vests have been expensive and require a maths degree to understand complex measurements. Not anymore!<\/p><p>Pitchero engineers have created a GPS Player Vest, which any player can use within seconds of activating the device. PitcheroGPS is a fraction of the price of our rivals and provides all the essential data used by professional players in an easy-to-use mobile app.<strong> <\/strong><\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "7756b025-8762-4b17-9270-c5eb2c897128": {
+      "type": "media-with-text",
+      "blocks": {
+        "f550d3de-704f-442f-81af-2a60a9dce10e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Made_in_Britain.png"
+          }
+        }
+      },
+      "block_order": [
+        "f550d3de-704f-442f-81af-2a60a9dce10e"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "title_left": true,
+        "title": "Made in Britain",
+        "text": "<p>Pitchero GPS is designed and manufactured in Britain. A team of specialist engineers use the latest components and BlueTooth technology to create a best-in-class solution at an exceptional price.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "180fa0e4-49e5-4a89-aa55-60ca867e4911",
+    "302d84e1-2365-4c46-9ac8-8b26f1db555a",
+    "671950a8-5d93-4931-bcdd-406a9bdca920",
+    "a2fed78b-e3c6-4dc8-8076-802bd71406c3",
+    "748f2e01-c62d-42f9-8c6e-70ac351c688b",
+    "7756b025-8762-4b17-9270-c5eb2c897128"
+  ]
+}

@@ -1,0 +1,82 @@
+.Table {
+  &__Scroller {
+    @apply overflow-y-auto sm-down:pl-30;
+  }
+
+  &__Content {
+    @apply relative;
+
+    table {
+      @apply w-full;
+
+      svg {
+        @apply w-7 h-auto;
+      }
+
+      th {
+        @apply bg-brand-primary text-20 font-normal uppercase w-1/4;
+
+        &:first-child {
+          @apply text-16 font-bold normal-case;
+        }
+
+        svg {
+          @apply w-auto h-5;
+        }
+      }
+
+      th,
+      td {
+        @apply px-6 py-10 md:px-9 md:py-12;
+
+        @media (--smDown) {
+          &:first-child {
+            @apply absolute left-0 w-30;
+          }
+
+          @apply h-32 overflow-hidden;
+        }
+      }
+
+      td {
+        @apply border-0 border-solid !text-14 !font-normal normal-case bg-neutral-100 sm:!text-16;
+
+        + td {
+          @apply border-l;
+        }
+
+        &:nth-of-type(2) {
+          svg {
+            @apply text-brand-tertiary;
+          }
+        }
+      }
+
+      tr {
+        + tr {
+          td {
+            @apply border-t;
+          }
+        }
+      }
+
+      tfoot {
+        td {
+          &:not(:first-child) {
+            @apply !text-14 !font-bold sm:!font-semibold sm:!text-16 md:!text-20;
+          }
+
+          &:nth-of-type(2) {
+            @apply !font-heading !font-bold !text-40 tracking-wider;
+          }
+        }
+
+        tr {
+          td {
+            @apply border-t;
+          }
+        }
+      }
+    }
+  }
+}

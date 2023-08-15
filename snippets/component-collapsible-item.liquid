@@ -1,0 +1,27 @@
+{%- liquid
+  assign title = title | default: ""
+  assign content = content | default: ""
+  assign is_open = is_open | default: false
+-%}
+
+{%- if title != blank -%}
+  <div class="CollapsibleContent CollapsibleContent" data-component="CollapsibleContent" data-animation-time="200">
+    <button
+      class="{% if is_open %}open{% endif %}"
+      type="button"
+      data-trigger
+    >
+      {% render "icons", icon: "plus-bold", size: "medium", className: "text-brand-tertiary" %}
+      {% render "icons", icon: "minus-bold", size: "medium", className: "text-brand-tertiary" %}
+      <span class="ml-4 sm:ml-9">{{ title }}</span>
+    </button>
+
+    <div class="CollapsibleContent__Content{% if is_open %} init open{% endif %}" data-content>
+      <div class="text-base font-medium rte ml-10 pb-2 sm:ml-15 sm:pb-5" data-content-inner>
+        {% if content != blank %}
+          {{ content }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

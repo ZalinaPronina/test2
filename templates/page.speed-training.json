@@ -1,0 +1,268 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "page_style_blue": true,
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": true
+      }
+    },
+    "48b233f7-eb42-4640-915a-d329e4897411": {
+      "type": "hero-section",
+      "blocks": {
+        "71d86c1d-0f7f-419c-9029-d5bd62c166ed": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat elit felis.<\/p>"
+          }
+        },
+        "aa50519e-3967-4ddf-a95c-837ec1885350": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Enter CTA",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "71d86c1d-0f7f-419c-9029-d5bd62c166ed",
+        "aa50519e-3967-4ddf-a95c-837ec1885350"
+      ],
+      "settings": {
+        "transparent_header": true,
+        "style_mobile": "transparent",
+        "style": "black",
+        "image_desktop": "shopify:\/\/shop_images\/Frame_550_2.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1027_1.png",
+        "show_image_decoration": true,
+        "image_title": "shopify:\/\/shop_images\/Group_172_1.png",
+        "title": "fitter   faster",
+        "title_as_h1": false,
+        "title_small": false,
+        "title_not_uppercase_mobile": false,
+        "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY"
+      }
+    },
+    "e8dc4cf5-d0e2-4030-b032-994b62808ef5": {
+      "type": "text-with-video",
+      "settings": {
+        "title": "",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-13_at_12.47.20_1.png",
+        "video": "",
+        "video_iframe": "shopify:\/\/files\/videos\/Shortsleevemale.mp4",
+        "text_size": "text_container-small",
+        "text": "<h4>The Ultimate Sprint Technique Explained<\/h4>",
+        "small_text": "<p>Performing a good sprinting technique is essential if you are to become a fitter, faster player. Good technique will unleash all of your power and ensure maximum results from training.<\/p><p>This sprint technique explanation video has been prepared for all players and provides a detailed overview of the core principles of running fast.<\/p><p>Watch this video before every training session and make good technique the foundation stone of all your training. <\/p>",
+        "media_position": "flex-row-reverse",
+        "large_container": false,
+        "text_mobile_top": false,
+        "video_popup": false,
+        "video_border": 0,
+        "bottom_line": true,
+        "bottom_line_border": 0,
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "435ed37a-99a4-4e5a-9add-c31bfca50de6": {
+      "type": "section-form",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/Frame_1224.png",
+        "image_logo": "shopify:\/\/shop_images\/PitcheroGPS_White_Logo_TM.png",
+        "image": "shopify:\/\/shop_images\/Group_172_1.png",
+        "subtitle": "6 Week Training Programme",
+        "image_large": "shopify:\/\/shop_images\/Frame_1236.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1228_1.png",
+        "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar ornare tristique. Fusce porta nunc erat, vel posuere metus faucibus a. Pellentesque sapien nunc, bibendum quis ex quis, maximus tempor sem.",
+        "html": "<script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/embed\/v2.js\"><\/script>\n<script>\n  hbspt.forms.create({\n    region: \"na1\",\n    portalId: \"2547723\",\n    formId: \"c1c08816-6d0e-420b-862d-2992f55352fd\"\n  });\n<\/script>"
+      }
+    },
+    "69750647-0ca7-4927-b82c-d180cf12d187": {
+      "type": "text-with-video",
+      "settings": {
+        "title": "Speed Training Videos",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-13_at_12.47.20_1.png",
+        "video": "",
+        "video_iframe": "shopify:\/\/files\/videos\/Shortsleevemale.mp4",
+        "text_size": "text_container-small",
+        "text": "<h4>Acceleration<\/h4>",
+        "small_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec varius nunc, vel pellentesque ligula. Nunc congue luctus turpis. In commodo massa quis ex dignissim, eu interdum ipsum iaculis.<\/p>",
+        "media_position": "flex-row-reverse",
+        "large_container": false,
+        "text_mobile_top": false,
+        "video_popup": false,
+        "video_border": 0,
+        "bottom_line": true,
+        "bottom_line_border": 2,
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "41c4024a-fe2f-4cf9-bf6a-c51eeda6c3bd": {
+      "type": "text-with-video",
+      "settings": {
+        "title": "",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-13_at_12.47.20_1.png",
+        "video": "",
+        "video_iframe": "shopify:\/\/files\/videos\/Shortsleevemale.mp4",
+        "text_size": "text_container-small",
+        "text": "<h4>Acceleration<\/h4>",
+        "small_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec varius nunc, vel pellentesque ligula. Nunc congue luctus turpis. In commodo massa quis ex dignissim, eu interdum ipsum iaculis.<\/p>",
+        "media_position": "flex-row-reverse",
+        "large_container": false,
+        "text_mobile_top": false,
+        "video_popup": false,
+        "video_border": 0,
+        "bottom_line": true,
+        "bottom_line_border": 2,
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "be362ddc-c410-4827-9972-bbf98621c96d": {
+      "type": "text-with-video",
+      "settings": {
+        "title": "",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-06-13_at_12.47.20_1.png",
+        "video": "",
+        "video_iframe": "shopify:\/\/files\/videos\/Shortsleevemale.mp4",
+        "text_size": "text_container-small",
+        "text": "<h4>Acceleration<\/h4>",
+        "small_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec varius nunc, vel pellentesque ligula. Nunc congue luctus turpis. In commodo massa quis ex dignissim, eu interdum ipsum iaculis.<\/p>",
+        "media_position": "flex-row-reverse",
+        "large_container": false,
+        "text_mobile_top": false,
+        "video_popup": false,
+        "video_border": 0,
+        "bottom_line": true,
+        "bottom_line_border": 0,
+        "padding_bottom": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "a0a21490-8ae5-4723-8d3d-689ab86c82e4": {
+      "type": "video-grid",
+      "blocks": {
+        "cf881b6b-52f6-4ad5-8b22-16ecc80b3bd7": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "662cbd3e-2d2f-4548-9b00-2410160cea44": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/a7FQ797ci44",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "0e6d063c-e47f-4cf0-8507-95e091672cb7": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "2da2604a-8526-4b5a-bb2e-0a22aa4c7ff7": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        }
+      },
+      "block_order": [
+        "cf881b6b-52f6-4ad5-8b22-16ecc80b3bd7",
+        "662cbd3e-2d2f-4548-9b00-2410160cea44",
+        "0e6d063c-e47f-4cf0-8507-95e091672cb7",
+        "2da2604a-8526-4b5a-bb2e-0a22aa4c7ff7"
+      ],
+      "settings": {
+        "title": "Drill Videos",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec varius nunc, vel pellentesque ligula.",
+        "text": "A - H",
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "e050a8bc-cf81-4d5f-bf98-9681a6a8f253": {
+      "type": "video-grid",
+      "blocks": {
+        "ba301e05-35ca-42a4-9f2a-460bc0d17575": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "4f5c1f32-b9ea-40da-aee5-3a93c6ffc3d5": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "5ea39ea6-b9ab-4cc3-9ad3-724b5947bc39": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "c5224585-e821-43dd-abfa-0c3520a8452e": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "title": "Video Title 01",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        }
+      },
+      "block_order": [
+        "ba301e05-35ca-42a4-9f2a-460bc0d17575",
+        "4f5c1f32-b9ea-40da-aee5-3a93c6ffc3d5",
+        "5ea39ea6-b9ab-4cc3-9ad3-724b5947bc39",
+        "c5224585-e821-43dd-abfa-0c3520a8452e"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "text": "I - M",
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 45
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "48b233f7-eb42-4640-915a-d329e4897411",
+    "e8dc4cf5-d0e2-4030-b032-994b62808ef5",
+    "435ed37a-99a4-4e5a-9add-c31bfca50de6",
+    "69750647-0ca7-4927-b82c-d180cf12d187",
+    "41c4024a-fe2f-4cf9-bf6a-c51eeda6c3bd",
+    "be362ddc-c410-4827-9972-bbf98621c96d",
+    "a0a21490-8ae5-4723-8d3d-689ab86c82e4",
+    "e050a8bc-cf81-4d5f-bf98-9681a6a8f253"
+  ]
+}

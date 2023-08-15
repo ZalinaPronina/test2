@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "0a80860b-1c37-4e86-956b-c48cdf4737df": {
+          "type": "details",
+          "settings": {
+            "title": "Look Like a PRO",
+            "text": "{{ product.metafields.meta.product_description | metafield_tag }}"
+          }
+        },
+        "5d9486fd-3c7e-4558-bd00-455c70299b61": {
+          "type": "details",
+          "settings": {
+            "title": "Product Details",
+            "text": "{{ product.metafields.meta.product_details | metafield_tag }}"
+          }
+        },
+        "0fee7d23-d92b-435b-9bf2-291a8db31f18": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "title": "Video Title",
+            "video": "https:\/\/www.youtube.com\/watch?v=a7FQ797ci44"
+          }
+        }
+      },
+      "block_order": [
+        "0a80860b-1c37-4e86-956b-c48cdf4737df",
+        "5d9486fd-3c7e-4558-bd00-455c70299b61",
+        "0fee7d23-d92b-435b-9bf2-291a8db31f18"
+      ],
+      "settings": {}
+    },
+    "067e9107-d975-4888-b637-7da59c7e94e0": {
+      "type": "product-image-gallery",
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "image_count": 6
+      }
+    }
+  },
+  "order": [
+    "main",
+    "067e9107-d975-4888-b637-7da59c7e94e0"
+  ]
+}

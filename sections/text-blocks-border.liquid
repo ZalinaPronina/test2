@@ -1,0 +1,217 @@
+<style>
+  #{{section.id}}.TextBlocks{
+    background-color: {{section.settings.color}};
+    padding: {{section.settings.padding_top}}px 63px {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.TextBlocks{
+      padding: {{section.settings.padding_top_mobile}}px 11vw {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+  [data-text-block="container"]{
+    max-width: {{section.settings.width}}px;
+    margin: 0 auto;
+  }
+</style>
+<section data-component="TextBlocksBorder" class="TextBlocks" id="{{section.id}}">
+  <div data-text-block="container" class="overflow-hidden" data-slider-count="{{section.settings.number}}">
+    <div class="TextBlocks__Wrapper">
+      {% for block in section.blocks %}
+        <div class="TextBlocks_Slide">
+        {% if block.settings.subtitle != blank %}
+          <h5 style="font-family: '{{ block.settings.subtitle_font }}', sans-serif; font-size:{{block.settings.subtitle_size}}px">
+            {{ block.settings.subtitle }}
+          </h5>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h2 style="font-family: '{{ block.settings.title_font }}', sans-serif; font-size:{{block.settings.title_size}}px">
+            {{ block.settings.title }}
+          </h2>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="TextBlocks_Slide__Text" style="font-family: '{{ block.settings.text_font }}', sans-serif; font-size:{{block.settings.text_size}}px">
+            {{ block.settings.text }}
+          </div>
+        {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="TextBlocks__Pagination"></div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Text Blocks Border",
+  "settings": [
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Container px",
+      "min": 900,
+      "max": 1400,
+      "unit": "px",
+      "step": 20,
+      "default": 900
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Background"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "number",
+      "label": "Count slider",
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "select",
+          "id": "subtitle_font",
+          "label": "Font Family",
+          "options": [
+            {
+              "value": "Anton",
+              "label": "Anton"
+            },
+            {
+              "value": "Montserrat",
+              "label": "Montserrat"
+            }
+          ],
+          "default": "Montserrat"
+        },
+        {
+          "type": "range",
+          "id": "subtitle_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Subtitle Size",
+          "default": 16
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "select",
+          "id": "title_font",
+          "label": "Font Family",
+          "options": [
+            {
+              "value": "Anton",
+              "label": "Anton"
+            },
+            {
+              "value": "Montserrat",
+              "label": "Montserrat"
+            }
+          ],
+          "default": "Montserrat"
+        },
+        {
+          "type": "range",
+          "id": "title_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Title Size",
+          "default": 40
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_font",
+          "label": "Font Family",
+          "options": [
+            {
+              "value": "Anton",
+              "label": "Anton"
+            },
+            {
+              "value": "Montserrat",
+              "label": "Montserrat"
+            }
+          ],
+          "default": "Montserrat"
+        },
+        {
+          "type": "range",
+          "id": "text_size",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Text Size",
+          "default": 16
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Blocks Border"
+    }
+  ]
+}
+{% endschema %}

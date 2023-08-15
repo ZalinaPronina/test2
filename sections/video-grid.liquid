@@ -1,0 +1,139 @@
+<style>
+  #{{section.id}}.section-video-grid{
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.section-video-grid{
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<div class="section-video-grid max-w-screen-1100 px-3.5 mx-auto xs:px-7.5 lg:px-[25px]" id="{{section.id}}">
+  {% if section.settings.title != blank or section.settings.text != blank %}
+    <div class="text-center section-video-grid-title">
+      <h4>{{ section.settings.title }}</h4>
+      <p>{{ section.settings.subtitle }}</p>
+    </div>
+  {% endif %}
+  <div class="video-grid-wrapper">
+    <p class="section-video-grid__letters">{{ section.settings.text }}</p>
+  </div>
+  <div class="video-grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+    {% for block in section.blocks %}
+      {% if block.settings.video != blank %}
+        <div class="video-grid-item">
+          <div class="relative" data-component="ModalVideo" data-video-id="{{ block.settings.video.id }}">
+            <iframe src="https://www.youtube.com/embed/{{ block.settings.video.id }}?rel=0&amp;showinfo=0&amp" allowfullscreen="" class="video__media"></iframe>
+            <button
+              type="button"
+              class="absolute z-2 text-brand-tertiary"
+              data-modal-trigger="text-with-video-{{ block.id }}"
+              aria-label="Play video"
+            >
+            </button>
+          </div>
+          <h6>{{ block.settings.title }}</h5>
+          <p>{{ block.settings.text }}</p>
+        </div>
+        <div class="Modal" data-component="Modal" data-modal-id="text-with-video-{{ block.id }}">
+          <div class="Modal__Overlay" data-modal-overlay></div>
+          <div class="Modal__Inner max-w-[800px] !bg-transparent">
+            <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+              {%
+                render "icons",
+                icon: "close",
+                size: "large"
+              %}
+            </button>
+    
+            <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.video_iframe != blank %}
+        <iframe class="video__media" src="{{block.settings.video_iframe}}?autoplay=0&loop=1&muted=1"
+        frameborder="0" playsinline controls ></iframe>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Letters"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video",
+          "accept": [
+            "youtube"
+          ],
+          "label": "Video"
+        },
+        {
+          "type": "video_url",
+          "id": "video_iframe",
+          "accept": [
+            "vimeo"
+          ],
+          "label": "Video Iframe"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Video Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Video Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Grid"
+    }
+  ]
+}
+{% endschema %}

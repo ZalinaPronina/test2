@@ -1,0 +1,119 @@
+<style>
+  .text-info{
+    padding: 50px 88px;
+    border-radius: 16px;
+    border: 2px solid #43CD9E;
+    margin-bottom: 107px;
+  }
+  .text-info-blocks-flex{
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+  }
+  .text-info__title{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 124%;
+    color: #012130;
+    text-align: center;
+    margin: 0 auto 50px;
+  }
+  .text-info-block{
+    width: 50%;
+  }
+  .text-info-block h4, .text-info-block h4 >*{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 170%;
+    margin-bottom: 35px;
+  }
+  .text-info-block >*{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+  }
+  .text-info-block .text p:not(:last-child){
+    margin-bottom: 25px;
+  }
+  .text-info-block ul{
+    padding-left: 15px;
+    list-style-type: disc;
+  }
+  .text-info-block li{
+    padding-left: 5px;
+  }
+  .text-info-block li:not(:last-child){
+    margin-bottom: 30px;
+  }
+  @media (max-width: 767px) {
+    .text-info-blocks-flex{
+      flex-direction: column;
+    }
+    .text-info-block{
+      width: 100%;
+    }
+    .text-info{
+      padding: 50px 24px;
+      margin-bottom: 50px;
+    }
+  }
+</style>
+<div class="container-main">
+  <div class="text-info">
+    {% if section.settings.title != blank %}
+      <h2 class="text-info__title">{{section.settings.title}}</h2>
+    {% endif %}
+    <div class="text-info-blocks-flex">
+      {% for block in section.blocks %}
+          <div class="text-info-block">
+            {% if block.settings.title != blank %}
+                <h4>{{block.settings.title}}</h4>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="text">{{block.settings.text}}</div>
+            {% endif %}
+          </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Text Info",
+    "settings": [
+	    {
+		    "type": "text",
+		    "id": "title",
+		    "label": "Title"
+	    }
+    ],
+		"blocks": [
+			{
+				"type": "block",
+				"name": "Text Block",
+				"settings": [
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+						"type": "richtext",
+						"id": "text",
+						"label": "Description"
+					}
+				]
+      }
+		],
+    "presets": [
+      {
+        "name": "Text Info"
+      }
+    ]
+  }
+
+{% endschema %}

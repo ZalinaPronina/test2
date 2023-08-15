@@ -1,0 +1,35 @@
+.CollapsibleContent {
+  button {
+    @apply text-left w-full flex items-center py-4 px-0 text-base font-bold sm:text-24 sm:py-7.5;
+
+    .Icon {
+      @apply shrink-0;
+    }
+
+    .Icon--minus-bold {
+      @apply hidden;
+    }
+
+    &.open {
+      .Icon--minus-bold {
+        @apply block;
+      }
+
+      .Icon--plus-bold {
+        @apply hidden;
+      }
+    }
+  }
+
+  &__Content {
+    @apply absolute opacity-0 overflow-hidden transition-all duration-200 ease-in-out;
+
+    &.init {
+      @apply h-0 opacity-100 static;
+    }
+
+    &.open {
+      @apply h-[var(--content-height)];
+    }
+  }
+}

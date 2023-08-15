@@ -1,0 +1,107 @@
+{
+  "current": {
+    "type_heading_font": "montserrat_n4",
+    "type_body_font": "montserrat_n4",
+    "social_sharing_blog": false,
+    "social_facebook_link": "",
+    "social_instagram_link": "https:\/\/instagram.com\/pitcherogps",
+    "enable_preorder": true,
+    "favicon": "shopify:\/\/shop_images\/GPS_Fav_bb647772-e8c6-4b50-b577-5a49dedfe5b8.png",
+    "landing_pages": "landing",
+    "checkout_logo_image": "shopify:\/\/shop_images\/PH_GPS_Logo_Blue_1da0693e-e366-4506-b38f-cb8a2bd16179.png",
+    "checkout_logo_size": "small",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_button_color": "#d60000",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "894b0b13-f715-444d-ab03-b2089217702d": {
+            "type": "action",
+            "settings": {
+              "style": "link",
+              "mobile": false,
+              "index": false,
+              "url": "\/tools\/recurring\/get-subscription-access",
+              "text": "Login"
+            }
+          },
+          "2a4c03f8-06a0-4b04-aaea-5fb3b61d20e8": {
+            "type": "action",
+            "settings": {
+              "style": "sale",
+              "mobile": true,
+              "index": true,
+              "url": "shopify:\/\/products\/new-gps-player-bundle",
+              "text": "Pre Order"
+            }
+          }
+        },
+        "block_order": [
+          "894b0b13-f715-444d-ab03-b2089217702d",
+          "2a4c03f8-06a0-4b04-aaea-5fb3b61d20e8"
+        ],
+        "settings": {
+          "transparent": true,
+          "search": true,
+          "account": false,
+          "cart": true,
+          "hide_cart_index": true,
+          "show_announcement": false,
+          "announcement": "",
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "menu_main": "new-menu",
+          "menu_mobile": "mobile-menu"
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "show_section": false,
+          "image": "shopify:\/\/shop_images\/New_Footer_Image_1.png",
+          "image_decoration": false,
+          "title": "<p>Register for Priority Access<\/p>",
+          "text": "<p>Register your interest in the New GPS Player Vest today.<\/p>",
+          "form_tag": "footer-priority-access"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "e975d3cd-3778-4c40-8be6-ed919bf29354": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo.png"
+            }
+          },
+          "a1ea298d-da72-48e7-b361-ce5039b86779": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer-1"
+            }
+          },
+          "e64b438c-41b1-4b38-bf73-aa0f9b07d064": {
+            "type": "contacts",
+            "settings": {
+              "text": "<p>PitcheroGPS is part of the Pitchero Group of companies.<br\/><a href=\"https:\/\/www.pitchero.com\" target=\"_blank\" title=\"https:\/\/www.pitchero.com\"><strong>www.pitchero.com<\/strong><\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "e975d3cd-3778-4c40-8be6-ed919bf29354",
+          "a1ea298d-da72-48e7-b361-ce5039b86779",
+          "e64b438c-41b1-4b38-bf73-aa0f9b07d064"
+        ],
+        "settings": {
+          "show_payments": true,
+          "show_social": true,
+          "credits_text": "© 2022 Pitchero GPS",
+          "menu": "footer-1"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

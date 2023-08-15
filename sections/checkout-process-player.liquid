@@ -1,0 +1,325 @@
+<div data-component="CheckoutProcessPlayer" data-section-id="{{ section.id }}">
+  <div class="bg-neutral-100 hidden" data-checkout-process="navigation">
+    <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+      <header class="py-3 sm:py-11">
+        <ul class="flex flex-wrap items-center justify-center gap-8 sm:gap-18">
+          {% for i in (1..3) %}
+            <li>
+              <button
+                type="button"
+                data-checkout-process="trigger"
+                data-index="{{ i }}"
+                data-ui="{% if forloop.first %}active{% endif %}"
+                class="w-7 h-7 rounded-full bg-white border-2 border-solid p-0 flex items-center justify-center text-11 font-bold data-[ui=active]:text-white data-[ui=active]:bg-brand-accent data-[ui=active]:border-brand-accent sm:text-20 sm:w-15 sm:h-15"
+                {% unless forloop.first %}disabled{% endunless %}>
+                {{ i }}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
+      </header>
+    </div>
+
+    <div id="scroll-to-here"></div>
+  </div>
+
+  <section
+    class="pt-4 pb-8 sm:py-14 hidden"
+    data-checkout-process="step"
+    data-index="1">
+    {% if section.settings.membership_title != blank %}
+      <header class="mb-5 text-center sm:mb-14">
+        <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+          <h2 class="text-24 font-body tracking-normal">
+            {{ section.settings.membership_title }}
+          </h2>
+        </div>
+      </header>
+    {% endif %}
+
+    <div data-checkout-process="membership">
+      <div class="max-w-4xl mx-auto px-5 lg:px-14">
+        <div class="flex flex-wrap items-end justify-center gap-9 sm:gap-11">
+          {% for membership_product in product.metafields.membership.products.value %}
+            {% liquid
+              assign selling_plan_group = membership_product.selling_plan_groups.first
+              assign selling_plan = selling_plan_group.selling_plans.first
+              assign membership_variant = membership_product.variants.first
+              assign membership_variant_paid = membership_variant
+
+              for variant in membership_product.variants
+                if settings.enable_preorder
+                  if variant.metafields.membership.pre_order
+                    assign membership_variant = variant
+                    break
+                  endif
+                else
+                  unless variant.metafields.membership.pre_order
+                    assign membership_variant = variant
+                    break
+                  endunless
+                endif
+              endfor
+            %}
+            <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+              <input
+                type="radio"
+                name="membership"
+                id="membership-{{ membership_product.id }}"
+                value="{{ membership_variant.id }}"
+                data-selling-plan-id="{{ selling_plan.id }}"
+                class="sr-only peer"
+                {% if forloop.first %}checked{% endif %} />
+
+              {% if selling_plan_group.name contains "Annual" %}
+                <div class="selling-plan-group uppercase font-bold text-center text-white p-3 bg-brand-primary peer-checked:bg-brand-accent">
+                  {{ "checkout_process.membership.best_value" | t }}
+                </div>
+              {% endif %}
+
+              <label for="membership-{{ membership_product.id }}" class="block cursor-pointer border-2 border-solid peer-checked:border-brand-accent peer-checked:shadow-checked">
+                <div class="text-center py-4 px-7.5 sm:py-7.5">
+                  <h3 class="text-16 font-body tracking-normal sm:text-24">
+                    {{ membership_product.title }}
+                  </h3>
+
+                  {% if selling_plan_group.name contains "Annual" %}
+                    <div class="flex items-center justify-center text-left space-x-2 mt-2">
+                      <span class="font-heading text-50 sm:text-72">
+                        {{ membership_variant_paid.price | divided_by: 12 | money_without_trailing_zeros }}
+                      </span>
+
+                      <span class="text-brand-accent text-50 sm:text-60">/</span>
+
+                      <span class="font-bold text-16 leading-none sm:text-24">
+                        {{ "checkout_process.membership.per_month_html" | t }}
+                      </span>
+                    </div>
+
+                    <div class="text-neutral-500 mt-2">
+                      {% assign annual_price = membership_variant_paid.price | money_without_trailing_zeros %}
+                      {{ "checkout_process.membership.annual.billed" | t: price: annual_price }}
+                    </div>
+
+                    <div class="text-brand-sale text-20 uppercase font-semibold">
+                      {{ "checkout_process.membership.saving" | t: value: "50%" }}
+                    </div>
+                  {% elsif selling_plan_group.name contains "Monthly" %}
+                    <div class="flex items-center justify-center text-left space-x-2 mt-2">
+                      <span class="font-heading text-50 sm:text-72">
+                        {{ membership_variant_paid.price | money_without_trailing_zeros }}
+                      </span>
+
+                      <span class="text-brand-accent text-50 sm:text-60">/</span>
+
+                      <span class="font-bold text-16 leading-none sm:text-24">
+                        {{ "checkout_process.membership.per_month_html" | t }}
+                      </span>
+                    </div>
+
+                    <div class="text-neutral-500 mt-2">
+                      {% assign monthly_price = membership_variant_paid.price | money_without_trailing_zeros %}
+                      {{ "checkout_process.membership.monthly.billed" | t: price: monthly_price }}
+                    </div>
+
+                    <div class="text-neutral-500 mt-1">
+                      {% assign monthly_total_price = membership_variant_paid.price | times: 12 | money_without_trailing_zeros %}
+                      {{ "checkout_process.membership.total" | t: price: monthly_total_price }}
+                    </div>
+                  {% else %}
+                    <div class="flex items-center justify-center text-left space-x-4 mt-2">
+                      <span class="font-heading text-72">
+                        {{ membership_variant_paid.price | money_without_trailing_zeros }}
+                      </span>
+                    </div>
+                  {% endif %}
+                </div>
+              </label>
+            </div>
+          {% else %}
+            <div class="grow basis-0 min-w-0 sm:w-1/2 sm:max-w-sm">
+              <div class="text-center p-7.5">
+                {{ "checkout_process.membership.empty" | t }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div data-checkout-process="gift">
+      <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+        <div class="flex flex-wrap items-end justify-center gap-5 sm:gap-11">
+          {% if product.metafields.membership.gift.value != blank %}
+            {% assign gift_membership_product = product.metafields.membership.gift.value %}
+            {% assign gift_membership_variant = gift_membership_product.variants.first %}
+            {% for variant in gift_membership_product.variants %}
+              {% if variant.metafields.membership.gift %}
+                {% assign gift_membership_variant = variant %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+              <input
+                type="radio"
+                name="gift-membership"
+                id="gift-membership-{{ gift_membership_product.id }}"
+                value="{{ gift_membership_variant.id }}"
+                data-selling-plan-id=""
+                class="sr-only peer"
+                checked />
+
+              <label for="gift-membership-{{ gift_membership_product.id }}" class="block cursor-pointer border-2 border-solid peer-checked:border-brand-accent peer-checked:shadow-checked">
+                <div class="text-center py-4 px-7.5 sm:py-7.5">
+                  <h3 class="text-16 font-body tracking-normal sm:text-24">
+                    {{ "checkout_process.membership.gift.title" | t }}
+                  </h3>
+
+                  <div class="flex items-center justify-center text-left space-x-2 mt-2">
+                    <span class="font-heading text-50 sm:text-72">
+                      {{ gift_membership_variant.price | plus: product.price | money_without_trailing_zeros }}
+                    </span>
+                  </div>
+
+                  <div class="text-left mt-4 xs-down:-mx-1 sm:px-4">
+                    <ul class="font-medium text-neutral-400 space-y-1">
+                      <li>
+                        {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+
+                        <span>{{ product.title | remove: "New" }}</span>
+                        <span>({{ product.price | money_without_trailing_zeros }})</span>
+                      </li>
+
+                      <li>
+                        {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+
+                        <span>{{ "checkout_process.membership.gift.info" | t }}</span>
+                        <span>({{ gift_membership_variant.price | money_without_trailing_zeros }})</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </label>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% capture gift_message %}
+        {{ "checkout_process.membership.gift.message" | t }}{% endcapture %}
+
+      {% if gift_message != " " %}
+        <div class="hidden max-w-2xl mx-auto px-5 sm:-mb-5 lg:px-12" data-checkout-process="gift-message">
+          <div class="rte font-medium mt-6 text-center">{{ gift_message }}</div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="text-center mt-5 sm:mt-14">
+      <div class="max-w-2xl mx-auto px-5 lg:px-10">
+        {% if section.settings.agree_checkbox %}
+          <label class="block space-x-1.5 cursor-pointer text-14 font-semibold text-neutral-500">
+            <input
+              type="checkbox"
+              name="agree"
+              id="agree"
+              class="rounded-full">
+            <span class="sm-down:text-14 [&_a]:underline">{{ "checkout_process.membership.agree_checkbox_html" | t }}</span>
+          </label>
+        {% endif %}
+
+        <button
+          type="button"
+          class="Button Button--sale mt-6 !w-auto !uppercase sm:mt-15 sm:!h-15"
+          data-checkout-process-next="1"
+          disabled>
+          {{ "checkout_process.membership.next_step" | t }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="hidden py-8 sm:py-14"
+    data-checkout-process="step"
+    data-index="2">
+    {% if section.settings.bundle_title != blank %}
+      <header class="mb-5 text-center sm:mb-14">
+        <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+          <h2 class="text-24 font-body tracking-normal">
+            {{ section.settings.bundle_title }}
+          </h2>
+        </div>
+      </header>
+    {% endif %}
+
+    <div data-checkout-process="bundle">
+      <div class="max-w-screen-md mx-auto px-3.5 lg:px-5">
+        <div>
+          {% assign bundle_product_image = product.metafields.bundle.product_image %}
+
+          <div>
+            <div class="flex flex-wrap items-center">
+              {% if bundle_product_image != blank %}
+                <div class="shrink-0 w-3/4 mx-auto sm:w-1/2">
+                  <div class="aspect-w-1 aspect-h-1">
+                    {{ bundle_product_image | image_url: width: 1000 | image_tag: class: "object-cover" }}
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="w-full sm:w-1/2">
+                {% form "product", product, class: "w-full" %}
+                  {% render "product-item-options", product: product, bundle: true, accent_color: "sale" %}
+                {% endform %}
+
+                <div class="text-center mt-8 sm:mt-14">
+                  <button
+                    type="button"
+                    class="Button Button--sale !w-auto !uppercase sm:!h-15"
+                    data-checkout-process-next="2"
+                    disabled>
+                    {{ "checkout_process.membership.next_step" | t }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Main",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Membership"
+      },
+      {
+        "type": "text",
+        "id": "membership_title",
+        "label": "Heading",
+        "default": "Choose Membership"
+      },
+      {
+        "type": "checkbox",
+        "id": "agree_checkbox",
+        "label": "Enbale agree checkbox",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Bundle"
+      }, {
+        "type": "text",
+        "id": "bundle_title",
+        "label": "Heading",
+        "default": "Choose Size"
+      }
+    ]
+  }
+{% endschema %}

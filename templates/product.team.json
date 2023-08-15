@@ -1,0 +1,431 @@
+{
+  "sections": {
+    "navigation": {
+      "type": "product-navigation",
+      "blocks": {
+        "c76b2a9b-3432-41db-8b04-80681b5ee8a6": {
+          "type": "product",
+          "settings": {
+            "product": "new-gps-player-bundle",
+            "image": "shopify:\/\/shop_images\/Frame_467_20ed9b04-8a55-4624-83fd-71e9854bea28.png",
+            "text": ""
+          }
+        },
+        "e89fe0b9-cf0d-4fcb-b227-097e00093b42": {
+          "type": "product",
+          "settings": {
+            "product": "new-gps-team-bundle",
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "text": ""
+          }
+        },
+        "f0fb230e-d3d8-4133-a475-6875013cb863": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "original-team-bundle",
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "icon": "shopify:\/\/shop_images\/Group_95_59265f24-a10b-4d3d-8312-8bac17e1506f.png",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "c76b2a9b-3432-41db-8b04-80681b5ee8a6",
+        "e89fe0b9-cf0d-4fcb-b227-097e00093b42",
+        "f0fb230e-d3d8-4133-a475-6875013cb863"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product-checkout",
+      "settings": {
+        "enable_checkout_process": true,
+        "checkout_process_page": "checkout-process-team",
+        "checkout_process_page_gift": "",
+        "button": "SECURE PRIORITY ACCESS",
+        "button_url": "https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2",
+        "button_color": "",
+        "button_background_color": ""
+      }
+    },
+    "81412b0e-a831-4940-a391-b38462bfddb0": {
+      "type": "how-to-order",
+      "blocks": {
+        "a8ee8ebc-73ff-4a7d-a78d-fb3c20839580": {
+          "type": "step",
+          "settings": {
+            "title": "Today",
+            "text": "Select tracker quantity & pay deposit",
+            "bold_text": "£200",
+            "bold_text_separator": ""
+          }
+        },
+        "850b234e-3c1a-423f-b7f6-2c7c94e88dfe": {
+          "type": "step",
+          "settings": {
+            "title": "BEFORE July 2023",
+            "text": "Pay invoice by bank transfer or card payment",
+            "bold_text": "",
+            "bold_text_separator": ""
+          }
+        },
+        "c24d9ba7-8307-4fc0-bb52-fb04db527c59": {
+          "type": "step",
+          "settings": {
+            "title": "July 2023",
+            "text": "Team Bundle delivered, membership begins",
+            "bold_text": "",
+            "bold_text_separator": ""
+          }
+        }
+      },
+      "block_order": [
+        "a8ee8ebc-73ff-4a7d-a78d-fb3c20839580",
+        "850b234e-3c1a-423f-b7f6-2c7c94e88dfe",
+        "c24d9ba7-8307-4fc0-bb52-fb04db527c59"
+      ],
+      "settings": {
+        "top_spacing": false,
+        "bottom_spacing": false,
+        "title": "How to Order",
+        "text": "",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "cc5488a3-bd26-4984-87bb-79c120c79b96": {
+      "type": "offer-app",
+      "blocks": {
+        "d36f4420-a795-45db-9b96-b7c9f44e7476": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The PitcheroGPS Player vest records your activity during a training session or game. When the activity ends, the recorded data is transferred in seconds to the PitcheroGPS App on your mobile phone via Bluetooth. Made for Apple and Android phones, the App displays your performance using intuitive, easy-to-read charts and tables.<\/p>"
+          }
+        },
+        "7ba8d71f-2941-4a3c-9068-1c66f019dd6e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Compare your latest performance to your Personal Best and create a journal tracking your progress and achievements over time. Enjoy a little competition? Submit your metrics to the #HEROSPEED Challenge and compare your Top Speed with team mates and rivals, week to week, game to game.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d36f4420-a795-45db-9b96-b7c9f44e7476",
+        "7ba8d71f-2941-4a3c-9068-1c66f019dd6e"
+      ],
+      "settings": {
+        "top_spacing": true,
+        "bottom_spacing": true,
+        "video": "",
+        "title": "",
+        "sub_title": "PitcheroGPS Web App",
+        "text": "",
+        "button_text": "PRE-ORDER",
+        "button_url": "shopify:\/\/pages\/choose-membership"
+      }
+    },
+    "25929c2a-bfef-46c4-b094-ce404f69a669": {
+      "type": "logo-list",
+      "blocks": {
+        "cb17c1d7-14b1-404f-aa6a-4595a6b98a10": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6df60785d4d2fd1aae74aa8442e9ba22.png",
+            "image_width": 72,
+            "title": "Company Name"
+          }
+        },
+        "317dc3e4-84b1-43f1-8253-b4aa268228bd": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/b2a1683f4ceb4971fd0aece23416daac.png",
+            "image_width": 64,
+            "title": "Company Name"
+          }
+        },
+        "903c542b-d32a-43c1-b8c4-ec4c97e28b20": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/e439dcc3e065c5acb735bd486237c854.png",
+            "image_width": 56,
+            "title": "Company Name"
+          }
+        },
+        "5ffd87b9-1e74-4f6f-944d-86a839d32994": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/315d976e41da79cee34f3f85a8f0dfc5.png",
+            "image_width": 52,
+            "title": "Company Name"
+          }
+        },
+        "eb585d70-60fb-42eb-b17f-96ef57e1a596": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cdd93260fb50c8fcca2e7f46a27a4ab0.png",
+            "image_width": 48,
+            "title": "Company Name"
+          }
+        },
+        "70701910-4326-483c-a23b-80ad22a40fe5": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6db9582867961177c148e988ec782582.png",
+            "image_width": 60,
+            "title": "Company Name"
+          }
+        }
+      },
+      "block_order": [
+        "cb17c1d7-14b1-404f-aa6a-4595a6b98a10",
+        "317dc3e4-84b1-43f1-8253-b4aa268228bd",
+        "903c542b-d32a-43c1-b8c4-ec4c97e28b20",
+        "5ffd87b9-1e74-4f6f-944d-86a839d32994",
+        "eb585d70-60fb-42eb-b17f-96ef57e1a596",
+        "70701910-4326-483c-a23b-80ad22a40fe5"
+      ],
+      "settings": {
+        "top_spacing": false,
+        "bottom_spacing": false,
+        "title": "Our Customers",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "ebe5b13c-50b0-4003-8da0-e0862c93989f": {
+      "type": "metrics-grid",
+      "blocks": {
+        "fb660dbe-d5c1-459c-9e43-0a5be5b2a992": {
+          "type": "column",
+          "settings": {
+            "grid_spacing": "small",
+            "top_padding": false,
+            "image": "shopify:\/\/shop_images\/Frame_777.png",
+            "image_size": "small",
+            "image_position": "left",
+            "icon": "shopify:\/\/shop_images\/Icon_Heatmap.png",
+            "title": "Maps",
+            "text": "<p>The Web App uses different map styles and overlays to give coaches deeper analysis capabilities. View Heatmaps for each player to understand how much time they spent in certain areas of the pitch. <\/p><p>Use the Activity Map for a detailed look at a player's movement throughout the game. Overlay High-Speed-Running Events to see where players were pushing themselves toward full speed.<\/p>"
+          }
+        },
+        "dda11493-34c1-4bef-97b0-8c8a83cb0706": {
+          "type": "column",
+          "settings": {
+            "grid_spacing": "medium",
+            "top_padding": false,
+            "image": "shopify:\/\/shop_images\/Frame_746.png",
+            "image_size": "small",
+            "image_position": "right",
+            "icon": "shopify:\/\/shop_images\/Icon_Track_e7938454-c768-4b21-a96b-3c4b826b4350.png",
+            "title": "Trends",
+            "text": "<p>Uploaded sessions are stored in a team's timeline as charts and graphs. Coaches can view all team or individual sessions over a specific period and monitor progress. The data helps track changes in intensity and monitor players returning from injury. The collection of data informs decisions.<\/p>"
+          }
+        },
+        "ebcb7715-610d-4fb6-993f-1f51ea0f5376": {
+          "type": "column",
+          "settings": {
+            "grid_spacing": "medium",
+            "top_padding": false,
+            "image": "shopify:\/\/shop_images\/Frame_746_84a9a425-f4a8-400f-bda1-f5c12ce6baca.png",
+            "image_size": "small",
+            "image_position": "left",
+            "icon": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "Speed Zones",
+            "text": "<p>Do you want to see who’s spending most of the game walking or doing the most sprinting? Speed Zones show the total amount of distance players covered within specific speed brackets, a great way to see who is and isn’t putting in maximum effort. Speed Zones are also a useful training aid for coaches to monitor the intensity of their sessions - players might need longer to recover after a particularly high-tempo training.<\/p>"
+          }
+        },
+        "220c0a55-a7b2-4314-8739-31110359c0fc": {
+          "type": "column",
+          "settings": {
+            "grid_spacing": "small",
+            "top_padding": true,
+            "image": "shopify:\/\/shop_images\/Mask_group_0d617b50-35d9-46c9-93c1-f97e74634952.png",
+            "image_size": "medium",
+            "image_position": "right",
+            "icon": "shopify:\/\/shop_images\/Icon_Compete.png",
+            "title": "Comparisons",
+            "text": "<p>Player comparisons allow coaches to compare players' performance across multiple sessions and matches with greater flexibility. This helps coaches review a player's data and understand factors that impact performance. The feature also helps coaches see who has the biggest impact on the team.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fb660dbe-d5c1-459c-9e43-0a5be5b2a992",
+        "dda11493-34c1-4bef-97b0-8c8a83cb0706",
+        "ebcb7715-610d-4fb6-993f-1f51ea0f5376",
+        "220c0a55-a7b2-4314-8739-31110359c0fc"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "show_border": true,
+        "title": "Team Metrics",
+        "text": "<p>The PitcheroGPS Player Vest records all activity during a training session or match. For ease of use and quick comparisons, the activity is processed and separated into 3 categories; SPEED, DISTANCE and INTENSITY providing a detailed overview of performance, player health and fatigue.<\/p>"
+      }
+    },
+    "65f8915f-9dd3-4432-8ffd-86e718ae32d1": {
+      "type": "features",
+      "blocks": {
+        "96845afb-a12a-4461-b1d0-d19d97be4fed": {
+          "type": "feature",
+          "settings": {
+            "title": "SIZE",
+            "text": "<p>Designed to meet FIFA and World Rugby requirements 76mm x 45mm x 20mm.<\/p>"
+          }
+        },
+        "142b777c-b13a-448d-9676-c0a71c56d65f": {
+          "type": "feature",
+          "settings": {
+            "title": "WEIGHT",
+            "text": "<p>Lightweight weighing only 51 Grams<\/p>"
+          }
+        },
+        "50a9b205-d588-4ab7-87ee-9238ed3c198f": {
+          "type": "feature",
+          "settings": {
+            "title": "BATTERY LIFE",
+            "text": "<p>5 hours of battery life captures every minute played.<\/p>"
+          }
+        },
+        "f5626e81-8904-4978-b881-b947ab280c0c": {
+          "type": "feature",
+          "settings": {
+            "title": "MOTION PROCESSOR",
+            "text": "<p>3-axis accelerometer and 3-axis gyroscope track your every twist and turn.<\/p>"
+          }
+        },
+        "ad54cc74-50cf-4378-ab1c-2118595c2960": {
+          "type": "feature",
+          "settings": {
+            "title": "DISPLAY",
+            "text": "<p>Crystal clear 1.14\" LCD screen.<\/p>"
+          }
+        },
+        "8bc3b02e-106c-4cb8-b3e6-c3a05edb32e4": {
+          "type": "feature",
+          "settings": {
+            "title": "CHARGE TIME",
+            "text": "<p>Full battery charge in 30 minutes.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "96845afb-a12a-4461-b1d0-d19d97be4fed",
+        "142b777c-b13a-448d-9676-c0a71c56d65f",
+        "50a9b205-d588-4ab7-87ee-9238ed3c198f",
+        "f5626e81-8904-4978-b881-b947ab280c0c",
+        "ad54cc74-50cf-4378-ab1c-2118595c2960",
+        "8bc3b02e-106c-4cb8-b3e6-c3a05edb32e4"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "image": "shopify:\/\/shop_images\/7a74acc63e8f525cf748022b1bc9f498.png",
+        "image_shadow": true,
+        "title": "World Class Digital Innovation"
+      }
+    },
+    "6f867fb0-4716-4376-b4ba-5f7c3b0343c4": {
+      "type": "hero-video",
+      "blocks": {
+        "70c5011b-e652-4574-89de-56be94c09cd5": {
+          "type": "button",
+          "settings": {
+            "style": "sale",
+            "text": "BOOK YOUR PLACE TODAY",
+            "url": "shopify:\/\/pages\/hero"
+          }
+        },
+        "6238977a-eb78-454d-b7dd-d09e1e3e1c89": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The search for the fastest player in grassroots sport. <strong>ALL players. ALL ages. ALL competitions.<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "70c5011b-e652-4574-89de-56be94c09cd5",
+        "6238977a-eb78-454d-b7dd-d09e1e3e1c89"
+      ],
+      "settings": {
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Group_120.jpg",
+        "image_decoration": false,
+        "title": "#HERO SPEED CHALLENGE",
+        "title_as_h1": false,
+        "sub_title": "LAUNCHING JULY 2023"
+      }
+    },
+    "c17c0d64-0f05-4156-a9cf-5398171985ec": {
+      "type": "media-slider",
+      "blocks": {
+        "b0501070-382a-486f-aeb4-3390a75e2215": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_04.jpg"
+          }
+        },
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_03.jpg"
+          }
+        },
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_01.jpg"
+          }
+        },
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_07.jpg"
+          }
+        },
+        "ccca7892-99ac-4e95-a91d-82412ba51db2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_05.jpg"
+          }
+        },
+        "b24bfef8-2cfc-4d65-9a4c-c53b74930c8b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_06.jpg"
+          }
+        },
+        "4f20eb8c-7920-4808-b5a1-d16cb90f730b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_02.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "b0501070-382a-486f-aeb4-3390a75e2215",
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-0",
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-2",
+        "template--15660718358733__c17c0d64-0f05-4156-a9cf-5398171985ec-166600327916e7c9e8-1",
+        "ccca7892-99ac-4e95-a91d-82412ba51db2",
+        "b24bfef8-2cfc-4d65-9a4c-c53b74930c8b",
+        "4f20eb8c-7920-4808-b5a1-d16cb90f730b"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    }
+  },
+  "order": [
+    "navigation",
+    "main",
+    "81412b0e-a831-4940-a391-b38462bfddb0",
+    "cc5488a3-bd26-4984-87bb-79c120c79b96",
+    "25929c2a-bfef-46c4-b094-ce404f69a669",
+    "ebe5b13c-50b0-4003-8da0-e0862c93989f",
+    "65f8915f-9dd3-4432-8ffd-86e718ae32d1",
+    "6f867fb0-4716-4376-b4ba-5f7c3b0343c4",
+    "c17c0d64-0f05-4156-a9cf-5398171985ec"
+  ]
+}

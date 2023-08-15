@@ -1,0 +1,49 @@
+.OfferApp {
+  @apply overflow-hidden;
+
+  &__Main {
+    @apply relative rounded-2xl overflow-hidden text-white;
+
+    &.hasVideo {
+      background-image: linear-gradient(180deg, #022931 42.19%, #000000 100%);
+    }
+  }
+  .icon-play {
+    width: 170px !important;
+    height: 170px !important;
+  }
+  @media (max-width: 767px) {
+    .icon-play {
+      width: 85px !important;
+      height: 85px !important;
+    }
+  }
+  &__Slider {
+    &Wrapper {
+      @apply flex;
+    }
+
+    &Slide {
+      @apply flex justify-center shrink-0;
+    }
+
+    &Pagination {
+      @apply flex items-center justify-center space-x-2.5 mt-18;
+
+      &.swiper-pagination-lock {
+        @apply hidden;
+      }
+
+      .swiper-pagination-bullet {
+        border-radius: 10px;
+        width: 20px;
+        height: 5px;
+        background-color: #d9d9d9;
+
+        &-active {
+          @apply bg-brand-tertiary;
+        }
+      }
+    }
+  }
+}

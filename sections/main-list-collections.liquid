@@ -1,0 +1,29 @@
+<h1 class="sr-only">{{ "collections.general.title" | t }}</h1>
+
+<div class="flex flex-wrap">
+  {% for collection in collections %}
+    {% unless collection.handle == 'frontpage' %}
+      <a
+        class="w-1/2 sm:w-1/3 relative"
+        href="{{ collection.url }}"
+        title="{{ 'collections.general.link_title' | t: title: collection.title }}"
+      >
+        {% if collection.image != blank or collection.products.first != blank %}
+          {% assign image_url = collection.image | default: collection.products.first.featured_image | img_url: "master" %}
+          {% assign image_alt = collection.image.alt | default: collection.products.first.featured_image.alt | escape %}
+
+          {%
+            render "component-image",
+            src: image_url,
+            alt: image_alt,
+            aspect: "square"
+          %}
+
+          <h3 class="text-white bg-black absolute bottom-4 left-4 z-1 px-4 md-down:text-base md:bottom-8 md:left-8">
+            {{ collection.title }}
+          </h3>
+        {% endif %}
+      </a>
+    {% endunless %}
+  {% endfor %}
+</div>

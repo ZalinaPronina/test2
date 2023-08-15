@@ -1,0 +1,77 @@
+.HeroVideo {
+  .HeroVideo-title-image {
+    max-width: 431px;
+    width: 100%;
+    display: block;
+  }
+  .Hero-image-right {
+    align-items: flex-end;
+  }
+  .Hero-image-right .Hero-text {
+    width: 38%;
+  }
+  .Hero-image-right .Hero-image {
+    left: 0;
+  }
+  .HeroVideo-title-width {
+    max-width: 431px;
+    width: 100%;
+  }
+  .HeroVideo-title-image-btn {
+    height: auto;
+    font-size: 16px;
+  }
+  @media (--smDown) {
+    .Hero-image-right .Hero-text {
+      width: 100%;
+    }
+    .HeroVideo-title-image-btn {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    background: radial-gradient(
+      100.86% 100.86% at 0% 0%,
+      #00a0d1 0%,
+      #012130 100%
+    );
+    .HeroVideo-title-width {
+      max-width: 318px;
+      width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .HeroVideo-title-image {
+      max-width: 300px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .HeroVideo-video-block {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+    .HeroVideo-video-block button {
+      height: 100%;
+      width: 100%;
+    }
+    .HeroVideo-video-block button svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .HeroVideo-video-block button svg path {
+      fill: #ffffff;
+    }
+  }
+
+  &.style {
+    &--black {
+      background: #000;
+    }
+  }
+}

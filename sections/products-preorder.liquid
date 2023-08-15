@@ -1,0 +1,187 @@
+{% if section.blocks.size > 0 or section.settings.title != blank %}
+  <section
+    class="pt-6 pb-7.5 sm:pt-17 sm:pb-14"
+    style="
+      --text-color: {{ section.settings.text_color | default: 'inherit' }};
+      color: var(--text-color);
+      --background-color: {{ section.settings.background_color | default: 'transparent' }};
+      background-color: var(--background-color);
+    "
+  >
+    <div
+      {% if section.settings.top_spacing %}
+        class="pt-[var(--header-height)]"
+      {% endif %}
+    >
+      <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+        {% if section.settings.title != blank or section.settings.text != blank %}
+          <div class="text-center">
+            {% if section.settings.title != blank %}
+              <h2 class="text-48 sm:text-72">{{ section.settings.title }}</h2>
+            {% endif %}
+  
+            {% if section.settings.text != blank %}
+              <div class="rte mt-6 max-w-xl mx-auto sm:mt-10">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="max-w-screen-md mx-auto mt-10 sm:mt-17 md:px-15{% if section.blocks.size == 1 %} sm:flex sm:justify-center{% else %} grid gap-7 sm:grid-cols-2 sm:gap-6{% endif %}">
+            {% for block in section.blocks %}
+              {% if block.settings.title != blank %}
+                {% liquid
+                  assign tag = "div"
+                  if block.settings.button_url != blank
+                    assign tag = "a"
+                  endif
+                %}
+
+                <{{ tag }}
+                  class="flex relative p-7.5 rounded-2xl overflow-hidden border border-solid border-brand-accent bg-[color:var(--background-color)] text-[color:var(--text-color)] min-h-[250px] transition-transform duration-300 ease-card hover:scale-105{% if section.blocks.size == 1 %} sm:max-w-[400px]{% endif %}"
+                  {% if block.settings.button_url != blank %}
+                    href="{{ block.settings.button_url }}"
+                  {% endif %}
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="relative z-1 flex flex-col max-w-[233px]">
+                    <h3 class="uppercase text-48 tracking-wide">
+                      {{ block.settings.title }}
+                    </h3>
+
+                    {% if block.settings.button_text != blank %}
+                      <div class="mt-auto pt-7.5">
+                        <button
+                          type="button"
+                          class="Button Button--sale !uppercase whitespace-nowrap"
+                        >
+                          {{ block.settings.button_text }}
+                        </button>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  {% assign image_classes = "absolute top-0 right-0 !m-0 w-auto h-full" %}
+
+                  {% if block.settings.image != blank %}
+                    {% liquid
+                      if block.settings.image_mobile != blank
+                        assign image_classes = image_classes | append: " sm-down:hidden"
+                      endif
+                    %}
+
+                    {{ block.settings.image | image_url: width: 600 | image_tag:
+                      loading: "lazy",
+                      class: image_classes,
+                      widths: "200, 400, 600",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  {% endif %}
+
+                  {% if block.settings.image_mobile != blank %}
+                    {% liquid
+                      if block.settings.image != blank
+                        assign image_classes = image_classes | append: " sm:hidden"
+                      endif
+                    %}
+
+                    {{ block.settings.image_mobile | image_url: width: 600 | image_tag:
+                      loading: "lazy",
+                      class: image_classes,
+                      widths: "200, 400, 600",
+                      alt: block.settings.image_mobile.alt | escape
+                    }}
+                  {% endif %}
+                </{{ tag }}>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Products Pre-Order",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_spacing",
+      "label": "Add top spacing",
+      "info": "It's useful when site header is transparent",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Pre-Order Products"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#012130"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your product's name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile devices"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Text",
+          "default": "Pre-order now"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

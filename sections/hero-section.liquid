@@ -1,0 +1,362 @@
+<style>
+  .{{section.id}} .hero-image-background{
+    background-image: url({{ section.settings.image_desktop | img_url: '3000x' }});
+  }
+  {% if section.settings.image_mobile != blank %}
+    @media (max-width: 767px) {
+      .{{section.id}} .hero-image-background{
+        background-image: url({{ section.settings.image_mobile | img_url: '1800x' }});
+      }
+    }
+  {% endif %}
+</style>
+{% liquid
+  assign image = section.blocks | where: "type", "image" | first
+  assign text = section.blocks | where: "type", "text" | first
+  assign title = section.blocks | where: "type", "title" | first
+  assign marquee = section.blocks | where: "type", "marquee" | first
+  assign button = section.blocks | where: "type", "button" | first
+%}
+
+<section class="Hero style--{{ section.settings.style }} {{section.id}}{% if section.settings.video != blank %} Hero-video{% endif %}">
+  <div class="hero-container">
+    <div class="hero-image-background hero-image-background-{{ section.settings.style_mobile }}" loading="lazy">
+      <div class="hero-container-title-block container-main">
+        <div class="hero-container-title-block-flex">
+          {% if section.settings.show_image_decoration %}
+            <svg class="sm-down:hidden" width="49" height="73" viewBox="0 0 49 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32.3431 0.159044C31.508 -0.197961 30.5355 0.0605968 29.9889 0.788769L0.394956 40.2478C-0.0542825 40.8464 -0.125572 41.6459 0.208243 42.3147C0.542623 42.9835 1.22608 43.4055 1.97298 43.4055H19.3742L14.8253 70.7023C14.6748 71.6007 15.1586 72.4828 15.9954 72.841C16.2466 72.9479 16.5097 73 16.771 73C17.377 73 17.9677 72.7194 18.3495 72.2113L47.9435 32.7522C48.3916 32.1536 48.4645 31.3542 48.1302 30.6854C47.7958 30.0177 47.1123 29.5945 46.3644 29.5945H28.9646L33.5135 2.29778C33.6629 1.40101 33.1794 0.517236 32.3431 0.159044Z" fill="#00F0FF"/>
+            </svg>        
+          {% endif %}
+          <div class="hero-container-title">
+            <div>
+              {% if section.settings.image_title != blank %}
+                <img src="{{ section.settings.image_title | img_url: '1000x' }}" loading="lazy" alt=""/>
+              {% else %}
+                {% if section.settings.title != blank %}
+                  {% liquid
+                    assign title_tag = "h2"
+                    if section.settings.title_as_h1
+                      assign title_tag = "h1"
+                    endif
+                  %}
+                  <{{ title_tag }} class="h1 uppercase [&_em]:text-brand-tertiary [&_em]:not-italic{% if section.settings.title_not_uppercase_mobile %} xs-down:text-40 xs-down:-mx-5 xs-down:normal-case md:-mr-20{% endif %} {% if section.settings.title_small %} md:text-60 md:-mr-15{% endif %}">
+                  {% if section.settings.show_image_decoration %}
+                    <svg class="sm:hidden" width="32" height="47" viewBox="0 0 32 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.8237 0.102398C20.286 -0.127454 19.6598 0.0390144 19.3079 0.507838L0.254287 25.913C-0.034949 26.2984 -0.0808479 26.8131 0.134074 27.2437C0.34936 27.6743 0.789396 27.946 1.27028 27.946H12.4738L9.54506 45.5206C9.44816 46.0991 9.75962 46.667 10.2984 46.8976C10.4601 46.9665 10.6295 47 10.7978 47C11.1879 47 11.5682 46.8193 11.8141 46.4922L30.8677 21.0871C31.1562 20.7017 31.2032 20.1869 30.9879 19.7563C30.7726 19.3265 30.3326 19.054 29.8511 19.054H18.6485L21.5772 1.47939C21.6734 0.902022 21.362 0.333015 20.8237 0.102398Z" fill="#00F0FF"/>
+                    </svg>     
+                  {% endif %}
+                {{ section.settings.title | replace: "+", "<em>+</em>" }}
+                  </{{ title_tag }}>
+                {% endif %}
+                {% if title.settings.title != blank %}
+                  <div class="text-20 font-heading font-bold uppercase">
+                    {{ title.settings.title }}
+                  </div>
+                {% endif %}
+              {% endif %}
+                {% if text.settings.text != blank %}
+                  <div class="rte font-medium mt-2 max-w-[28em] sm-down:mx-auto{% unless text.settings.show_on_mobile %} md-down:hidden{% endunless %}">
+                    {{ text.settings.text }}
+                  </div>
+                {% endif %}
+            </div>
+            {% if button.settings.text != blank %}
+              <a href="{{ button.settings.url }}" class="hero__container-btn Button Button--{{ button.settings.style }}">
+                {{ button.settings.text }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        {% if section.settings.video != blank %}
+          <div class="hero-container-video-block" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}">
+            <button
+              type="button"
+              data-modal-trigger="hero-section-video-{{ section.id }}"
+              aria-label="Play video"
+            >
+            </button>
+            <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if marquee.settings.text != blank %}
+    <div class="Marquee !absolute bottom-10 z-1 opacity-50{% unless marquee.settings.show_on_mobile %} md-down:hidden{% endunless %}">
+      <div class="Marquee__Inner" aria-hidden="true">
+        <div>
+          {% for i in (1..20) %}
+            {{ marquee.settings.text }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% assign image_object = image.settings.image_mobile | default: image.settings.image %}
+
+{% if image_object != blank and image.settings.show_on_mobile %}
+  <div class="">
+    <div class="">
+      <div class="px-3 py-6 border border-solid border-brand-accent rounded-10">
+        <div class="text-center">
+          {{ image_object | image_url: width: 600 | image_tag:
+            loading: "lazy",
+            class: "w-full",
+            widths: "300, 600",
+            alt: section.settings.image.alt | escape
+          }}
+
+          {% if image.settings.text != blank %}
+            <div class="">
+              {{ image.settings.text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if section.settings.transparent_header %}
+  <style>
+    .hero-container-title-block{
+      padding-top:11vw;
+    }
+  </style>
+{% endif %}
+{% if section.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="hero-section-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "transparent_header",
+      "label": "Transparent site header",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "style_mobile",
+      "label": "Style Mobile",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_decoration",
+      "label": "Show title svg decoration",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image_title",
+      "label": "Image Title",
+      "info": "If an image is selected, the text title will be hidden"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_as_h1",
+      "label": "Heading as H1 tag",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_small",
+      "label": "Small heading",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_not_uppercase_mobile",
+      "label": "Heading in lowercase on mobile",
+      "default": false
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "marquee",
+      "name": "Marquee text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_on_mobile",
+          "label": "Show on mobile devices",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "settings": {
+        "title": "Hero Section"
+      }
+    }
+  ]
+}
+{% endschema %}

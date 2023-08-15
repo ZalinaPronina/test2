@@ -1,0 +1,56 @@
+.video-grid {
+  display: grid;
+  grid-gap: 60px;
+}
+.video-grid-item > * {
+  font-family: "Montserrat", sans-serif;
+}
+.video-grid-item p {
+  margin-top: 10px;
+  color: #012130;
+}
+.video-grid .video__media {
+  min-width: 100%;
+  max-width: 100%;
+  height: 216px;
+  margin-bottom: 22px;
+}
+.video-grid button {
+  width: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.section-video-grid__letters {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 22px;
+}
+.section-video-grid {
+  padding-top: 60px;
+}
+.max-w-screen-1100 {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .video-grid {
+    grid-gap: 42px;
+  }
+}
+.section-image-grid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.section-image-grid .ImageBlocks__Slide img {
+  max-width: 100%;
+}
+@media (min-width: 767px) {
+  .section-image-grid .image-grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+  .section-image-grid .ImageBlocks__Pagination {
+    display: none;
+  }
+}

@@ -1,0 +1,314 @@
+<style>
+  .beforeOverlay::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(1, 33, 48, 0.75) 2.22%, rgba(1, 33, 48, 0) 69.21%);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .beforeOverlay .textUnder {
+    z-index: 1000 !important;
+  }
+  #{{section.id}}.Bundles{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.Bundles{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+{% liquid
+  assign className = 'Bundles'
+  assign container_width = 'max-w-screen-lg mx-auto px-5 xs:px-7.5 lg:px-20'
+
+  if section.settings.container_width == 'medium'
+    assign container_width = 'max-w-screen-lg mx-auto px-5 lg:px-[25px]'
+  endif
+%}
+
+{% if section.blocks.size > 0 %}
+  <section id="{{section.id}}" class="{{ className }}{% if section.settings.hide_mobile %} sm-down:hidden{% endif %}">
+    <div class="{{ container_width }}">
+      {% if section.settings.title != blank %}
+        <h2 class="text-20 text-center uppercase font-body font-normal mb-14">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      <div class="grid gap-5{% if section.blocks.size > 1 %} sm:gap-6 sm:grid-cols-2{% endif %}">
+        {% for block in section.blocks %}
+          <div
+            class="bundle-item relative p-6 rounded-2xl overflow-hidden bg-brand-primary text-white space-y-10 min-h-[280px] sm:py-10 sm:px-12{% if block.settings.overlay_background %} beforeOverlay{% endif %}"
+            {% if block.settings.text_color != blank %}
+            style="color:{{block.settings.text_color}}; background-color:{{block.settings.background_color}}"
+            {% endif %}
+            {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <div class="relative z-1 max-w-[15em] title-block sm:max-w-xs{% if section.blocks.size == 1 %} sm:space-y-3 sm:max-w-[75%]{% endif %}">
+                {% if block.settings.sub_title != blank %}
+                  <span class="uppercase text-20">{{ block.settings.sub_title }}</span>
+                {% endif %}
+
+                <h3 class="uppercase text-40 xs:text-48 sm:text-50 sm-down:hidden">{{ block.settings.title }}</h3>
+                <h3 class="uppercase text-40 sm:hidden">{{ block.settings.title | replace: '<br>', ' ' }}</h3>
+              </div>
+            {% endif %}
+
+            {% if block.settings.icon != blank or block.settings.button != blank %}
+              <div class="textUnder sm-down:hidden relative z-1 w-full flex flex-col space-y-6 {% if section.blocks.size == 1 %} sm:space-y-0 sm:flex-row sm:w-3/4 md:w-1/2{% else %} sm:max-w-[250px]{% endif %}">
+                <div class="flex flex-wrap justify-center items-center gap-3 max-w-[60%] mobile:max-w-[52%] xs:max-w-none{% if section.blocks.size == 1 %} sm:flex-nowrap sm:ml-15{% endif %}">
+                  {% if block.settings.text != blank %}
+                    <span class="text-20 font-bold sm:-ml-4">{{ block.settings.text }}</span>
+                  {% endif %}
+
+                  {% if block.settings.icon != blank %}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 300
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'w-auto h-14',
+                        widths: '100, 200, 300',
+                        alt: block.settings.icon.alt
+                      | escape
+                    }}
+                  {% endif %}
+                </div>
+
+                {% if block.settings.button != blank %}
+                  <a
+                    href="{{ block.settings.button_url }}"
+                    class="Button Button--{{ block.settings.button_style }} whitespace-nowrap{% if section.blocks.size == 1 %} sm:ml-15{% endif %}"
+                  >
+                    {{ block.settings.button }}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% liquid
+              assign image_classes = 'absolute top-0 right-0 !m-0 w-auto h-full sm-down:hidden'
+              if section.blocks.size == 1
+                assign image_classes = image_classes | append: ' md:right-10 lg:right-18'
+              endif
+            %}
+
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 1400
+                | image_tag:
+                  loading: 'lazy',
+                  class: image_classes,
+                  widths: '1400',
+                  alt: block.settings.image.alt
+                | escape
+              }}
+            {% endif %}
+
+            {% if block.settings.image_mobile != blank %}
+              {{
+                block.settings.image_mobile
+                | image_url: width: 1400
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'w-auto h-auto sm:hidden img-mobile',
+                  alt: block.settings.image_mobile.alt
+                | escape
+              }}
+            {% endif %}
+            {% if block.settings.button != blank %}
+              <a
+                href="{{ block.settings.button_url }}"
+                class="Button button-mobile sm:hidden Button--{{ block.settings.button_style }} whitespace-nowrap{% if section.blocks.size == 1 %} sm:ml-15{% endif %}"
+              >
+                {{ block.settings.button }}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": "Bundles Redesign",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_mobile",
+      "label": "Hide on Mobile"
+    },
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile devices"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "checkbox",
+          "id": "overlay_background",
+          "label": "Overlay Background"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default":"#002030"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Bundle name"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub-Heading"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "sale",
+              "label": "Sale"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles Redesign",
+      "blocks": [
+        {
+          "type": "bundle"
+        },
+        {
+          "type": "bundle"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,65 @@
+.Reviews {
+  &__Wrapper {
+    @apply flex items-start;
+  }
+
+  &__Slide {
+    @apply shrink-0 space-y-14;
+
+    h3 {
+      color: var(--accent-color);
+    }
+
+    .rte {
+      p {
+        @apply relative sm-down:flex sm-down:flex-col sm-down:items-center;
+
+        &::before {
+          content: "“";
+          @apply -top-8;
+        }
+
+        &::after {
+          content: "”";
+          @apply -bottom-13;
+        }
+
+        &::before,
+        &::after {
+          @apply absolute font-heading text-40 font-bold leading-none pointer-events-none not-italic;
+          color: var(--accent-color);
+        }
+
+        @media (--sm) {
+          &::before {
+            @apply top-0 -ml-7;
+          }
+
+          &::after {
+            @apply -bottom-2.5 ml-3;
+          }
+        }
+      }
+    }
+  }
+
+  &__Pagination {
+    @apply flex items-center justify-center space-x-2.5 mt-10 sm:mt-12;
+
+    &.swiper-pagination-lock {
+      @apply hidden;
+    }
+
+    .swiper-pagination-bullet {
+      border-radius: 10px;
+      width: 20px;
+      height: 5px;
+      background-color: #d9d9d9;
+      cursor: pointer;
+
+      &-active {
+        @apply bg-brand-tertiary;
+      }
+    }
+  }
+}

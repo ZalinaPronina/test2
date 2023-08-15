@@ -1,0 +1,9 @@
+.shopify-challenge__container {
+  @apply flex flex-col items-center justify-center min-h-screen;
+
+  input[type="submit"] {
+    @apply uppercase text-base sm:text-base w-full h-16 sm:h-20 justify-center px-8 border border-black border-solid cursor-pointer;
+    @apply transition-colors duration-100 ease-out hover:bg-black hover:text-white disabled:text-gray-300 disabled:border-gray-300 disabled:bg-transparent;
+    @apply bg-black text-white hover:bg-gray-600 hover:border-gray-600 disabled:bg-gray-300 disabled:text-white;
+  }
+}

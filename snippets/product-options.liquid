@@ -1,0 +1,80 @@
+<div>
+  {% unless product.has_only_default_variant %}
+    <div data-component="ProductSelection">
+      {% for option in product.options_with_values %}
+        {% liquid
+          assign is_size = false
+          if option.name == "Size"
+            assign is_size = true
+          endif
+        %}
+
+        <fieldset class="p-0 m-0 space-y-5">
+          <legend class="p-0 font-medium w-full flex items-center">
+            <span>{{ option.name }}</span>
+
+            {% if is_size %}
+              <button
+                type="button"
+                class="p-0 ml-auto underline font-medium hover:no-underline"
+                data-modal-trigger="size-guide-{{ product.id }}"
+              >
+                {{ 'products.product.size_trigger' | t }}
+              </button>
+
+              <div class="Modal" data-component="Modal" data-modal-id="size-guide-{{ product.id }}">
+                <div class="Modal__Overlay" data-modal-overlay></div>
+                <div class="Modal__Inner max-w-[800px]">
+                  <button
+                    type="button" class="Modal__Close"
+                    data-modal-close
+                    aria-label="Close modal"
+                  >
+                    {%
+                      render "icons",
+                      icon: "close",
+                      size: "large"
+                    %}
+                  </button>
+
+                  <div class="pt-12 pb-8 px-6 rte">
+                    {{ pages.size-guide.content }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </legend>
+
+          <select
+            class="w-full font-bold"
+            name="{{ option.name }}"
+            id="product-option-{{ product.id }}-{{ option.name | handle }}"
+            data-option-select
+            data-index="{{ forloop.index0 }}"
+          >
+            <option selected disabled>Please Choose {{ option.name }}</option>
+
+            {% for value in option.values %}
+              <option value="{{ value }}">
+                {{ value }}
+              </option>
+            {% endfor %}
+          </select>
+        </fieldset>
+      {% endfor %}
+
+      <select class="hidden" name="id" data-option-main>
+        {% for variant in product.variants %}
+          <option
+            value="{{ variant.id }}"
+            {% if product.selected_or_first_available_variant == variant %}
+              selected
+            {% endif %}
+          >{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  {% else %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+  {% endunless %}
+</div>

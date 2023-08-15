@@ -1,0 +1,285 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>Protect player health by monitoring and optimising physical activity, leading to improved fitness levels, reduced risk of injury, and better overall health.<\/p>"
+          }
+        },
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85",
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/Why_GPS_Header_V1_2_78abe02a-c3ff-489f-89f9-ad5f3b0927d9.png",
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "Track Health with GPS",
+        "title_as_h1": true,
+        "show_heading_decoration": true,
+        "title_small": false,
+        "title_not_uppercase_mobile": false,
+        "sub_title": ""
+      }
+    },
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392": {
+      "type": "page-navigation",
+      "settings": {
+        "title": "Health and Wellbeing",
+        "text": "<p>Protecting player health is as important as performance. Monitoring data from the <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">GPS Player Vest<\/a> will give insight into fatigue and impacts to the body.<\/p>",
+        "menu": "why-pages"
+      }
+    },
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646": {
+      "type": "media-with-text",
+      "blocks": {
+        "e3bd3a69-d8b3-4509-bc40-fd9413134a1d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GPS_Imapct-2.jpg"
+          }
+        },
+        "cce6f5dd-af31-4a43-bc7b-ec0e6d96d206": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pithero_GPS_Injury_3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e3bd3a69-d8b3-4509-bc40-fd9413134a1d",
+        "cce6f5dd-af31-4a43-bc7b-ec0e6d96d206"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title": "Impacts",
+        "text": "<p>From big tackles to unintentional collisions, impacts to the body are a reality in all contact and non-contact sports. <\/p><p>By tracking the impact felt by the body, you can more accurately review the severity of a collision, make more informed decisions and rest and recover. <\/p><p>Appropriate rest and recovery will keep a player healthier and injury-free, ensuring they get the most from every game.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6": {
+      "type": "media-with-text",
+      "blocks": {
+        "50654485-3289-43e8-b5c3-a7add967a429": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pithero_GPS_Injury-2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "50654485-3289-43e8-b5c3-a7add967a429"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title": "Fatigue",
+        "text": "<p>Tracking your performance over time will highlight if your body is suffering from fatigue. <\/p><p>Below average distances or speeds, slower acceleration and more time in lower speed zones could all suggest your body is suffering from fatigue.<\/p><p>A week off may be just what you need to recharge the batteries and finish the season with your best performances.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    },
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29": {
+      "type": "media-with-text",
+      "blocks": {
+        "e6600c4d-038d-47a9-8d58-806417b11f40": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Impact-2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e6600c4d-038d-47a9-8d58-806417b11f40"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title": "Injury",
+        "text": "<p>If your body is tired, it is more likely to suffer injuries that could result in time away from training or missing matches. No player wants to miss a game or spend weeks on the bench.<\/p><p>Players maximise performance when their bodies are healthy and rested. By monitoring your performances over time, a coach can identify fatigue and rotate the squad before an injury occurs, avoiding long spells away from the game.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c": {
+      "type": "media-with-text",
+      "disabled": true,
+      "blocks": {
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/43afe0a65034c9c0808beaf3c26db4c7.jpg"
+          }
+        },
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg"
+          }
+        },
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a",
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce",
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "icon": "shopify:\/\/shop_images\/Contained_Icon2.png",
+        "title": "Protect your health",
+        "text": "<p>Protect your long term health and wellbeing. Accurately assess the impact your body absorbs and be alerted to potential fatigue which can lead to injuries and missed games.<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b": {
+      "type": "bundles",
+      "blocks": {
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "title": "Player<br>bundle",
+            "sub_title": "new",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "title": "Team<br>bundle",
+            "sub_title": "new",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0",
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1"
+      ],
+      "custom_css": [
+        ".Bundles a {background-color: #00f0ff; border-color: #00f0ff; color: black;}"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "2b9afc54-049d-42fa-babe-49fcd19cbfec": {
+      "type": "newsletter",
+      "settings": {
+        "show_section": true,
+        "image": "shopify:\/\/shop_images\/New_Footer_Image_1.png",
+        "image_decoration": false,
+        "title": "<p>Join our newsletter<\/p>",
+        "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+        "form_tag": ""
+      }
+    },
+    "08b0912d-9bd7-441d-981c-8e85530cc41c": {
+      "type": "hero-video",
+      "disabled": true,
+      "blocks": {
+        "e116970c-37dc-45d7-a17f-397bc10839ea": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The search for the fastest player in grassroots sport. <strong>ALL players. ALL ages. ALL competitions.<\/strong><\/p>"
+          }
+        },
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "title": "How fast is fast?",
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY&t=6s",
+            "button": "WATCH VIDEO"
+          }
+        },
+        "1bdfee98-1641-4656-988f-d4730cb89f71": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "BOOK YOUR PLACE TODAY",
+            "url": "shopify:\/\/pages\/hero"
+          }
+        }
+      },
+      "block_order": [
+        "e116970c-37dc-45d7-a17f-397bc10839ea",
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386",
+        "1bdfee98-1641-4656-988f-d4730cb89f71"
+      ],
+      "settings": {
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Group_120.jpg",
+        "image_decoration": true,
+        "title": "#HERO SPEED CHALLENGE",
+        "title_as_h1": false,
+        "sub_title": "LAUNCHING JULY 2023"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392",
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646",
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6",
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29",
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c",
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b",
+    "08b0912d-9bd7-441d-981c-8e85530cc41c",
+    "2b9afc54-049d-42fa-babe-49fcd19cbfec"
+  ]
+}

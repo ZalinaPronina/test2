@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "form"
+  ]
+}

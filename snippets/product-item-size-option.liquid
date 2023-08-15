@@ -1,0 +1,28 @@
+<div class="{% if bundle %}space-y-3{% else %}space-y-1.5{% endif %}">
+  <div class="font-bold text-center">{{ label }}</div>
+
+  <div class="flex flex-wrap justify-center{% if bundle %} gap-3 xs:gap-5{% else %} gap-2{% endif %}">
+    {% for value in option.values %}
+      {% if value contains label %}
+        {% assign formatted_value = value | split: " - " | last %}
+
+        <div>
+          <input
+            class="sr-only peer"
+            type="radio"
+            id="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}"
+            name="{{ option.name | handle }}"
+            value="{{ value }}"
+          />
+
+          <label
+            class="{% if bundle %}w-15 h-15 text-18 xs-down:w-10 xs-down:h-10 xs-down:text-12{% else %}w-8 h-8 text-11{% endif %} rounded-full border-2 border-solid border-current flex items-center justify-center font-bold cursor-pointer {{ selected_option_classes }} peer-checked:text-white"
+            for="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}"
+          >
+            {{ formatted_value }}
+          </label>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

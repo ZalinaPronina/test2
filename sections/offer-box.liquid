@@ -1,0 +1,412 @@
+{% liquid
+  assign products = section.blocks | where: "type", "product"
+  assign steps = section.blocks | where: "type", "step"
+%}
+<style>
+  #{{section.id}}.OfferBox{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.OfferBox{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<section id="{{section.id}}" class="OfferBox">
+  <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="text-center mb-6 space-y-4 sm:hidden {% if section.settings.hide_text_mobile %}sm-down:hidden{% endif %}">
+        {% if section.settings.title != blank %}
+          <h2 class="text-24 font-body tracking-normal">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="OfferBox__Container{% if steps.size > 0 %} sm:rounded-t-2xl{% else %} sm:rounded-2xl{% endif %}">
+      {% if section.settings.model != blank %}
+        <div
+          class="OfferBox__Media sm-down:h-[420px]"
+          {% if section.settings.background_none != blank %}
+          style="background-color: transparent;"
+          {% endif %}>
+          <model-viewer
+            src="{{ section.settings.model }}"
+            camera-controls
+            data-shopify-feature="1.12"
+            alt="{{ section.settings.title }}"
+            poster="{{ section.settings.image | image_url: width: 800 }}"
+            style="--poster-color: transparent;"></model-viewer>
+        </div>
+      {% elsif section.settings.image != blank %}
+        <div
+          class="OfferBox__Media sm-down:h-[460px]"
+          {% if section.settings.background_none != blank %}
+          style="background-color: transparent;"
+          {% endif %}>
+          {% if section.settings.image_crop_center %}
+            {{ section.settings.image | image_url: width: 800, height: 800, crop: "center" | image_tag:
+             loading: "lazy",
+             widths: "300, 600, 800",
+             alt: section.settings.image.alt | escape }}
+          {% else %}
+            {% if section.settings.image_mobile != blank %}
+              {{ section.settings.image_mobile | image_url: width: 800 | image_tag:
+              loading: "lazy",
+              widths: "300, 600, 800",
+              class: "!object-top sm:hidden",
+              alt: section.settings.image_mobile.alt | escape }}
+            {% endif %}
+            {{ section.settings.image | image_url: width: 800 | image_tag:
+             loading: "lazy",
+             widths: "300, 600, 800",
+             class: "sm-down:hidden",
+             alt: section.settings.image.alt | escape }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="OfferBox__Content">
+        <div class="relative z-1">
+          {% if section.settings.sub_title != blank %}
+            <h3 class="font-body font-normal text-18 uppercase sm-down:hidden mobile:text-20">
+              {{ section.settings.sub_title }}
+            </h3>
+          {% endif %}
+
+          {% if section.settings.title != blank %}
+            <h2 class="h1 uppercase text-34 mobile:text-40 sm-down:hidden sm:text-72">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.list != blank %}
+            {% assign list_items = section.settings.list | newline_to_br | strip_newlines | split: "<br />" %}
+
+            <div class="flex flex-wrap mt-2 sm-down:hidden sm:mt-6">
+              {% for item in list_items %}
+                <div class="font-bold w-full sm:w-auto">{{ item }}</div>
+
+                {% unless forloop.last %}
+                  <span class="w-px h-7 bg-brand-accent mx-8 sm-down:hidden"></span>
+                {% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="rte mt-4 sm-down:hidden sm:mt-8 OfferBox__Content-text">{{ section.settings.text }}</div>
+          {% endif %}
+
+          {% if products.size > 0 %}
+            <div class="sm-down:space-y-7 {% if section.settings.product_layout == "row" %}md:flex md:gap-6 md:-mx-7.5{% endif %}">
+              {% for product in products %}
+                <div class="OfferBox__Product{% if section.settings.product_layout == "row" %} px-3 py-6 text-center md:w-1/2{% else %} p-5 sm:p-7 sm-down:space-y-10 sm:flex{% endif %}">
+                  <div class="OfferBox__Product-container">
+                    {% if product.settings.title != blank %}
+                      <div>
+                        {% if product.settings.sub_title != blank %}
+                          <span class="uppercase text-18 mobile:text-20">
+                            {{ product.settings.sub_title }}
+                          </span>
+                        {% endif %}
+
+                        <h3 class="uppercase text-30 mobile:text-40 xs:text-48{% if section.settings.product_layout == "row" %} {% else %} sm:text-50{% endif %}">
+                          {{ product.settings.title }}
+                        </h3>
+                      </div>
+                    {% endif %}
+
+                    {% if product.settings.image != blank or product.settings.button != blank or product.settings.accent_text != blank %}
+                      <div class="w-full flex flex-col items-center space-y-6 sm:max-w-xs sm:pl-4">
+                        <div class="flex items-center">
+                          {% if product.settings.text != blank %}
+                            <span class="text-14 font-bold -ml-4 mr-4">{{ product.settings.text }}</span>
+                          {% endif %}
+
+                          {% if product.settings.image != blank %}
+                            {{ product.settings.image | image_url: width: 300 | image_tag:
+                            loading: "lazy",
+                            class: "w-auto h-14",
+                            widths: "100, 200, 300",
+                            alt: product.settings.image.alt | escape }}
+                          {% endif %}
+                        </div>
+
+                        {% if product.settings.accent_text != blank %}
+                          <div class="text-20 tracking-widest">
+                            {{ product.settings.accent_text }}
+                          </div>
+                        {% endif %}
+
+                        {% if product.settings.button != blank %}
+                          <a href="{{ product.settings.button_url }}" class="Button Button--{{ product.settings.button_style }} {% if section.settings.product_layout == "row" %}!w-auto{% endif %}">
+                            {{ product.settings.button }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {% if steps.size > 0 %}
+      <div class="text-white bg-black overflow-hidden rounded-b-2xl sm-down:rounded-t-2xl sm-down:mt-5">
+        <div class="flex flex-wrap justify-around">
+          {% for step in steps %}
+            {% if step.settings.title != blank %}
+              {% liquid
+                assign tag = "div"
+                assign index_mod = forloop.index | modulo: 2
+
+                if step.settings.url != blank
+                  assign tag = "a"
+                endif
+              %}
+
+              <{{ tag }}
+                class="OfferBox__Step"
+                {% if step.settings.url != blank %}
+                href="{{ step.settings.url }}"
+                {% endif %}>
+                <h3 class="font-body font-normal text-16 uppercase flex items-center sm:text-18">
+                  <span>{{ step.settings.title }}</span>
+
+                  {% unless index_mod == 0 or forloop.last %}
+                    <div class="absolute -right-3 text-brand-accent sm:hidden">
+                      {% render "icons", icon: "arrow-right", size: "medium" %}
+                    </div>
+                  {% endunless %}
+                </h3>
+
+                {% if step.settings.image != blank %}
+                  {{ step.settings.image | image_url: width: 300 | image_tag:
+                   loading: "lazy",
+                   class: "w-auto h-11 sm:h-15",
+                   widths: "100, 200, 300",
+                   alt: step.settings.image.alt | escape }}
+                {% elsif step.settings.text != blank %}
+                  <h3 class="text-30 uppercase sm:text-44">{{ step.settings.text }}</h3>
+                {% endif %}
+
+                {% unless forloop.last %}
+                  <div class="absolute top-1/2 -right-7 text-brand-accent !mt-0 sm-down:hidden">
+                    {% render "icons", icon: "arrow-long-right", className: "!w-15 !h-auto" %}
+                  </div>
+                {% endunless %}
+              </{{ tag }}>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Offer box",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top px",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile px",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom px",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile px",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_text_mobile",
+        "label": "Hide Text Mobile"
+      },
+      {
+        "type": "checkbox",
+        "id": "image_crop_center",
+        "label": "Crop image center",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "background_none",
+        "label": "Background Transparent"
+      },
+      {
+        "type": "url",
+        "id": "model",
+        "label": "3D model"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "sub_title",
+        "label": "Sub-Heading"
+      }, {
+        "type": "textarea",
+        "id": "list",
+        "label": "List"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }, {
+        "type": "select",
+        "id": "product_layout",
+        "label": "Products layout",
+        "options": [
+          {
+            "value": "column",
+            "label": "Column"
+          }, {
+            "value": "row",
+            "label": "Row"
+          }
+        ],
+        "default": "column"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "sub_title",
+            "label": "Sub-Heading"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }, {
+            "type": "text",
+            "id": "accent_text",
+            "label": "Accent Text"
+          }, {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          }, {
+            "type": "select",
+            "id": "button_style",
+            "label": "Style",
+            "options": [
+              {
+                "value": "primary",
+                "label": "Primary"
+              }, {
+                "value": "sale",
+                "label": "Sale"
+              }
+            ],
+            "default": "primary"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Link"
+          }
+        ]
+      }, {
+        "type": "step",
+        "name": "Step",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }, {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Offer box",
+        "settings": {
+          "title": "Heading"
+        }
+      }
+    ]
+  }
+{% endschema %}

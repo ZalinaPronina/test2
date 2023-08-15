@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="{{ shop.locale }}">
+  <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WNRHH94');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <meta name="facebook-domain-verification" content="9bp2ib7zeqqduv2mzo7z4dwe68ibgw" />
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {% if settings.favicon != blank %}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url }}" type="image/png">
+    {% endif %}
+
+    {% capture seo_title %}
+      {{ page_title }}
+      {% if current_tags %}
+        {%- assign meta_tags = current_tags | join: ", " %} &ndash; {{ "general.meta.tags" | t: tags: meta_tags -}}
+      {% endif %}
+      {% if current_page != 1 %}
+        &ndash; {{ "general.meta.page" | t: page: current_page }}
+      {% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}
+      {% endunless %}
+    {% endcapture %}
+
+    <title>{{ seo_title }}</title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render "meta-tags" %}
+
+    {% if template.directory == "customers" %}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    <script src="{{ 'index.js' | asset_url }}" defer="defer"></script>
+
+    {% render "css-variables" %}
+    {% render "theme-strings" %}
+
+    {{ "index.css" | asset_url | stylesheet_tag }}
+    {{ "main.css" | asset_url | stylesheet_tag }}
+    
+    {% unless settings.type_body_font.system? %}
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+    {% endunless %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    {{ content_for_header }}
+  </head>
+
+  <body data-template="{{ template.name }}" class="{{page.handle}}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNRHH94"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a class="skip-to-content-link Button sr-only" href="#MainContent">
+      {{ "accessibility.skip_to_content" | t }}
+    </a>
+
+    {% liquid
+      assign this_is_landing_page = false
+      assign landing_page_handles = settings.landing_pages | newline_to_br | strip_newlines | split: '<br />'
+
+      if landing_page_handles contains page.handle
+        assign this_is_landing_page = true
+      endif
+    %}
+
+    {% unless this_is_landing_page
+      or template.suffix contains "checkout-process-player"
+    %}
+      {% section "header" %}
+    {% endunless %}
+
+    <main id="MainContent" role="main">
+      {{ content_for_layout }}
+    </main>
+
+    {% unless template.directory == "customers"
+      or template.name == "password"
+      or template.name == "search"
+      or template.suffix contains "products-preorder"
+      or template.suffix contains "checkout-process"
+      or template.suffix contains "faq"
+      or this_is_landing_page
+      or request.path contains "tools/recurring"
+    %}
+      {% section "newsletter" %}
+    {% endunless %}
+
+    {% unless this_is_landing_page %}
+      {% section "footer" %}
+    {% endunless %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    </ul>
+
+    {% render "theme-schemas" %}
+
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2547723.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <script>
+      if(window.location.pathname === "/collections/all"){
+        window.location.href = "/collections/accessories";
+      }
+      if(!window.location.pathname.includes('/checkouts/') && !window.location.pathname.includes('/products/') && !window.location.pathname.includes('/pages/checkout-process') && !window.location.pathname.includes('pages/checkout-process-player-as-gift')){
+        if(localStorage.getItem('sellingId') != null){
+          localStorage.removeItem('sellingId');
+        }
+        if(localStorage.getItem('productVariant') != null){
+          localStorage.removeItem('productVariant');
+        }
+      }
+    </script>
+  </body>
+</html>

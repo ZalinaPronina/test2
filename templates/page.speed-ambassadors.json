@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "disabled": true,
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        },
+        "a50ba5a9-3e13-4265-9d06-3739ea1be571": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>PitcheroGPS is looking for athletes of all ages, genders and levels to become SpeedHeroes. Join our Speed Ambassador Program Now!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695",
+        "a50ba5a9-3e13-4265-9d06-3739ea1be571"
+      ],
+      "settings": {
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Header2_1.png",
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "Speed Heroes",
+        "title_as_h1": true,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": ""
+      }
+    },
+    "b055e4ea-53e7-4254-bbaf-0360acdd5468": {
+      "type": "offer-box",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IGWP5_2433.jpg",
+        "image_crop_center": true,
+        "model": "",
+        "title": "100 Players Wanted!",
+        "sub_title": "Launching ??? 2023",
+        "list": "PitcheroGPS are seeking 100 players to be the first in the world to join the Speed Heroes.",
+        "text": "<p>Whatever sport, position or level you play, speed is undefeated as an attribute and PitcheroGPS is designed to train you to go faster – every training session, every match, every time you push yourself to the limit.The Speed Heroes are an exclusive group of aspiring athletes looking to unleash their true potential and become big game players who deliver in the moments that matter.We’re searching for players like you who dream of turning pro or moving up the levels – all you have to do is be prepared to showcase your speed training with PitcheroGPS and fill out the form below to be part of this incredible new talent programme.You will be given unique early access to PitcheroGPS, free stash and invited to attend elite speed training sessions held across the UK during Summer 2023.<\/p>",
+        "product_layout": "column"
+      }
+    },
+    "518f5711-19a7-424c-bf28-76c62ef71ffb": {
+      "type": "media-with-text",
+      "blocks": {
+        "3e26153a-26f3-41f3-909f-2b83d793aa21": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_728.png"
+          }
+        }
+      },
+      "block_order": [
+        "3e26153a-26f3-41f3-909f-2b83d793aa21"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_History.png",
+        "title": "Step 1",
+        "text": "<p><strong>Apply to be a Speed Ambassador<\/strong><\/p><p>To kickstart your journey as a PitcheroGPS Speed Ambassador, all you need to do is fill out the application form on this page. We'll review your submission and reach out to you within the next few weeks to inform you about your selection status.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "079ec8bd-05f4-4387-ad45-e4eaf96265a8": {
+      "type": "media-with-text",
+      "blocks": {
+        "e5934691-d742-47b2-9803-f3e4ed309fa3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IGWP5_2433.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e5934691-d742-47b2-9803-f3e4ed309fa3"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Compete.png",
+        "title": "Step 2",
+        "text": "<p><strong>Attend a speed training event<\/strong><\/p><p>Upon your selection as a PitcheroGPS Speed Ambassador, you'll be invited to join a speed training day in your region. This event will be your chance to have your speed stats recorded using our cutting-edge PitcheroGPS sports trackers. Plus, we'll capture memorable photos of you in action throughout the day!<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "7ca26425-afff-4db7-ab74-a8bf09f2b070": {
+      "type": "media-with-text",
+      "blocks": {
+        "857fff4c-b11b-4050-817a-d811c9ba0199": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Table_1_654ad580-70b6-468d-aa21-25c5a124aa25.png"
+          }
+        }
+      },
+      "block_order": [
+        "857fff4c-b11b-4050-817a-d811c9ba0199"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Track_4430cef7-4475-4199-9832-c5fa27aa0877.png",
+        "title": "Step 3",
+        "text": "<p><strong>Have your speed stats featured online<\/strong><\/p><p>After the PitcheroGPS Speed Training Day, we'll feature your data, a brief profile, and event photos on our website. You'll also be among the first to appear on our SpeedHero leaderboard, where you'll stand alongside other speed enthusiasts who participated in our Speed Training days.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "17272181-100f-4e3f-aa66-1cc59519e967": {
+      "type": "media-with-text",
+      "blocks": {
+        "dae73460-e53f-4be0-82cc-53bd22081db1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_846.png"
+          }
+        }
+      },
+      "block_order": [
+        "dae73460-e53f-4be0-82cc-53bd22081db1"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Tracker_d573f73f-6a42-4f1b-a19d-feb3e1808601.png",
+        "title": "Step 4",
+        "text": "<p><strong>Receive your PitcheroGPS Tracker<\/strong><\/p><p>In July 2023, when our product launches, you'll receive your very own free PitcheroGPS Sports Tracker. Each new speed personal best you achieve will be updated on both the SpeedHero leaderboard and your ambassador profile. Keep pushing your limits and inspire others with your ever-growing accomplishments!<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "54aa8380-167e-4976-85d6-092d8b3d926b": {
+      "type": "register",
+      "blocks": {
+        "d530eb55-e193-4517-a0b3-013b5f81d63e": {
+          "type": "form",
+          "settings": {
+            "title": "Grab a free PitcheroGPS Player Bundle with 1 years subscription",
+            "html": "<script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/embed\/v2.js\"><\/script>\n<script>\n  hbspt.forms.create({\n    region: \"na1\",\n    portalId: \"2547723\",\n    formId: \"ff2190ee-953d-4da4-9b38-759ed161c9fa\"\n  });\n<\/script>"
+          }
+        }
+      },
+      "block_order": [
+        "d530eb55-e193-4517-a0b3-013b5f81d63e"
+      ],
+      "settings": {
+        "title": "Become a Speed Hero"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "b055e4ea-53e7-4254-bbaf-0360acdd5468",
+    "518f5711-19a7-424c-bf28-76c62ef71ffb",
+    "079ec8bd-05f4-4387-ad45-e4eaf96265a8",
+    "7ca26425-afff-4db7-ab74-a8bf09f2b070",
+    "17272181-100f-4e3f-aa66-1cc59519e967",
+    "54aa8380-167e-4976-85d6-092d8b3d926b"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": true,
+        "background_image": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": true
+      }
+    },
+    "d0ff10d9-23ff-4a30-b245-e44788b760af": {
+      "type": "hero",
+      "disabled": true,
+      "blocks": {
+        "51564ac4-37e5-43f5-80c0-6a1f979351ec": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": false,
+            "text": "<p>Register your interest in the PitcheroGPS Player Vest for priority access. You will be one of the first to be notified when the new and improved version is available for purchase. <strong>Limited stock available.<\/strong><\/p>"
+          }
+        },
+        "38a967d0-77f8-461c-8866-ab77302292f4": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": false,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "51564ac4-37e5-43f5-80c0-6a1f979351ec",
+        "38a967d0-77f8-461c-8866-ab77302292f4"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Group_94_68a1d9b6-401d-49b8-951a-61194e791b0d.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": false,
+        "title": "Priority Registration",
+        "show_heading_decoration": true,
+        "title_small": true,
+        "sub_title": ""
+      }
+    },
+    "tabs": {
+      "type": "register",
+      "blocks": {
+        "de643da6-b694-4b44-9055-720646704736": {
+          "type": "form",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_467_20ed9b04-8a55-4624-83fd-71e9854bea28.png",
+            "title": "Player Bundle",
+            "html": "<script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/embed\/v2.js\"><\/script>\n<script>\n  hbspt.forms.create({\n    region: \"na1\",\n    portalId: \"2547723\",\n    formId: \"57875882-de68-487d-ad3e-8abf00988a8a\"\n  });\n<\/script>"
+          }
+        },
+        "9d8362bd-cc5d-4749-a7af-1d2e53b1b8ae": {
+          "type": "form",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "title": "Team Bundle",
+            "html": "<script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/embed\/v2.js\"><\/script>\n<script>\n  hbspt.forms.create({\n    region: \"na1\",\n    portalId: \"2547723\",\n    formId: \"6745bdad-c186-4894-a271-b535f6d6b102\"\n  });\n<\/script>"
+          }
+        }
+      },
+      "block_order": [
+        "de643da6-b694-4b44-9055-720646704736",
+        "9d8362bd-cc5d-4749-a7af-1d2e53b1b8ae"
+      ],
+      "settings": {
+        "title": "Choose Your Bundle"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "d0ff10d9-23ff-4a30-b245-e44788b760af",
+    "tabs"
+  ]
+}

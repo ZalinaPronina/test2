@@ -1,0 +1,96 @@
+{% liquid
+  assign className = ""
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-5 sm:pt-10"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-5 sm:pb-10"
+  endif
+%}
+
+{% if section.blocks.size > 0 %}
+  <section class="{{ className }}">
+    <div class="max-w-screen-lg mx-auto px-5 lg:px-20">
+      <nav class="flex flex-col items-center sm-down:space-y-18 sm:flex-row sm:justify-around">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            {% liquid
+              assign tag = "div"
+
+              if block.settings.url != blank
+                assign tag = "a"
+              endif
+            %}
+
+            <{{ tag }} class="text-24 text-center font-bold max-w-[12em]"{% if block.settings.url != blank %} href="{{ block.settings.url }}"{% endif %}>
+              {{ block.settings.title }}
+            </{{ tag }}>
+
+            {% unless forloop.last %}
+              <span class="shrink-0 text-brand-accent mx-4 sm-down:hidden">
+                {% render "icons", icon: "arrow-long-right", className: "!w-15 !h-auto" %}
+              </span>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Steps",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps",
+      "blocks": [
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        },
+        {
+          "type": "step"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,22 @@
+.Hero {
+  @apply relative text-white overflow-hidden;
+  background: radial-gradient(
+    62.92% 62.92% at 50% 50%,
+    #085a7f 0%,
+    #012130 75.58%
+  );
+
+  &.style {
+    &--black {
+      background: #000;
+    }
+  }
+
+  &__Container {
+    @apply relative flex flex-col;
+
+    @media (--sm) {
+      min-height: 540px;
+    }
+  }
+}

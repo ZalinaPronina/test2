@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "form": {
+      "type": "sign-up",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/logo_8d3158dc-5b70-453b-a9f1-6af0df45b955.png",
+        "image": "shopify:\/\/shop_images\/Mask_group_b5d6ecd4-48a5-4dea-909f-4ed14c230cc2.png",
+        "image_mobile": "shopify:\/\/shop_images\/Mask_groupM.png",
+        "title": "PRIORITY REGISTRATION",
+        "disclaimer_text": "<p>By registering your interest, you agree to receive updates about PitcheroGPS including launch offers and promotions, you may unsubscribe at any time by clicking the unsubscribe link in the footer of any email.<\/p>",
+        "thank_you_text": "Congratulations - You have secured Priority Access",
+        "text": "<p>Be the first to be notified when the<br\/>NEW PitcheroGPS Team Bundle launches.<\/p>",
+        "button": "REGISTER INTEREST",
+        "form_tag": "school-landing"
+      }
+    },
+    "eff06109-abf2-4571-a8a3-625a90e333ac": {
+      "type": "richtext",
+      "disabled": true,
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "title": "",
+        "text": "<p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Fusce ante lacus, sodales faucibus tempor in.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "form",
+    "eff06109-abf2-4571-a8a3-625a90e333ac"
+  ]
+}

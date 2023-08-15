@@ -1,0 +1,30 @@
+{% liquid
+  assign image_sizes = image_sizes | default: '100vw'
+  assign featured_image = product.metafields.collection.images.value | first | default: product.featured_image
+%}
+
+<div class="space-y-5 sm:space-y-2.5">
+  <a
+    class="block aspect-w-3 aspect-h-4 [&_*]:object-cover"
+    href="{{ product.url }}"
+  >
+    {% if featured_image %}
+      {{
+        featured_image
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'lazy',
+          sizes: image_sizes,
+          widths: "300, 400, 600, 800, 1200"
+      }}
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag }}
+    {% endif %}
+  </a>
+
+  <div>
+    <h3 class="text-base font-body font-normal tracking-normal sm:text-20{% if product.title.size > 20 %} max-w-[10em]{% endif %}">
+      {{ product.title }}
+    </h3>
+  </div>
+</div>

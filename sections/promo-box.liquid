@@ -1,0 +1,241 @@
+{% liquid
+  assign className = "PromoBox"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-9 sm:pt-12"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-9 sm:pb-12"
+  endif
+
+  assign has_image = false
+  if section.settings.image != blank
+    assign has_image = true
+  endif
+%}
+<style>
+  {% if section.settings.top_padding == blank %}
+    #{{section.id}}.PromoBox{
+      padding-top: {{section.settings.padding_top}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.PromoBox{
+        padding-top: {{section.settings.padding_top_mobile}}px;
+      }
+    }
+  {% endif %}
+  {% if section.settings.bottom_padding == blank %}
+    #{{section.id}}.PromoBox{
+      padding-bottom: {{section.settings.padding_bottom}}px;
+    }
+    @media (max-width: 939px) {
+      #{{section.id}}.PromoBox{
+        padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+      }
+    }
+  {% endif %}
+</style>
+<section
+  id="{{section.id}}"
+  class="{{ className }}"
+  {% if has_image %}
+    style="--margin-bottom: {{ section.settings.image_bottom_spacing }}px;"
+  {% endif %}
+>
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    <div class="PromoBox__Container{% if has_image %} mt-17 md:mt-7.5{% endif %}">
+      <div class="PromoBox__Wrapper">
+        {% if has_image or section.blocks.size > 0 %}
+          <div class="relative z-1 md-down:mb-8 md-down:flex md:absolute md:right-5 md:-top-7.5 md:w-full md:max-w-[220px] lg:right-16">
+            {% if has_image %}
+              <div class="-mt-20 -mb-10 w-3/4 xs:-mt-25 xs:-mb-16 xs:w-1/2 md:my-0 md:w-full">
+                <div class="max-w-[200px] md:max-w-none md:w-full">
+                  {{ section.settings.image | image_url: width: 1200 | image_tag:
+                    loading: "lazy",
+                    class: "w-full h-auto",
+                    sizes: "(min-width: 768px) 240px, 100vw",
+                    widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                    alt: section.settings.image.alt | escape
+                  }}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if section.blocks.size > 0 %}
+              <div class="md-down:w-1/2 flex flex-col items-center space-y-5 md:hidden">
+                {% for block in section.blocks %}
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 300 | image_tag:
+                      loading: "lazy",
+                      class: "w-20 h-auto",
+                      widths: "100, 200, 300",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.blocks.size > 0
+          or section.settings.title != blank
+          or section.settings.sub_title != blank
+          or section.settings.text != blank
+        %}
+          <div class="flex items-center md:space-x-20 md:shrink-0">
+            {% if section.blocks.size > 0 %}
+              <div class="flex flex-wrap shrink-0 items-center space-x-10 md-down:hidden">
+                {% for block in section.blocks %}
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 200 | image_tag:
+                      loading: "lazy",
+                      class: "w-25 h-auto",
+                      widths: "100, 200",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="w-full relative z-2 text-white text-center md:text-left">
+              {% if section.settings.title != blank %}
+                <h2 class="text-20 mb-2 mobile:text-24 sm-down:tracking-normal sm-down:font-body{% unless section.settings.sub_title == blank %} sm:mb-5 sm:text-48 md:hidden{% endunless %}">
+                  {{ section.settings.title }}
+                </h2>
+              {% endif %}
+
+              {% if section.settings.sub_title != blank %}
+                <h3 class="font-body text-14 mobile:text-16 md-down:tracking-normal md-down:font-normal md:text-24 md:max-w-[20em]">
+                  {{ section.settings.sub_title }}
+                </h3>
+              {% endif %}
+
+              {% if section.settings.text != blank %}
+                <div class="rte font-medium mt-3 md:max-w-[26em]{% unless section.settings.title == blank %} md-down:hidden{% endunless %}">
+                  {{ section.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Promo box",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile rem",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "info": "To activate this field the checkboxes for automatic padding must be disabled",
+      "label": "Padding Bottom px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_bottom_spacing",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Image bottom spacing",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo box",
+      "settings": {
+        "title": "Promo"
+      }
+    }
+  ]
+}
+{% endschema %}

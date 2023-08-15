@@ -1,0 +1,34 @@
+.player-container {
+  margin-top: 92px;
+  margin-bottom: 92px;
+}
+.player-container .wrapper-text {
+  margin: 0 auto 90px;
+  max-width: 645px;
+}
+.player-grid {
+  display: grid;
+  grid-gap: 32px;
+}
+.player-block {
+  text-align: center;
+}
+.player-block img {
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .player-block img {
+    max-width: 280px;
+  }
+  .player-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 40px;
+  }
+  .player-grid {
+    grid-gap: 50px;
+  }
+  .player-container .wrapper-text {
+    margin: 0 auto 50px;
+  }
+}

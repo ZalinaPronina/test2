@@ -1,0 +1,401 @@
+{% liquid
+  assign className = "OfferApp"
+
+  assign images = section.blocks | where: "type", "image"
+  assign texts = section.blocks | where: "type", "text"
+  assign buttons = section.blocks | where: "type", "button"
+
+  assign show_offer = false
+
+  if section.settings.image != blank or section.settings.video != blank or section.settings.video_iframe != blank
+    assign show_offer = true
+  endif
+%}
+
+<style>
+  .OfferApp{
+    max-width: {{section.settings.width}}px;
+    margin: 0 auto;
+  }
+  #{{section.id}}.OfferApp{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.OfferApp{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+<section class="{{ className }}" data-component="OfferApp" id="{{section.id}}">
+  {% if section.settings.sub_title != blank %}
+    <div class="mb-12 md:mb-10">
+      <div class="max-w-6xl mx-auto px-3.5 xs:px-7.5 lg:px-16">
+        <h2 class="text-24 text-center font-body tracking-normal">
+          {{ section.settings.sub_title }}
+        </h2>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if show_offer %}
+    <div {% if section.settings.video != blank %} data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}" {% endif %}>
+      <div class="{% unless section.settings.video != blank or section.settings.video_iframe != blank %}max-w-6xl mx-auto px-3.5 xs:px-7.5 lg:px-9 {% endunless %}">
+        <div class="OfferApp__Main{% if section.settings.video != blank %} hasVideo{% endif %}"{% if section.settings.video != blank %} style="border-radius:{{section.settings.border_radius}}px"{% endif %}>
+          {% if section.settings.title != blank or buttons.size > 0 %}
+            <div class="absolute inset-0 z-1 px-20 py-22 md-down:hidden">
+              <div class="max-w-sm">
+                {% if section.settings.title != blank %}
+                  <h2 class="text-50 !leading-snug uppercase">{{ section.settings.title }}</h2>
+                {% endif %}
+
+                {% if buttons.size > 0 %}
+                  <div class="flex items-center space-x-4 mt-20">
+                    {% for block in buttons %}
+                      {% assign button = block.settings %}
+
+                      {% case button.style %}
+                        {% when "apple" %}
+                          <a href="{{ button.url }}" aria-label="Download on the app store" target="_blank" rel="noopener">
+                            {% render "app-buttons", type: button.style %}
+                          </a>
+                        {% when "google" %}
+                          <a href="{{ button.url }}" aria-label="Get in on google play" target="_blank" rel="noopener">
+                            {% render "app-buttons", type: button.style %}
+                          </a>
+                        {% else %}
+                          {% if button.title != blank %}
+                            <a href="{{ button.url }}" class="Button Button--primary">
+                              {{ button.title }}
+                            </a>
+                          {% endif %}
+                      {% endcase %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="flex items-center justify-center">
+            <div class="w-full shrink-0 aspect-w-16 aspect-h-9">
+              {% if section.settings.video_iframe != blank %}
+                <iframe class="h-full w-full" src="{{section.settings.video_iframe}}?autoplay=0&loop=1&muted=1"
+                  frameborder="0" playsinline controls ></iframe>
+              {% endif %}
+              {% if section.settings.image != blank %}
+                {{ section.settings.image | image_url: width: 2000 | image_tag:
+                  loading: "lazy",
+                  class: "",
+                  sizes: "(min-width: 768px) 640px, 1000px",
+                  widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                  alt: section.settings.image.alt | escape
+                }}
+              {% elsif section.settings.video != blank %}
+                <img
+                  src="https://i.ytimg.com/vi_webp/{{ section.settings.video.id }}/maxresdefault.webp"
+                  width="1280"
+                  height="720"
+                  alt="{{ section.settings.title }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+
+            {% if section.settings.video != blank %}
+              <button
+                type="button"
+                class="absolute z-2 text-brand-tertiary"
+                data-modal-trigger="hero-video-{{ section.id }}"
+                aria-label="Play video"
+              >
+                {% render "icons", icon: "play", size: "large", className: "!w-20 !h-20 w-40 h-40 icon-play" %}
+              </button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if images.size > 0 %}
+    <div class="mt-18 md:mt-22">
+      <div class="max-w-6xl mx-auto px-3.5 xs:px-7.5 lg:px-16">
+        <div class="OfferApp__Slider" data-offer-app="container" data-slide-count="{{ images.size }}">
+          <div class="OfferApp__SliderWrapper">
+            {% for block in images %}
+              {% if block.settings.image != blank %}
+                {% liquid
+                  assign classes = "w-full h-auto"
+                  if block.settings.narrow
+                    assign classes = classes | append: " scale-112"
+                  endif
+                %}
+
+                <div class="OfferApp__SliderSlide">
+                  <div class="w-full sm-down:max-w-xs{% if block.settings.narrow %} sm-down:px-10{% endif %}">
+                    {{ block.settings.image | image_url: width: 1200 | image_tag:
+                      loading: "lazy",
+                      class: classes,
+                      sizes: "(min-width: 768px) 280px, 100vw",
+                      widths: "300, 600, 800, 1200",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="OfferApp__SliderPagination"></div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if texts.size > 0 or section.settings.text != blank %}
+    <div class="mt-12 md:mt-18">
+      <div class="max-w-screen-lg mx-auto px-3.5 space-y-7 xs:px-7.5 lg:px-[25px] {% if section.settings.video != blank %} sm-down:text-center{% endif %}">
+        {% if section.settings.text != blank %}
+          <div class="rte text-24 font-bold sm:text-center">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+
+        {% if texts.size > 0 %}
+          <div class="grid gap-12{% if texts.size == 1 %} {% else %} sm:grid-cols-2{% endif %}">
+            {% for block in texts %}
+              {% if block.settings.text != blank %}
+                <div class="rte{% if texts.size == 1 %} sm:w-3/4 sm:text-center sm:mx-auto{% endif %}">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.settings.button_text != blank %}
+    <div class="mt-12 md:mt-18">
+      <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+        <div class="text-center">
+          <a href="{{ section.settings.button_url }}" class="Button Button--large Button--sale !w-auto">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% if section.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="hero-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Offer app",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Container px",
+      "min": 900,
+      "max": 1400,
+      "unit": "px",
+      "step": 10,
+      "default": 1280
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_iframe",
+      "accept": [
+        "vimeo"
+      ],
+      "label": "Video Iframe"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius media",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub-Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "narrow",
+          "label": "Narrow",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "google",
+              "label": "Google"
+            },
+            {
+              "value": "apple",
+              "label": "Apple"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer app",
+      "settings": {
+        "title": "Heading"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,132 @@
+{% liquid
+  assign selected_option_classes = "peer-checked:border-brand-accent peer-checked:bg-brand-accent"
+
+  if accent_color == "sale"
+    assign selected_option_classes = "peer-checked:border-brand-sale peer-checked:bg-brand-sale"
+  endif
+%}
+
+<select class="hidden" name="id" data-option-main test>
+  {% for variant in product.variants %}
+    <option value="{{ variant.id }}">{{ variant.title }}</option>
+  {% endfor %}
+</select>
+
+<input type="hidden" name="quantity" value="1">
+
+{% unless product.has_only_default_variant %}
+  <div class="space-x-3 mt-3{% if max_width %} max-w-[260px] mx-auto{% else %} px-8{% if bundle %} mobile-down:px-2{% endif %}{% endif %}">
+    {% for option in product.options_with_values %}
+      {% liquid
+        assign is_size = false
+        if option.name == "Size"
+          assign is_size = true
+        endif
+      %}
+
+      {% if is_size %}
+        {% liquid
+          assign adult_sizes = false
+          assign youth_sizes = false
+          assign size_variants = false
+
+          for value in option.values
+            if value contains "Adult"
+              assign adult_sizes = true
+            endif
+
+            if value contains "Youth"
+              assign youth_sizes = true
+            endif
+
+            if adult_sizes and youth_sizes
+              break
+            endif
+          endfor
+
+          if adult_sizes and youth_sizes
+            assign size_variants = true
+          endif
+        %}
+
+        <fieldset
+          class="p-0 m-0"
+          data-option-radio
+          data-index="{{ forloop.index0 }}"
+        >
+          {% if size_variants %}
+            <div class="justify-center {% if bundle %}sm:space-y-5 sm-down:flex sm-down:gap-5{% else %}flex gap-7{% endif %}">
+              {% render "product-item-size-option",
+                product: product,
+                option: option,
+                value: value,
+                label: "Youth",
+                bundle: bundle,
+                selected_option_classes: selected_option_classes
+              %}
+
+              {% render "product-item-size-option",
+                product: product,
+                option: option,
+                value: value,
+                label: "Adult",
+                bundle: bundle,
+                selected_option_classes: selected_option_classes
+              %}
+            </div>
+          {% else %}
+            <div class="space-y-1.5">
+              <legend class="font-bold text-center p-0">{{ option.name }}</legend>
+
+              <div class="flex flex-wrap justify-center gap-2">
+                {% for value in option.values %}
+                  <div>
+                    <input
+                      class="sr-only peer"
+                      type="radio"
+                      id="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}"
+                      name="{{ option.name | handle }}"
+                      value="{{ value }}"
+                    />
+
+                    <label
+                      class="{% if bundle %}w-15 h-15 text-18{% else %}w-8 h-8 text-11{% endif %} rounded-full border-2 border-solid border-current flex items-center justify-center font-bold cursor-pointer peer-checked:text-white {{ selected_option_classes }}"
+                      for="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}"
+                    >
+                      {{ value }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </fieldset>
+      {% else %}
+        <fieldset
+          class="p-0 m-0 space-y-1.5"
+          data-option-radio
+          data-index="{{ forloop.index0 }}"
+        >
+          <legend class="font-bold text-center p-0">{{ option.name }}</legend>
+
+          <div class="flex flex-wrap justify-center gap-2">
+            {% for value in option.values %}
+              <div>
+                <input
+                  type="radio"
+                  id="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}"
+                  name="{{ option.name | handle }}"
+                  value="{{ value }}"
+                />
+
+                <label for="upsell-product-{{ product.id }}-{{ option.name | handle }}-{{ value | handle }}">
+                  {{ value }}
+                </label>
+              </div>
+            {% endfor %}
+          </div>
+        </fieldset>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endunless %}

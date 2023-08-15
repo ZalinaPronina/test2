@@ -1,0 +1,115 @@
+{% assign per_page = section.settings.per_page | default: 16 %}
+
+{% paginate search.results by per_page %}
+
+<div class="Collection pb-3 lg:pb-9" data-component="Collection" data-section-id="{{ section.id }}">
+  <div data-insertable-content>
+    <header role="banner" class="text-center py-5">
+      <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px] space-y-5">
+        <h1 class="text-30 font-normal uppercase">
+          {% if search.performed %}
+            {% if search.results_count == 0 %}
+              {{ "general.search.no_results_html" | t: terms: search.terms }}
+            {% else %}
+              {{ "general.search.results_for_html" | t: terms: search.terms }}
+            {% endif %}
+          {% else %}
+            {{ "general.search.title" | t }}
+          {% endif %}
+        </h1>
+
+        <div class="mx-auto w-full max-w-xs">
+          <form action="{{ routes.search_url }}" method="get" role="search" class="relative flex items-center w-full">
+            <input
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ 'general.search.placeholder' | t }}"
+              aria-autocomplete="list"
+              aria-label="{{ 'general.search.placeholder' | t }}"
+              class="appearance-none w-full text-base rounded-8 px-3.5 py-3"
+            />
+
+            <button type="submit" class="absolute z-1 right-3 flex bg-transparent border-0 p-0 transition-opacity duration-200 ease-in-out hover:opacity-75" aria-label="{{ 'general.search.submit' | t }}">
+              {% render "icons", icon: "search" %}
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+        {% if section.settings.show_filter or section.settings.show_sort %}
+          <div class="">
+            {%
+              render "facets",
+              enable_filter: section.settings.show_filter,
+              enable_sorting: section.settings.show_sort,
+              results: search
+            %}
+          </div>
+        {% endif %}
+
+        <section class="max-w-screen-lg mx-auto px-5 lg:px-[25px] mt-3 grid gap-1 sm:grid-cols-2 lg:grid-cols-4" data-insertable-content>
+          {% for item in search.results %}
+            {% if item.object_type == "product" %}
+              {% assign product = item %}
+              <div class="w-full" data-product-item>
+                {%
+                  render "product-item",
+                  product: product,
+                  show_options: true
+                %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </section>
+
+        {% if paginate.pages > 1 and paginate.current_page != paginate.pages %}
+          <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px] mt-3" data-pagination>
+            <div class="flex flex-col items-center text-12">
+              <div class="">
+                Showing {{ paginate.current_offset | plus: paginate.page_size }} of {{ paginate.items }} Products
+              </div>
+
+              <a class="Button Button--primary mt-4 sm:max-w-sm" href="{{ paginate.next.url }}" data-loadmore>Load more</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Search template",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_filter",
+      "label": "Show filter",
+      "default": true,
+      "info": "[Manage filters](https://shopify.com/admin/menus)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sort",
+      "label": "Show sort",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 50,
+      "step": 1,
+      "default": 30
+    }
+  ]
+}
+{% endschema %}

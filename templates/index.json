@@ -1,0 +1,510 @@
+{
+  "sections": {
+    "4e158056-dde5-4825-a0e0-1fd3de1843b5": {
+      "type": "main-page-header",
+      "settings": {
+        "page_style_blue": true,
+        "transparent_header": false,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "c896c3bf-7fad-49d1-a744-146f164ea517": {
+      "type": "hero-redesign",
+      "blocks": {
+        "5dbd30e2-0cdd-479c-bd26-aa57f5b1d450": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": ""
+          }
+        },
+        "b443e4b5-ec20-425e-806c-014b1197f301": {
+          "type": "image",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "Approved by FIFA & World Rugby",
+            "image": "shopify:\/\/shop_images\/Frame_746_fc6a8356-75b8-4c59-9855-02dacd1f7322.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_746_fc6a8356-75b8-4c59-9855-02dacd1f7322.png"
+          }
+        },
+        "cdf4510d-9907-4f1e-90bb-5414e1a5bdef": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Buy Now",
+            "url": "#",
+            "text_review": "Rated Excellent on TrustPilot",
+            "image_reviews": "shopify:\/\/shop_images\/GPS_-_Trust_Pilot_Stars.png"
+          }
+        }
+      },
+      "block_order": [
+        "5dbd30e2-0cdd-479c-bd26-aa57f5b1d450",
+        "b443e4b5-ec20-425e-806c-014b1197f301",
+        "cdf4510d-9907-4f1e-90bb-5414e1a5bdef"
+      ],
+      "settings": {
+        "active_color": true,
+        "color": "#002030",
+        "style": "gradient",
+        "image_left": false,
+        "image": "shopify:\/\/shop_images\/Frame_1255_1.png",
+        "hide_text_mobile": false,
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1256_2.png",
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "<p>Train Smarter<br\/>Run Faster<\/p>",
+        "title_as_h1": false,
+        "show_heading_decoration": true,
+        "title_small": false,
+        "title_not_uppercase_mobile": false,
+        "sub_title": "GPS Player Tracker"
+      }
+    },
+    "ed7f9077-2fc4-4b45-9e8d-b5bdea6fbb64": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "padding_top": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0,
+        "show_media_on_mobile": true,
+        "medium_size": false,
+        "title": "",
+        "title_center": false,
+        "title_position": "outside",
+        "bold_text": "<p><strong>Top players wear a GPS tracker to record their data, compare their metrics and improve their training and match day performance.<\/strong><\/p>",
+        "bold_text_mobile": "<p><strong>Top players wear a GPS tracker to improve their training and match day performance.<\/strong><\/p>",
+        "bold_text_center": true,
+        "bold_text_size": 32,
+        "text": "",
+        "text_list_background": false,
+        "text_color": "#000000",
+        "background_color": "#f2f2f2",
+        "media_position": "flex-row"
+      }
+    },
+    "cfc9569b-0dbe-4e18-a99c-7e61ce2b8e4a": {
+      "type": "text-blocks-border",
+      "blocks": {
+        "5da6a893-9512-47fe-9b32-df9e88794d73": {
+          "type": "text",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font": "Montserrat",
+            "subtitle_size": 16,
+            "title": "<p>1. RECORD<\/p>",
+            "title_font": "Anton",
+            "title_size": 40,
+            "text": "<p>Record you Speed, Distance & Intensity when you train and play.<\/p>",
+            "text_font": "Montserrat",
+            "text_size": 16
+          }
+        },
+        "0247bfe7-3ce4-4846-a7e0-4fae31752674": {
+          "type": "text",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font": "Montserrat",
+            "subtitle_size": 16,
+            "title": "<p>2. COMPARE<\/p>",
+            "title_font": "Anton",
+            "title_size": 40,
+            "text": "<p>Compare your performance with team mates and pro players.<\/p>",
+            "text_font": "Montserrat",
+            "text_size": 16
+          }
+        },
+        "7a91f850-6ed1-40d3-97db-38512dc38d2f": {
+          "type": "text",
+          "settings": {
+            "subtitle": "",
+            "subtitle_font": "Montserrat",
+            "subtitle_size": 16,
+            "title": "<p>3. IMPROVE<\/p>",
+            "title_font": "Anton",
+            "title_size": 40,
+            "text": "<p>Train smarter, optimise every training session and track your metrics as they improve match by match.<\/p>",
+            "text_font": "Montserrat",
+            "text_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "5da6a893-9512-47fe-9b32-df9e88794d73",
+        "0247bfe7-3ce4-4846-a7e0-4fae31752674",
+        "7a91f850-6ed1-40d3-97db-38512dc38d2f"
+      ],
+      "settings": {
+        "width": 1000,
+        "color": "#f2f2f2",
+        "padding_top": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom": 20,
+        "padding_bottom_mobile": 20,
+        "number": 3
+      }
+    },
+    "0ea48e73-63d1-4c8b-a80c-fe7ad9300b12": {
+      "type": "video-banner",
+      "settings": {
+        "width": 840,
+        "padding_top": 20,
+        "padding_top_mobile": 0,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 0,
+        "active_color": true,
+        "color": "#f2f2f2",
+        "style": "gradient",
+        "subtitle": "",
+        "title": "",
+        "title_as_h1": false,
+        "video_popup": false,
+        "video_autoplay": false,
+        "video": "",
+        "video_iframe": "https:\/\/player.vimeo.com\/video\/561800392",
+        "border_radius": 0,
+        "style_btn": "primary",
+        "text": "",
+        "url": ""
+      }
+    },
+    "6ba17ce5-2817-4a66-8107-6fc3ef21d254": {
+      "type": "offer-box",
+      "disabled": true,
+      "blocks": {
+        "fb7d559e-dc42-4175-9732-91b769b5687b": {
+          "type": "product",
+          "settings": {
+            "title": "Player Bundle",
+            "sub_title": "New",
+            "text": "",
+            "accent_text": "£49+Membership",
+            "button": "PRE-ORDER NOW",
+            "button_style": "sale",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle"
+          }
+        },
+        "2352eb31-351a-4a5d-a54a-2cab50ada6ed": {
+          "type": "product",
+          "settings": {
+            "title": "Team Bundle",
+            "sub_title": "New",
+            "text": "",
+            "accent_text": "£200 Deposit",
+            "button": "PRE-ORDER NOW",
+            "button_style": "sale",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle"
+          }
+        }
+      },
+      "block_order": [
+        "fb7d559e-dc42-4175-9732-91b769b5687b",
+        "2352eb31-351a-4a5d-a54a-2cab50ada6ed"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_1033_67ba7042-0c69-4944-a3a1-051201eac501.png",
+        "hide_text_mobile": false,
+        "image_crop_center": false,
+        "background_none": true,
+        "model": "",
+        "title": "GPS PLAYER VEST",
+        "sub_title": "TAKE YOUR TOP SPEED TO THE NEXT LEVEL",
+        "list": "Ultimate Speed Training Tool\nPre-Order & Save 20%",
+        "text": "<p>In sport, speed is undefeated and PitcheroGPS Player Vest helps you train to go faster, so you can feel the difference in every sprint, every training session and every match. Work harder, faster and smarter - measure your top speed, movement with heat maps and track your intensity. Improve week in week out and become a big game player who delivers in the moments that matter. <strong>#speedheroes<\/strong><\/p>",
+        "product_layout": "row"
+      }
+    },
+    "cefb3da8-2ed9-4724-8999-a42752413e5e": {
+      "type": "text-with-media-redesign",
+      "blocks": {
+        "f6d745e9-7634-43c8-a888-8ee189a42f82": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1085.png",
+            "image_max_width": 620,
+            "rounded": false,
+            "background_color": "",
+            "text": "<p><strong>Interactive Heatmaps<\/strong><br\/>Every session, training and match, create a series of interactive heat maps, showing your location and performance during the session.<\/p>"
+          }
+        },
+        "8679c912-7df8-4dae-b3f2-cba01e7b3355": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1085.png",
+            "image_max_width": 620,
+            "rounded": false,
+            "background_color": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "f6d745e9-7634-43c8-a888-8ee189a42f82",
+        "8679c912-7df8-4dae-b3f2-cba01e7b3355"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 50,
+        "image_max_width": 620,
+        "medium_size": false,
+        "title": "",
+        "title_center": false,
+        "title_position": "outside",
+        "bold_text": "<p><strong>The PitcheroGPS App<br\/><\/strong><\/p>",
+        "bold_text_mobile": "<p><strong>The PitcheroGPS App<\/strong><\/p>",
+        "bold_text_center": false,
+        "bold_text_size": 50,
+        "text": "<p>The PitcheroGPS App displays all performance data in simple, easy to app. No jargon. Just the metrics that matter to make your train smarter and run faster.<br\/><br\/><strong>Interactive Heatmaps<br\/><\/strong>Every session, training and match, create a series of interactive heat maps, showing your location and performance during the session. <br\/><br\/><strong>Metrics that Matter<br\/><\/strong>We only display the metrics that matter, no complex jargon. Just the metrics which make you a fitter, faster player to improve your performance. <br\/><br\/><strong>Compare Your Stats<br\/><\/strong>Every session is logged in Trends, a series of graphs plotting your performance over time. Set goals and watch your metrics improve with stunning graphics and charts.<\/p>",
+        "text_mobile": "<p>The PitcheroGPS App displays all performance data in simple, easy to app. No jargon. Just the metrics that matter to make your train smarter and run faster,<\/p>",
+        "text_list_background": false,
+        "text_color": "",
+        "background_color": "",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "97814765-418a-4379-be6e-a1a2e2a0de91": {
+      "type": "bundles-redesign",
+      "blocks": {
+        "template--15804452503757__97814765-418a-4379-be6e-a1a2e2a0de91-bundle-1": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_461_2_233b69cc-1bb7-4032-9f9d-1d7b1468c11a.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_1048_cb316604-1565-4419-bb17-8f37ebabba12.png",
+            "overlay_background": false,
+            "background_color": "#f2f2f2",
+            "text_color": "#000000",
+            "title": "<p>Player<br>Bundle<\/p>",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "#",
+            "button_style": "primary"
+          }
+        },
+        "template--15804452503757__97814765-418a-4379-be6e-a1a2e2a0de91-bundle-2": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_1036_2_1_56032e1c-e5c3-4a51-b38a-0e90536ab473.png",
+            "overlay_background": false,
+            "background_color": "#f2f2f2",
+            "text_color": "#000000",
+            "title": "team<br>Bundle",
+            "sub_title": "NEW",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "template--15804452503757__97814765-418a-4379-be6e-a1a2e2a0de91-bundle-1",
+        "template--15804452503757__97814765-418a-4379-be6e-a1a2e2a0de91-bundle-2"
+      ],
+      "settings": {
+        "hide_mobile": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "c00f1440-420a-4aa5-8127-a4582e4d3bd3": {
+      "type": "hero-video-redesign",
+      "blocks": {
+        "f9db3af2-575d-464f-947a-ce6016506956": {
+          "type": "text",
+          "settings": {
+            "text": "<p>On a pitch Speed is undefeated and the PitcheroGPS Speed Training programme can make every player run faster for longer.<br\/><br\/>Completed over 6 weeks and designed for all players, the programme is a series of drills and exercise to improve running technique and match day performance.<\/p>"
+          }
+        },
+        "fe822fcc-c5fe-4d89-9d5e-551c8abe1c50": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "DOWNLOAD THE PROGRAMME",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "f9db3af2-575d-464f-947a-ce6016506956",
+        "fe822fcc-c5fe-4d89-9d5e-551c8abe1c50"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom": 50,
+        "padding_bottom_mobile": 50,
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Frame_1037.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1037_5.png",
+        "image_title": "shopify:\/\/shop_images\/Group_172_1.png",
+        "title": "",
+        "title_as_h1": false,
+        "sub_title": "",
+        "subtitle": "PitcheroGPS Speed Training",
+        "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+        "media_position": "flex-row"
+      }
+    },
+    "7592e725-7b75-4969-ab88-a8ff6137c602": {
+      "type": "featured-bundle-redesign",
+      "blocks": {
+        "7869de91-e3de-4df4-949e-29c237227941": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fifa.png"
+          }
+        },
+        "d1c2779b-b512-415f-954d-6cd9bf319656": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        },
+        "044d3ed0-9ccc-42fc-97a5-6ea7354a2736": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Approved by FIFA and World Rugby, the new PitcheroGPS tracker is available to pre-order now for delivery in July 2023.<\/p>"
+          }
+        },
+        "95ef9e78-1ef8-4b3f-9a68-fb1e7829189d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The New PitcheroGPS Player Bundle is built using the core principles of data accuracy and innovation designed for the grassroots and semi-pro player.<\/p>"
+          }
+        },
+        "982d5cb8-3cf1-461c-8d9a-9dec1c623aab": {
+          "type": "button",
+          "settings": {
+            "text": "LEARN MORE",
+            "url": "shopify:\/\/products\/new-gps-player-bundle",
+            "style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "7869de91-e3de-4df4-949e-29c237227941",
+        "d1c2779b-b512-415f-954d-6cd9bf319656",
+        "044d3ed0-9ccc-42fc-97a5-6ea7354a2736",
+        "95ef9e78-1ef8-4b3f-9a68-fb1e7829189d",
+        "982d5cb8-3cf1-461c-8d9a-9dec1c623aab"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_top_mobile": 50,
+        "padding_bottom": 100,
+        "padding_bottom_mobile": 50,
+        "title": "FIFA & WORLD RUGBY",
+        "sub_title": "GLOBALLY APPROVED",
+        "title_mobile": "Approved by FIFA and World Rugby",
+        "image": "shopify:\/\/shop_images\/Pitchero_GPS_Tracker_1_2.png"
+      }
+    },
+    "195b2c2a-2b2d-4cad-9993-f193995b78b1": {
+      "type": "hero-video-redesign",
+      "blocks": {
+        "b8ccd156-c926-41b3-bffd-9d89d306fd7d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Unlock your top speed and true potential with our Speed Heroes player programme. Open to PitcheroGPS members looking to learn, improve and perform.<\/p><p>Register now for access to exclusive benefits, elite training opportunities and join our global search for the fastest player in grassroots sport.<\/p><p><br\/><strong>All Players. All Ages. All Levels.<\/strong><\/p>"
+          }
+        },
+        "724a0000-b198-4dbb-b85e-800fc2dec9cc": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "APPLY NOW",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "b8ccd156-c926-41b3-bffd-9d89d306fd7d",
+        "724a0000-b198-4dbb-b85e-800fc2dec9cc"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom": 50,
+        "padding_bottom_mobile": 50,
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Frame_1037.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1037_5.png",
+        "title": "#SPEEDHEROES",
+        "title_as_h1": false,
+        "sub_title": "",
+        "subtitle": "OUR UNIQUE #SPEED CLUB",
+        "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+        "media_position": "image-right"
+      }
+    },
+    "dcfabdbb-ce42-424a-a503-92b65b3e4581": {
+      "type": "columns-slider",
+      "blocks": {
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WP9_7040.png",
+            "background": "shopify:\/\/shop_images\/Vector_70f427c2-e1db-43e5-a002-4643eb9996c1.png",
+            "add_radius": true,
+            "title": "Football",
+            "url": "shopify:\/\/pages\/football-gps-tracker"
+          }
+        },
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WP9_5712_1.png",
+            "background": "shopify:\/\/shop_images\/Vector_70f427c2-e1db-43e5-a002-4643eb9996c1.png",
+            "add_radius": true,
+            "title": "Rugby",
+            "url": "shopify:\/\/pages\/rugby-gps-tracker"
+          }
+        },
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WP5_3579.png",
+            "background": "shopify:\/\/shop_images\/Vector_70f427c2-e1db-43e5-a002-4643eb9996c1.png",
+            "add_radius": true,
+            "title": "Hockey",
+            "url": "shopify:\/\/pages\/hockey-gps-tracker"
+          }
+        }
+      },
+      "block_order": [
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-1",
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-0",
+        "template--15632184213709__dcfabdbb-ce42-424a-a503-92b65b3e4581-1665070376077c76c5-2"
+      ],
+      "settings": {
+        "padding_bottom": 3
+      }
+    }
+  },
+  "order": [
+    "4e158056-dde5-4825-a0e0-1fd3de1843b5",
+    "c896c3bf-7fad-49d1-a744-146f164ea517",
+    "ed7f9077-2fc4-4b45-9e8d-b5bdea6fbb64",
+    "cfc9569b-0dbe-4e18-a99c-7e61ce2b8e4a",
+    "0ea48e73-63d1-4c8b-a80c-fe7ad9300b12",
+    "6ba17ce5-2817-4a66-8107-6fc3ef21d254",
+    "cefb3da8-2ed9-4724-8999-a42752413e5e",
+    "97814765-418a-4379-be6e-a1a2e2a0de91",
+    "c00f1440-420a-4aa5-8127-a4582e4d3bd3",
+    "7592e725-7b75-4969-ab88-a8ff6137c602",
+    "195b2c2a-2b2d-4cad-9993-f193995b78b1",
+    "dcfabdbb-ce42-424a-a503-92b65b3e4581"
+  ]
+}

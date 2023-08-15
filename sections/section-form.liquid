@@ -1,0 +1,122 @@
+<style>
+  .section-form{
+    background-image: url({{ section.settings.background | img_url: '2800x' }});
+  }
+</style>
+<div class="section-form" id="section-form-scroll">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-20">
+    <div class="section-form-flex">
+      <div class="section-form-title">
+        {% if section.settings.image_logo %}
+          <img src="{{ section.settings.image_logo | img_url: '500x' }}" class="section-form-video-logo" loading="lazy">
+        {% endif %}
+        {% if section.settings.image %}
+          <img src="{{ section.settings.image | img_url: '800x' }}" class="section-form-video-image-title" loading="lazy">
+        {% endif %}
+        {% if section.settings.subtitle %}
+          <h5>{{section.settings.subtitle}}</h2>
+        {% endif %}
+      </div>
+      <div class="section-form-video" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}" >
+        <button
+          type="button"
+          data-modal-trigger="section-form-video-{{ section.id }}"
+          aria-label="Play video"
+        >
+          {% if section.settings.image_large %}
+            <img src="{{ section.settings.image_large | img_url: '3000x' }}" class="section-form-video-image-desktop" loading="lazy">
+          {% endif %}
+          {% if section.settings.image_mobile %}
+            <img src="{{ section.settings.image_mobile | img_url: '600x' }}" class="section-form-video-image-mobile" loading="lazy">
+          {% endif %}
+        </button>
+      </div>
+      {% if section.settings.text %}
+        <div class="section-form-text">
+          {{section.settings.text}}
+        </div>
+      {% endif %}
+      {% if section.settings.html %}
+        <div class="section-form-form">
+          {{section.settings.html}}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% if section.settings.video != blank %}
+  <div class="Modal" data-component="Modal" data-modal-id="section-form-video-{{ section.id }}">
+    <div class="Modal__Overlay" data-modal-overlay></div>
+    <div class="Modal__Inner max-w-[800px] !bg-transparent">
+      <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+        {%
+          render "icons",
+          icon: "close",
+          size: "large"
+        %}
+      </button>
+
+      <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Form Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_logo",
+      "label": "Image Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_large",
+      "label": "Image Large"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "html",
+      "id": "html",
+      "label": "HTML code"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Form"
+    }
+  ]
+}
+{% endschema %}

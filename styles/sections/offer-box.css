@@ -1,0 +1,51 @@
+.OfferBox {
+  &__Container {
+    @apply overflow-hidden sm:flex;
+  }
+
+  &__Media {
+    @apply bg-brand-black shrink-0 rounded-tl-2xl rounded-tr-2xl overflow-hidden sm:w-[37%] sm:rounded-none;
+
+    img,
+    model-viewer {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  &__Content {
+    @apply text-white bg-brand-primary overflow-hidden;
+
+    > div {
+      @apply bg-no-repeat py-9 px-6 sm:py-12 sm:px-18;
+      background-size: 100% 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='1226' fill='none'%3E%3Cpath fill='url(%23a)' d='M0 0h400v1061H0z'/%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='0' r='1' gradientTransform='matrix(660.00251 1578.10399 -869.22019 363.5296 -133 -122)' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2300A0D1'/%3E%3Cstop offset='.526' stop-color='%23012130'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
+    }
+
+    @media (--sm) {
+      > div {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='770' height='806' fill='none'%3E%3Cmask id='a' width='770' height='806' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:alpha'%3E%3Cpath fill='%23012130' d='M0 0h754c8.837 0 16 7.163 16 16v790H0V0Z'/%3E%3C/mask%3E%3Cg mask='url(%23a)'%3E%3Cpath fill='url(%23b)' d='M-964-496.095H770v1302.09H-964z'/%3E%3C/g%3E%3Cdefs%3E%3CradialGradient id='b' cx='0' cy='0' r='1' gradientTransform='matrix(0 819.313 -1091.08 0 -97 154.952)' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23085A7F'/%3E%3Cstop offset='.756' stop-color='%23012130'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  &__Product {
+    @apply rounded-2xl sm:mt-7 border border-brand-accent;
+  }
+
+  &__Step {
+    @apply relative text-center flex flex-col items-center space-y-3 py-10 px-5 w-1/2 sm:w-1/4 sm:px-7;
+
+    &:nth-child(3n),
+    &:nth-child(4n) {
+      @apply sm-down:pt-0;
+    }
+  }
+
+  a.OfferBox__Step {
+    * {
+      @apply transition-opacity duration-150 ease-in-out;
+    }
+
+    @apply [&_h3]:hover:opacity-60 [&_img]:hover:opacity-60;
+  }
+}

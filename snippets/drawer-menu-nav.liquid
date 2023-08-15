@@ -1,0 +1,69 @@
+{% if menu %}
+  <ul class="">
+    {% for link in menu.links %}
+      {% liquid
+        assign has_active_link = false
+        assign active_links = link.links | where: 'active', true
+
+        if active_links.size > 0
+          assign has_active_link = true
+        endif
+      %}
+
+      <li class="px-5">
+        <a
+          class="flex items-center uppercase py-3{% if link.active or has_active_link %} underline underline-offset-8 decoration-2 decoration-brand-tertiary{% endif %}"
+          href="{{ link.url }}"
+          {% unless link.type != 'http_link' %}target="_blank"{% endunless %}
+        >
+          {{ link.title }}
+        </a>
+
+        {% if link.levels > 0 %}
+          <ul>
+            {% for sub_link in link.links %}
+              <li class="px-5">
+                <a
+                  class="flex items-center uppercase py-3{% if sub_link.active %} font-bold text-brand-tertiary{% endif %}"
+                  href="{{ sub_link.url }}"
+                  {% unless sub_link.type != 'http_link' %}target="_blank"{% endunless %}
+                >
+                  <span>{{ sub_link.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+
+    {% if shop.customer_accounts_enabled and section.settings.account %}
+      <li class="px-5">
+        {% if customer %}
+          <a
+            class="flex items-center uppercase py-3"
+            href="{{ routes.account_url }}"
+          >
+            {{ "layout.header.account.title" | t }}
+          </a>
+        {% else %}
+          <a
+            class="flex items-center uppercase py-3"
+            href="{{ routes.account_register_url }}"
+          >
+            {{ "layout.header.account.sign_in" | t }}
+          </a>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    <li class="px-5">
+      <a
+          class="flex items-center uppercase py-3"
+          href="{{ routes.search_url }}"
+        >
+          {{ "layout.header.search.title" | t }}
+        </a>
+    </li>
+  </ul>
+{% endif %}

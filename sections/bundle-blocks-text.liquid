@@ -1,0 +1,177 @@
+<style>
+  .section-bundle{
+    margin-top: 65px;
+    margin-bottom: 18px;
+  }
+  .section-bundle__container{
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+    padding: 50px 62px;
+  }
+  .section-bundle__title-container{
+    max-width: 800px;
+    margin: 0 auto 45px;
+  }
+  .section-bundle__title-container span{
+    margin-bottom: 11px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00F0FF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .section-bundle__title-container .h1{
+    color: #fff;
+    margin-bottom: 11px;
+    font-weight: 400;
+  }
+  .section-bundle-blocks-flex{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 42px;
+    justify-content: space-between;
+  }
+  .section-bundle-block{
+    flex-basis: calc(33% - 30px);
+  }
+  .section-bundle__title-container p{
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 157.5%;
+  }
+  .section-bundle-block img{
+    max-width: 70px;
+    margin-bottom: 19px;
+  }
+  .section-bundle-block p{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 170%;
+    color: #fff;
+    max-width: 91%;
+    margin: 0 auto;
+  }
+  .section-bundle__container .Button{
+      max-width: max-content;
+      margin-top: 64px;
+      padding: 20px 24px;
+      height: auto;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+  }
+  @media (max-width: 767px) {
+    .section-bundle-block{
+      flex-basis: 100%;
+    }
+    .section-bundle__container{
+      padding: 40px 26px;
+    }
+    .section-bundle__title-container p{
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 170%;
+    }
+    .section-bundle-blocks-flex{
+      row-gap: 30px;
+    }
+    .section-bundle__container .Button{
+      margin-top: 36px;
+    }
+  }
+</style>
+<div class="section-bundle container-main">
+  <div class="section-bundle__container" style="background-color:{{section.settings.color}}">
+    <div class="section-bundle__title-container">
+      {% if section.settings.subtitle != blank %}
+        <span>{{section.settings.subtitle}}</span>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="h1">{{section.settings.title}}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p>{{section.settings.text}}</p>
+      {% endif %}
+    </div>
+    <div class="section-bundle-blocks-flex">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="section-bundle-block">
+            <img src="{{block.settings.image | img_url: '150x'}}" alt="">
+            <p>{{block.settings.text}}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if section.settings.btn_text != blank %}
+      <a href="{{section.settings.btn_url}}" class="Button Button--primary">{{section.settings.btn_text}}</a>
+    {% endif %}
+  </div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Bundle Blocks",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Background"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+	    {
+		    "type": "text",
+		    "id": "title",
+		    "label": "Title"
+	    },
+      {
+		    "type": "text",
+		    "id": "text",
+		    "label": "Text"
+	    },
+      {
+		    "type": "text",
+		    "id": "btn_text",
+		    "label": "Btn Text"
+	    },
+      {
+		    "type": "url",
+		    "id": "btn_url",
+		    "label": "Btn Url"
+	    }
+    ],
+		"blocks": [
+			{
+				"type": "block",
+				"name": "Image Block",
+				"settings": [
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Image"
+					},
+          {
+						"type": "text",
+						"id": "text",
+						"label": "Title"
+					}
+				]
+      }
+		],
+    "presets": [
+      {
+        "name": "Bundle Blocks"
+      }
+    ]
+  }
+
+{% endschema %}

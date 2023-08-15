@@ -1,0 +1,154 @@
+{% liquid
+  assign className = "Columns"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-12 md:pt-20"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-12 md:pb-20"
+  endif
+%}
+
+<section class="{{ className }}" data-component="Columns">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="space-y-7 mb-10 sm:mb-12 md:space-y-5 md:text-center lg:mb-20">
+        {% if section.settings.title != blank %}
+          <h3 class="text-24 font-body tracking-normal">
+            {{ section.settings.title }}
+          </h3>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="rte">{{ section.settings.text }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div data-slider="container">
+      <div class="Columns__Wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank or block.settings.text != blank %}
+            {% liquid
+              assign tag = "div"
+
+              if block.settings.url != blank
+                assign tag = "a"
+              endif
+            %}
+
+            <{{ tag }} class="Columns__Item"{% if block.settings.url != blank %} href="{{ block.settings.url }}"{% endif %}>
+              <div class="h-full rounded-15 px-7 py-10 bg-white md:p-10 md:flex">
+                {% if block.settings.image != blank %}
+                  <div class="w-full shrink-0 h-[230px] mb-6 md:max-w-[40%] md:mb-0 md:mr-5 lg:mr-9 lg:max-w-[33%]">
+                    {{ block.settings.image | image_url: width: 800 | image_tag:
+                      loading: "lazy",
+                      class: "w-full h-full object-cover",
+                      sizes: "(min-width: 940px) 180px, (min-width: 768px) 320px, calc(100vw - 7.25rem)",
+                      widths: "200, 400, 600, 800",
+                      alt: block.settings.image.alt | escape
+                    }}
+                  </div>
+                {% endif %}
+
+                <div class="space-y-4 md:space-y-6">
+                  {% if block.settings.title != blank %}
+                    <h3 class="text-20 font-body font-normal tracking-normal uppercase md:text-24 md:normal-case">
+                      {{ block.settings.title }}
+                    </h3>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="rte">{{ block.settings.text }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </{{ tag }}>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="Columns__Pagination"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Columns",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Columns",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

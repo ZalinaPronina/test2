@@ -1,0 +1,21 @@
+<section class="mb-5 sm:mb-10">
+  <div class="max-w-screen-xl mx-auto px-5 lg:px-20">
+    <div class="flex flex-wrap items-center justify-center sm-down:text-center">
+      <div class="w-full px-5 py-6 sm:w-auto sm:p-0 sm:bg-transparent">
+        {% if template contains "order" %}
+          <h1 class="text-30 font-bold uppercase">{{ "customer.orders.title" | t }}</h1>
+        {% else %}
+          <h1 class="text-30 font-bold uppercase">{{ "customer.account.title" | t }}</h1>
+        {% endif %}
+      </div>
+
+      <nav class="w-full px-5 py-7 sm:w-auto sm:p-0 sm:ml-auto">
+        {% if template contains "order" %}
+          <a class="hover:underline" href="{{ routes.account_url }}">{{ "customer.account.return_to_orders" | t }}</a>
+        {% else %}
+          <a class="hover:underline" href="{{ routes.root_url }}">{{ "customer.account.return_to_shopping" | t }}</a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</section>

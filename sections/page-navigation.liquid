@@ -1,0 +1,69 @@
+{% if section.settings.menu != blank %}
+  <section class="pb-5 md:py-17" data-component="PageNavigation">
+    <div class="max-w-screen-lg mx-auto lg:px-[25px]">
+      <div class="overflow-hidden">
+        <nav class="flex justify-around md-down:flex-wrap md-down:-mr-px md-down:border-b md-down:border-black md:rounded-2xl md:overflow-hidden md:border md:border-brand-primary">
+          {% for link in section.settings.menu.links %}
+            {% liquid
+              assign className = "relative text-14 xs:text-16 text-center font-semibold uppercase border-0 flex grow items-center justify-center h-11 w-1/2 md-down:border-black md-down:border-t md-down:border-r md:text-20 md:w-full md:h-18 md:font-normal"
+
+              if link.active
+                assign className = className | append: " text-white bg-brand-primary"
+              else
+                assign className = className | append: " md:transition-colors md:duration-200 md:hover:bg-brand-gray"
+              endif
+
+              unless forloop.last
+                assign className = className | append: " md:border-brand-primary md:border-r"
+              endunless
+            %}
+
+            <a href="{{ link.url }}" class="{{ className }}">
+              {{ link.title }}
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+
+      {% if section.settings.title != blank or section.settings.text != blank %}
+        <div class="px-7.5 mt-8 space-y-4 sm:space-y-8 sm:mt-17 sm:w-1/2 sm:pr-5 lg:px-0">
+          {% if section.settings.title != blank %}
+            <h2 class="text-24 font-body tracking-normal">{{ section.settings.title }}</h2>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="rte">{{ section.settings.text }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Page navigation",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page navigation"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+.Drawer {
+  @apply fixed inset-0 z-6 hidden;
+
+  &.isVisible {
+    @apply block;
+  }
+
+  &__Overlay {
+    @apply absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 ease-in-out;
+
+    .isActive & {
+      @apply opacity-100;
+    }
+  }
+
+  &__Inner {
+    @apply absolute top-0 right-0 bottom-0 w-full max-w-[375px] overflow-y-auto bg-white translate-x-full transition-transform duration-300 ease-in-out;
+
+    .isActive & {
+      @apply translate-x-0;
+    }
+  }
+
+  &__Header {
+    @apply relative flex items-center px-4 min-h-[56px];
+  }
+
+  &__Close {
+    @apply absolute right-5 flex border-0 p-0 bg-transparent;
+  }
+}

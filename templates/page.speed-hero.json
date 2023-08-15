@@ -1,0 +1,179 @@
+{
+  "sections": {
+    "d9dea0a9-5c1b-4aa0-94fa-7b3abf23023c": {
+      "type": "hero-section",
+      "blocks": {
+        "dbf7337a-49ac-4a4e-b1c1-9628b08b64db": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": false,
+            "text": "WIN. MORE. GAMES."
+          }
+        },
+        "f4a93205-3d4f-4a16-be42-89b0a8bc0171": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Apply Now",
+            "url": "#shopify-section-template--15766938058957__2c4b8d44-0215-4c5e-9d36-af30ce5ec87c"
+          }
+        },
+        "6021dab7-b5e4-466b-a1c5-9133c2287d33": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>Join the most exclusive Speed club in sport. Applications now open! #SpeedHeroes<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "dbf7337a-49ac-4a4e-b1c1-9628b08b64db",
+        "f4a93205-3d4f-4a16-be42-89b0a8bc0171",
+        "6021dab7-b5e4-466b-a1c5-9133c2287d33"
+      ],
+      "settings": {
+        "style": "black",
+        "image_desktop": "shopify:\/\/shop_images\/Group_42_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1027.png",
+        "show_image_decoration": true,
+        "title": "Speed Heroes",
+        "title_as_h1": true,
+        "title_small": true,
+        "title_not_uppercase_mobile": true
+      }
+    },
+    "c3fe672b-fdd5-44e3-960c-6d051b04a293": {
+      "type": "bundle-blocks-text",
+      "blocks": {
+        "4ae453e0-4580-4f5c-ac4f-68ac8b5fb7b3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_954_8a5b0f6e-c1f2-43bc-8969-66605255889a.png",
+            "text": "PitcheroGPS Player Bundle  + 1 YR Player Membership"
+          }
+        },
+        "5237e4e9-b039-4bae-b81c-d74295b6b4fc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_955.png",
+            "text": "Invitations to PitcheroGPS  Speed Meet Up"
+          }
+        },
+        "813af5cc-d11b-407d-b324-fb31c5c1bd62": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_956.png",
+            "text": "Verified Hero Status  on the PitcheroGPS Mobile App"
+          }
+        },
+        "53391497-1a0e-4b15-af78-f76a28f06b19": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_957.png",
+            "text": "Profile on the PitcheroGPS Speed Leaderboard!"
+          }
+        },
+        "bde13e0c-3126-4337-9c2d-f2327ec91330": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_958.png",
+            "text": "Priority Access to PitcheroGPS  Speed Leaderboard"
+          }
+        },
+        "9400e7b1-5b88-4e0e-a8ff-cdcb6fe65abe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_959.png",
+            "text": "25% Off PitcheroGPS Accessories"
+          }
+        }
+      },
+      "block_order": [
+        "4ae453e0-4580-4f5c-ac4f-68ac8b5fb7b3",
+        "5237e4e9-b039-4bae-b81c-d74295b6b4fc",
+        "813af5cc-d11b-407d-b324-fb31c5c1bd62",
+        "53391497-1a0e-4b15-af78-f76a28f06b19",
+        "bde13e0c-3126-4337-9c2d-f2327ec91330",
+        "9400e7b1-5b88-4e0e-a8ff-cdcb6fe65abe"
+      ],
+      "settings": {
+        "color": "#000000",
+        "subtitle": "",
+        "title": "100 PLAYERS WANTED!",
+        "text": "PitcheroGPS are seeking 100 players to be the first in the world to join the Speed Heroes.",
+        "btn_text": "Apply Now",
+        "btn_url": "#shopify-section-template--15766938058957__2c4b8d44-0215-4c5e-9d36-af30ce5ec87c"
+      }
+    },
+    "7614dd28-aad6-43a9-b57b-251a211b586e": {
+      "type": "video-section",
+      "disabled": true,
+      "settings": {
+        "video": "https:\/\/youtu.be\/a7FQ797ci44"
+      }
+    },
+    "d3d6141d-6e5d-461e-88c1-6bc7e8ca04d6": {
+      "type": "text-info-section",
+      "blocks": {
+        "51f80411-54dd-4169-970a-fba1028b1463": {
+          "type": "block",
+          "settings": {
+            "title": "<p>Whatever sport, position or level you play, speed is undefeated and PitcheroGPS is designed to train you to go faster – every training session, every match, every time you push yourself to the limit. <\/p>",
+            "text": "<p>The Speed Heroes are an exclusive group of aspiring players looking to unleash their true potential and become game changers who deliver in the moments that matter. <\/p><p>We’re searching for players like you who dream of turning pro or moving up the levels – all you have to do is be prepared to showcase your speed training with PitcheroGPS and fill out the form below to be part of this incredible new talent programme.<\/p><p>You will be given unique early access to PitcheroGPS, free stash and invited to attend elite speed training sessions held across the UK during Summer 2023.<\/p>"
+          }
+        },
+        "ae376b4f-7da8-4b47-b294-8ecd0f7609e5": {
+          "type": "block",
+          "settings": {
+            "title": "<p>In order to join the Speed Heroes programme, we want you to share our passion for speed as a game changer for players and be excited to learn, improve and perform using PitcheroGPS. Player terms are as follows:<\/p>",
+            "text": "<ul><li>You must be an active football, rugby or hockey player training and playing matches during the 2023\/24 season.<\/li><li>Amateur or semi-professional standard playing at a club, school, college, university or academy.<\/li><li>14 years+, all field positions and all genders<\/li><li>You must be open to sharing your passion for speed, uploading and sharing your latest speed stats after training and matches.<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "51f80411-54dd-4169-970a-fba1028b1463",
+        "ae376b4f-7da8-4b47-b294-8ecd0f7609e5"
+      ],
+      "settings": {
+        "title": "Speed Heroes Player Application"
+      }
+    },
+    "page_header": {
+      "type": "main-page-header",
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "background_newsletter": false,
+        "show_header": true,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_content": true
+      }
+    },
+    "2c4b8d44-0215-4c5e-9d36-af30ce5ec87c": {
+      "type": "new-from-register",
+      "custom_css": [
+        "{font-size: 32px; color: white;}"
+      ],
+      "settings": {
+        "style": "black",
+        "title": "Player Application",
+        "html": "<script charset=\"utf-8\" type=\"text\/javascript\" src=\"\/\/js.hsforms.net\/forms\/embed\/v2.js\"><\/script>\n<script>\n  hbspt.forms.create({\n    region: \"na1\",\n    portalId: \"2547723\",\n    formId: \"c1c08816-6d0e-420b-862d-2992f55352fd\"\n  });\n<\/script>"
+      }
+    }
+  },
+  "order": [
+    "d9dea0a9-5c1b-4aa0-94fa-7b3abf23023c",
+    "c3fe672b-fdd5-44e3-960c-6d051b04a293",
+    "7614dd28-aad6-43a9-b57b-251a211b586e",
+    "d3d6141d-6e5d-461e-88c1-6bc7e8ca04d6",
+    "page_header",
+    "main",
+    "2c4b8d44-0215-4c5e-9d36-af30ce5ec87c"
+  ]
+}

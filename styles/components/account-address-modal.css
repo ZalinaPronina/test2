@@ -1,0 +1,9 @@
+.AccountAddressModal {
+  &__Inner {
+    @apply max-w-lg px-5 py-10 xs-down:w-full xs-down:h-full xs-down:max-h-full xs:rounded-8 sm:px-12;
+  }
+
+  &__Close {
+    @apply top-10 sm:right-7;
+  }
+}

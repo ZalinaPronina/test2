@@ -1,0 +1,29 @@
+<fieldset class="p-0 m-0 space-y-5">
+  <legend class="p-0 font-medium">
+    {{ 'products.product.quantity' | t }}:
+  </legend>
+
+  <div class="flex space-x-2 mt-4" data-component="ProductCounter">
+    <span
+      class="cursor-pointer leading-none text-base font-bold flex items-center justify-center w-11 h-11 border border-solid border-brand-gray"
+      data-counter-remove
+      >-</span
+    >
+    <input
+      class="text-center text-base font-bold p-0 mx-0 flex items-center justify-center w-11 h-11 border border-solid border-brand-gray"
+      id="{{ product.id }}"
+      name="quantity"
+      type="number"
+      value="1"
+      min="1"
+      max="1000"
+      pattern="[0-9]*"
+      data-counter-quantity
+    >
+    <span
+      class="cursor-pointer leading-none text-base font-bold flex items-center justify-center w-11 h-11 border border-solid border-brand-gray"
+      data-counter-add
+      >+</span
+    >
+  </div>
+</fieldset>

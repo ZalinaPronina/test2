@@ -1,0 +1,581 @@
+{% liquid
+  assign className = "Metrics sm-down:bg-neutral-200"
+
+  if section.settings.top_padding
+    assign className = className | append: " md:pt-15"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " md:pb-15"
+  endif
+%}
+
+<section class="{{ className }}" data-section-id="{{ section.id }}" data-component="Metrics">
+  {% if section.settings.title != blank or section.settings.text != blank %}
+    <div class="sm:hidden">
+      <div class="max-w-screen-xl mx-auto px-3.5 xs:px-7.5 xl:px-12">
+        <div class="space-y-7 sm:space-y-11">
+          {% if section.settings.title != blank %}
+            <h2 class="text-24 font-body tracking-normal">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="rte max-w-[58em] mx-auto">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    {% capture navigation %}
+      {% assign block_count = 0 %}
+
+      <nav class="flex justify-center">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            {% assign block_count = block_count | plus: 1 %}
+
+            <button
+              class="Metrics__Trigger{% if block_count == 1 %} isActive{% endif %}"
+              type="button"
+              data-tab="trigger"
+              data-handle="{{ block.id }}"
+            >
+              {{ block.settings.title }}
+            </button>
+
+            {% unless block_count == section.blocks.size %}
+              <span class="shrink-0 w-0.5 bg-brand-accent mx-3 xs:mx-4 md:hidden"></span>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </nav>
+    {% endcapture %}
+
+    <div class="md-down:mt-10 md-down:bg-neutral-200">
+      <div class="max-w-screen-xl mx-auto px-3.5 xs:px-7.5 xl:px-12">
+        <div class="Metrics__Wrapper">
+          <div class="md-down:py-5 md:rounded-15 md:overflow-hidden md:bg-neutral-200 md:p-10 lg:py-14">
+            {% if section.settings.title != blank or section.settings.text != blank %}
+              <div class="text-center md-down:hidden md:mb-20">
+                <div class="max-w-screen-xl mx-auto px-3.5 xs:px-7.5 xl:px-12">
+                  <div class="space-y-7 sm:space-y-11">
+                    {% if section.settings.title != blank %}
+                      <h2 class="text-24 font-body tracking-normal">
+                        {{ section.settings.title }}
+                      </h2>
+                    {% endif %}
+          
+                    {% if section.settings.text != blank %}
+                      <div class="rte max-w-[58em] mx-auto">
+                        {{ section.settings.text }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+            {% unless section.blocks.size == 1 %}
+              {{ navigation }}
+            {% endunless %}
+
+            <div class="{% if section.blocks.size == 1 %}hasOnlyOne{% endif %}">
+              {% assign block_count = 0 %}
+
+              {% for block in section.blocks %}
+                {% if block.settings.title != blank %}
+                  {% assign block_count = block_count | plus: 1 %}
+
+                  <div
+                    class="Metrics__Content{% if block_count == 1 %} isActive{% endif %}"
+                    data-tab="content"
+                    data-handle="{{ block.id }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <div class="grid gap-9 md:gap-5 md:grid-cols-2 lg:gap-10">
+                      <div class="">
+                        {% if block.settings.image != blank %}
+                          {{ block.settings.image | image_url: width: 1200 | image_tag:
+                            loading: "lazy",
+                            class: "w-full h-auto rounded-16 overflow-hidden",
+                            sizes: "(min-width: 768px) 560px, 100vw",
+                            widths: "300, 600, 800, 1200",
+                            alt: block.settings.image.alt | escape
+                          }}
+                        {% endif %}
+                      </div>
+
+                      <div class="space-y-9 md:space-y-5">
+                        {% for i in (1..2) %}
+                          {% assign key_title = "block_#_title" | replace: "#", i %}
+
+                          <div class="Metrics__Block">
+                            <div class="p-5 space-y-4 rounded-15 bg-neutral-200 sm:space-y-3">
+                              {% if block.settings[key_title] != blank %}
+                                <h3 class="text-24 text-center font-body tracking-normal md:font-normal">
+                                  {{ block.settings[key_title] }}
+                                </h3>
+                              {% endif %}
+
+                              <div class="flex flex-col items-center sm-down:space-y-3 sm:flex-row sm:justify-between sm:space-x-5">
+                                {% for j in (1..3) %}
+                                  {% liquid
+                                    assign key_title = "block_#_column_$_title" | replace: "#", i | replace: "$", j
+                                    assign key_text = "block_#_column_$_text" | replace: "#", i | replace: "$", j
+                                    assign key_background_color = "block_#_column_$_background_color" | replace: "#", i | replace: "$", j
+                                    assign key_border_color = "block_#_column_$_border_color" | replace: "#", i | replace: "$", j
+                                    assign key_icon = "block_#_column_$_icon" | replace: "#", i | replace: "$", j
+                                  %}
+
+                                  {% if block.settings[key_title] != blank or block.settings[key_text] != blank %}
+                                    <div class="space-y-2">
+                                      {% if block.settings[key_title] != blank %}
+                                        <h4 class="text-16 text-center font-body font-normal tracking-normal">
+                                          {{ block.settings[key_title] }}
+                                        </h4>
+                                      {% endif %}
+
+                                      {% if block.settings[key_text] != blank %}
+                                        <div
+                                          class="flex items-center justify-center space-x-2 min-w-[146px] min-h-[70px] text-white border border-solid rounded-xl p-3 md:min-w-[100px] md:p-2 lg:min-w-[146px] lg:p-3"
+                                          style="
+                                          background-color: {{ block.settings[key_background_color] }};
+                                          border-color: {{ block.settings[key_border_color] }};
+                                          "
+                                        >
+                                          {% if block.settings[key_icon] %}
+                                            {% render "icons", icon: "arrow-up", className: "!w-5 !h-auto" %}
+                                          {% endif %}
+
+                                          <span class="font-heading font-bold text-34 tracking-wider !leading-none md:text-24 lg:text-34">
+                                            {{ block.settings[key_text] }}
+                                          </span>
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+
+                    <div class="lg:px-20">
+                      <div class="grid gap-14 md:grid-cols-2">
+                        {% for i in (1..4) %}
+                          {% liquid
+                            assign key_title = "content_block_#_title" | replace: "#", i
+                            assign key_text = "content_block_#_text" | replace: "#", i
+                            assign key_image = "content_block_#_image" | replace: "#", i
+                          %}
+
+                          {% if block.settings[key_title] != blank or block.settings[key_text] != blank or block.settings[key_image] != blank %}
+                            <div class="flex flex-col justify-center space-y-6 md:space-y-5 md:pr-6{% if block.settings[key_title] == blank or block.settings[key_text] == blank %} md-down:hidden{% endif %}">
+                              {% if block.settings[key_title] != blank %}
+                                <h3 class="text-24 font-body tracking-normal max-w-[12em]">
+                                  {{ block.settings[key_title] }}
+                                </h3>
+                              {% endif %}
+
+                              {% if block.settings[key_text] != blank %}
+                                <div class="rte">{{ block.settings[key_text] }}</div>
+                              {% endif %}
+
+                              {% if block.settings[key_image] != blank %}
+                                {{ block.settings[key_image] | image_url: width: 1200 | image_tag:
+                                  loading: "lazy",
+                                  class: "w-full h-auto md-down:hidden",
+                                  sizes: "(min-width: 768px) 560px, 100vw",
+                                  widths: "300, 600, 800, 1200",
+                                  alt: block.settings[key_image].alt | escape
+                                }}
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            {% unless section.blocks.size == 1 %}
+              {{ navigation }}
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Metrics",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Block #1"
+        },
+        {
+          "type": "text",
+          "id": "block_1_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "paragraph",
+          "content": "Column #1"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_1_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_1_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_1_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_1_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_1_column_1_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "paragraph",
+          "content": "Column 2"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_2_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_2_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_2_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_2_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_1_column_2_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "paragraph",
+          "content": "Column #3"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_3_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_1_column_3_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_3_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_1_column_3_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_1_column_3_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Block #2"
+        },
+        {
+          "type": "text",
+          "id": "block_2_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "paragraph",
+          "content": "Column #1"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_1_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_1_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_1_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_1_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_2_column_1_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "paragraph",
+          "content": "Column 2"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_2_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_2_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_2_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_2_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_2_column_2_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "paragraph",
+          "content": "Column #3"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_3_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "block_2_column_3_text",
+          "label": "Text",
+          "default": "10"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_3_background_color",
+          "label": "Background color",
+          "default": "#012130"
+        },
+        {
+          "type": "color",
+          "id": "block_2_column_3_border_color",
+          "label": "Border color",
+          "default": "#43CD9E"
+        },
+        {
+          "type": "checkbox",
+          "id": "block_2_column_3_icon",
+          "label": "Show arrow icon",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Content block #1"
+        },
+        {
+          "type": "text",
+          "id": "content_block_1_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content_block_1_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_block_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content block #2"
+        },
+        {
+          "type": "text",
+          "id": "content_block_2_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content_block_2_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_block_2_image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content block #3"
+        },
+        {
+          "type": "text",
+          "id": "content_block_3_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content_block_3_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_block_3_image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Content block #4"
+        },
+        {
+          "type": "text",
+          "id": "content_block_4_title",
+          "label": "Title",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content_block_4_text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_block_4_image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metrics",
+      "settings": {
+        "title": "Heading"
+      }
+    }
+  ]
+}
+{% endschema %}

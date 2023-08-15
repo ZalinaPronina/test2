@@ -1,0 +1,11 @@
+.Image {
+  /* img {
+    @apply opacity-0 transition-opacity duration-300 ease-out;
+  }
+
+  &.is-loaded {
+    img {
+      @apply opacity-100;
+    }
+  } */
+}

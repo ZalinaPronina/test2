@@ -1,0 +1,168 @@
+{% liquid
+  assign variant = product.variants.first
+  assign variant_price = product.metafields.deposit.fake_price | times: 100
+  assign quantity_min = product.metafields.deposit.min_quantity | default: 20
+  assign quantity_max = product.metafields.deposit.max_quantity | default: 40
+%}
+
+<div
+  data-component="CheckoutProcessTeam"
+  data-section-id="{{ section.id }}"
+>
+  <section class="py-8 sm:py-14">
+    {% if section.settings.membership_title != blank %}
+      <header class="mb-12 text-center">
+        <div class="max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+          <h2 class="text-24 font-body tracking-normal">
+            {{ section.settings.membership_title }}
+          </h2>
+        </div>
+      </header>
+    {% endif %}
+
+    <div data-checkout-process="membership">
+      <div class="max-w-4xl mx-auto px-5 lg:px-14">
+        <div class="flex justify-center mb-12">
+          <div class="flex items-center h-18 border border-solid rounded-10" data-component="ProductCounter">
+            <button type="button" class="cursor-pointer flex items-center justify-center h-full px-5 disabled:text-brand-gray" disabled data-counter-remove>
+              {% render "icons", icon: "chevron-down" %}
+            </button type="button">
+
+            <input class="text-center text-40 text-brand-accent font-heading tracking-wide p-0 mx-0 flex items-center justify-center border-0 border-x border-solid border-brand-gray" name="quantity" type="number" value="{{ quantity_min }}" min="{{ quantity_min }}" max="{{ quantity_max }}" pattern="[0-9]*" data-counter-quantity data-checkout-process="quantity" data-fake-price="{{ variant_price }}">
+
+            <button type="button" class="cursor-pointer flex items-center justify-center h-full px-5 disabled:text-brand-gray" data-counter-add>
+              {% render "icons", icon: "chevron-up" %}
+            </button type="button">
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-end justify-center gap-5 sm:gap-11">
+          {% if product %}
+            <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+              <input
+                type="radio"
+                name="membership"
+                id="membership-{{ product.id }}"
+                value="{{ variant.id }}"
+                class="sr-only peer"
+                checked
+              />
+
+              <label
+                for="membership-{{ product.id }}"
+                class="block cursor-pointer border-2 border-solid peer-checked:border-brand-accent peer-checked:shadow-checked"
+              >
+                <div class="text-center p-7.5">
+                  <h3 class="text-24 font-body tracking-normal">
+                    {{ "checkout_process.membership.team.annual" | t }}
+                  </h3>
+
+                  <div class="flex items-center justify-center text-left space-x-4 mt-2">
+                    <span class="font-heading text-72" data-checkout-process="quantity-price" data-original-price="{{ variant_price }}">
+                      {{ variant_price | times: quantity_min | money_without_trailing_zeros }}
+                    </span>
+
+                    <span class="font-bold text-24">
+                      {{ "checkout_process.membership.per_year_html" | t }}
+                    </span>
+                  </div>
+
+                  <div class="text-neutral-500 mt-2">
+                    {% assign deposit_price = variant.price | money_without_trailing_zeros %}
+                    {{ "checkout_process.membership.team.deposit" | t: price: deposit_price }}
+                  </div>
+
+                  <div class="text-left flex justify-center mt-4">
+                    <ul class="font-medium text-neutral-400 space-y-1">
+                      <li>
+                        {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+
+                        <span>x<span data-checkout-process="quantity-value">20</span> {{ "checkout_process.membership.team.tracker" | t }}</span>
+                      </li>
+
+                      <li>
+                        {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+
+                        <span>x<span data-checkout-process="quantity-value">20</span> {{ "checkout_process.membership.team.vest" | t }}</span>
+                      </li>
+
+                      <li>
+                        {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+
+                        <span>x<span data-checkout-process="case-value" data-original-quantity="1">1</span> {{ "checkout_process.membership.team.case" | t }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </label>
+            </div>
+          {% else %}
+            <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+              <div class="text-center p-7.5">
+                {{ "checkout_process.membership.empty" | t }}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% capture membership_message %}{{ "checkout_process.membership.team.message" | t }}{% endcapture %}
+
+      {% if membership_message != " " %}
+        <div class="max-w-3xl mx-auto px-5 mt-12 lg:px-12">
+          <div class="rte font-medium text-center">{{ membership_message }}</div>
+        </div> 
+      {% endif %}
+
+      <div class="text-center mt-12">
+        <div class="max-w-2xl mx-auto px-5">
+          {% if section.settings.agree_checkbox %}
+            <label class="block space-x-1.5 cursor-pointer text-14 font-semibold text-neutral-500">
+              <input type="checkbox" name="agree" id="agree" class="rounded-full" data-checkout-process="agree">
+              <span class="sm-down:text-14 [&_a]:underline">{{ "checkout_process.membership.checkout_agree_checkbox_html" | t }}</span>
+            </label>
+          {% endif %}
+
+          {% capture deposit_price_with_prefix %}- {{ deposit_price }}{% endcapture %}
+
+          <button
+            type="button"
+            class="Button Button--sale mt-12 !w-auto !uppercase sm:!h-15"
+            data-checkout-process="submit"
+            disabled
+          >
+            {% if product %}
+              {{ "checkout_process.membership.team.submit" | t: price: deposit_price_with_prefix }}
+            {% else %}
+              {{ "checkout_process.membership.submit" | t }}
+            {% endif %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+  {
+    "name": "Main",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Membership"
+      },
+      {
+        "type": "text",
+        "id": "membership_title",
+        "label": "Heading",
+        "default": "Choose Membership"
+      },
+      {
+        "type": "checkbox",
+        "id": "agree_checkbox",
+        "label": "Enbale agree checkbox",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,490 @@
+{
+  "sections": {
+    "navigation": {
+      "type": "product-navigation",
+      "blocks": {
+        "c76b2a9b-3432-41db-8b04-80681b5ee8a6": {
+          "type": "product",
+          "settings": {
+            "product": "new-gps-player-bundle",
+            "image": "shopify:\/\/shop_images\/Frame_467_20ed9b04-8a55-4624-83fd-71e9854bea28.png",
+            "icon": "shopify:\/\/shop_images\/Group_95_59265f24-a10b-4d3d-8312-8bac17e1506f.png",
+            "text": ""
+          }
+        },
+        "e89fe0b9-cf0d-4fcb-b227-097e00093b42": {
+          "type": "product",
+          "settings": {
+            "product": "new-gps-team-bundle",
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "icon": "shopify:\/\/shop_images\/Group_95_59265f24-a10b-4d3d-8312-8bac17e1506f.png",
+            "text": ""
+          }
+        },
+        "f0fb230e-d3d8-4133-a475-6875013cb863": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "original-team-bundle",
+            "image": "shopify:\/\/shop_images\/Group.png",
+            "icon": "shopify:\/\/shop_images\/Navigation_Approved.png",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "c76b2a9b-3432-41db-8b04-80681b5ee8a6",
+        "e89fe0b9-cf0d-4fcb-b227-097e00093b42",
+        "f0fb230e-d3d8-4133-a475-6875013cb863"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-product-checkout",
+      "settings": {
+        "enable_checkout_process": false,
+        "checkout_process_page": "",
+        "checkout_process_page_gift": "",
+        "button": "Sold out",
+        "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+        "button_color": "",
+        "button_background_color": "#e22120"
+      }
+    },
+    "cc5488a3-bd26-4984-87bb-79c120c79b96": {
+      "type": "offer-app",
+      "disabled": true,
+      "blocks": {
+        "a2e6d94c-7439-4175-be73-9b29cca9e655": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "apple",
+            "title": "Apple",
+            "url": "https:\/\/www.apple.com\/app-store\/"
+          }
+        },
+        "2bcc3898-3ed7-4ef5-a4a1-648499fa5b7f": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "google",
+            "title": "Google",
+            "url": "https:\/\/play.google.com\/store\/"
+          }
+        },
+        "999f1aa1-4ef6-40c0-8ee0-81fcef6578f7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage.png",
+            "narrow": true
+          }
+        },
+        "d22edc37-e580-4938-b9a9-3dc5181c28fc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats.png",
+            "narrow": true
+          }
+        },
+        "d072e3e7-40a8-4e07-a578-c2837fd98769": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity.png",
+            "narrow": true
+          }
+        },
+        "d36f4420-a795-45db-9b96-b7c9f44e7476": {
+          "type": "text",
+          "settings": {
+            "text": "<p>[TEST TEXT] The PitcheroGPS Player vest records your activity during a training session or game. When the activity ends, the recorded data is transferred from the tracker to the PitcheroGPS App on your mobile phone via Bluetooth.<br\/><br\/>Made for Apple and Android phones, the App downloads the data from the tracker in seconds and displays your performance using intuitive, easy-to-read charts and tables.<\/p>"
+          }
+        },
+        "7ba8d71f-2941-4a3c-9068-1c66f019dd6e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The App displays a detailed overview, comparing your latest performance to your Personal Best. All performances are saved within the App, creating a journal showing your progress and achievements over time.<br\/><br\/>The latest #HERO Speeds Challenge charts are provided within the App, allowing players to compare their most recent performance with players across all sports, ages and standards!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a2e6d94c-7439-4175-be73-9b29cca9e655",
+        "2bcc3898-3ed7-4ef5-a4a1-648499fa5b7f",
+        "999f1aa1-4ef6-40c0-8ee0-81fcef6578f7",
+        "d22edc37-e580-4938-b9a9-3dc5181c28fc",
+        "d072e3e7-40a8-4e07-a578-c2837fd98769",
+        "d36f4420-a795-45db-9b96-b7c9f44e7476",
+        "7ba8d71f-2941-4a3c-9068-1c66f019dd6e"
+      ],
+      "settings": {
+        "top_spacing": true,
+        "bottom_spacing": true,
+        "video": "",
+        "title": "",
+        "sub_title": "PitcheroGPS Mobile App",
+        "text": "<p>Complimentary Apple and Android App<\/p>",
+        "button_text": "",
+        "button_url": ""
+      }
+    },
+    "188a8f28-fcdf-433a-8d58-6f6ec52c0c6d": {
+      "type": "metrics",
+      "disabled": true,
+      "blocks": {
+        "39cb8ece-510d-4951-b036-39de6976ac7c": {
+          "type": "tab",
+          "settings": {
+            "title": "Speed",
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "block_1_title": "Today’s Game",
+            "block_1_column_1_title": "Top Speed KM\/H",
+            "block_1_column_1_text": "34.23",
+            "block_1_column_1_background_color": "#43cd9e",
+            "block_1_column_1_border_color": "#43cd9e",
+            "block_1_column_1_icon": true,
+            "block_1_column_2_title": "HSR Count",
+            "block_1_column_2_text": "6",
+            "block_1_column_2_background_color": "#012130",
+            "block_1_column_2_border_color": "#43cd9e",
+            "block_1_column_2_icon": true,
+            "block_1_column_3_title": "Av. Speed KM\/H",
+            "block_1_column_3_text": "4.5",
+            "block_1_column_3_background_color": "#012130",
+            "block_1_column_3_border_color": "#43cd9e",
+            "block_1_column_3_icon": true,
+            "block_2_title": "Personal best",
+            "block_2_column_1_title": "Top speed KM\/H",
+            "block_2_column_1_text": "33.23",
+            "block_2_column_1_background_color": "#012130",
+            "block_2_column_1_border_color": "#43cd9e",
+            "block_2_column_1_icon": true,
+            "block_2_column_2_title": "HSR count",
+            "block_2_column_2_text": "11",
+            "block_2_column_2_background_color": "#012130",
+            "block_2_column_2_border_color": "#43cd9e",
+            "block_2_column_2_icon": true,
+            "block_2_column_3_title": "Av. Speed KM\/H",
+            "block_2_column_3_text": "4.9",
+            "block_2_column_3_background_color": "#012130",
+            "block_2_column_3_border_color": "#43cd9e",
+            "block_2_column_3_icon": true,
+            "content_block_1_title": "Top Speed",
+            "content_block_1_text": "<p>What is your fastest running speed during training or a match? Measure your top speed and track your progress over the season.  Compare your speed with athletes across the world with the #HERO SPEED Challenge.<\/p>",
+            "content_block_2_title": "Average Speed",
+            "content_block_2_text": "<p>Track improvements in your fitness levels by monitoring your average speed during each session. Higher average speed means more time spent running at high-speeds, a key indicator to fitness and performance.<\/p>",
+            "content_block_3_title": "High-Speed Running (HSR)",
+            "content_block_3_text": "<p>How long do you spend running at a high-speed. Gauge whether you are pushing yourself to the limit during a match or training session.<\/p>",
+            "content_block_4_title": "",
+            "content_block_4_text": "",
+            "content_block_4_image": "shopify:\/\/shop_images\/Speed_Summary.png"
+          }
+        },
+        "5dadf144-4882-4e5a-8461-5ef5f15bdc73": {
+          "type": "tab",
+          "settings": {
+            "title": "Distance",
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "block_1_title": "Today's Game",
+            "block_1_column_1_title": "Distance (M)",
+            "block_1_column_1_text": "6500",
+            "block_1_column_1_background_color": "#012130",
+            "block_1_column_1_border_color": "#43cd9e",
+            "block_1_column_1_icon": true,
+            "block_1_column_2_title": "HSR Metres",
+            "block_1_column_2_text": "220",
+            "block_1_column_2_background_color": "#43cd9e",
+            "block_1_column_2_border_color": "#43cd9e",
+            "block_1_column_2_icon": true,
+            "block_1_column_3_title": "Metres\/Min",
+            "block_1_column_3_text": "60",
+            "block_1_column_3_background_color": "#012130",
+            "block_1_column_3_border_color": "#43cd9e",
+            "block_1_column_3_icon": true,
+            "block_2_title": "Personal Best",
+            "block_2_column_1_title": "Distance (M)",
+            "block_2_column_1_text": "7302",
+            "block_2_column_1_background_color": "#012130",
+            "block_2_column_1_border_color": "#43cd9e",
+            "block_2_column_1_icon": true,
+            "block_2_column_2_title": "HSR Metres",
+            "block_2_column_2_text": "215",
+            "block_2_column_2_background_color": "#012130",
+            "block_2_column_2_border_color": "#43cd9e",
+            "block_2_column_2_icon": true,
+            "block_2_column_3_title": "Metres\/Min",
+            "block_2_column_3_text": "62",
+            "block_2_column_3_background_color": "#012130",
+            "block_2_column_3_border_color": "#43cd9e",
+            "block_2_column_3_icon": true,
+            "content_block_1_title": "Active Distance (Metres)",
+            "content_block_1_text": "<p>Know exactly how far you travelled in a match whilst running or jogging. Do you spend more time than you think standing or walking?<\/p>",
+            "content_block_2_title": "Meteres Per Minute",
+            "content_block_2_text": "<p>How far are you travelling every minute? A higher metres per minute figure suggests a higher work-rate throughout the duration of a session.<\/p>",
+            "content_block_3_title": "High-Speed Running (Distance)",
+            "content_block_3_text": "<p>Record the distance you travelled at high-speeds. Professionals can put down over 1000m of high-speed running efforts in a single game.<\/p>",
+            "content_block_4_title": "",
+            "content_block_4_text": "",
+            "content_block_4_image": "shopify:\/\/shop_images\/Distance_Summery.png"
+          }
+        },
+        "fa661d1c-41c8-4b9c-bddd-0424f5d2be44": {
+          "type": "tab",
+          "settings": {
+            "title": "Intensity",
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "block_1_title": "Today's Game",
+            "block_1_column_1_title": "Accels",
+            "block_1_column_1_text": "22",
+            "block_1_column_1_background_color": "#012130",
+            "block_1_column_1_border_color": "#43cd9e",
+            "block_1_column_1_icon": true,
+            "block_1_column_2_title": "Decals",
+            "block_1_column_2_text": "17",
+            "block_1_column_2_background_color": "#012130",
+            "block_1_column_2_border_color": "#43cd9e",
+            "block_1_column_2_icon": true,
+            "block_1_column_3_title": "Impacts",
+            "block_1_column_3_text": "3",
+            "block_1_column_3_background_color": "#43cd9e",
+            "block_1_column_3_border_color": "#43cd9e",
+            "block_1_column_3_icon": true,
+            "block_2_title": "Personal Best",
+            "block_2_column_1_title": "Accels",
+            "block_2_column_1_text": "25",
+            "block_2_column_1_background_color": "#012130",
+            "block_2_column_1_border_color": "#43cd9e",
+            "block_2_column_1_icon": true,
+            "block_2_column_2_title": "Decals",
+            "block_2_column_2_text": "21",
+            "block_2_column_2_background_color": "#012130",
+            "block_2_column_2_border_color": "#43cd9e",
+            "block_2_column_2_icon": true,
+            "block_2_column_3_title": "Impacts",
+            "block_2_column_3_text": "2",
+            "block_2_column_3_background_color": "#012130",
+            "block_2_column_3_border_color": "#43cd9e",
+            "block_2_column_3_icon": true,
+            "content_block_1_title": "Accelerations",
+            "content_block_1_text": "<p>Want to know how many sprints you do every match? Monitor all high-velocity explosive movements completed during a session <\/p>",
+            "content_block_2_title": "Decelerations",
+            "content_block_2_text": "<p>Deceleration puts significant strain on the body. Monitoring this metric tells you whether the intensity of your sessions is more likely to cause injury.<\/p>",
+            "content_block_3_title": "Impact",
+            "content_block_3_text": "<p>Impacts to the body can cause injury and in some cases concussion. Evaluate player health after large impacts to avoid long-term injuries.<\/p>",
+            "content_block_4_title": "",
+            "content_block_4_text": "",
+            "content_block_4_image": "shopify:\/\/shop_images\/Intesity_Graph_02.png"
+          }
+        }
+      },
+      "block_order": [
+        "39cb8ece-510d-4951-b036-39de6976ac7c",
+        "5dadf144-4882-4e5a-8461-5ef5f15bdc73",
+        "fa661d1c-41c8-4b9c-bddd-0424f5d2be44"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "title": "Player Metrics",
+        "text": "<p>The PitcheroGPS Player Vest records all activity during a training session or match. <\/p><p>For ease of use and quick comparisons the activity is processed and separated into 3 categories; SPEED, DISTANCE and INTENSITY providing a detailed overview of performance, player health and fatigue.<\/p>"
+      }
+    },
+    "770d0870-16d4-4e80-a558-273be76f2ee1": {
+      "type": "columns",
+      "disabled": true,
+      "blocks": {
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg",
+            "title": "Global Positioning System (GPS)",
+            "text": "<p>The Player Vest records 9 data points every second, using a constellation of satellites to provide a highly accurate log of the player's location during training and matches.<br\/><br\/>The log is used to calculate various metrics related to speed, distance, and time.<\/p>",
+            "url": ""
+          }
+        },
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg",
+            "title": "Accelerometer",
+            "text": "<p>Measures and records relative changes in velocity across  planes or axes. Accelerations can be displayed in a few different ways, but the 2 primary measurements in a PitcheroGPS vest are meters per second squared (m\/s²) and G-forces (g).<\/p>",
+            "url": "shopify:\/\/pages\/why-use-a-gps-player-vest"
+          }
+        },
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg",
+            "title": "Gyroscope",
+            "text": "<p>Gyroscopes measure accelerations on 3 rotational axes to provide enhanced data. <\/p><p>This can be relevant for sport-specific movements such as kicking a football, passing a rugby ball, or swinging a hockey stick.<\/p>",
+            "url": ""
+          }
+        },
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-3": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg",
+            "title": "This is a heading",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nisl, sagittis sit amet pellentesque vitae, congue et eros. <\/p><p>Felis non urna bibendum rhoncus. Nullam malesuada massa eu ultricies dictum.<\/p>",
+            "url": ""
+          }
+        },
+        "259d456b-87d9-4751-905e-a3a1a6c26fe5": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg",
+            "title": "This is a heading",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nisl, sagittis sit amet pellentesque vitae, congue et eros. <\/p><p>Felis non urna bibendum rhoncus. Nullam malesuada massa eu ultricies dictum.<\/p>",
+            "url": ""
+          }
+        },
+        "9e2eee84-6e25-4092-9fd2-28c34e5110b7": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg",
+            "title": "This is a heading",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nisl, sagittis sit amet pellentesque vitae, congue et eros. <\/p><p>Felis non urna bibendum rhoncus. Nullam malesuada massa eu ultricies dictum.<\/p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-0",
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-1",
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-2",
+        "template--15660718358733__770d0870-16d4-4e80-a558-273be76f2ee1-166593766121878c86-3",
+        "259d456b-87d9-4751-905e-a3a1a6c26fe5",
+        "9e2eee84-6e25-4092-9fd2-28c34e5110b7"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Technical Innovation",
+        "text": "<p>The PitcheroGPS Player Vest brings world-class innovation, identical to the technology used by professional players and national teams, to grassroots and non-league sports.<\/p>"
+      }
+    },
+    "6f867fb0-4716-4376-b4ba-5f7c3b0343c4": {
+      "type": "hero-video",
+      "blocks": {
+        "70c5011b-e652-4574-89de-56be94c09cd5": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "BOOK YOUR PLACE TODAY",
+            "url": "shopify:\/\/pages\/hero"
+          }
+        },
+        "6238977a-eb78-454d-b7dd-d09e1e3e1c89": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The search for the fastest player in grassroots sport. <strong>ALL players. ALL ages. ALL competitions.<\/strong><\/p>"
+          }
+        },
+        "bdc1554b-9a75-4d69-b99e-02fa7430f817": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "title": "How fast is fast?",
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY&t=6s",
+            "button": "WATCH VIDEO"
+          }
+        }
+      },
+      "block_order": [
+        "70c5011b-e652-4574-89de-56be94c09cd5",
+        "6238977a-eb78-454d-b7dd-d09e1e3e1c89",
+        "bdc1554b-9a75-4d69-b99e-02fa7430f817"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/Hero_Spped_Challenge_Banner_V2_1.png",
+        "image_decoration": true,
+        "title": "#HERO SPEED CHALLENGE",
+        "title_as_h1": false,
+        "sub_title": "LAUNCHING JULY 2023"
+      }
+    },
+    "c17c0d64-0f05-4156-a9cf-5398171985ec": {
+      "type": "media-slider",
+      "blocks": {
+        "1434f6b9-322f-461b-bf59-3103ff658d45": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_04.jpg"
+          }
+        },
+        "06416937-b70a-4fd4-b5e7-e8ae212fd2b4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_03.jpg"
+          }
+        },
+        "0f6161c9-30b3-44a3-be48-6b2ec64c9910": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_01.jpg"
+          }
+        },
+        "623484a0-bcdf-4ee7-ab10-80e58f5695eb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_07.jpg"
+          }
+        },
+        "3fa57dd8-155e-4bb0-b1d8-f7d338e6d373": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_05.jpg"
+          }
+        },
+        "f8f4b5a6-da12-4122-b38d-1e041d68705b": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_06.jpg"
+          }
+        },
+        "57f7637c-c508-42bb-ab0f-f7ab99318535": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pitchero_GPS_Gallery_02.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1434f6b9-322f-461b-bf59-3103ff658d45",
+        "06416937-b70a-4fd4-b5e7-e8ae212fd2b4",
+        "0f6161c9-30b3-44a3-be48-6b2ec64c9910",
+        "623484a0-bcdf-4ee7-ab10-80e58f5695eb",
+        "3fa57dd8-155e-4bb0-b1d8-f7d338e6d373",
+        "f8f4b5a6-da12-4122-b38d-1e041d68705b",
+        "57f7637c-c508-42bb-ab0f-f7ab99318535"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "8419e753-9835-4f91-ad6d-26f58f86969c": {
+      "type": "table",
+      "disabled": true,
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "HOW DOES IT COMPARE",
+        "code": "<table>\n        <thead>\n          <tr>\n            <th>Tracker<\/th>\n            <th>\n              <svg class=\"sm:hidden\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 51 16\"><path d=\"M4.511 15.107v-.266c0-.094-.019-.19-.038-.284-.038-.284-.095-.588-.076-.872 0-.114.038-.19.057-.303 0-.209-.076-.398-.076-.607 0-.075.02-.17 0-.246-.019-.076-.056-.17-.075-.246-.057-.171-.095-.342-.152-.531l-.057-.285c-.019-.056-.038-.094-.038-.132v-.095c0-.019-.038-.057-.057-.095-.246-.436-.36-.928-.625-1.345-.038-.057-.095-.114-.114-.19-.019-.038 0-.095-.019-.152-.019-.151-.038-.265-.019-.417.038-.284.076-.568.133-.853.076-.398.246-.72.36-1.08.057-.17.133-.341.19-.55.019-.056.019-.132.037-.208.02-.038.038-.076.057-.133.057-.132.133-.246.17-.398.02-.114.058-.208.077-.303.038-.095.095-.17.132-.265.038-.114.057-.266.171-.266h.095c.057 0 .114.038.17.057.057 0 .171-.019.228 0 .019 0 .038.019.057.038.057.019.151.019.227.038.038.019.057.038.076.057.038.019.076 0 .095.019a.182.182 0 0 1 .038.17c0 .02.056.02.075.038.02.02.02.057.038.114.038.076.114.095.114.19 0 .094-.095.17-.17.208l-.19.19c-.038.018-.114.037-.19.075-.056.02-.113.076-.17.095-.038.019-.095.019-.133.038-.133.057-.19.19-.265.341-.133.284-.17.683-.209 1.08-.038.399-.038.797-.076 1.176-.018.19-.075.34-.037.511.019.057.132.114.17.152.114.076.209.17.284.265.057.076.114.171.19.209.076.038.095.095.133.152.019.037.076.113.113.113.171.076.323.228.455.38.057.056.133.113.209.17.057.057.151.227.227.227.114-.018.17-.17.152-.303a.453.453 0 0 1-.057-.17V10.5c0-.02-.038-.038-.057-.057a.534.534 0 0 1-.076-.209c-.019-.094-.075-.303 0-.398.02-.018.057-.018.076-.018v-.114c0-.114.02-.228.038-.322.076-.285.209-.57.455-.72.265-.152.607-.114.89-.039.475.133.626.607.588 1.062 0 .057-.019.133-.019.19 0 .037.057.037.057.094a.253.253 0 0 1-.019.17c-.038.152-.056.36-.151.437-.038.038-.076.038-.114.075-.038.057-.038.133-.057.19-.057.152-.17.19-.19.265-.037.133-.075.285-.132.417-.019.038-.057.114-.057.133 0 .038.17.095.209.095a.88.88 0 0 1 .379.246c.075.076.132.17.151.285.02.208 0 .417-.038.587a.674.674 0 0 0-.038.19c0 .095.057.208.076.322.02.133.038.246.038.379 0 .114-.019.246-.057.36-.019.095-.094.17-.132.265a.999.999 0 0 0-.057.228c-.02.133.038.265.038.417 0 .133-.076.227-.057.36 0 .019 0 .019.019.038 2.388-.815 4.094-3.052 4.094-5.705a6.018 6.018 0 0 0-6.028-6.028A6.018 6.018 0 0 0 0 9.724c0 2.805 1.914 5.155 4.511 5.838 0-.095-.019-.19-.019-.266.057-.019.038-.075.02-.19ZM18.253 6.919v3.013h4.416c-.398 1.44-1.649 2.37-3.525 2.37-1.858 0-4.056-1.346-4.056-4.436 0-2.919 2.18-4.283 4.037-4.283 1.592 0 2.672.872 3.26 1.914h4.227C25.797 2.635 22.764.266 19.22.266c-3.298 0-6.141 1.838-7.317 4.643a7.569 7.569 0 0 1 1.782 4.872 7.655 7.655 0 0 1-.626 3.013c1.422 1.725 3.583 2.843 6.104 2.843 4.094 0 7.885-2.975 7.885-7.922 0-.304 0-.512-.02-.777h-8.775v-.02ZM37.472 1.63C36.676.967 35.652.55 32.923.55H28.09v14.765h3.62V10.69h1.63c2.294 0 3.298-.417 4.322-1.27.947-.796 1.554-2.369 1.554-3.866 0-1.517-.588-2.976-1.744-3.924Zm-4.227 5.743H31.71V3.867h1.403c.815 0 2.502 0 2.502 1.744-.02 1.762-1.65 1.762-2.37 1.762ZM46.703 6.842C44.049 5.648 43.65 5.46 43.65 4.587c0-.702.645-1.156 1.29-1.156 1.155 0 1.269.947 1.364 1.44h3.715c-.038-.834-.095-1.838-.986-2.919-.966-1.137-2.54-1.668-4-1.668-2.482 0-5.174 1.573-5.174 4.36 0 2.767 2.578 3.81 3.62 4.226 2.275.967 2.9 1.195 2.9 2.18 0 .682-.53 1.422-1.44 1.422-.474 0-1.535-.303-1.535-2.01h-3.753v.475c0 1.895 1.061 4.7 5.326 4.7 3.905 0 5.155-2.37 5.155-4.53.02-1.763-.682-3.033-3.43-4.265Z\" fill=\"#fff\"><\/path><\/svg>\n\n              <svg class=\"sm-down:hidden\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 148 20\"><path d=\"M6.208.507H0v19.01h4.662v-5.966h2.101c2.947 0 4.227-.532 5.556-1.643 1.208-1.038 2.005-3.067 2.005-4.976 0-1.932-.75-3.792-2.247-5.024-1.038-.87-2.343-1.4-5.87-1.4ZM4.662 9.3V4.783h1.787c1.063 0 3.213 0 3.213 2.246 0 2.27-2.102 2.27-3.044 2.27H4.662ZM27.223.507h-4.276v4.759h-2.101v3.671h2.101v10.58h4.276V8.937h2.053V5.266h-2.053V.507ZM37.174 4.783c-4.275 0-7.536 3.381-7.536 7.584 0 4.227 3.309 7.633 7.632 7.633 3.865 0 6.715-2.657 7.488-5.894h-4.347c-.46.87-1.305 1.909-3.092 1.909-2.03 0-3.382-1.546-3.382-3.624 0-2.004 1.28-3.623 3.213-3.623h.169c1.763 0 2.609 1.039 3.092 2.005h4.323c-.724-3.502-3.768-5.99-7.56-5.99ZM50.049.507h-4.276v19.01h4.276v-7.899c0-.7 0-2.826 2.391-2.826 2.295 0 2.295 2.295 2.295 2.971v7.754h4.275v-7.971c0-2.536-.12-3.792-1.328-5.217-.894-1.087-2.512-1.57-3.89-1.57-1.521 0-2.946.507-3.67 1.787h-.049V.507h-.024ZM74.54 15.048c-.7 1.594-1.69 2.826-2.898 3.647a6.923 6.923 0 0 1-4.058 1.28c-4.082 0-7.56-3.309-7.56-7.56 0-3.985 3.14-7.657 7.487-7.657 4.348 0 7.537 3.43 7.537 7.778 0 .556-.049.797-.097 1.135H64.275c.265 1.691 1.666 2.706 3.333 2.706 1.304 0 2.005-.58 2.584-1.329h4.348Zm-3.768-4.227c-.169-.845-1.038-2.44-3.237-2.44-2.222 0-3.067 1.595-3.236 2.44h6.473ZM76.04 5.266h4.009v1.522h.048c.362-.7 1.111-2.005 3.575-2.005v4.275c-1.98.048-3.358.459-3.358 2.609v7.826H76.04V5.266ZM89.686 19.252v-.339c0-.12-.024-.241-.048-.362-.048-.362-.12-.749-.097-1.111 0-.145.049-.242.073-.387 0-.265-.097-.507-.097-.773 0-.096.024-.217 0-.314-.024-.096-.072-.217-.096-.313-.073-.218-.121-.435-.194-.677l-.072-.362c-.024-.073-.048-.12-.048-.17v-.12c0-.024-.049-.072-.073-.12-.314-.556-.459-1.184-.797-1.716-.048-.072-.12-.145-.145-.241-.024-.049 0-.121-.024-.194-.024-.193-.048-.338-.024-.531.048-.362.096-.725.169-1.087.097-.507.314-.918.459-1.377.072-.217.169-.435.241-.7.025-.073.025-.17.049-.266.024-.048.048-.097.072-.169.073-.17.17-.314.217-.507.025-.145.073-.266.097-.387.048-.12.12-.217.17-.338.047-.145.072-.338.217-.338h.12c.073 0 .145.048.218.072.072 0 .217-.024.29 0 .024 0 .048.025.072.049.072.024.193.024.29.048.048.024.072.048.097.073.048.024.096 0 .12.024.049.048.073.145.049.217 0 .024.072.024.096.048.024.025.024.073.049.145.048.097.145.121.145.242 0 .12-.121.217-.218.266l-.241.241c-.049.024-.145.048-.242.097-.072.024-.145.096-.217.12-.049.025-.121.025-.17.049-.168.072-.241.241-.338.435-.169.362-.217.87-.265 1.376-.049.508-.049 1.015-.097 1.498-.024.242-.097.435-.048.652.024.073.169.145.217.193.145.097.266.218.362.338.073.097.145.218.242.266.097.049.12.121.17.194.023.048.096.144.144.144.217.097.41.29.58.483.072.073.169.145.265.218.073.072.194.29.29.29.145-.024.218-.218.194-.387-.025-.048-.073-.145-.073-.217v-.145c0-.024-.048-.048-.072-.072a.68.68 0 0 1-.097-.266c-.024-.121-.097-.387 0-.508.024-.024.072-.024.097-.024v-.145c0-.145.024-.29.048-.41.097-.363.266-.725.58-.918.338-.193.773-.145 1.135-.048.604.169.797.773.749 1.352 0 .073-.025.17-.025.242 0 .048.073.048.073.12.024.073 0 .17-.024.218-.049.193-.073.459-.193.556-.049.048-.097.048-.145.096-.049.073-.049.17-.073.242-.072.193-.217.241-.241.338-.049.169-.097.362-.17.531a.873.873 0 0 0-.072.17c0 .048.218.12.266.12.217.073.338.17.483.314.096.097.169.218.193.363.024.265 0 .53-.048.748a.86.86 0 0 0-.049.242c0 .12.073.265.097.41.024.17.048.314.048.483 0 .145-.024.315-.072.46-.024.12-.12.217-.17.338a1.272 1.272 0 0 0-.072.29c-.024.169.049.338.049.53 0 .17-.097.29-.073.46 0 .024 0 .024.024.048 3.044-1.038 5.218-3.889 5.218-7.27a7.67 7.67 0 0 0-7.681-7.682 7.67 7.67 0 0 0-7.681 7.682c0 3.575 2.44 6.57 5.748 7.44 0-.122-.024-.242-.024-.339.073-.024.048-.097.024-.241ZM19.71 5.266h-4.275v14.25h4.275V5.267ZM17.585 4.251a2.126 2.126 0 1 0 0-4.251 2.126 2.126 0 0 0 0 4.251ZM107.198 8.817v3.84h5.628c-.507 1.836-2.101 3.02-4.492 3.02-2.368 0-5.17-1.715-5.17-5.653 0-3.72 2.778-5.459 5.145-5.459 2.029 0 3.406 1.112 4.155 2.44h5.386c-1.038-3.647-4.903-6.667-9.42-6.667-4.203 0-7.826 2.343-9.324 5.918a9.648 9.648 0 0 1 2.271 6.208 9.76 9.76 0 0 1-.797 3.84c1.811 2.199 4.565 3.624 7.778 3.624 5.217 0 10.048-3.793 10.048-10.097 0-.386 0-.652-.024-.99h-11.184v-.024ZM131.691 2.078C130.676 1.232 129.372.7 125.894.7h-6.16v18.816h4.614v-5.894h2.077c2.923 0 4.203-.531 5.507-1.618 1.208-1.014 1.981-3.02 1.981-4.928 0-1.932-.749-3.792-2.222-5Zm-5.387 7.318h-1.956V4.928h1.787c1.039 0 3.189 0 3.189 2.222-.024 2.246-2.102 2.246-3.02 2.246ZM143.454 8.72c-3.381-1.522-3.889-1.763-3.889-2.875 0-.893.822-1.473 1.643-1.473 1.473 0 1.618 1.208 1.739 1.836h4.734c-.048-1.063-.12-2.343-1.256-3.72-1.232-1.45-3.236-2.126-5.096-2.126-3.165 0-6.595 2.005-6.595 5.556 0 3.526 3.285 4.855 4.614 5.386 2.899 1.232 3.696 1.522 3.696 2.778 0 .87-.677 1.812-1.836 1.812-.604 0-1.957-.387-1.957-2.56h-4.782v.603c0 2.416 1.352 5.99 6.787 5.99 4.976 0 6.57-3.019 6.57-5.772.024-2.247-.869-3.865-4.372-5.435Z\" fill=\"#fff\"><\/path><\/svg>\n            <\/th>\n            <th>PLAYR<\/th>\n            <th>STATS<\/th>\n          <\/tr>\n        <\/thead>\n\n        <tbody>\n          <tr>\n            <td>Feature Detail<\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n          <\/tr>\n\n          <tr>\n            <td>Another Feature Detail<\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n          <\/tr>\n\n          <tr>\n            <td>Another Feature Detail<\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n          <\/tr>\n\n          <tr>\n            <td>Feature Detail<\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n          <\/tr>\n\n          <tr>\n            <td>Another Feature Detail<\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n            <td>\n              <svg fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 32 25\"><path d=\"m2 14 8 8L30 2\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"><\/path><\/svg>\n            <\/td>\n          <\/tr>\n        <\/tbody>\n\n        <tfoot>\n          <tr>\n            <td>Price:<\/td>\n            <td>£45<\/td>\n            <td>£160<\/td>\n            <td>£200<\/td>\n          <\/tr>\n        <\/tfoot>\n      <\/table>"
+      }
+    }
+  },
+  "order": [
+    "navigation",
+    "main",
+    "cc5488a3-bd26-4984-87bb-79c120c79b96",
+    "188a8f28-fcdf-433a-8d58-6f6ec52c0c6d",
+    "770d0870-16d4-4e80-a558-273be76f2ee1",
+    "6f867fb0-4716-4376-b4ba-5f7c3b0343c4",
+    "c17c0d64-0f05-4156-a9cf-5398171985ec",
+    "8419e753-9835-4f91-ad6d-26f58f86969c"
+  ]
+}

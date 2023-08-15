@@ -1,0 +1,65 @@
+{% liquid
+  assign className = "Table"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-24"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-24"
+  endif
+%}
+
+{% if section.settings.code != blank %}
+  <section class="{{ className }}">
+    <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+      {% if section.settings.title != blank %}
+        <h2 class="text-20 text-center uppercase font-body font-light mb-9 sm:mb-10">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      <div class="Table__Content">
+        <div class="Table__Scroller">
+          {{ section.settings.code }}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Table",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "html",
+      "id": "code",
+      "label": "HTML"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Table"
+    }
+  ]
+}
+{% endschema %}

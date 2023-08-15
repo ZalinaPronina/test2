@@ -1,0 +1,26 @@
+.TextBlocks_Slide {
+  border: 3px solid #00f0ff;
+  padding: 25px 30px 15px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.TextBlocks__Wrapper {
+  display: inline-flex;
+  align-items: initial;
+}
+[data-template="index"] .TextBlocks_Slide h2 {
+  letter-spacing: 2px;
+}
+.TextBlocks_Slide h2 {
+  margin-bottom: 20px;
+}
+.TextBlocks_Slide h5 {
+  margin-bottom: 10px;
+}
+.TextBlocks_Slide .TextBlocks_Slide__Text {
+  font-weight: 500;
+  color: #012130;
+}
+.TextBlocks_Slide > * {
+  letter-spacing: normal;
+}

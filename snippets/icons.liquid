@@ -1,0 +1,106 @@
+{%- capture icon_class -%}Icon Icon--{{ icon }}{%- endcapture -%}
+
+{%- liquid
+  if size
+    assign icon_class = icon_class | append: " Icon--" | append: size
+  endif
+
+  if className
+    assign icon_class = icon_class | append: " " | append: className
+  endif
+-%}
+
+{%- case icon -%}
+  {%- when "facebook" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="12" fill="currentColor"/><path d="M14.08 7.547h1.253v-2.12a17.404 17.404 0 0 0-1.826-.094c-1.814 0-3.054 1.107-3.054 3.134v1.746H8.407v2.374h2.046v6.08h2.454v-6.08h2.04l.306-2.374h-2.346V8.7c0-.7.186-1.153 1.173-1.153Z" fill="#fff"/></svg>
+
+  {%- when "twitter" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="12" fill="currentColor"/><path d="M19.901 7.453a6.326 6.326 0 0 1-1.758.477 3.077 3.077 0 0 0 1.348-1.691c-.6.358-1.258.61-1.944.745A3.055 3.055 0 0 0 12.33 9.77a8.673 8.673 0 0 1-6.295-3.196 3.1 3.1 0 0 0-.051 2.983c.236.443.579.821.997 1.1a3.017 3.017 0 0 1-1.386-.38v.037a3.055 3.055 0 0 0 2.459 2.98c-.266.082-.542.124-.82.127a3.653 3.653 0 0 1-.574-.052 3.062 3.062 0 0 0 2.854 2.116A6.125 6.125 0 0 1 5 16.752a8.62 8.62 0 0 0 4.686 1.378 8.636 8.636 0 0 0 8.725-8.702v-.395a6.281 6.281 0 0 0 1.49-1.58Z" fill="#fff"/></svg>
+
+  {%- when "instagram" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 29 29" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.944 0H8.056A8.056 8.056 0 0 0 0 8.056v12.888A8.056 8.056 0 0 0 8.056 29h12.888A8.056 8.056 0 0 0 29 20.944V8.056A8.056 8.056 0 0 0 20.944 0Zm5.237 20.944a5.253 5.253 0 0 1-5.237 5.237H8.056a5.252 5.252 0 0 1-5.237-5.237V8.056a5.252 5.252 0 0 1 5.237-5.237h12.888a5.252 5.252 0 0 1 5.237 5.237v12.888ZM22.153 8.458a1.611 1.611 0 1 0 0-3.222 1.611 1.611 0 0 0 0 3.222ZM14.5 7.25a7.25 7.25 0 1 0 7.25 7.25 7.233 7.233 0 0 0-7.25-7.25Zm-4.43 7.25a4.43 4.43 0 1 0 8.86 0 4.43 4.43 0 0 0-8.86 0Z" fill="currentColor"/></svg>
+
+  {%- when "youtube" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="12" fill="currentColor"/><path d="M19.333 10.473a5.667 5.667 0 0 0-.606-2.753 1.947 1.947 0 0 0-1.147-.667A52.24 52.24 0 0 0 12 6.847a52.298 52.298 0 0 0-5.56.2 1.913 1.913 0 0 0-.973.493c-.6.553-.667 1.5-.734 2.3a32.192 32.192 0 0 0 0 4.32c.02.45.087.897.2 1.333.08.337.243.649.474.907.271.269.617.45.993.52 1.437.177 2.885.25 4.333.22 2.334.033 4.38 0 6.8-.187.385-.065.741-.247 1.02-.52.187-.186.326-.415.407-.666a7.056 7.056 0 0 0 .347-2.267c.026-.373.026-2.627.026-3.027Zm-8.84 3.427V9.773l3.947 2.074c-1.107.613-2.567 1.306-3.947 2.053Z" fill="#fff"/></svg>
+
+  {%- when "spotify" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="12" fill="currentColor"/><path d="M10.574 8c2.814.043 5.443.719 7.858 2.114.113.064.225.135.321.221a.752.752 0 0 1 .101 1.01.842.842 0 0 1-.99.298c-.13-.048-.248-.124-.372-.194a13.97 13.97 0 0 0-5.201-1.692c-2.083-.254-4.127-.087-6.125.551-.512.162-.951-.038-1.115-.486-.157-.438.074-.865.586-1.033a14.605 14.605 0 0 1 4.12-.746c.27-.005.541-.027.817-.043Z" fill="#fff"/><path d="M10.804 10.724c1.947.027 3.715.427 5.336 1.346.214.125.422.27.614.433.315.265.349.665.101.967a.732.732 0 0 1-1.002.14c-1.61-1.134-3.44-1.502-5.387-1.459-.968.022-1.908.233-2.826.536a.752.752 0 0 1-.805-.238c-.186-.238-.214-.568-.022-.806a.943.943 0 0 1 .416-.297c.99-.346 2.015-.551 3.068-.59.197-.015.388-.026.507-.032Z" fill="#fff"/><path d="M10.82 13.222c1.825.043 3.333.465 4.662 1.421.118.087.23.184.338.287.264.26.28.66.033.897-.242.232-.63.243-.912-.005-.788-.692-1.74-1.044-2.764-1.244-1.255-.243-2.477-.097-3.664.346-.08.027-.158.06-.237.087-.388.135-.72.005-.861-.324-.14-.33 0-.67.388-.8.58-.2 1.171-.384 1.768-.52.467-.108.951-.118 1.25-.145Z" fill="#fff"/></svg>
+
+  {%- when "menu" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 41 36" fill="none" aria-hidden="true"><path d="M12.5 18H29M12.5 12H29M12.5 24H29" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  {%- when "cart" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M24.103 7.42H5.897L4 25.42h22l-1.897-18Z" stroke="currentColor" stroke-width="2"/><path d="M20 11V7.04C20 4.256 17.761 2 15 2s-5 2.256-5 5.04V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+
+  {%- when "account" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M18.75 8.75a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" stroke="currentColor" stroke-width="2"/><path d="M6.25 25v-4.301c0-3.822 5.967-3.199 8.75-3.199 2.801 0 8.75-.439 8.75 3.338V25" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+
+  {%- when "search" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 10c0-3.307 2.702-6 6.05-6s6.05 2.693 6.05 6a5.958 5.958 0 0 1-1.727 4.197 1.019 1.019 0 0 0-.188.183A6.053 6.053 0 0 1 10.05 16C6.702 16 4 13.307 4 10Zm10.926 6.366A8.05 8.05 0 0 1 10.05 18C5.61 18 2 14.425 2 10s3.61-8 8.05-8c4.44 0 8.05 3.575 8.05 8 0 1.88-.652 3.606-1.741 4.97l3.345 3.32a1 1 0 0 1-1.409 1.42l-3.369-3.344Z" fill="currentColor"/></svg>
+
+  {%- when "chevron-down" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 30 17" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.458 1.542 15 15.084 28.542 1.542"/></svg>
+
+  {%- when "chevron-up" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 30 16" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M28.542 14.542 15 1 1.458 14.542"/></svg>
+
+  {%- when "chevron-left" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1 1 6l5 5" stroke="currentColor" stroke-linecap="round"/></svg>
+
+  {%- when "chevron-right" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="m1 1 5 5-5 5" stroke="currentColor" stroke-linecap="round"/></svg>
+
+  {%- when "arrow-left" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M4.333 12.72c-.104.225-.152.429-.143.628.017.356.208.677.528.998 2.073 2.047 4.12 4.111 6.18 6.171.49.49 1.098.542 1.61.134.451-.356.547-1.059.2-1.519a3.541 3.541 0 0 0-.295-.33l-4.076-4.076-.252-.251c.152-.005.243-.01.338-.01 5.363-.001 10.73-.008 16.096-.005.477 0 .89-.118 1.154-.556.426-.694-.008-1.614-.815-1.718-.13-.017-.26-.017-.39-.017-5.34-.002-10.681-.005-16.022.002-.095 0-.19.035-.286.052-.009-.035-.022-.074-.03-.108.064-.066.13-.13.195-.196 1.375-1.376 2.76-2.751 4.127-4.136.156-.156.308-.351.39-.555.183-.443.075-.864-.26-1.198-.346-.338-.763-.416-1.227-.246a3.46 3.46 0 0 1-.225.086c-2.231 2.249-4.47 4.488-6.706 6.723a.619.619 0 0 0-.091.126Z" fill="currentColor"/></svg>
+
+  {%- when "arrow-right" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 28 19" fill="none" aria-hidden="true"><path d="m18 17.95 8.475-8.475L18 1M1 9h25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  {%- when "arrow-long-right" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 62 19" fill="none" aria-hidden="true"><path d="m52 17.95 8.475-8.475L52 1M1 9.474h58.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  {%- when "arrow-long-down" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 20 30" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 21 9 8 9-8M10 1v28"/></svg>
+
+  {%- when "close" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="m19.604 18.333 5.833 5.833a.75.75 0 0 1-1.06 1.061l-5.834-5.834-5.834 5.834a.75.75 0 1 1-1.06-1.06l5.833-5.834-5.833-5.834a.75.75 0 1 1 1.06-1.06l5.834 5.833 5.834-5.833a.75.75 0 0 1 1.06 1.06l-5.833 5.834Z" fill="currentColor"/></svg>
+
+  {%- when "plus" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18.615 18.615v6.77a.615.615 0 1 1-1.23 0v-6.77h-6.77a.615.615 0 1 1 0-1.23h6.77v-6.77a.615.615 0 1 1 1.23 0v6.77h6.77a.615.615 0 1 1 0 1.23h-6.77Z" fill="currentColor"/></svg>
+
+  {%- when "minus" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M10.615 18.615a.615.615 0 0 1 0-1.23h14.77a.615.615 0 1 1 0 1.23h-14.77Z" fill="currentColor"/></svg>
+
+  {%- when "plus-bold" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 29 29" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="M2 14.5h25M14.5 2v25"/></svg>
+
+  {%- when "minus-bold" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 29 25" fill="none" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="M2 12.5h25"/></svg>
+
+  {%- when "edit" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M9 23.25V27h3.75l11.06-11.06-3.75-3.75L9 23.25Zm17.71-10.21a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83Z" fill="currentColor"/></svg>
+
+  {%- when "link" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M1 4.5c.145-.45.465-.598.922-.598 2.331.012 3.663.004 5.998.004.406 0 .68.192.777.543a.722.722 0 0 1-.574.899c-.094.015-.187.02-.281.02H2.464v10.167H12.63V10.105c0-.398.164-.671.472-.785a.723.723 0 0 1 .977.586c.012.078.008.156.008.235 0 2.312-.004 3.625.004 5.937.004.457-.149.777-.598.922H1.59a.83.83 0 0 1-.594-.594C1 12.438 1 8.47 1 4.5Z" fill="currentColor" stroke="currentColor" stroke-width=".5"/><path d="M16.445 1.016a.858.858 0 0 1 .348.218c.152.168.21.399.21.688C16.994 3.777 17 5.629 17 7.484c0 .442-.25.739-.664.786a.714.714 0 0 1-.773-.594 2.266 2.266 0 0 1-.016-.281V3.496c-.07.067-.113.106-.156.149-2.413 2.414-4.83 4.828-7.244 7.246-.215.214-.453.347-.77.27a.725.725 0 0 1-.406-1.141c.051-.067.11-.125.168-.184 2.402-2.406 4.804-4.813 7.21-7.215.042-.043.1-.07.152-.105l-.035-.063h-.176c-1.238 0-2.48.004-3.718-.004-.14 0-.297-.02-.426-.074-.28-.117-.422-.355-.422-.656.004-.309.157-.532.442-.664.047-.02.093-.04.14-.063C12.322 1 14.336 1 16.348 1c.02 0 .082.008.098.016Z" fill="currentColor" stroke="currentColor" stroke-width=".5"/></svg>
+
+  {%- when "check" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 9 9" fill="none" aria-hidden="true"><path fill="currentColor" d="M4.70542 7.82456c-.23631.32073-.60431.51786-1.0022.53745a1.32395 1.32395 0 01-1.04987-.43667L.26419 5.27402c-.37971-.42112-.34598-1.07026.07514-1.44998.42152-.37971 1.07026-.34578 1.44997.07554l1.69033 1.87594a.12459.12459 0 00.09877.041c.03756-.00181.0719-.0206.09432-.05049l3.47437-4.71227c.33629-.45647.97897-.55362 1.43564-.21713.45626.33649.55321.97918.21672 1.43544L4.70542 7.82456z"/></svg>
+
+  {%- when "play" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 45 45" fill="none" aria-hidden="true"><circle cx="22.5" cy="22.5" r="21.5" fill="#000" fill-opacity=".4" stroke="currentColor" stroke-width="1"/><path d="M33.158 23.092 17.763 13.026v20.132l15.395-10.066Z" fill="#fff"/></svg>
+
+  {%- when "arrow-circle-left" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 56C18.745 56 8 45.255 8 32S18.745 8 32 8s24 10.745 24 24-10.745 24-24 24Z" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.476 40.476 22 32.001l8.475-8.475M42 32H22" stroke="#012130" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  {%- when "arrow-circle-right" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 56c13.255 0 24-10.745 24-24S45.255 8 32 8 8 18.745 8 32s10.745 24 24 24Z" fill="#fff" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.524 40.476 42 32.001l-8.475-8.475M22 32h20" stroke="#012130" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  {%- when "arrow-up" -%}
+    <svg class="{{ icon_class }}" viewBox="0 0 21 37" fill="none" aria-hidden="true"><path d="M9.342 18.141a1.342 1.342 0 0 1 2.325 0l6.391 11.07a1.342 1.342 0 0 1-1.162 2.014H4.113a1.342 1.342 0 0 1-1.162-2.013l6.391-11.07Z" fill="currentColor" fill-opacity=".2"/><path d="M9.342 13.013a1.342 1.342 0 0 1 2.325 0l6.391 11.07a1.342 1.342 0 0 1-1.162 2.013H4.113a1.342 1.342 0 0 1-1.162-2.013l6.391-11.07Z" fill="currentColor" fill-opacity=".4"/><path d="M9.342 7.885a1.342 1.342 0 0 1 2.325 0l6.391 11.07a1.342 1.342 0 0 1-1.162 2.013H4.113a1.342 1.342 0 0 1-1.162-2.013l6.391-11.07Z" fill="currentColor" fill-opacity=".8"/><path d="M9.342 2.756a1.342 1.342 0 0 1 2.325 0l6.391 11.07a1.342 1.342 0 0 1-1.162 2.014H4.113a1.342 1.342 0 0 1-1.162-2.013l6.391-11.07Z" fill="currentColor"/></svg>
+
+  {%- when "triangle" -%}
+    <svg class="{{ icon_class }}" fill="none" viewBox="0 0 14 11" aria-hidden="true"><path fill="currentColor" d="M7 10.5.938 0h12.124L7 10.5Z"/></svg>
+
+  {%- when "mark" -%}
+    <svg class="{{ icon_class }}" fill="none" viewBox="0 0 13 15" aria-hidden="true"><path fill="currentColor" d="M12 5.768c1.333.77 1.333 2.694 0 3.464l-8.25 4.763c-1.333.77-3-.192-3-1.732V2.737c0-1.54 1.667-2.502 3-1.732L12 5.768Z"/></svg>
+{%- endcase -%}

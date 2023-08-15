@@ -1,0 +1,35 @@
+.Modal {
+  @apply fixed inset-0 invisible z-5;
+
+  &.is-active {
+    @apply visible;
+  }
+
+  .is-visible & {
+    @apply opacity-100;
+  }
+
+  &__Overlay {
+    @apply absolute inset-0 bg-black bg-opacity-60 opacity-0;
+    @apply transition-opacity duration-200 ease-in-out;
+
+    .is-visible & {
+      @apply opacity-100;
+    }
+  }
+
+  &__Inner {
+    @apply absolute opacity-0 bg-white;
+    @apply transition-opacity duration-200 ease-in-out;
+    @apply top-2/4 left-2/4 transform -translate-y-1/2 -translate-x-1/2;
+    @apply w-[calc(100%-40px)] max-h-[calc(100%-40px)] overflow-y-auto;
+
+    .is-visible & {
+      @apply opacity-100;
+    }
+  }
+
+  &__Close {
+    @apply absolute top-0 right-0 p-0 bg-transparent;
+  }
+}

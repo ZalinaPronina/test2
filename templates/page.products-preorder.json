@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "products": {
+      "type": "products-preorder",
+      "blocks": {
+        "850cfe55-69a4-48d1-b208-ad159b5796eb": {
+          "type": "product",
+          "settings": {
+            "title": "Player Bundle",
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "button_text": "Pre-order now",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle"
+          }
+        },
+        "dd1c1c95-e19f-460d-a0d9-831bdb6a85f8": {
+          "type": "product",
+          "settings": {
+            "title": "Team Bundle",
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "button_text": "Pre-order now",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle"
+          }
+        }
+      },
+      "block_order": [
+        "850cfe55-69a4-48d1-b208-ad159b5796eb",
+        "dd1c1c95-e19f-460d-a0d9-831bdb6a85f8"
+      ],
+      "settings": {
+        "top_spacing": true,
+        "title": "Pre-Order PitcheroGPS",
+        "text": "<p>Select our individual player or team product.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "products"
+  ]
+}

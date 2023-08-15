@@ -1,0 +1,13 @@
+<form id="email_signup" data-banner="form">
+  <input type="hidden" name="context" value="landing">
+  <input type="hidden" name="listId" value="{{ section.settings.klaviyo_id }}">
+  
+  <div class="klaviyo_field_group">
+    <input type="text" value="" class="contact_name" name="name" placeholder="YOUR NAME" required />
+    <input type="email" value="" class="contact_email" name="email" placeholder="YOUR EMAIL" required />
+  </div>
+  <div class="klaviyo_form_actions">
+    <button type="submit" class="Button klaviyo-form-banner-btn">{{ section.settings.form_btn_label }}</button>
+    <p class="note-text">{{ section.settings.form_note }}</p>
+  </div>
+</form>

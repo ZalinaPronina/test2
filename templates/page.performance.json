@@ -1,0 +1,326 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "page_style_blue": true,
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>PitcheroGPS provides detailed data on movements, allowing players and coaches to tailor training programs and make data-driven decisions for optimizing individual and team performance.<\/p>"
+          }
+        },
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85",
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image_left": false,
+        "image": "shopify:\/\/shop_images\/Why_GPS_Header_V1_4_9309a702-a9d4-45fb-b6f9-6d534283797d.png",
+        "hide_text_mobile": false,
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "Improve Sports Performance with GPS",
+        "title_as_h1": true,
+        "show_heading_decoration": true,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": ""
+      }
+    },
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392": {
+      "type": "page-navigation",
+      "settings": {
+        "title": "Reach Your Potential",
+        "text": "<p>By monitoring the data collected by the <a href=\"https:\/\/www.pitcherogps.com\/products\/player-bundle\" target=\"_blank\">GPS Player Vest<\/a>, you can track performances week-to-week, session-to-session. Only by recording data, adpating your training and pushing your performances will you reach your true potential.<\/p>",
+        "menu": "why-pages"
+      }
+    },
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646": {
+      "type": "media-with-text",
+      "blocks": {
+        "4e171bd9-be5a-46ca-a3c4-5dacf61a61dc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_645_2_-2.png"
+          }
+        },
+        "b103b73f-e1cc-4932-b56a-49817fc012c1": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY",
+            "video_popup": false
+          }
+        }
+      },
+      "block_order": [
+        "4e171bd9-be5a-46ca-a3c4-5dacf61a61dc",
+        "b103b73f-e1cc-4932-b56a-49817fc012c1"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": false,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title_left": false,
+        "title": "Speed",
+        "text": "<p>Record your Top Speed during every game and training session. <\/p><p>Compare your latest performance against your personal best (PB) and compare your Top Speed with players around the World.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6": {
+      "type": "media-with-text",
+      "blocks": {
+        "199e8aab-9319-4550-b67f-7e706bdca53c": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "https:\/\/youtu.be\/Rb8F_8em3fY",
+            "video_popup": false
+          }
+        },
+        "b0138fd6-0755-49b9-8076-d2276458c7b2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_646-2.png"
+          }
+        }
+      },
+      "block_order": [
+        "199e8aab-9319-4550-b67f-7e706bdca53c",
+        "b0138fd6-0755-49b9-8076-d2276458c7b2"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title_left": false,
+        "title": "Distance",
+        "text": "<p>A professional footballer will cover 10km per game, how about you?!<\/p><p>Record every meter covered during matches and training, and track your movement with interactive heatmaps.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    },
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29": {
+      "type": "media-with-text",
+      "blocks": {
+        "3f19bfcc-9993-4bf3-9c15-3e1382d492c4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_648.png"
+          }
+        },
+        "d6139e76-4aca-4e04-80f8-89f828065ab8": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "3f19bfcc-9993-4bf3-9c15-3e1382d492c4",
+        "d6139e76-4aca-4e04-80f8-89f828065ab8"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title_left": false,
+        "title": "Intensity",
+        "text": "<p>How hard are you working in every game? Measure your level of intensity by tracking accelerations, decelerations and impacts on the body.<\/p><p>How big was that tackle? Measure impacts up to 16G and take time to rest your body before returning to play.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c": {
+      "type": "media-with-text",
+      "blocks": {
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_705.png"
+          }
+        },
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg"
+          }
+        },
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a",
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce",
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404"
+      ],
+      "settings": {
+        "background": "",
+        "border_radius": 1,
+        "top_padding": true,
+        "bottom_padding": false,
+        "icon": "shopify:\/\/shop_images\/icon-gps.png",
+        "title_left": false,
+        "title": "Heatmaps",
+        "text": "<p>Track your movement across the pitch, creating unique interactive heatmaps. Crop the time down to specific events and see your movement in the lead-up to goals or tries.<\/p>",
+        "text_color": "#000000",
+        "media_position": "flex-row"
+      }
+    },
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b": {
+      "type": "bundles",
+      "blocks": {
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC07722.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC07722.png",
+            "overlay_background": true,
+            "text_color": "",
+            "title": "Playerbundle",
+            "sub_title": "new",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/DSC08653_B_1.png",
+            "overlay_background": true,
+            "text_color": "",
+            "title": "Teambundle",
+            "sub_title": "new",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0",
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1"
+      ],
+      "custom_css": [
+        ".Bundles a {background-color: #00f0ff; border-color: #00f0ff; color: black;}"
+      ],
+      "settings": {
+        "hide_mobile": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "08b0912d-9bd7-441d-981c-8e85530cc41c": {
+      "type": "hero-video",
+      "disabled": true,
+      "blocks": {
+        "e116970c-37dc-45d7-a17f-397bc10839ea": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The search for the fastest player in grassroots sport. <strong>ALL players. ALL ages. ALL competitions.<\/strong><\/p>"
+          }
+        },
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "title": "How fast is fast?",
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY&t=6s",
+            "button": "WATCH VIDEO"
+          }
+        },
+        "1bdfee98-1641-4656-988f-d4730cb89f71": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "BOOK YOUR PLACE TODAY",
+            "url": "shopify:\/\/pages\/hero"
+          }
+        }
+      },
+      "block_order": [
+        "e116970c-37dc-45d7-a17f-397bc10839ea",
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386",
+        "1bdfee98-1641-4656-988f-d4730cb89f71"
+      ],
+      "settings": {
+        "style": "black",
+        "image": "shopify:\/\/shop_images\/Group_120.jpg",
+        "image_decoration": false,
+        "title": "#HERO SPEED CHALLENGE",
+        "title_as_h1": false,
+        "sub_title": "LAUNCHING JULY 2023"
+      }
+    },
+    "2b9afc54-049d-42fa-babe-49fcd19cbfec": {
+      "type": "newsletter",
+      "settings": {
+        "show_section": true,
+        "image": "shopify:\/\/shop_images\/New_Footer_Image_1.png",
+        "image_decoration": false,
+        "title": "<p>Join our newsletter<\/p>",
+        "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+        "form_tag": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392",
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646",
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6",
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29",
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c",
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b",
+    "08b0912d-9bd7-441d-981c-8e85530cc41c",
+    "2b9afc54-049d-42fa-babe-49fcd19cbfec"
+  ]
+}

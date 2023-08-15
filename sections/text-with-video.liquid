@@ -1,0 +1,283 @@
+{% liquid
+  assign show_section = false
+  assign sizes = "(min-width: 940px) 600px, calc(100vw - 2.5rem)"
+
+  if section.settings.text != blank or section.settings.small_text != blank or section.settings.image != blank or section.settings.video != blank or section.settings.video_iframe_vimeo != blank
+    assign show_section = true
+  endif
+
+  if section.settings.text == blank and section.settings.small_text == blank
+    assign sizes = "(min-width: 1280px) calc(1280px - 10rem), calc(100vw - 2.5rem)"
+  endif
+%}
+<style>
+  #{{section.id}}.TextVideo .TextVideo__Media{
+    border-radius: {{ section.settings.video_border}}px;
+  }
+  {% if section.settings.bottom_line_border != 0 %}
+    #{{section.id}}.TextVideo .TextVideo__wrapper{
+      border-bottom: {{section.settings.bottom_line_border}}px solid #000;
+    }
+  {% endif %}
+  #{{section.id}}.TextVideo{
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 767px) {
+    #{{section.id}}.TextVideo{
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+{% if show_section %}
+  <section id={{section.id}} class="TextVideo {% if section.settings.large_container != blank %}large-container {% endif %}{% if section.settings.bottom_line %}bottom_line{% endif %}">
+    <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-20">
+      {% if section.settings.title != blank %}
+        <h4 class="TextVideo-title text-center">{{section.settings.title}}</h2>
+      {% endif %}
+      <div class="md-down:space-y-10 md:flex md:items-center {{ section.settings.media_position }} {% if section.settings.text_mobile_top != blank %}text-top-center{% endif %} TextVideo__wrapper" >
+        {% if section.settings.video_iframe != blank %}
+          <div class="TextVideo__Media video-iframe" data-component="IframeVideo">
+            <div class="w-full shrink-0 aspect-w-16 aspect-h-9">
+              <button
+                type="button"
+                class="absolute z-2 text-brand-tertiary"
+                data-button-video="video-{{section.id}}"
+              >
+                {% render "icons", icon: "play", size: "large", className: "!w-18 !h-18 sm:!w-22 sm:!h-22" %}
+              </button>
+              {% if section.settings.image != blank %}
+                {{ section.settings.image | image_url: width: 1200 | image_tag:
+                  loading: "lazy",
+                  sizes: sizes,
+                  widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                  alt: section.settings.image.alt | escape
+                }}
+              {% endif %}
+              <video data-video="video-{{section.id}}" src="{{section.settings.video_iframe.sources[1].url}}" loop muted playsinline controls></video>
+            </div>
+          </div>
+          {% elsif section.settings.image != blank or section.settings.video != blank %}
+            <div class="TextVideo__Media" data-component="ModalVideo" data-video-id="{{ section.settings.video.id }}">
+              <div class="w-full shrink-0 aspect-w-16 aspect-h-9">
+                {% if section.settings.image != blank %}
+                  {{ section.settings.image | image_url: width: 1200 | image_tag:
+                    loading: "lazy",
+                    sizes: sizes,
+                    widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                    alt: section.settings.image.alt | escape
+                  }}
+                {% elsif section.settings.video != blank %}
+                  {% if section.settings.video_popup == blank %}
+                    <iframe src="https://www.youtube.com/embed/{{ section.settings.video.id }}?rel=0&amp;showinfo=0&amp" allowfullscreen="" class="video__media"></iframe>
+                  {% else %}
+                    <img
+                      src="https://i.ytimg.com/vi_webp/{{ section.settings.video.id }}/maxresdefault.webp"
+                      width="1280"
+                      height="720"
+                      alt="{{ section.settings.title }}"
+                      loading="lazy"
+                    >
+                  {% endif %}
+                {% endif %}
+              </div>
+  
+              {% if section.settings.video != blank and section.settings.video_popup != blank %}
+                <button
+                  type="button"
+                  class="absolute z-2 text-brand-tertiary"
+                  data-modal-trigger="text-with-video-{{ section.id }}"
+                  aria-label="Play video"
+                >
+                  {% render "icons", icon: "play", size: "large", className: "!w-18 !h-18 sm:!w-22 sm:!h-22" %}
+                </button>
+              {% endif %}
+            </div>
+        {% endif %}
+        {% if section.settings.video_iframe_vimeo != blank %}
+          <div class="TextVideo__Media">
+            <div class="w-full shrink-0 aspect-w-16 aspect-h-9">
+              <iframe src="{{section.settings.video_iframe_vimeo}}?autoplay=0&loop=1&muted=1"
+              frameborder="0" playsinline controls ></iframe>
+            </div>
+          </div>
+        {% endif %}
+        {% if section.settings.text != blank or section.settings.small_text != blank %}
+          <div class="w-full shrink-0 space-y-10 md-down:px-2.5 sm:space-y-15 md:w-1/2 md:pl-7.5 md:ml-7.5 lg:ml-22.5 TextVideo__Media-content {{ section.settings.text_size }}">
+            {% if section.settings.text != blank %}
+              <div class="rte text-20">{{ section.settings.text }}</div>
+            {% endif %}
+
+            {% if section.settings.small_text != blank %}
+              <div class="rte">{{ section.settings.small_text }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if section.settings.video != blank %}
+    <div class="Modal" data-component="Modal" data-modal-id="text-with-video-{{ section.id }}">
+      <div class="Modal__Overlay" data-modal-overlay></div>
+      <div class="Modal__Inner max-w-[800px] !bg-transparent">
+        <button type="button" class="Modal__Close z-1 text-white" data-modal-close aria-label="Close modal">
+          {%
+            render "icons",
+            icon: "close",
+            size: "large"
+          %}
+        </button>
+
+        <div class="aspect-w-16 aspect-h-9" data-modal-content></div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Text with Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "video",
+      "accept": [
+        "youtube"
+      ],
+      "label": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video_iframe",
+      "label": "Iframe"
+    },
+    {
+      "type": "video_url",
+      "id": "video_iframe_vimeo",
+      "accept": [
+        "vimeo"
+      ],
+      "label": "Video Iframe"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        {
+          "value": "text_container-bigger",
+          "label": "Big 50%"
+        },
+        {
+          "value": "text_container-medium",
+          "label": "Medium"
+        },
+        {
+          "value": "text_container-small",
+          "label": "Small"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "small_text",
+      "label": "Small Text"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Media position",
+      "options": [
+        {
+          "value": "flex-row",
+          "label": "Left"
+        },
+        {
+          "value": "flex-row-reverse",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "large_container",
+      "label": "Large Container",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "text_mobile_top",
+      "label": "Text Mobile Top",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_popup",
+      "label": "The video will be in a pop-up window",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "video_border",
+      "label": "Video Border",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_line",
+      "label": "Add Bottom Line",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "bottom_line_border",
+      "label": "Bottom Border",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with Video"
+    }
+  ]
+}
+{% endschema %}

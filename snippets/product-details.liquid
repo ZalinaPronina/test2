@@ -1,0 +1,30 @@
+<section class="mb-7.5 md:mb-15">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    <div class="border-y border-solid">
+      <div class="py-7 sm:flex sm:py-12 md:py-18 md:max-w-6xl md:mx-auto md:px-4">
+        {% for block in blocks %}
+          <div
+            class="space-y-3 sm:w-1/2 sm:px-10 sm:shrink-0 sm:py-3 md:px-14"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.title != blank %}
+              <h3 class="font-body tracking-normal text-24">
+                {{ block.settings.title }}
+              </h3>
+            {% endif %}
+
+            <div class="font-medium [&_ul]:list-disc [&_ul]:list-inside [&_p+p]:mt-[0.75em] sm:max-w-[24em]">
+              {{ block.settings.text }}
+            </div>
+          </div>
+
+          {% unless forloop.last %}
+            <div
+              class="w-full h-px bg-current my-6 shrink-0 sm:my-0 sm:w-px sm:h-auto"
+            ></div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

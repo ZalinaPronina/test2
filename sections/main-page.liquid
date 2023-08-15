@@ -1,0 +1,21 @@
+{% if section.settings.show_content and page.content != blank %}
+  <div class="max-w-prose mx-auto px-5">
+    <div class="py-10 rte">
+      {{ page.content }}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page template",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_content",
+        "label": "Show page content",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,197 @@
+<style>
+  #{{section.id}}.Features{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+    background: {{section.settings.background}};
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.Features{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+</style>
+
+<section id="{{section.id}}" class="Features" data-component="Features">
+  <div class="max-w-screen-lg mx-auto px-5 space-y-15 xs:px-7.5 md:space-y-20 lg:px-[25px] xl:px-15">
+    {% if section.settings.title != blank %}
+      <div class="text-center">
+        <h2 class="text-24 font-body tracking-normal">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if section.settings.image != blank %}
+      <div class="md:hidden">
+        {{ section.settings.image | image_url: width: 1200 | image_tag:
+          loading: "lazy",
+          class: "w-full h-auto",
+          sizes: "(min-width: 940px) 600px, 100vw",
+          widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+          alt: section.settings.image.alt | escape
+        }}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="md:flex md:items-center md:justify-between">
+        <div class="space-y-15 md:w-1/4">
+          {% for block in section.blocks limit: 3 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="relative space-y-6 max-w-[280px] md-down:mx-auto md-down:text-center" {{ block.shopify_attributes }}>
+                {% if block.settings.title != blank %}
+                  <h3 class="relative z-1 text-24 text-brand-tertiary font-body font-bold md:max-w-[220px]">
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {% endif %}
+
+                <div class="absolute z-1 border-0 border-dashed border-t-2{% unless forloop.last %} border-r-2{% endunless %} border-brand-tertiary top-0 left-[calc(100%-50px)] w-3/4 h-[calc(100%+60px)] !mt-4 pointer-events-none md-down:hidden"></div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if section.settings.image != blank %}
+          {% liquid
+            assign image_classes = "relative z-2 w-full h-auto max-w-[600px]"
+            if section.settings.image_shadow
+              assign image_classes = image_classes | append: " md:drop-shadow-image"
+            endif
+          %}
+
+          <div class="flex justify-center w-1/2 mt-10 md-down:hidden">
+            {{ section.settings.image | image_url: width: 1200 | image_tag:
+              loading: "lazy",
+              class: image_classes,
+              sizes: "(min-width: 940px) 600px, 100vw",
+              widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+              alt: section.settings.image.alt | escape
+            }}
+          </div>
+        {% endif %}
+
+        <div class="space-y-15 md-down:mt-15 md:w-1/4 md:text-right">
+          {% for block in section.blocks offset: 3 limit: 3 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="relative space-y-6 max-w-[280px] md-down:mx-auto md-down:text-center md:ml-auto" {{ block.shopify_attributes }}>
+                {% if block.settings.title != blank %}
+                  <h3 class="relative z-2 text-24 text-brand-tertiary font-body font-bold md:max-w-[220px] md:ml-auto">
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {% endif %}
+
+                <div class="absolute z-1 border-0 border-dashed border-t-2{% unless forloop.last %} border-l-2{% endunless %} border-brand-tertiary top-0 right-[calc(100%-50px)] w-3/4 h-[calc(100%+60px)] !mt-4 pointer-events-none md-down:hidden"></div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Features",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "image_shadow",
+      "label": "Show image shadow",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Features",
+      "settings": {
+        "title": "Heading"
+      }
+    }
+  ]
+}
+{% endschema %}

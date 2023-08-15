@@ -1,0 +1,103 @@
+<style>
+  #{{section.id}}.section-image-grid{
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media (max-width: 939px) {
+    #{{section.id}}.section-image-grid{
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+  #{{section.id}} .image-grid{
+    max-width: {{section.settings.width}}px;
+    margin: 0 auto;
+  }
+</style>
+<div class="section-image-grid" id="{{section.id}}" data-component="ImageGridSlider">
+  <div class=" overflow-hidden" data-image-block="container">
+    <div class="ImageBlocks__Wrapper grid sm:gap-7 image-grid md:grid-cols-3 sm:grid-cols-2">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="ImageBlocks__Slide">
+            <img src="{{ block.settings.image| img_url: 'master'}}">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="ImageBlocks__Pagination"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Container px",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "default": 1140
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Grid"
+    }
+  ]
+}
+{% endschema %}

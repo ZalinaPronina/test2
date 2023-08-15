@@ -1,0 +1,138 @@
+<div id="form_{{ id }}" class="w-full relative" data-component="AddressForm">
+  {% form "customer_address", action %}
+    <input type="hidden" name="return_to" value="{{ routes.account_url }}">
+
+    {% assign form_suffix = "_" | append: id %}
+    {% assign form_country_id = "country" | append: form_suffix %}
+    {% assign form_province_id = "province" | append: form_suffix %}
+
+    <div class="flex flex-wrap items-start w-full">
+      <div class="w-full mb-4">
+        {% assign first_name_label = "customer.addresses.first_name" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: first_name_label,
+          name: "address[first_name]",
+          value: form.first_name
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign last_name_label = "customer.addresses.first_name" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: last_name_label,
+          name: "address[last_name]",
+          value: form.last_name
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign phone_label = "customer.addresses.phone" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: phone_label
+          name: "address[phone]",
+          value: form.phone,
+          type: "tel"
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign address1_label = "customer.addresses.address1" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: address1_label,
+          name: "address[address1]",
+          value: form.address1
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign address2_label = "customer.addresses.address2" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: address2_label,
+          name: "address[address2]",
+          value: form.address2
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign zip_label = "customer.addresses.zip" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: zip_label,
+          name: "address[zip]",
+          value: form.zip
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {% assign city_label = "customer.addresses.city" | t %}
+
+        {%
+          render "component-input" with
+          placeholder: city_label,
+          name: "address[city]",
+          value: form.city
+        %}
+      </div>
+
+      <div class="w-full mb-4">
+        {%- capture attr -%}data-default="{{ form.country }}" data-country{%- endcapture -%}
+        {% assign country_label = "customer.addresses.country" | t %}
+
+        {%
+          render "component-select" with
+          placeholder: country_label,
+          show_label: true,
+          id: form_country_id,
+          name: "address[country]"
+          options: country_option_tags,
+          attributes: attr
+        %}
+      </div>
+
+      <div class="w-full mb-4" data-select-parent>
+        {%- capture attr -%}data-default="{{ form.province }}" data-province{%- endcapture -%}
+        {% assign province_label = "customer.addresses.province" | t %}
+
+        {%
+          render "component-select" with
+          placeholder: province_label,
+          show_label: true,
+          id: form_province_id,
+          name: "address[province]"
+          options: "",
+          attributes: attr
+        %}
+      </div>
+    </div>
+
+    <div>
+      <span class="grayscale saturate-200">{{ form.set_as_default_checkbox }}</span>
+      <label for="address_default_address{{ form_suffix }}" class="ml-2 mt-4 mb-2 cursor-pointer">
+        {{ "customer.addresses.set_default" | t }}
+      </label>
+    </div>
+
+    <div class="pt-4 flex items-center w-full">
+      {%
+        render "component-button" with
+        tag: "button",
+        cta: cta,
+        type: "submit",
+        className: "Button Button--primary"
+      %}
+
+      <button type="button" class="Button ml-4" data-modal-close>{{ "customer.addresses.cancel" | t }}</button>
+    </div>
+  {% endform %}
+</div>

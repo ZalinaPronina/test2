@@ -1,0 +1,462 @@
+{% assign checkout_process_params = "?handle=" | append: product.handle %}
+
+<section class="Product py-6 md:py-14" data-component="Product">
+  <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+    <div class="mb-4 sm:hidden">
+      <h1 class="text-24 font-body font-bold tracking-normal">
+        {{ "products.product.order" | t }} {{ product.title }}
+      </h1>
+
+      {% if product.metafields.meta.subtitle != blank %}
+        <h2 class="text-base font-body font-bold tracking-normal">
+          {{ product.metafields.meta.subtitle }}
+        </h2>
+      {% endif %}
+    </div>
+
+    <div class="md:flex">
+      <div class="Product__Gallery" data-component="ProductCarousel">
+        <div class="GalleryMain" data-gallery="main">
+          <ul class="GalleryMain__Wrapper">
+            {% for media in product.media %}
+              <li class="GalleryMain__Slide">
+                {% if media.media_type == "image" %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{ media | image_url: width: 1200 | image_tag:
+                      loading: "lazy",
+                      class: "object-cover",
+                      sizes: "(min-width: 768px) 640w, 1280w",
+                      widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800"
+                    }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == "external_video" %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{ media | external_video_tag: class: "object-cover", loop: "1", muted: "1", autoplay: "1", loading: "lazy" }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == "video" %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{ media | video_tag: class: "object-cover", loop: "1", muted: "1", autoplay: "1", loading: "lazy" }}
+                  </div>
+                {% endif %}
+
+                {% if media.media_type == "model" %}
+                  <div class="aspect-h-10 aspect-w-12">
+                    {{ media | model_viewer_tag }}
+                  </div>
+                {% endif %}
+              </li>
+            {% else %}
+              <li class="GalleryMain__Slide">
+                <div class="aspect-h-10 aspect-w-12">
+                  {{ "product-1" | placeholder_svg_tag }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="GalleryThumbs" data-gallery="thumbs">
+          <ul class="GalleryThumbs__Wrapper">
+            {% for media in product.media %}
+              {% liquid
+                assign is_video = false
+                if media.media_type == "external_video" or media.media_type == "video"
+                  assign is_video = true
+                endif
+              %}
+
+              <li class="GalleryThumbs__Slide{% if is_video %} relative isVideo{% endif %}">
+                <div class="aspect-h-10 aspect-w-12">
+                  {{ media | image_url: width: 400 | image_tag:
+                    loading: "lazy",
+                    class: "object-cover",
+                    sizes: "",
+                    widths: "200, 400"
+                  }}
+                </div>
+
+                {% if is_video %}
+                  <div class="absolute z-20 top-2/4 left-2/4 transform -translate-x-2/4 -translate-y-2/4 text-brand-tertiary">
+                    {% render "icons", icon: "play", size: "large", className: "sm-down:!w-9 sm-down:!h-9" %}
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+
+          <button type="button" class="GalleryThumbs__Button GalleryThumbs__Button--previous">
+            &lt;
+          </button>
+
+          <button type="button" class="GalleryThumbs__Button GalleryThumbs__Button--next">
+            &gt;
+          </button>
+        </div>
+      </div>
+
+      <div class="Product__Info">
+        {% if section.settings.enable_checkout_process %}
+          <div class="space-y-6 mt-7 md:hidden">
+            <a
+              href="{{ section.settings.checkout_process_page.url }}"
+              class="Button Button--sale !uppercase"
+            >
+              {% if product.metafields.membership.gift.value != blank %}
+                {{ "products.product.pre_order" | t }}
+              {% else %}
+                {{ "products.product.pre_order" | t }} {{ product.title | remove: "New" }}
+              {% endif %}
+            </a>
+
+            {% if product.metafields.membership.gift.value != blank %}
+              <a
+                href="{{ section.settings.checkout_process_page_gift.url | default: section.settings.checkout_process_page.url }}"
+                class="Button Button--tertiary !uppercase buy_gift"
+              >
+                {{ "products.product.buy_gift" | t }}
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if product.metafields.meta.subtitle != blank %}
+          <h2 class="text-24 font-body font-bold tracking-normal mb-4 sm-down:hidden">
+            {{ product.metafields.meta.subtitle }}
+          </h2>
+        {% endif %}
+
+        <h2 class="text-50 uppercase text-brand-tertiary sm-down:hidden">
+          {{ product.title }}
+        </h2>
+
+        {% if product.description != blank %}
+          <div class="Product__Description rte">
+            {{ product.description }}
+          </div>
+        {% endif %}
+        <div class="mt-6">
+          <div class="max-w-4xl mx-auto" data-checkout-process="membership">
+            <p class="font-bold">Choose Membership:</p>
+            <div class="flex flex-wrap items-end justify-center gap-5 mt-4">
+              {% for membership_product in product.metafields.membership.products.value %}
+                {% liquid
+                  assign selling_plan_group = membership_product.selling_plan_groups.first
+                  assign selling_plan = selling_plan_group.selling_plans.first
+                  assign membership_variant = membership_product.variants.first
+                  assign membership_variant_paid = membership_variant
+    
+                  for variant in membership_product.variants
+                    if settings.enable_preorder
+                      if variant.metafields.membership.pre_order
+                        assign membership_variant = variant
+                        break
+                      endif
+                    else
+                      unless variant.metafields.membership.pre_order
+                        assign membership_variant = variant
+                        break
+                      endunless
+                    endif
+                  endfor
+                %}
+                <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+                  <input
+                    type="radio"
+                    name="membership"
+                    id="membership-{{ membership_product.id }}"
+                    value="{{ membership_variant.id }}"
+                    data-selling-plan-id="{{ selling_plan.id }}"
+                    class="sr-only peer"
+                    {% if forloop.first %}checked{% endif %} />
+    
+                  <label for="membership-{{ membership_product.id }}" class="block cursor-pointer border-2 border-solid peer-checked:border-brand-accent peer-checked:shadow-checked rounded-16">
+                    {% if selling_plan_group.name contains "Annual" %}
+                      <div class="selling-plan-group uppercase font-bold text-center text-white p-3 bg-brand-primary peer-checked:bg-brand-accent rounded-10 ">
+                        {{ "checkout_process.membership.product_best_value" | t }}
+                      </div>
+                    {% endif %}
+                    <div class="text-center py-5 px-5">
+                      <h3 class="text-16 font-body tracking-normal sm:text-24">
+                        {{ membership_product.title }}
+                      </h3>
+    
+                      {% if selling_plan_group.name contains "Annual" %}
+                        <div class="flex items-center justify-center text-left mt-2 flex-col">
+                          <span class="font-heading text-50 sm:text-72">
+                            {{ membership_variant_paid.price | divided_by: 12 | money_without_trailing_zeros }}
+                          </span>
+    
+                          <span class="font-bold text-16 leading-none sm:text-16">
+                            {{ "checkout_process.membership.product_per_month_html" | t }}
+                          </span>
+                        </div>
+    
+                        <div class="mt-2">
+                          {% assign annual_price = membership_variant_paid.price | money_without_trailing_zeros %}
+                          {{ "checkout_process.membership.annual.billed" | t: price: annual_price }}
+                        </div>
+    
+                        <div class="text-brand-sale text-20 uppercase font-semibold">
+                          {{ "checkout_process.membership.saving" | t: value: "50%" }}
+                        </div>
+                      {% elsif selling_plan_group.name contains "Monthly" %}
+                        <div class="flex items-center justify-center text-left mt-2 flex-col">
+                          <span class="font-heading text-50 sm:text-72">
+                            {{ membership_variant_paid.price | money_without_trailing_zeros }}
+                          </span>
+    
+                          <span class="font-bold text-16 leading-none sm:text-16">
+                            {{ "checkout_process.membership.product_per_month_html" | t }}
+                          </span>
+                        </div>
+    
+                        <div class="mt-2">
+                          {% assign monthly_price = membership_variant_paid.price | money_without_trailing_zeros %}
+                          {{ "checkout_process.membership.monthly.billed" | t: price: monthly_price }}
+                        </div>
+    
+                        <div class="mt-1">
+                          {% assign monthly_total_price = membership_variant_paid.price | times: 12 | money_without_trailing_zeros %}
+                          {{ "checkout_process.membership.total" | t: price: monthly_total_price }}
+                        </div>
+                      {% else %}
+                        <div class="flex items-center justify-center text-left space-x-4 mt-2">
+                          <span class="font-heading text-72">
+                            {{ membership_variant_paid.price | money_without_trailing_zeros }}
+                          </span>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </label>
+                </div>
+              {% else %}
+                <div class="grow basis-0 min-w-0 sm:w-1/2 sm:max-w-sm">
+                  <div class="text-center p-7.5">
+                    {{ "checkout_process.membership.empty" | t }}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div data-checkout-process="gift">
+            <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+              <div class="flex flex-wrap items-end justify-center gap-5 sm:gap-11">
+                {% if product.metafields.membership.gift.value != blank %}
+                  {% assign gift_membership_product = product.metafields.membership.gift.value %}
+                  {% assign gift_membership_variant = gift_membership_product.variants.first %}
+                  {% for variant in gift_membership_product.variants %}
+                    {% if variant.metafields.membership.gift %}
+                      {% assign gift_membership_variant = variant %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  <div class="w-full sm:grow sm:basis-0 sm:min-w-0 sm:w-1/2 sm:max-w-sm">
+                    <input
+                      type="radio"
+                      name="gift-membership"
+                      id="gift-membership-{{ gift_membership_product.id }}"
+                      value="{{ gift_membership_variant.id }}"
+                      data-selling-plan-id
+                      class="sr-only peer"
+                      checked />
+      
+                    <label for="gift-membership-{{ gift_membership_product.id }}" class="block cursor-pointer border-2 border-solid peer-checked:border-brand-accent peer-checked:shadow-checked rounded-16">
+                      <div class="text-center py-4 px-7.5 sm:py-7.5">
+                        <h3 class="text-16 font-body tracking-normal sm:text-24">
+                          {{ "checkout_process.membership.gift.title" | t }}
+                        </h3>
+      
+                        <div class="flex items-center justify-center text-left space-x-2 mt-2">
+                          <span class="font-heading text-50 sm:text-72">
+                            {{ gift_membership_variant.price | plus: product.price | money_without_trailing_zeros }}
+                          </span>
+                        </div>
+      
+                        <div class="text-left mt-4 xs-down:-mx-1 sm:px-4">
+                          <ul class="font-medium text-neutral-400 space-y-1">
+                            <li>
+                              {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+      
+                              <span>{{ product.title | remove: "New" }}</span>
+                              <span>({{ product.price | money_without_trailing_zeros }})</span>
+                            </li>
+      
+                            <li>
+                              {% render "icons", icon: "mark", size: "small", className: "text-brand-accent mr-2" %}
+      
+                              <span>{{ "checkout_process.membership.gift.info" | t }}</span>
+                              <span>({{ gift_membership_variant.price | money_without_trailing_zeros }})</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+      
+            {% capture gift_message %}
+              {{ "checkout_process.membership.gift.message" | t }}{% endcapture %}
+      
+            {% if gift_message != " " %}
+              <div class="hidden max-w-2xl mx-auto px-5 sm:-mb-5 lg:px-12" data-checkout-process="gift-message">
+                <div class="rte font-medium mt-6 text-center">{{ gift_message }}</div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div data-component="ProductSelection">
+          {% form "product", product, class: "w-full" %}
+            {% render "product-item-options", product: product, bundle: true, accent_color: "sale" %}
+            <button type="submit" class="Button Button--primary Button--large !uppercase mt-7 md:!w-auto">
+              {{ "products.product.add_to_cart" | t }}
+            </button>
+          {% endform %}
+        </div>
+
+        {% if product.metafields.meta.list != blank %}
+          <div class="flex flex-wrap mt-6">
+            {% for item in product.metafields.meta.list.value %}
+              <div class="font-bold w-full sm:w-auto">{{ item }}</div>
+
+              {% unless forloop.last %}
+                <span class="w-0.5 h-3 bg-brand-tertiary mx-4 self-center sm-down:hidden"></span>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.enable_checkout_process %}
+          <div class="space-y-6 mt-7 md:flex md:space-y-0">
+            <a
+              href="{{ section.settings.checkout_process_page.url }}"
+              class="Button Button--sale !uppercase md:hidden"
+            >
+              {{ "products.product.pre_order" | t }} {{ product.title | remove: "New" }}
+            </a>
+            <button
+              class="Button Button--sale !uppercase md-down:hidden md:h-15 md:!text-base md:!w-auto"
+              data-submit-bundle
+            >
+              {% if product.metafields.membership.gift.value != blank %}
+                {{ "products.product.pre_order" | t }}
+              {% else %}
+                {{ "products.product.pre_order" | t }} {{ product.title | remove: "New" }}
+              {% endif %}
+            </button>
+            <a
+              href="{{ section.settings.checkout_process_page.url }}"
+              class="Button Button--sale !uppercase md-down:hidden md:h-15 md:!text-base md:!w-auto"
+            >
+              {% if product.metafields.membership.gift.value != blank %}
+                {{ "products.product.pre_order" | t }}
+              {% else %}
+                {{ "products.product.pre_order" | t }} {{ product.title | remove: "New" }}
+              {% endif %}
+            </a>
+            {% if product.metafields.membership.gift.value != blank %}
+              <button
+                data-submit-gift-bundle
+                class="Button Button--tertiary !uppercase md:h-15 md:!text-base md:!w-auto md:ml-7.5"
+              >
+                {{ "products.product.buy_gift" | t }}
+              </button>
+              <a
+                href="{{ section.settings.checkout_process_page_gift.url | default: section.settings.checkout_process_page.url }}"
+                class="Button Button--tertiary !uppercase md:h-15 md:!text-base md:!w-auto md:ml-7.5"
+              >
+                {{ "products.product.buy_gift" | t }}
+              </a>
+            {% endif %}
+          </div>
+        {% else %}
+          {% if section.settings.button != blank %}
+            <a
+              href="{{ section.settings.button_url }}"
+              class="Button Button--primary Button--large !uppercase mt-7 md:!w-auto"
+              style="
+                color: {{ section.settings.button_color | default: '' }};
+                background-color: {{ section.settings.button_background_color | default: '' }};
+                border-color: {{ section.settings.button_background_color | default: '' }};
+              "
+            >
+              {{ section.settings.button }}
+            </a>
+          {% else %}
+            {% form "product", product %}
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+              <button type="submit" class="Button Button--primary Button--large !uppercase mt-7 md:!w-auto">
+                {{ "products.product.add_to_cart" | t }}
+              </button>
+            {% endform %}
+          {% endif %}
+        {% endif %}
+
+        {% if product.metafields.meta.text != blank %}
+          <div class="text-16 font-bold text-neutral-500 mt-6 md-down:text-center md:text-inherit">
+            {{ product.metafields.meta.text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Checkout process"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_checkout_process",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "page",
+      "id": "checkout_process_page",
+      "label": "Page for Pre-order"
+    },
+    {
+      "type": "page",
+      "id": "checkout_process_page_gift",
+      "label": "Page for Gift"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Text",
+      "default": "Register your interest"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Color"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background color"
+    }
+  ]
+}
+{% endschema %}

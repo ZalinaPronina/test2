@@ -1,0 +1,155 @@
+@layer base {
+  html {
+    font-size: 100%;
+  }
+
+  html,
+  body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-body text-base text-brand-text bg-brand-body;
+  }
+
+  .Button--primary {
+    background: var(--background-btn);
+    color: var(--color-btn);
+  }
+
+  .blue-style .Button,
+  .Button.Button--blue {
+    background: var(--background-btn-redesign);
+    color: var(--color-btn-redesign);
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  ul {
+    @apply list-none m-0 p-0;
+  }
+
+  h1,
+  .h1 {
+    @apply m-0 text-48 font-heading font-bold tracking-wider sm:text-72;
+  }
+
+  h2,
+  .h2 {
+    @apply m-0 text-36 font-heading font-bold tracking-wider;
+  }
+
+  h3,
+  .h3 {
+    @apply m-0 text-30 font-heading font-bold tracking-wider;
+  }
+
+  h4,
+  .h4 {
+    @apply m-0 text-24 font-heading font-bold tracking-wider;
+  }
+
+  h5 {
+    @apply m-0 text-base font-heading font-bold;
+  }
+
+  h6 {
+    @apply m-0 text-base font-heading font-bold;
+  }
+
+  a {
+    @apply no-underline text-current;
+  }
+
+  button,
+  .button,
+  input[type="button"] {
+    @apply appearance-none no-underline cursor-pointer font-inherit text-parent leading-none;
+  }
+
+  figure {
+    @apply relative m-0;
+  }
+
+  hr {
+    @apply my-16 mx-0 border-0 h-px;
+  }
+
+  table {
+    @apply border-collapse;
+
+    &:not(.unstyled) {
+      td,
+      th {
+        @apply text-center p-6;
+      }
+
+      th {
+        @apply text-white bg-black;
+      }
+
+      td:first-child {
+        @apply text-left font-bold;
+      }
+
+      th:first-child {
+        @apply text-left font-bold;
+      }
+    }
+  }
+
+  ::-moz-selection {
+    @apply text-white bg-black;
+  }
+
+  ::selection {
+    @apply text-white bg-black;
+  }
+
+  .rte {
+    @apply text-base leading-relaxed;
+
+    p {
+      @apply text-parent leading-inherit;
+
+      + p {
+        margin-top: 1em;
+      }
+    }
+
+    img {
+      @apply max-w-full;
+    }
+
+    a {
+      @apply underline hover:no-underline;
+    }
+
+    ul {
+      @apply my-7 space-y-4;
+
+      li {
+        @apply relative;
+
+        &::before {
+          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 25 25' fill='none'%3E%3Cpath fill='%2300A0D1' d='M21.828 10.46c1.287.743 1.287 2.6 0 3.344L5.897 23.002C4.609 23.745 3 22.816 3 21.33V2.933C3 1.447 4.61.518 5.897 1.262l15.93 9.197Z'/%3E%3C/svg%3E");
+          @apply w-4 h-4 mr-2 -mt-1.5 inline-block align-middle;
+        }
+      }
+    }
+  }
+
+  form {
+    .errors {
+      @apply my-4 text-red-500;
+    }
+  }
+}

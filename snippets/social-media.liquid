@@ -1,0 +1,59 @@
+{%- assign social_media_count = 0 -%}
+
+{%- capture social_media -%}
+  {%- if settings.social_facebook_link != blank -%}
+    <li>
+      <a href="{{ settings.social_facebook_link | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="transition-opacity duration-200 ease-in-out hover:opacity-75" target="_blank" rel="noopener" aria-label="Facebook">
+        {%- render 'icons', icon: 'facebook' -%}
+      </a>
+    </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_twitter_link != blank -%}
+    <li>
+      <a href="{{ settings.social_twitter_link | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="transition-opacity duration-200 ease-in-out hover:opacity-75" target="_blank" rel="noopener" aria-label="Twitter">
+        {%- render 'icons', icon: 'twitter' -%}
+      </a>
+    </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_instagram_link != blank -%}
+    <li>
+      <a href="{{ settings.social_instagram_link | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="transition-opacity duration-200 ease-in-out hover:opacity-75" target="_blank" rel="noopener" aria-label="Instagram">
+        {%- render 'icons', icon: 'instagram' -%}
+      </a>
+    </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_youtube_link != blank -%}
+    <li>
+      <a href="{{ settings.social_youtube_link | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="transition-opacity duration-200 ease-in-out hover:opacity-75" target="_blank" rel="noopener" aria-label="YouTube">
+        {%- render 'icons', icon: 'youtube' -%}
+      </a>
+    </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
+  {%- endif -%}
+
+  {%- if settings.social_spotify_link != blank -%}
+    <li>
+      <a href="{{ settings.social_spotify_link | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="transition-opacity duration-200 ease-in-out hover:opacity-75" target="_blank" rel="noopener" aria-label="TikTok">
+        {%- render 'icons', icon: 'spotify' -%}
+      </a>
+    </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if social_media_count > 0 -%}
+  <ul class="{{ className }} list-none flex items-center space-x-3">
+    {{ social_media }}
+  </ul>
+{%- endif -%}

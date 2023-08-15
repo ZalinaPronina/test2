@@ -1,0 +1,204 @@
+{% liquid
+  assign className = "Faq"
+  assign show_tabs = false
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-8 sm:pt-20"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-4 sm:pb-12.5"
+  endif
+
+  if section.settings.tab_1_title != blank
+    assign tab_1_blocks = section.blocks | where: "type", "tab_1"
+  endif
+
+  if section.settings.tab_2_title != blank
+    assign tab_2_blocks = section.blocks | where: "type", "tab_2"
+  endif
+
+  if tab_1_blocks and tab_2_blocks
+    assign show_tabs = true
+  endif
+%}
+
+<section class="{{ className }}" data-component="Faq">
+  <div class="max-w-screen-md mx-auto px-5 space-y-4 md:space-y-17 lg:px-15">
+    {% if show_tabs %}
+      <div class="px-5 xs:px-7.5 sm:px-0">
+        <div class="flex sm-down:rounded-16 sm-down:overflow-hidden sm-down:border sm-down:border-solid sm-down:border-brand-accent sm:gap-10">
+          {% for i in (1..2) %}
+            {% liquid
+              assign title_key = "tab_#_title" | replace: "#", i
+              assign title = section.settings[title_key]
+              assign image_key = "tab_#_image" | replace: "#", i
+              assign image = section.settings[image_key]
+            %}
+
+            {% if title != blank %}
+              <button type="button" class="{% if forloop.first %}isActive{% endif %} w-full p-3 sm-down:font-bold sm-down:justify-center sm-down:[&.isActive]:bg-brand-accent sm-down:[&.isActive]:text-white sm:text-left sm:flex sm:relative sm:p-10 sm:rounded-13 sm:overflow-hidden sm:min-h-[180px] sm:transition-filter duration-300 ease-card sm:grayscale sm:bg-neutral-300 sm:text-black sm:hover:grayscale-0 sm:hover:bg-brand-primary sm:hover:text-white sm:[&.isActive]:grayscale-0 sm:[&.isActive]:bg-brand-primary sm:[&.isActive]:text-white" data-faq="trigger" data-handle="tab-{{ i }}">
+                <div class="relative z-1 flex flex-col max-w-[200px] sm-down:hidden">
+                  <h3 class="uppercase text-40 tracking-wide">
+                    {{ title }}
+                  </h3>
+                </div>
+
+                <span class="sm:hidden">{{ title | remove: "bundle" }}</span>
+
+                {% if image != blank %}
+                  {{ image | image_url: width: 600 | image_tag:
+                    loading: "lazy",
+                    class: "absolute top-0 right-0 !m-0 w-auto h-full sm-down:hidden",
+                    widths: "200, 400, 600",
+                    alt: image.alt | escape
+                  }}
+                {% endif %}
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div>
+        {% if show_tabs %}
+          <div class="hidden isActive [&.isActive]:block" data-faq="content" data-handle="tab-1">
+            {% for block in tab_1_blocks %}
+              {% if block.settings.title != blank and block.settings.text != blank %}
+                <div {{ block.shopify_attributes }}>
+                  {% render "component-collapsible-item",
+                    title: block.settings.title,
+                    content: block.settings.text
+                  %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="hidden [&.isActive]:block" data-faq="content" data-handle="tab-2">
+            {% for block in tab_2_blocks %}
+              {% if block.settings.title != blank and block.settings.text != blank %}
+                <div {{ block.shopify_attributes }}>
+                  {% render "component-collapsible-item",
+                    title: block.settings.title,
+                    content: block.settings.text
+                  %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="-mt-4 sm:-mt-7.5">
+            {% for block in section.blocks %}
+              {% if block.settings.title != blank and block.settings.text != blank %}
+                <div class="" {{ block.shopify_attributes }}>
+                  {% render "component-collapsible-item",
+                    title: block.settings.title,
+                    content: block.settings.text
+                  %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "paragraph",
+      "content": "Tab #1"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_title",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "paragraph",
+      "content": "Tab #2"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_title",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "tab_2_image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_1",
+      "name": "Tab #1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        }
+      ]
+    },
+    {
+      "type": "tab_2",
+      "name": "Tab #2",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}

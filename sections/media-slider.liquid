@@ -1,0 +1,96 @@
+{% liquid
+  assign className = "MediaSlider"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-16 md:pt-24"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-16 md:pb-24"
+  endif
+%}
+
+{% if section.blocks.size > 0 %}
+  <section class="{{ className }}" data-component="MediaSlider">
+    <div class="max-w-6xl mx-auto px-3.5 xs:px-7.5 lg:px-16">
+      <div class="MediaSlider__Container" data-slider="container">
+        <div class="MediaSlider__Wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="MediaSlider__Item">
+                <div class="aspect-w-16 aspect-h-12 md:aspect-h-9">
+                  {{ block.settings.image | image_url: width: 1200 | image_tag:
+                    loading: "lazy",
+                    class: "object-cover",
+                    sizes: "(min-width: 768px) 1000px, calc(100vw - 5rem)",
+                    widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                    alt: block.settings.image.alt | escape
+                  }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <button type="button" class="MediaSlider__Button MediaSlider__Button--previous" aria-label="Previous slide">
+          {% render "icons", icon: "arrow-circle-left", className: "!w-16 !h-16" %}
+        </button>
+
+        <button type="button" class="MediaSlider__Button MediaSlider__Button--next" aria-label="Next slide">
+          {% render "icons", icon: "arrow-circle-right", className: "!w-16 !h-16" %}
+        </button>
+
+        <div class="MediaSlider__Pagination"></div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Media slider",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,89 @@
+{% if section.blocks.size > 0 %}
+  <section class="ProductNavigation">
+    <div class="max-w-screen-lg mx-auto px-3.5 xs:px-7.5 lg:px-[25px]">
+      <nav class="flex justify-around">
+        {% for block in section.blocks %}
+          {% if block.settings.product != blank %}
+            {% liquid
+              assign className = "ProductNavigation__Link group"
+
+              if block.settings.product.handle == product.handle
+                assign className = className | append: " isActive"
+              endif
+            %}
+
+            <a href="{{ block.settings.product.url }}" class="{{ className }}">
+              {% if block.settings.image != blank %}
+                <div class="ProductNavigation__LinkImage">
+                  {% if block.settings.text != blank %}
+                    <span class="text-20 font-bold -ml-4 mr-3">{{ block.settings.text }}</span>
+                  {% endif %}
+
+                  {{ block.settings.image | image_url: width: 300 | image_tag:
+                    loading: "lazy",
+                    class: "w-auto h-14",
+                    widths: "100, 200, 300",
+                    alt: block.settings.image.alt | escape
+                  }}
+                </div>
+              {% endif %}
+
+              <span>{{ block.settings.product.title }}</span>
+
+              {% if block.settings.icon != blank %}
+                <div class="absolute left-full top-10 md-down:hidden">
+                  {{ block.settings.icon | image_url: width: 300 | image_tag:
+                    loading: "lazy",
+                    class: "w-auto h-14",
+                    widths: "100, 200, 300",
+                    alt: block.settings.image.icon | escape
+                  }}
+                </div>
+              {% endif %}
+
+              <span class="ProductNavigation__LinkUnderline"></span>
+            </a>
+
+            {% unless forloop.last %}
+              <span class="shrink-0 w-px bg-brand-tertiary mx-3 xs:mx-4 md:hidden"></span>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Navigation",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

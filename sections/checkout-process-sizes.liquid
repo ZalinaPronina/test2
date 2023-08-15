@@ -1,0 +1,94 @@
+{% liquid
+  assign is_dropdown_for_both = false
+  assign dropdown_mobile = section.settings.dropdown_mobile
+  assign dropdown_desktop = section.settings.dropdown_desktop
+
+  if dropdown_mobile and dropdown_desktop
+    assign is_dropdown_for_both = true
+  endif
+%}
+
+<div
+  class="SizeGuide hidden py-5 sm:bg-neutral-100 sm:py-15"
+  data-checkout-process="step"
+  data-index="2"
+  data-section-id="{{ section.id }}"
+>
+  <div class="max-w-[820px] mx-auto px-3.5">
+    {% if section.settings.title != blank %}
+      <h2 class="text-center text-24 font-body tracking-normal mb-10{% if is_dropdown_for_both %} hidden{% elsif dropdown_mobile %} sm-down:hidden{% elsif dropdown_desktop %} sm:hidden{% endif %}">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    <div
+      class="mb-6 text-center group [&~div]:aria-expanded:flex [&~div]:aria-expanded:sm:flex-row{% if is_dropdown_for_both == false and dropdown_mobile %} sm:hidden{% elsif is_dropdown_for_both == false and dropdown_desktop %} sm-down:hidden{% elsif is_dropdown_for_both == false %} hidden{% endif %}"
+      data-component="ContentToggle"
+      aria-controls="content-toggle-{{ section.id }}"
+      aria-expanded="false"
+      role="button"
+    >
+      <span class="font-bold">
+        {% if section.settings.title != blank %}
+          {{ section.settings.title }}
+        {% else %}
+          Show content
+        {% endif %}
+      </span>
+
+      {% render "icons", icon: "triangle", size: "small", className: "group-aria-expanded:rotate-180" %}
+    </div>
+
+    <div class="flex flex-col gap-5 sm:flex-row{% if is_dropdown_for_both %} hidden{% elsif dropdown_mobile %} sm-down:hidden{% elsif dropdown_desktop %} sm:hidden{% endif %}" id="content-toggle-{{ section.id }}">
+      {% for block in section.blocks %}
+        <div class="sm:w-1/2">
+          {{ block.settings.html }}
+        </div>
+
+        {% if section.blocks.size > 1 and forloop.first %}
+          <span class="hidden w-full h-1 bg-brand-text sm:block sm:bg-white sm:w-1 sm:h-auto"></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Sizes",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "dropdown_mobile",
+        "label": "Enable Dropdown for mobile",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "dropdown_desktop",
+        "label": "Enable Dropdown for desktop",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Heading"
+      }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "html",
+            "id": "html",
+            "label": "HTML code"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

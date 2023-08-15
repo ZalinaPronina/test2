@@ -1,0 +1,56 @@
+{% if menu != blank %}
+  <nav
+    class="HeaderNav"
+    role="navigation"
+    aria-label="{{ label | default: 'Primary' }}"
+    data-component="HeaderNav"
+  >
+    {% assign menu = linklists[menu] %}
+
+    <ul class="flex items-center space-x-4">
+      {% for link in menu.links %}
+        {% liquid
+          assign has_active_link = false
+          assign active_links = link.links | where: 'active', true
+
+          if active_links.size > 0
+            assign has_active_link = true
+          endif
+        %}
+
+        <li
+          class="HeaderNav__Item{% if link.active or has_active_link %} isActive{% endif %}"
+          {% if link.links.size > 0 %}data-has-childlink{% endif %}
+        >
+          <a
+            class="text-14 font-medium px-2 py-1.5 flex items-center space-x-1"
+            href="{{ link.url }}"
+          >
+            <span>{{ link.title }}</span>
+
+            {% if link.links.size > 0 %}
+              {% render "icons", icon: "chevron-down", size: "xsmall" %}
+            {% endif %}
+          </a>
+
+          {% if link.links.size > 0 %}
+            <div class="HeaderNav__ItemDropdown hidden" data-link-dropdown>
+              <ul class="space-y-2">
+                {% for child_link in link.links %}
+                  <li class="{% if child_link.active %}isActive{% endif %}">
+                    <a
+                      class="text-14 font-medium text-brand-text"
+                      href="{{ child_link.url }}"
+                    >
+                      {{ child_link.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

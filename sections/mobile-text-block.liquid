@@ -1,0 +1,79 @@
+<style>
+  .mobile-block-container {
+    padding: 0 27px;
+  }
+  .mobile-block-container .rte{
+    font-size: 16px;
+    font-weight: 500;
+  }
+</style>
+  <div class="mt-5 sm:hidden" style="margin-bottom:34px">
+    <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+      <div class="px-3 py-6 border border-solid border-brand-accent rounded-10">
+        <div class="text-center">
+          {{ section.settings.image_mobile | image_url: width: 600 | image_tag:
+            loading: "lazy",
+            class: "w-full h-auto max-w-[160px] mx-auto",
+            widths: "300, 600",
+            alt: section.settings.image_mobile.alt | escape
+          }}
+
+          {% if section.settings.text_image != blank %}
+            <div class="text-16 font-bold mt-4">
+              {{ section.settings.text_image }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-block-container max-w-screen-lg mx-auto px-3.5 lg:px-[25px]">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div class="text-center mb-6 space-y-4 sm:hidden">
+        {% if section.settings.title != blank %}
+          <h2 class="text-24 font-body tracking-normal">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% schema %}
+  {
+    "name": "Mobile Text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "richtext",
+        "id": "text_image",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Mobile Text"
+      }
+    ]
+  }
+{% endschema %}

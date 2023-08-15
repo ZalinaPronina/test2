@@ -1,0 +1,69 @@
+.Metrics {
+  @apply sm-down:pt-9 sm-down:pb-9;
+
+  &__Wrapper,
+  &__Block {
+    background: rgb(67, 205, 158);
+    background: -moz-linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+    background: linear-gradient(
+      120deg,
+      rgba(67, 205, 158, 1) 0%,
+      rgba(0, 160, 209, 1) 100%
+    );
+  }
+
+  &__Wrapper {
+    @apply md-down:bg-[image:none] md:p-px md:rounded-16;
+  }
+
+  &__Trigger {
+    @apply text-14 text-center uppercase justify-center leading-none;
+    @apply md:text-20 md:w-full md:max-w-xs md:h-18 md:border md:border-solid md:border-brand-primary md:bg-neutral-200;
+
+    &:first-child {
+      @apply md:rounded-l-16;
+    }
+
+    &:last-child {
+      @apply md:rounded-r-16;
+    }
+
+    &:not(:first-child):not(:last-child),
+    &:nth-of-type(2) {
+      @apply md:-mx-3.5;
+    }
+
+    &:not(.isActive) {
+      @apply md:hover:bg-brand-gray;
+    }
+
+    &.isActive {
+      @apply font-bold md:bg-brand-primary md:text-white md:rounded-16 md:relative;
+    }
+  }
+
+  &__Content {
+    @apply hidden py-6 space-y-14 md:py-14 md:space-y-18;
+
+    &.isActive {
+      @apply block;
+    }
+
+    .hasOnlyOne & {
+      @apply py-0;
+    }
+  }
+
+  &__Block {
+    @apply p-px rounded-16 overflow-hidden space-y-5;
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Why_GPS_Header_V1_12_-2.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "GPS in sport - WHY TEAMS USE GPS",
+        "title_as_h1": false,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "sub_title": "For Teams"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "blocks": {
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GPS_Tracker_Rugby.png",
+            "image_max_width": 410,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "184e2fee-ba05-48f7-8d36-1470fa6ad106"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "Introduction",
+        "title_position": "inside",
+        "bold_text": "<p><strong>GPS tracking is an opportunity to use player data intelligently to improve physical performance, fitness, tactical awareness and injury recovery times.<\/strong><\/p>",
+        "text": "<p>It’s technology that is no longer limited to professional sports teams. Increasingly, grassroots clubs are using the data collected from GPS tracking to understand everything from max speed of players to distance covered.<\/p><p><br\/>In this guide, we’ll explore how GPS trackers work, what they show you and why sports science can help your club in lots of ways.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "blocks": {
+        "4b58a2c5-b99d-4e5d-a6a3-679d86f60195": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "image_mobile": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "PLAYER<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "1X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/player-bundle-priority-registration"
+          }
+        },
+        "9b9dcff6-9923-4be7-b1d5-2272b8a4e8ca": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Team_Bundle_Banner.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/3_x_Vests_1_d2584f42-4017-469f-8b99-321ae9cf88a5.png",
+            "title": "TEAM<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "20X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/team-bundle-priority-registration"
+          }
+        }
+      },
+      "block_order": [
+        "4b58a2c5-b99d-4e5d-a6a3-679d86f60195",
+        "9b9dcff6-9923-4be7-b1d5-2272b8a4e8ca"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What is a GPS in Sport?",
+        "title_position": "outside",
+        "bold_text": "",
+        "text": "<p>Global Positioning System (GPS) is common in everything from a TomTom sat-nav in our car to a Strava app for a morning run.<\/p><p>The application of GPS metrics in sports opens a whole new world of possibility. The use of ‘wearables’ such as a vest gives sports teams accurate personalised GPS data to get faster, stronger and fitter.<\/p><p>It allows every player and the coaches to understand a player’s baseline to work from (e.g. distance covered in a pre-season session versus a week or month later).<\/p><p>GPS technology has been utilised successfuly to monitor and improve performance in all team sports including <a href=\"\/pages\/football-1\" title=\"Football\">football<\/a>, <a href=\"\/pages\/rugby-union\" title=\"Rugby\">rugby<\/a> and <a href=\"\/pages\/hockey\" title=\"Hockey\">hockey<\/a>.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Homepage_5020581b-218b-41f1-b92e-30791d7a237a.png",
+            "image_max_width": 370,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Speed_Stats.png",
+            "image_max_width": 370,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "1e678e40-eaba-453b-a696-59793397869c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Iphone_Intensity.png",
+            "image_max_width": 370,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2",
+        "1e678e40-eaba-453b-a696-59793397869c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How do athletes track their progress?",
+        "title_position": "outside",
+        "bold_text": "<p>A GPS tracker is typically worn in a vest by a player and that will record GPS data which can be saved to the Cloud for analysis.<\/p>",
+        "text": "<p>By recording location, speed, direction and distance, the coaching staff and players can then view that on a mobile device or computer. <\/p><p>So, what is tracking as an athlete?<br\/><br\/>That’s really the next step of understanding the GPS data to gain insights for training sessions and matches:<\/p><p><strong>How fast did I run?<\/strong><\/p><p><strong>How many kilometres did I cover?<\/strong><\/p><p><strong>What was my acceleration at key times?<\/strong><\/p><p><strong>How intense was my training?<\/strong><\/p><p><strong>Where can I improve?<\/strong><\/p><p>Via an app or a dashboard, players can see heatmaps to learn where their positioning was, key statistics and understand the training load so they don’t over (or under) exert themselves.<br\/><br\/>Physical conditioning can be honed to challenge what an individual is currently doing.<br\/><br\/>Every squad member will be different and the beauty of GPS tracking is that it is accurate and personalised. Take soccer players monitoring their GPS data ahead of their next game.<br\/><br\/>A striker might learn about his fitness before a crunch cup tie against promotion rivals. A goalkeeper can find out how to balance a return to action with minimising injury.<\/p><p>All of this knowledge helps them individually but it will also assist team performance too.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "97312a30-97e7-4c2a-ab23-840f7dd17724": {
+      "type": "text-with-media",
+      "blocks": {
+        "076fb93e-6232-49b3-a1e4-2743975f78fd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Speed_Graph_02.png",
+            "image_max_width": 410,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "2be5f322-3739-43ce-ad4a-64f53ac4afb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dostance_Graph_02.png",
+            "image_max_width": 410,
+            "rounded": false,
+            "background_color": ""
+          }
+        },
+        "8f323260-45d4-448f-935d-c561776cdd5c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Intensity_Graph_01B.png",
+            "image_max_width": 410,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "076fb93e-6232-49b3-a1e4-2743975f78fd",
+        "2be5f322-3739-43ce-ad4a-64f53ac4afb2",
+        "8f323260-45d4-448f-935d-c561776cdd5c"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What do gps trackers do in sport?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>While it’s true that GPS trackers can’t do the work for you, they highlight to an individual player and coaches the reality on the pitch.<\/strong><\/p>",
+        "text": "<p>By tracking speed, distance and intensity over weeks and months, a picture begins to emerge.<\/p><p>For example, ‘training load’ is the amount of exercise in a set time period (it could be a training session or over a week). It’s important to measure so players do the right amount for their circumstances, particularly when coming back from an injury.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "6993dc73-db14-43f9-a978-b23108856ad9": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What are the 6 main uses of a gps?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>As we’ve outlined, the technology of GPS trackers allows individual athletes and teams to gather information on physical performance. <\/strong><\/p><p><strong>Key features include:<\/strong><\/p>",
+        "text": "<ul><li>Total distance covered<\/li><li>Total Active Time<\/li><li>Top Speed<\/li><li>Activity Zones - Walking, Jogging, Running<\/li><li>Accelerations<\/li><li>Decelerations<\/li><li>Impacts\/Changes in Direction<\/li><li>Field Position\/Heatmaps<\/li><\/ul><p>Armed with this insight for each player, the training process can be adapted in future according to different needs, rather than everyone doing all the drills in the same way. <\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Speed.png",
+            "title": "Speed",
+            "text": "<p>Knowing the speed of a player is useful in plenty of ways. Who are your quickest squad members? Are there any surprises you didn’t know about? <\/p><p>Is everyone in the best position to capitalize on that speed? What tactical changes need to be made?<\/p><p>It’s also a benchmark to improve on so coaches can aim to increase the overall speed of the team.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Contained_Icon2.png",
+            "title": "Location",
+            "text": "<p>Where do players spend their time in training or matches? Are defenders pushing too far up the pitch? Can midfielders do more to support attacks or corners?<br\/><br\/>Coaches get to learn if their players are where they should be for specific set plays and tactical moves.<br\/><br\/>How do athletes track their progress? Well, the dashboard (on a laptop or an app) is a visual coaching aid to show what areas of the field or court they are in over a time period.<br\/><br\/>With a heatmap, it will typically show dark red areas as a higher concentration of time or light green as less.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Distance.png",
+            "title": "Distance",
+            "text": "<p>Being able to tell how far players run in a training session or a match is vital. It demonstrates fitness and stamina over a set time. How active is each player? <\/p><p>Should they be doing more in their role? Conversely, are certain players running too much and should conserve energy to last longer or be more effective at a certain time?<\/p><p>Total distance is a part of the puzzle when it comes to assessing how training and matches. It’s the volume, measured in kilometres or miles, that players move - but needs consideration along with the intensity and frequency.<\/p>"
+          }
+        },
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Contained_Icon2.png",
+            "title": "Accelerations \/ Decelerations",
+            "text": "<p>Sudden changes of speed are an asset in every sport. They’re something GPS trackers can measure to judge the improvement in each player.<br\/><br\/>How quickly a player speeds up or slows down is valuable to know when evaluating their fatigue and injury risk too. It can be benchmarked for each person to carefully manage their training load across each week.<\/p><p>With PitcheroGPS, accelerations and decelerations figures are decided in advance - they are measured as metres per second squared m\/s²). This can be updated before the next session.<\/p><p>Wearing their GPS vests, players are then logged how often they go above that figure (accelerations) or go below it (decelerations).<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "Intensity",
+            "text": "<p>How often are your team getting their heart rate up? A high-intensity session is a short burst of more strenuous exercises.<\/p><p>With PitcheroGPS, coaches can set up <span style=\"text-decoration:underline\"><strong>custom speed zones<\/strong><\/span> that demonstrate how often a player was reaching certain speeds. These can be changed for any session to either assess all players in the same brackets or a particular player and how they perform.<\/p><p>Default speed zones are listed here (in kilometres per hour):<\/p><ul><li>Walking is &lt;6 kmph<\/li><li>Jogging is 6-12 kmph<\/li><li>Running is 12-18 kmph<\/li><li>Sprinting is &gt;18 kmph<\/li><\/ul><p>Coaches talk about the ‘external load’ that describes what players do such as distance travelled or sets of sprints. <\/p><p>Meanwhile, ‘internal load’ is how players respond physically to the external load through their heart rate and other factors.<\/p><p>High-intensity interval training (HIIT) is a popular method of building endurance over time using GPS trackers to judge outcomes.<br\/><br\/>It is shorter sets of high-intensity exercise followed by a recovery period then repeated.<\/p><p>An example would be running or cycling as fast as you can for 10 seconds then 2 minutes of slow jogging. Or, as many squat thrusts as you can do in 30 seconds.<\/p><p>Again, using GPS tracking, the number of times a certain intensity is reached can be monitored.<\/p><p>HIIT can easily be built into a team environment with games such as 5v5 and aspects such as interval duration or intensity changed, along with the number of repetitions and recovery time.<\/p><p>All of this can be reviewed later with a GPS tracker; a coach has total control over future improvements to their training which is backed up by real-life, recent scientific data.<\/p>"
+          }
+        },
+        "fa49ef11-adf5-420a-957d-267b8d088063": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Injury.png",
+            "title": "Injury Reductions",
+            "text": "<p>If we assume that players don’t want to miss out and coaches want to pick them then it can be hard to know when is the right time to be re-introduced after injury.<br\/><br\/>Equally, along with relapses, preventing injuries from happening in the first place is incredibly important for player welfare and team success.<\/p><p>It’s human nature that a player might continue with minor injuries or if your winger is not at his usual best, well, it happens. <\/p><p>With GPS stats to call upon, it’s easier to spot deficiencies that might suggest a player is struggling physically that can indicate an injury.<br\/><br\/>The precision of the GPS data allows coaches to micro-manage a player’s individual training regime to ensure a gradual, sensible comeback from injury.<br\/><br\/>Injury risk comes with overloading a player’s training beyond what they’re used to or capable of at that point. <\/p><p>On a daily or weekly basis, exactly how much exercise for a player can be tweaked at any point when you have the GPS data to go from.<\/p><p>With PitcheroGPS, you can measure ‘impacts’ which will often be tackles and collisions, particularly with contact sports like rugby union and football.<\/p><p>This is vital when it comes to assessing player workload and the strain their bodies have been under recently or historically.<br\/><br\/>The coach can set the threshold in advance - so it could be changed depending on the age of player, standard being played at or the type of training.<br\/><br\/>The GPS tracker will register the number of times where the g-force goes beyond that.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3",
+        "fa49ef11-adf5-420a-957d-267b8d088063"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "",
+        "text": ""
+      }
+    },
+    "144c725e-7ad1-4e35-876d-1b217a69e7fc": {
+      "type": "bundles",
+      "blocks": {
+        "a328c0e4-06c6-4f4d-b2a7-0d6bf1385eac": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "image_mobile": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "PLAYER<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "1X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/player-bundle-priority-registration"
+          }
+        },
+        "44760b90-9091-47c6-919e-d42f74bdb107": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Team_Bundle_Banner.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/3_x_Vests_1_d2584f42-4017-469f-8b99-321ae9cf88a5.png",
+            "title": "TEAM<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "20X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/team-bundle-priority-registration"
+          }
+        }
+      },
+      "block_order": [
+        "a328c0e4-06c6-4f4d-b2a7-0d6bf1385eac",
+        "44760b90-9091-47c6-919e-d42f74bdb107"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "6ad9b74c-bf74-4566-9074-727a1ae90267": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What are the disadvantages of GPS tracking in sport?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>As with any system that relies on pinpoint measuring, its accuracy is crucial. If the GPS tracker you’re using isn’t reliable then neither is the data it produces.<br\/><br\/>But you could say that with any analytics for sport. Not so much a disadvantage or a reason to avoid; more a note of caution.<\/strong><\/p>",
+        "text": "<p>With the PitcheroGPS system, it has been rigourosly tested and shown to be as accurate as existing alternatives.<br\/><br\/>On a similar theme, running out of battery power is something else to bear in mind. A charging case is a worthwhile investment as it protects the GPS trackers from damage while also charging them at the same time.<br\/><br\/>Bear in mind different GPS player tracker systems may take longer to upload and view data. Fast access to data is something to look out for with your research, especially if it’s completely wireless.<\/p><p><br\/>Privacy and data protection can be concerns where personal information is gathered and stored. Players should all give consent for the club to collect and use their performance data, along with how and where it is shared.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe": {
+      "type": "text-with-media",
+      "blocks": {
+        "7143614b-af79-401b-a534-6cbd87fe4dd5": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/mAhn1Hy-808"
+          }
+        }
+      },
+      "block_order": [
+        "7143614b-af79-401b-a534-6cbd87fe4dd5"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your team",
+        "title_position": "outside",
+        "bold_text": "<p>Sports teams, like Cambridge RFU and West Bromwich Albion Women, are choosing PitcheroGPS to improve performance and reduce the risk of injuries.<\/p>",
+        "text": "<p>It’s an investment in understanding your players more, boosting their potential and seeing results in training and on the field or court.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0": {
+      "type": "reviews",
+      "blocks": {
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1526-2205110239_1.png",
+            "title": "Cambridge RUFC told us what they think",
+            "text": "We’ve found using the PitcheroGPS has been massively beneficial for us as a club. It’s cost-effective compared to other brands that are currently available. It’s something I would recommend to any clubs at our level, the National Leagues below and community clubs to purchase."
+          }
+        }
+      },
+      "block_order": [
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "1173bfe6-f275-4920-a795-66aa53e1f134": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your team",
+        "title_position": "outside",
+        "bold_text": "<p><strong>You might be asking yourself: ‘Which is the best GPS tracker for my team? The answer lies in the features, price and feedback from clubs. The superior product is one that combines all of these.<\/strong><\/p>",
+        "text": "<p>Our GPS system has been rigorously trialled and tested. Pitchero understands the demands of grassroots sport as well as any company. That’s why our GPS web app is easy to use and understand for coaches and players. <\/p><p>No confusion and absolute pinpoint accuracy. <br\/><\/p><p>Cameron Wilson is the Strength and Conditioning Coach of West Bromwich Albion Women’s FC. His feedback was: ‘The PitcheroGPS system is brilliant. It’s one that us, as coaches, understand really well. The players understand it well too. It uploads really quickly, it’s easy, it’s a really good system to use.’<\/p><p>The <a href=\"\/products\/team-bundle\" title=\"Team Bundle\"><span style=\"text-decoration:underline\"><strong>PitcheroGPS Team Bundle<\/strong><\/span><\/a> includes:<\/p><ul><li>20 x GPS Player Trackers<\/li><li>20 x Player Vests<\/li><li>1 x Charging Case<\/li><li>1 x 2-yr Software Subscription<\/li><\/ul><p><strong>Register for Priority Access<\/strong><\/p><p>Just <a href=\"https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2\" title=\"https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2\"><span style=\"text-decoration:underline\"><strong>register your interest<\/strong><\/span><\/a> if your club, academy, <a href=\"\/pages\/gps-in-schools\" title=\"Schools\">school<\/a>, college or university is interested in the new PitcheroGPS Team Bundle. <\/p><p>You will be the first to be notified when the new GPS Team Bundle becomes available in 2023.<\/p>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "3c98e054-8d80-4ff8-b91a-17cd087b134d": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "3c98e054-8d80-4ff8-b91a-17cd087b134d"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Player Vest is approved by FIFA and quickly sold out to <a href=\"\/pages\/football-gps-tracker\" title=\"Football\">football<\/a> and <a href=\"\/pages\/rugby-gps-tracker\" title=\"Rugby\">rugby<\/a> customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    },
+    "5f99780c-1146-4dbd-a57c-8e72bf4c9d9e": {
+      "type": "bundles",
+      "blocks": {
+        "adead782-a436-44f6-b137-c467274acb8e": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "image_mobile": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "PLAYER<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "1X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/player-bundle-priority-registration"
+          }
+        },
+        "513d9c06-c829-4d27-8c49-1c90b4624bb4": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Team_Bundle_Banner.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/3_x_Vests_1_d2584f42-4017-469f-8b99-321ae9cf88a5.png",
+            "title": "TEAM<br>BUNDLE",
+            "sub_title": "NEW",
+            "text": "20X",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/team-bundle-priority-registration"
+          }
+        }
+      },
+      "block_order": [
+        "adead782-a436-44f6-b137-c467274acb8e",
+        "513d9c06-c829-4d27-8c49-1c90b4624bb4"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "5478d54d-5c5f-4c5f-a9cf-8136ebb923c2": {
+      "type": "columns-slider",
+      "blocks": {
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sport_x3_-_Football.png",
+            "title": "Football",
+            "url": "shopify:\/\/pages\/football-gps-tracker"
+          }
+        },
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sport_x_3_-_Rugby_df5cdb99-7d8c-4d5d-806b-e6a5a3b125fb.png",
+            "title": "Rugby",
+            "url": "shopify:\/\/pages\/rugby-gps-tracker"
+          }
+        },
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sport3.png",
+            "title": "Hockey",
+            "url": "shopify:\/\/pages\/hockey-gps-tracker"
+          }
+        }
+      },
+      "block_order": [
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-0",
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-1",
+        "template--15669487665357__5478d54d-5c5f-4c5f-a9cf-8136ebb923c2-16672093161555ffda-2"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "97312a30-97e7-4c2a-ab23-840f7dd17724",
+    "6993dc73-db14-43f9-a978-b23108856ad9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "144c725e-7ad1-4e35-876d-1b217a69e7fc",
+    "6ad9b74c-bf74-4566-9074-727a1ae90267",
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe",
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0",
+    "1173bfe6-f275-4920-a795-66aa53e1f134",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8",
+    "5f99780c-1146-4dbd-a57c-8e72bf4c9d9e",
+    "5478d54d-5c5f-4c5f-a9cf-8136ebb923c2"
+  ]
+}

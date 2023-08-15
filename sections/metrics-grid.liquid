@@ -1,0 +1,244 @@
+{% liquid
+  assign className = "MetricsGrid"
+
+  if section.settings.top_padding
+    assign className = className | append: " pt-15 sm:pt-13"
+  endif
+
+  if section.settings.bottom_padding
+    assign className = className | append: " pb-15 sm:pb-13"
+  endif
+%}
+
+<section class="{{ className }}" data-component="MetricsGrid">
+  <div class="max-w-6xl mx-auto px-3.5 space-y-17 xs:px-7.5 md:space-y-30 lg:px-16">
+    {% if section.settings.title != blank or section.settings.text != blank %}
+      <div>
+        <div class="space-y-12">
+          {% if section.settings.title != blank %}
+            <h2 class="text-24 text-center font-body tracking-normal">
+              {{ section.settings.title }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="rte max-w-[50em] mx-auto sm:text-center">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div data-slider="container">
+        <div class="MetricsGrid__Wrapper">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank or block.settings.title != blank %}
+              <div class="MetricsGrid__Item md:flex{% if block.settings.image_position == "right" %} md:flex-row-reverse{% endif %}{% unless forloop.first %}{% if block.settings.grid_spacing == "small" %} md:mt-17{% else %} md:mt-52{% endif %}{% endunless %}" {{ block.shopify_attributes }}>
+                {% if block.settings.icon != blank or block.settings.title != blank %}
+                  <div class="flex items-center justify-center space-x-4 mb-8 md:hidden">
+                    {% if block.settings.icon != blank %}
+                      <div class="">
+                        {{ block.settings.icon | image_url: width: 100 | image_tag:
+                          loading: "lazy",
+                          class: "w-auto h-12",
+                          widths: "100",
+                          alt: block.settings.icon.alt | escape
+                        }}
+                      </div>
+                    {% endif %}
+  
+                    {% if block.settings.title != blank %}
+                      <h3 class="text-24 font-body font-bold">
+                        {{ block.settings.title }}
+                      </h3>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.image != blank %}
+                  <div class="shrink-0 md:w-1/2">
+                    <div class="flex justify-center w-full{% if block.settings.image_size == "small" %} h-52 sm:h-80 md:h-108{% else %} h-100 md:h-150{% endif %}">
+                      {{ block.settings.image | image_url: width: 1200 | image_tag:
+                        loading: "lazy",
+                        class: "w-auto h-full",
+                        sizes: "(min-width: 940px) 600px, 100vw",
+                        widths: "400, 600, 800, 1200, 1600, 2000, 2400, 3200, 3800",
+                        alt: block.settings.image.alt | escape
+                      }}
+                    </div>
+                  </div>
+                {% endif %}
+
+                {% if block.settings.title != blank or block.settings.text != blank %}
+                  <div class="space-y-8 md:w-1/2{% if block.settings.top_padding %} md:pt-20{% endif %} {% if block.settings.image_position == "right" %}md:pr-30{% else %}md:pl-30{% endif %}">
+                    {% if block.settings.icon != blank %}
+                      <div class="md-down:hidden">
+                        {{ block.settings.icon | image_url: width: 100 | image_tag:
+                          loading: "lazy",
+                          class: "w-auto h-12",
+                          widths: "100",
+                          alt: block.settings.icon.alt | escape
+                        }}
+                      </div>
+                    {% endif %}
+
+                    <div class="text-center md:text-left md:space-y-3">
+                      {% if block.settings.title != blank %}
+                        <h3 class="text-24 font-body font-bold md-down:hidden">
+                          {{ block.settings.title }}
+                        </h3>
+                      {% endif %}
+
+                      {% if block.settings.text != blank %}
+                        <div class="rte">{{ block.settings.text }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="MetricsGrid__Pagination"></div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.show_border %}
+    <div class="md-down:hidden">
+      <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+        <div class="h-0.5 bg-[color:#BABABA]"></div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Metrics Grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "Add top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "Add bottom spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "grid_spacing",
+          "label": "Top spacing",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            }
+          ],
+          "default": "small"
+        },
+        {
+          "type": "checkbox",
+          "id": "top_padding",
+          "label": "Add top spacing to content",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_size",
+          "label": "Style",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            }
+          ],
+          "default": "medium"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Metrics Grid",
+      "settings": {
+        "title": "Heading"
+      }
+    }
+  ]
+}
+{% endschema %}

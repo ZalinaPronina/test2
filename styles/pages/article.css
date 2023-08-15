@@ -1,0 +1,35 @@
+.Article {
+  .rte {
+    @apply text-16 sm:text-20;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      + h1,
+      + h2,
+      + h3,
+      + h4,
+      + h5,
+      + h6,
+      + p {
+        margin-top: 1em;
+      }
+    }
+
+    h3 {
+      @apply opacity-50 font-normal;
+    }
+
+    img {
+      @apply w-full rounded-8 overflow-hidden md:w-[calc(100%+80px)] md:-ml-10 md:max-w-none;
+
+      + .img-alt {
+        @apply text-center text-12 opacity-30 mt-2.5;
+      }
+    }
+  }
+}

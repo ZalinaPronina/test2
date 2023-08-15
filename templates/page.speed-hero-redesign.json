@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "page_style_blue": true,
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_content": false
+      }
+    },
+    "d9dea0a9-5c1b-4aa0-94fa-7b3abf23023c": {
+      "type": "hero-section",
+      "blocks": {
+        "f4a93205-3d4f-4a16-be42-89b0a8bc0171": {
+          "type": "button",
+          "settings": {
+            "style": "primary",
+            "text": "Apply Now",
+            "url": "#shopify-section-template--15766938058957__2c4b8d44-0215-4c5e-9d36-af30ce5ec87c"
+          }
+        },
+        "6021dab7-b5e4-466b-a1c5-9133c2287d33": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>Join the most exclusive Speed club in sport. Applications now open! #SpeedHeroes<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f4a93205-3d4f-4a16-be42-89b0a8bc0171",
+        "6021dab7-b5e4-466b-a1c5-9133c2287d33"
+      ],
+      "settings": {
+        "transparent_header": true,
+        "style_mobile": "transparent",
+        "style": "black",
+        "image_desktop": "shopify:\/\/shop_images\/Group_42_2.png",
+        "image_mobile": "shopify:\/\/shop_images\/Frame_1027_245fd041-c3b6-42cc-ad15-5976e9544388.png",
+        "show_image_decoration": true,
+        "title": "Speed Heroes",
+        "title_as_h1": true,
+        "title_small": true,
+        "title_not_uppercase_mobile": true
+      }
+    },
+    "cb4e37ec-0cd3-4554-89bb-5ef1fa6dab00": {
+      "type": "grid-players",
+      "blocks": {
+        "00458007-34a2-4701-ac4a-798d3302897e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Profile_Mobile_1.png"
+          }
+        },
+        "6e01e157-36d8-4b1e-b70b-0f36e0949715": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Profile_Mobile_1.png"
+          }
+        },
+        "c54fc24f-42f9-458f-881f-750b4307c092": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Profile_Mobile_1.png"
+          }
+        },
+        "eb7937e3-5942-4f1e-954f-fa5fd94c59ab": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Profile_Mobile_1.png"
+          }
+        },
+        "ffc40cbd-a7de-4647-868e-19f1f12ee86b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Profile_Mobile_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "00458007-34a2-4701-ac4a-798d3302897e",
+        "6e01e157-36d8-4b1e-b70b-0f36e0949715",
+        "c54fc24f-42f9-458f-881f-750b4307c092",
+        "eb7937e3-5942-4f1e-954f-fa5fd94c59ab",
+        "ffc40cbd-a7de-4647-868e-19f1f12ee86b"
+      ],
+      "settings": {
+        "title": "How Hockey Players Benefit from GPS",
+        "text": "This guide shows how every hockey player can benefit from wearing a GPS Player Vest. Get Fitter and run faster. Improve strength and performance by measuring key performance metrics at every game and training session; distance, speed, acceleration……"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "d9dea0a9-5c1b-4aa0-94fa-7b3abf23023c",
+    "cb4e37ec-0cd3-4554-89bb-5ef1fa6dab00"
+  ]
+}

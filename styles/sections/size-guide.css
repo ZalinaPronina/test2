@@ -1,0 +1,20 @@
+.SizeGuide {
+  table {
+    @apply w-full;
+
+    th {
+      @apply bg-transparent text-inherit align-top;
+    }
+
+    td,
+    th {
+      @apply font-medium py-2.5 px-6;
+    }
+
+    td {
+      &:first-child {
+        @apply font-medium;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{% if section.settings.transparent_header %}
+  <script>
+    const siteHeader = document.querySelector(".Header");
+    siteHeader.classList.add("isTransparent");
+  </script>
+{% endif %}
+
+{% if section.settings.page_style_blue %}
+  <script>
+    const siteBody = document.querySelector("body");
+    siteBody.classList.add("blue-style");
+  </script>
+{% endif %}
+
+{% if section.settings.background_newsletter %}
+  <script>
+    const siteBody = document.body;
+    siteBody.setAttribute("data-newsletter-background", true)
+  </script>
+{% endif %}
+
+{% if section.settings.show_header %}
+  <header class="PageHeader{% if section.settings.background_image %} hasBackground{% endif %}{% if section.settings.transparent_header %} hasTransparentHeader{% endif %}
+">
+    <div class="max-w-screen-lg mx-auto px-5 lg:px-[25px]">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </header>
+{% else %}
+  <h1 class="sr-only">{{ page_title }}</h1>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Page header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "page_style_blue",
+        "label": "Page Style Blue",
+        "default": false,
+        "info": "Save and reboot page"
+      },
+      {
+        "type": "checkbox",
+        "id": "transparent_header",
+        "label": "Transparent site header",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "background_newsletter",
+        "label": "Background newsletter",
+        "info": "Add background color to newsletter section",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_header",
+        "label": "Show page header",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "background_image",
+        "label": "Show background image",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Header"
+      }
+    ]
+  }
+{% endschema %}

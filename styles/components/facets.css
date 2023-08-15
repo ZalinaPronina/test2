@@ -1,0 +1,11 @@
+.Facets {
+  &__Disclosure {
+    &[open] {
+      summary {
+        .Icon {
+          @apply rotate-180;
+        }
+      }
+    }
+  }
+}

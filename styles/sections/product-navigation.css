@@ -1,0 +1,38 @@
+.ProductNavigation {
+  @apply bg-gray-100 overflow-hidden md-down:py-7;
+
+  &__Link {
+    @apply relative flex flex-col items-center justify-end text-16 font-medium text-center md:pt-10 md:pb-6 md:px-5;
+
+    &Image {
+      @apply flex items-center mb-2  md-down:hidden;
+
+      img {
+        @apply grayscale transition-all duration-150 opacity-60 group-hover:opacity-100 group-hover:grayscale-0;
+      }
+
+      span {
+        @apply grayscale transition-all duration-150 opacity-20 group-hover:opacity-100 group-hover:grayscale-0;
+      }
+
+      .isActive & {
+        img,
+        span {
+          @apply grayscale-0 opacity-100;
+        }
+      }
+    }
+
+    &Underline {
+      @apply absolute bottom-0 left-5 w-[calc(100%-40px)] h-1.5 bg-brand-tertiary transition-opacity duration-150 opacity-0 md-down:hidden group-hover:opacity-100;
+
+      .isActive & {
+        @apply opacity-100;
+      }
+    }
+
+    &.isActive {
+      @apply text-brand-tertiary md-down:underline;
+    }
+  }
+}

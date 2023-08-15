@@ -1,0 +1,285 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85": {
+          "type": "text",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "<p>GPS Player Vests are used by amateur and professional athletes to improve performance, track their activity and protect their health and wellbeing. <\/p>"
+          }
+        },
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "3f420ec3-ef50-487c-98b3-0481e73b7b85",
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Why_GPS_Header_V1_16_-2.png",
+        "show_image_decoration": false,
+        "show_image_on_mobile": true,
+        "title": "Why use a GPS Player Vest?",
+        "show_heading_decoration": true,
+        "title_small": false,
+        "sub_title": ""
+      }
+    },
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392": {
+      "type": "page-navigation",
+      "settings": {
+        "title": "More Fun, With Every Game",
+        "text": "<p>Tracking your progress and understanding your performances will bring a new level of enjoyment to your game.<\/p><p>Don’t just play the game. Use a <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">GPS Player Vest<\/a> to learn, adapt and improve. Reach your best, support your teammates and get the most from every game.<\/p>",
+        "menu": "why-pages"
+      }
+    },
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646": {
+      "type": "media-with-text",
+      "blocks": {
+        "4e171bd9-be5a-46ca-a3c4-5dacf61a61dc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_625_3.png"
+          }
+        },
+        "b103b73f-e1cc-4932-b56a-49817fc012c1": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY"
+          }
+        }
+      },
+      "block_order": [
+        "4e171bd9-be5a-46ca-a3c4-5dacf61a61dc",
+        "b103b73f-e1cc-4932-b56a-49817fc012c1"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Track_e7938454-c768-4b21-a96b-3c4b826b4350.png",
+        "title": "Track Your Progress",
+        "text": "<p>Running watches and bike computers are used by athletes to track their progress every time they go out.<\/p><p>With a <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">GPS Player Vest<\/a>, you can now do the same in contact-sports like football, rugby and hockey. Review your performance session by session, match by match. See your top speed and total distance improve as you get fitter and faster.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6": {
+      "type": "media-with-text",
+      "blocks": {
+        "c016503e-22b6-43f4-97c4-ca0ae5fa0ce9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_627-2.png"
+          }
+        },
+        "199e8aab-9319-4550-b67f-7e706bdca53c": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "https:\/\/youtu.be\/Rb8F_8em3fY"
+          }
+        },
+        "b0138fd6-0755-49b9-8076-d2276458c7b2": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "c016503e-22b6-43f4-97c4-ca0ae5fa0ce9",
+        "199e8aab-9319-4550-b67f-7e706bdca53c",
+        "b0138fd6-0755-49b9-8076-d2276458c7b2"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Goals_1.png",
+        "title": "Reach Your Goals",
+        "text": "<p>How fast can you run? How much ground do you cover in a game? Track this and much more with a <a href=\"\/products\/player-bundle\" title=\"New Player Bundle\">GPS Player Vest<\/a>.<\/p><p>Set a Top Speed goal and follow your progress throughout the season! Achieving your goals and reaching your targets will help you and your team’s fitness, stamina and tactical awareness.<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29": {
+      "type": "media-with-text",
+      "blocks": {
+        "3f19bfcc-9993-4bf3-9c15-3e1382d492c4": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg"
+          }
+        },
+        "d6139e76-4aca-4e04-80f8-89f828065ab8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "3f19bfcc-9993-4bf3-9c15-3e1382d492c4",
+        "d6139e76-4aca-4e04-80f8-89f828065ab8"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Compete.png",
+        "title": "Compete With Teammates",
+        "text": "<p>Bring more fun to the locker room. Compete over speed, distance and time with teammates.<\/p><p>Compare stats within seconds of matches finishing and aim to be the fastest, fittest or most improved player in your team.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c": {
+      "type": "media-with-text",
+      "blocks": {
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_626_1_-2_5fd8caab-be65-4edc-82bb-1882122284a0.png"
+          }
+        },
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/f32f4a0ee0024f834f6a7a071ea63753.jpg"
+          }
+        },
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/35256c835bff557d20506ab76c60c9c0.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f8bd884e-3da9-4450-bf14-682d73e19d7a",
+        "8a2e2c9f-96cd-494a-be99-3c61e949ffce",
+        "d3ecaec9-52f2-4c37-a94b-d2d155c27404"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "icon": "shopify:\/\/shop_images\/Icon_World.png",
+        "title": "Compete With The World",
+        "text": "<p>Teammates not enough? Thanks to Pitchero’s unique global network, you can compare your stats with players worldwide through the #HERO Speed Challenge.<\/p><p>Compete across your sport, position and age group or all sports, ages and positions to see how you compare to a global field of grassroots and semi-pro players.<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b": {
+      "type": "bundles",
+      "blocks": {
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "image_mobile": "shopify:\/\/shop_images\/Player_Bundle_Banner_562bdb2e-4792-49ef-84d5-3826094d0a09.png",
+            "icon": "shopify:\/\/shop_images\/Frame_467.png",
+            "title": "Player<br>bundle",
+            "sub_title": "new",
+            "text": "1x",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "shopify:\/\/pages\/choose-membership"
+          }
+        },
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Team_Bundle_Banner.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_96_be26d207-1f45-445e-9a2d-cc8711bdbaf3.png",
+            "icon": "shopify:\/\/shop_images\/3_x_Vests_1_d2584f42-4017-469f-8b99-321ae9cf88a5.png",
+            "title": "Team<br>bundle",
+            "sub_title": "new",
+            "text": "20x",
+            "button": "SECURE PRIORITY ACCESS",
+            "button_url": "https:\/\/www.pitcherogps.com\/pages\/register?active-tab=2"
+          }
+        }
+      },
+      "block_order": [
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-0",
+        "template--15651126837453__346fd114-8fb7-4a77-b546-91e8ef8db29b-166540752005b5f770-1"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "08b0912d-9bd7-441d-981c-8e85530cc41c": {
+      "type": "hero-video",
+      "blocks": {
+        "e116970c-37dc-45d7-a17f-397bc10839ea": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The search for the fastest player in grassroots sport. <strong>ALL players. ALL ages. ALL competitions.<\/strong><\/p>"
+          }
+        },
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "title": "How fast is fast?",
+            "video": "https:\/\/www.youtube.com\/watch?v=Rb8F_8em3fY&t=6s",
+            "button": "WATCH VIDEO"
+          }
+        },
+        "1bdfee98-1641-4656-988f-d4730cb89f71": {
+          "type": "button",
+          "settings": {
+            "text": "BOOK YOUR PLACE TODAY",
+            "url": "shopify:\/\/pages\/hero"
+          }
+        }
+      },
+      "block_order": [
+        "e116970c-37dc-45d7-a17f-397bc10839ea",
+        "e61ffe4f-e1d7-4b13-a88a-9df60c0a7386",
+        "1bdfee98-1641-4656-988f-d4730cb89f71"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_Spped_Challenge_Banner_V2_1.png",
+        "title": "#HERO SPEED CHALLENGE",
+        "sub_title": "LAUNCHING JULY 2023"
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "bdfecdb1-c419-4c63-870e-e9b35cecd392",
+    "42f7aab1-5afe-47dd-b5a4-54680a1b6646",
+    "29397ff8-34cb-46ea-a106-201ddfb5e0c6",
+    "f1013346-89a4-4c1f-9028-1e81a74b8c29",
+    "c05c320b-564d-4311-b619-ccf5f97d1e5c",
+    "346fd114-8fb7-4a77-b546-91e8ef8db29b",
+    "08b0912d-9bd7-441d-981c-8e85530cc41c"
+  ]
+}

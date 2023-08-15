@@ -1,0 +1,48 @@
+{
+  "sections": {
+    "promo": {
+      "type": "collection-promo",
+      "blocks": {
+        "168c15fd-9776-4e38-8b49-4a21048963a6": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_866.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_858.jpg",
+            "title": "GPS Player Bundle",
+            "url": "shopify:\/\/products\/new-gps-player-bundle"
+          }
+        },
+        "c794eb98-a7e3-4e57-a56a-f202c02f0cee": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_873.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_859.jpg",
+            "title": "GPS Team Bundle",
+            "url": "shopify:\/\/products\/new-gps-team-bundle"
+          }
+        }
+      },
+      "block_order": [
+        "168c15fd-9776-4e38-8b49-4a21048963a6",
+        "c794eb98-a7e3-4e57-a56a-f202c02f0cee"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "title": "GPS Trackers"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "per_page": 11
+      }
+    }
+  },
+  "order": [
+    "promo",
+    "main"
+  ]
+}

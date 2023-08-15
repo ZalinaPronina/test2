@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": false,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "checkout_main": {
+      "type": "checkout-process-player",
+      "settings": {
+        "membership_title": "Choose Membership",
+        "agree_checkbox": false,
+        "bundle_title": "Choose Size"
+      }
+    },
+    "checkout_step_1": {
+      "type": "checkout-process-steps",
+      "blocks": {
+        "19ada674-da68-4154-98fa-a32e2aac38d6": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Membership.png",
+            "name": "Step 01",
+            "title": "",
+            "subtitle": "Choose your membership and vest size",
+            "text": "<p>After choosing the Gift Membership, you will select the appropriate vest size for the person you are gifting to ensure a perfect fit. You will pay a limited-time launch price of £97 which includes your GPS Tracker and an annual PitcheroGPS membership. This cost is 20% below RRP.<\/p>"
+          }
+        },
+        "690ed2ad-c9a8-4456-800d-9dbe79ed84a7": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Tracker_d573f73f-6a42-4f1b-a19d-feb3e1808601.png",
+            "name": "Step 02",
+            "title": "",
+            "subtitle": "Receive the PitcheroGPS Player Bundle",
+            "text": "<p>After you pre-order we will deliver the new PitcheroGPS Player Bundle in July 2023. The player bundle will include a GPS Tracker, Player Vest, and charging cable.<\/p>"
+          }
+        },
+        "602cbc7e-f4e1-45c0-8e18-fbf62bc2a7d1": {
+          "type": "step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_App_bf5050dc-af10-4ef9-b305-9b473e11b215.png",
+            "name": "Step 03",
+            "title": "",
+            "subtitle": "Activate PitcheroGPS Membership",
+            "text": "<p>After receiving the Player Bundle, we will email you with instructions on how to send your giftee their membership. They will then follow a simple step-by-step guide to activate their membership.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "19ada674-da68-4154-98fa-a32e2aac38d6",
+        "690ed2ad-c9a8-4456-800d-9dbe79ed84a7",
+        "602cbc7e-f4e1-45c0-8e18-fbf62bc2a7d1"
+      ],
+      "settings": {
+        "dropdown_mobile": true,
+        "dropdown_desktop": true,
+        "title": "How it works"
+      }
+    },
+    "checkout_step_2": {
+      "type": "checkout-process-sizes",
+      "blocks": {
+        "0b0ca281-a892-4737-a403-4dd4fffd2b0c": {
+          "type": "column",
+          "settings": {
+            "html": "<table>\n  <thead>\n    <tr>\n      <th><strong>Youth<\/strong><\/th>\n      <th>\n<strong>Chest<\/strong><br>(INCH)<\/th>\n      <th>\n<strong>Chest<\/strong><br>(CM)<\/th>\n    <\/tr>\n  <\/thead>\n  <tbody>\n    <tr>\n      <td>Small<\/td>\n      <td>28-28<\/td>\n      <td>62-69<\/td>\n    <\/tr>\n    <tr>\n      <td>Medium<\/td>\n      <td>31-34<\/td>\n      <td>80-87<\/td>\n    <\/tr>\n    <tr>\n      <td>Large<\/td>\n      <td>27-40<\/td>\n      <td>88-94<\/td>\n    <\/tr>\n  <\/tbody>\n<\/table>"
+          }
+        },
+        "5e7cc284-912a-4bdc-8253-9c7f38f7e17b": {
+          "type": "column",
+          "settings": {
+            "html": "<table>\n  <thead>\n    <tr>\n      <th><strong>Adult<\/strong><\/th>\n      <th>\n<strong>Chest<\/strong><br>(INCH)<\/th>\n      <th>\n<strong>Chest<\/strong><br>(CM)<\/th>\n    <\/tr>\n  <\/thead>\n  <tbody>\n    <tr>\n      <td>Small<\/td>\n      <td>37-40<\/td>\n      <td>95-102<\/td>\n    <\/tr>\n    <tr>\n      <td>Medium<\/td>\n      <td>40-43<\/td>\n      <td>103-110<\/td>\n    <\/tr>\n    <tr>\n      <td>Large<\/td>\n      <td>43-46<\/td>\n      <td>111-117<\/td>\n    <\/tr>\n    <tr>\n      <td>XL<\/td>\n      <td>46-50<\/td>\n      <td>118-125<\/td>\n    <\/tr>\n    <tr>\n      <td>XXL<\/td>\n      <td>50-54<\/td>\n      <td>126-132<\/td>\n    <\/tr>\n  <\/tbody>\n<\/table>"
+          }
+        }
+      },
+      "block_order": [
+        "0b0ca281-a892-4737-a403-4dd4fffd2b0c",
+        "5e7cc284-912a-4bdc-8253-9c7f38f7e17b"
+      ],
+      "settings": {
+        "dropdown_mobile": true,
+        "dropdown_desktop": false,
+        "title": "Size Guide"
+      }
+    },
+    "checkout_step_3": {
+      "type": "checkout-process-upsell",
+      "settings": {
+        "title": "Bundle Offers - Save 20%",
+        "product_list": [
+          "long-sleeve-base-layer",
+          "short-sleeve-base-layer",
+          "sleeveless-base-layer"
+        ]
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "checkout_main",
+    "checkout_step_1",
+    "checkout_step_2",
+    "checkout_step_3"
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "sections": {
+    "page_header": {
+      "type": "main-page-header",
+      "settings": {
+        "transparent_header": true,
+        "background_newsletter": false,
+        "show_header": false,
+        "background_image": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_content": false
+      }
+    },
+    "0d09175a-295d-4c28-9604-86af3008b091": {
+      "type": "hero",
+      "blocks": {
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695": {
+          "type": "marquee",
+          "settings": {
+            "show_on_mobile": true,
+            "text": "WIN. MORE. GAMES."
+          }
+        }
+      },
+      "block_order": [
+        "d2fe8da3-1313-4dc4-9adf-b03254c18695"
+      ],
+      "settings": {
+        "style": "gradient",
+        "image": "shopify:\/\/shop_images\/WP9_4634.png",
+        "show_image_decoration": true,
+        "show_image_on_mobile": true,
+        "title": "Using a GPS Hockey Tracker",
+        "title_as_h1": true,
+        "show_heading_decoration": false,
+        "title_small": true,
+        "title_not_uppercase_mobile": false,
+        "sub_title": "GPS Hockey Bundle"
+      }
+    },
+    "774b7c44-8455-469a-8169-46c15c679ee9": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": false,
+        "title": "A GPS Hockey Tracker for semi-professional and amateur hockey players is here.",
+        "title_position": "inside",
+        "bold_text": "",
+        "text": "<p>In this guide to using a GPS Hockey Tracker, we answer:<\/p><ul><li><strong>How<\/strong> do GPS trackers work for hockey?<\/li><li>What <strong>performance stats<\/strong> are collected?<\/li><li>How can you <strong>interpret<\/strong> the data?<\/li><\/ul><p><br\/>Accurate analysis for any hockey player is nearer than you think. Find out how far your centre-forward ran. Or, if your goalkeeper is on course with her injury comeback.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "5e4cd785-cd2d-4651-8ce3-fb2d1424ff46": {
+      "type": "bundles",
+      "blocks": {
+        "14e3101a-9783-4cca-adf3-cea5b8f00df0": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "title": "Player<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "2e31b671-980f-435a-9b8b-f73609e1f8c9": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "title": "Team<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "14e3101a-9783-4cca-adf3-cea5b8f00df0",
+        "2e31b671-980f-435a-9b8b-f73609e1f8c9"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "8faaff45-d767-4c7a-bd3d-d31fac55836d": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "show_media_on_mobile": true,
+        "title": "Why use a GPS Tracker when playing hockey?",
+        "title_position": "outside",
+        "bold_text": "",
+        "text": "",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "4f9a356d-ba74-4d33-a8c1-4977e1827318": {
+      "type": "media-with-text",
+      "blocks": {
+        "4937a9e0-bfc9-4021-9309-e3f05c77fb4d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_979.png"
+          }
+        }
+      },
+      "block_order": [
+        "4937a9e0-bfc9-4021-9309-e3f05c77fb4d"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Contained_Icon_0e05abe7-5da9-4643-a3f2-af86b6a1bb31.png",
+        "title": "1. Speed",
+        "text": "<p>In hockey, speed is a crucial element that can make or break a player's performance. The fast nature of the game demands quick reflexes and explosive power. Whether it's sprinting to intercept a pass or rapidly changing direction to evade an opponent, speed plays a vital role at every turn.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "109437f4-3604-424a-a4b2-8a741d1e2eff": {
+      "type": "media-with-text",
+      "blocks": {
+        "71af2894-0af8-4632-9c63-c1a51f957dc3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_980.png"
+          }
+        }
+      },
+      "block_order": [
+        "71af2894-0af8-4632-9c63-c1a51f957dc3"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "icon": "shopify:\/\/shop_images\/Icon_Distance.png",
+        "title": "2. Distance",
+        "text": "<p>Players often need to traverse long distances on the field in order to be in the right position to make plays. The ability to cover ground quickly can make a huge difference in a game, as it allows players to be in the right place at the right time.<\/p>",
+        "media_position": "flex-row"
+      }
+    },
+    "50028057-a1ba-4885-8e27-a96eb025315d": {
+      "type": "media-with-text",
+      "blocks": {
+        "39bc604e-2caa-46fc-af39-6d790e8d578d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_982.png"
+          }
+        }
+      },
+      "block_order": [
+        "39bc604e-2caa-46fc-af39-6d790e8d578d"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "icon": "shopify:\/\/shop_images\/Icon_Intensity.png",
+        "title": "3. Intensity",
+        "text": "<p>Players need to be highly focused and driven in order to maintain their intensity throughout the game. The physical demands of the sport, such as the need to cover large distances quickly and engage in physical contact with other players, require a high level of stamina and endurance.<\/p>",
+        "media_position": "flex-row-reverse"
+      }
+    },
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9": {
+      "type": "text-with-media",
+      "blocks": {
+        "c3114ab7-09d6-4a33-aeb2-f5b98405812b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_988.png",
+            "image_max_width": 490,
+            "rounded": false,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "c3114ab7-09d6-4a33-aeb2-f5b98405812b"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": false,
+        "show_media_on_mobile": true,
+        "title": "How do GPS hockey trackers work?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Global Positioning System (GPS) is used in all walks of life from maps in our cars to fitness watches.<\/strong><\/p>",
+        "text": "<ul><li>Pinpoint your current location and track your movement<\/li><li>More accurate than consumer wearables and can be legally worn in competitive matched at any level<\/li><li>Lightweight at only 51g<\/li><li>A 100Hz accelerometer ensures all movements are logged<\/li><li>It can be charged in 30-45 minutes<\/li><li>There’s unlimited storage<\/li><li> The unit is water-resistant <\/li><\/ul>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "1625e892-3c1f-4476-b485-f72038fb1bc9": {
+      "type": "text-with-media",
+      "blocks": {
+        "8244b6cb-af22-4bac-9b5a-0daac3613506": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_722.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        },
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_728.png",
+            "image_max_width": 600,
+            "rounded": true,
+            "background_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "8244b6cb-af22-4bac-9b5a-0daac3613506",
+        "6f492039-b0ee-46f9-9507-8a3c368e7bb2"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "What performance metrics do GPS hockey trackers collect?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Hockey teams can gather personalised data for every player. <\/strong><\/p>",
+        "text": "<p>As a coaching tool, it’s invaluable. Understand performance and where improvements can be made.<br\/><br\/>This is scientifically tested tech with pinpoint precision.<\/p><p>Here’s what a PitcheroGPS hockey tracker records - and how to use the results to improve your performance.<\/p>",
+        "text_color": "",
+        "background_color": ""
+      }
+    },
+    "2cfa501f-6152-48e3-914f-1282e38ca750": {
+      "type": "columns-with-icon",
+      "blocks": {
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Distance.png",
+            "title": "Total Distance",
+            "text": "<p>Knowing how far a hockey player moves has many uses.<\/p><p>First, teams will benchmark their performances. It shows what squads are capable of at a moment in time, usually pre-season.<\/p><p>Assessing the total distance for each player will highlight stamina, fatigue levels and effort in sessions.<\/p><p>On its own, distance is an indicator of match fitness. You want your team to finish strong until the last minute.<\/p><p>It also helps to build a picture of a player’s capabilities. How do they train and perform in matches over months?<\/p><p>The GPS data may highlight certain questions. Coaches have the data to refer to whenever they need it.<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Time.png",
+            "title": "Total Active Time",
+            "text": "<p>Tracking ‘total active time’ will show the duration of exercise.<\/p><p>But, it’s a record of every session. Coaches can balance how hard to push the squad.<\/p><p>They can view past data and assess specifically what individuals or the group need to do in the future.<\/p><p>Has your centre forward been training too little?<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Speed.png",
+            "title": "Top Speed",
+            "text": "<p>Recording top speed is a popular metric to improve performance.<\/p><p>In all sports, speed matters. <\/p><p>It could mean a crucial tackle. Or reaching the ball first to score.<\/p><p>A GPS hockey tracker can settle that debate. It also encourages friendly competition within squads.<\/p><p>Clubs using PitcheroGPS tell us that players <em>really<\/em> want to know their GPS data.<\/p><p>How did they get on? How did they compare to team-mates? <\/p><p>Healthy competition can push up standards. We also have our <a href=\"https:\/\/www.pitcherogps.com\/pages\/hero\"><span style=\"text-decoration:underline\"><strong>#HERO Speed Challenge<\/strong><\/span><\/a> to compare your speed across the world!<\/p>"
+          }
+        },
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Intensity.png",
+            "title": "High Speed Running",
+            "text": "<p>High speed running is an asset in any sport. Get to know your levels of intensity in hockey training and matches.<\/p><p>With PitcheroGPS, you can view types of activity: standing, walking, jogging or sprinting.<\/p><p>The web app will also display the amount of time doing each.<\/p><p>Speed workouts help you become faster over time. They’ll build stamina too by increasing aerobic capacity.<\/p><p>Hockey coaches can set up ‘custom speed zones’ for their team. These are ranges of speeds based on player age and ability.<\/p><p>In the PitcheroGPS hockey tracking app, you can set:<\/p><ul><li>The <strong>name<\/strong> of each speed zone<\/li><li>The <strong>value<\/strong> of each banding <\/li><li><strong>Create<\/strong> up to 8 speed bands<\/li><\/ul>"
+          }
+        },
+        "fa49ef11-adf5-420a-957d-267b8d088063": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Dec.png",
+            "title": "Accelerations \/ Decelerations",
+            "text": "<p>Speed for hockey players is more than just being the fastest.<\/p><p>How quickly you speed up and slow down can be just as powerful.<\/p><p>It might be defending a corner or sprinting into the 16-yard area. That explosion of power in the first few seconds matters.<\/p><p>Hockey is a very stop-start sport with penalty corners, restarts and pushbacks.<\/p><p>Speed from a standing start is a subtle advantage. Likewise, changes in pace can win you many battles before the final whistle. <\/p><p>Accelerations and decelerations are also important to monitor player fatigue and injury risk.<\/p>"
+          }
+        },
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Heatmap.png",
+            "title": "Positioning Heatmaps",
+            "text": "<p>What are your movements across a hockey pitch in a match?<\/p><p>Heatmaps are a simple visual aid from dark red (more time in a certain area) to green for less or no time.<\/p><p>It’s another example where a GPS hockey tracker can be a competitive edge over rivals.<\/p><p>For coaches, heatmaps will show if tactics and game plans are being followed. It can also be useful for players to understand areas on the pitch that are neglected.<\/p><p>How does your team react offensively or defensively?<\/p>"
+          }
+        },
+        "9b23853b-3fda-4153-9214-9e240533a184": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Injury.png",
+            "title": "Injury Prevention",
+            "text": "<p>Whether a player is going through rehab or teams are keeping themselves fit, GPS can play its part.<\/p><p>injuries are a part of any sport but they can be greatly reduced by knowing every players limits and weaknesses. <\/p><p>Once you have that background with a GPS hockey tracker, you can continually review.<\/p><p>'Training load’ is a term that encompasses how much exercise a player does and how strenuous that was.<\/p><p>It's one of the ways coaches and physios can monitor player health.<\/p>"
+          }
+        },
+        "9835a78f-e66d-43e8-80f0-9c7bffe0237d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_Impact.png",
+            "title": "Impacts",
+            "text": "<p>Measuring impacts is another benefit of using PitcheroGPS.<\/p><p>Players can see the number of times they had an 'impact' - i.e.) involved in a heavy collision.<\/p><p>While hockey isn’t the same as football or rugby, contact is inevitable. <\/p><p>Our GPS hockey tracker shows how hard and often a player is hit.<\/p><p>The coach can decide the safe limits beforehand. The tracker will log any times where the g-force exceeds that.<\/p><p>What counts as an impact can be adjusted for age groups.<\/p><p>It demonstrates player welfare is taken seriously. Club coaches can utilise impact data to decide when player should rest. Or, it might prompt lighter training to lessen injury risk.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-0",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-1",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-2",
+        "template--15667362857165__2cfa501f-6152-48e3-914f-1282e38ca750-16667796227b2ad643-3",
+        "fa49ef11-adf5-420a-957d-267b8d088063",
+        "7f588593-10bc-4c13-b775-eb36d3ac0bc1",
+        "9b23853b-3fda-4153-9214-9e240533a184",
+        "9835a78f-e66d-43e8-80f0-9c7bffe0237d"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": false,
+        "title": "",
+        "text": ""
+      }
+    },
+    "df996c19-d8e8-447f-9dfe-228a803636af": {
+      "type": "bundles",
+      "blocks": {
+        "b9321437-77c9-4c2a-b6d9-8c0ebbc4f9c2": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "title": "Player<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "3121f52d-b83b-41c4-b02e-5994fd4803ba": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "title": "Team<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "b9321437-77c9-4c2a-b6d9-8c0ebbc4f9c2",
+        "3121f52d-b83b-41c4-b02e-5994fd4803ba"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe": {
+      "type": "text-with-media",
+      "disabled": true,
+      "blocks": {
+        "7143614b-af79-401b-a534-6cbd87fe4dd5": {
+          "type": "video",
+          "settings": {
+            "video": "https:\/\/youtu.be\/mAhn1Hy-808"
+          }
+        }
+      },
+      "block_order": [
+        "7143614b-af79-401b-a534-6cbd87fe4dd5"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "How PitcheroGPS can help your hockey club",
+        "title_position": "outside",
+        "bold_text": "<p><strong>Clubs (like Cambridge RFU and West Bromwich Albion Women) are using PitcheroGPS to aid performances and cut down the risk of injuries.<\/strong><\/p>",
+        "text": "<p>An asset for one team or multiple squads.<\/p><p>Using PitcheroGPS is all about optimising performances. Personalised data whenever you need it.<\/p><p>Cambridge RFU coaches regularly review GPS player data. They can then modify training for the group or specific players.<\/p>",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0": {
+      "type": "reviews",
+      "disabled": true,
+      "blocks": {
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1526-2205110239_1.png",
+            "title": "Cambridge RUFC told us what they think",
+            "text": "We’ve found using the PitcheroGPS has been massively beneficial for us as a club. It’s cost-effective compared to other brands that are currently available. It’s something I would recommend to any clubs at our level, the National Leagues below and community clubs to purchase."
+          }
+        }
+      },
+      "block_order": [
+        "template--15669229977805__eb551f70-440f-4df4-b1dd-3731a4e43ab0-1666860541db61a12c-0"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "accent_color": "#00a0d1",
+        "text_color": "#ffffff",
+        "background_color": "#012130"
+      }
+    },
+    "1173bfe6-f275-4920-a795-66aa53e1f134": {
+      "type": "text-with-media",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "show_media_on_mobile": true,
+        "title": "Which is the best GPS tracker for hockey?",
+        "title_position": "outside",
+        "bold_text": "<p><strong>The answer lies in the features, price and feedback from clubs. The best product will aim to combine all of these.<\/strong><\/p>",
+        "text": "<p>Our GPS system has been rigorously tested by coaches. You don’t need a PhD to understand your team metrics.<\/p><p>No confusion or complexity, just absolute pinpoint accuracy.<\/p><p>Cameron Wilson is the Strength and Conditioning Coach of West Bromwich Albion Women’s FC. <\/p><p>His feedback was: <em>‘The PitcheroGPS system is brilliant. It’s one that us, as coaches, understand really well. The players understand it well too. It uploads really quickly, it’s easy, it’s a really good system to use.’<\/em><\/p><p>The <a href=\"\/products\/new-gps-team-bundle\" title=\"New Team Bundle\"><strong>PitcheroGPS Team Bundle<\/strong><\/a> includes:<\/p><ul><li>20 x GPS Hockey Trackers<\/li><li>20 x GPS Hockey Vests<\/li><li>1 x Carry Case (Includes charging and data transfer)<\/li><li>1 x 1-yr Software Membership<\/li><\/ul>",
+        "text_color": "",
+        "background_color": "#f2f2f2"
+      }
+    },
+    "501381f8-44e6-416d-b520-8c770d0f0e5e": {
+      "type": "bundles",
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    },
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8": {
+      "type": "promo-box",
+      "disabled": true,
+      "blocks": {
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_57.png"
+          }
+        },
+        "c9ceaa85-57e3-4ba4-9543-be2c91a30edb": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Approved_Rugby.png"
+          }
+        }
+      },
+      "block_order": [
+        "f0e3a4e9-5edb-4ac6-9487-78523cbac410",
+        "c9ceaa85-57e3-4ba4-9543-be2c91a30edb"
+      ],
+      "settings": {
+        "top_padding": false,
+        "bottom_padding": true,
+        "title": "Original Team Bundle",
+        "sub_title": "Approved by FIFA & World Rugby",
+        "text": "<p>Launched in 2021, the original PitcheroGPS Tracker is approved by FIFA & World Rugby and quickly sold out to football and rugby customers across the UK.<\/p>",
+        "image": "shopify:\/\/shop_images\/acc49ad9342cc482109ffdc39d9000a4.png",
+        "image_bottom_spacing": 100
+      }
+    },
+    "5775cc42-2bfd-4faf-94ad-3b3165a31b93": {
+      "type": "bundles",
+      "blocks": {
+        "862a7922-3fee-46da-bcff-4ea5c03c0e12": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "image_mobile": "shopify:\/\/shop_images\/Mask_group_6.png",
+            "title": "Player<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-player-bundle",
+            "button_style": "sale"
+          }
+        },
+        "935301f3-a529-4c62-b8c0-cb988c1cf039": {
+          "type": "bundle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/IGWP9_4767_2.png",
+            "title": "Team<br>bundle",
+            "sub_title": "HOCKEY",
+            "text": "",
+            "button": "PRE-ORDER",
+            "button_url": "shopify:\/\/products\/new-gps-team-bundle",
+            "button_style": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "862a7922-3fee-46da-bcff-4ea5c03c0e12",
+        "935301f3-a529-4c62-b8c0-cb988c1cf039"
+      ],
+      "settings": {
+        "top_padding": true,
+        "bottom_padding": true,
+        "container_width": "medium",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "page_header",
+    "main",
+    "0d09175a-295d-4c28-9604-86af3008b091",
+    "774b7c44-8455-469a-8169-46c15c679ee9",
+    "5e4cd785-cd2d-4651-8ce3-fb2d1424ff46",
+    "8faaff45-d767-4c7a-bd3d-d31fac55836d",
+    "4f9a356d-ba74-4d33-a8c1-4977e1827318",
+    "109437f4-3604-424a-a4b2-8a741d1e2eff",
+    "50028057-a1ba-4885-8e27-a96eb025315d",
+    "716f4a8a-d535-4ff4-af6d-c43af22e1fb9",
+    "1625e892-3c1f-4476-b485-f72038fb1bc9",
+    "2cfa501f-6152-48e3-914f-1282e38ca750",
+    "df996c19-d8e8-447f-9dfe-228a803636af",
+    "0ec8c387-31cf-4f55-bd44-b8670391c9fe",
+    "eb551f70-440f-4df4-b1dd-3731a4e43ab0",
+    "1173bfe6-f275-4920-a795-66aa53e1f134",
+    "501381f8-44e6-416d-b520-8c770d0f0e5e",
+    "a8cdbef1-b16b-4f0a-b113-3ec02db7f3b8",
+    "5775cc42-2bfd-4faf-94ad-3b3165a31b93"
+  ]
+}

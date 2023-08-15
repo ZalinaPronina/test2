@@ -1,0 +1,46 @@
+{%- liquid
+  assign className = className | append: " Image w-full flex items-center justify-center relative"
+  assign image = image | default: nil
+  assign width = width | default: "auto"
+  assign height = height | default: "auto"
+  assign fill = fill
+  assign fit = fit | default: "cover"
+  assign aspect = aspect | default: false
+
+  if fill
+    assign className = className | append: " h-full"
+  endif
+
+  if aspect == "landscape"
+    assign className = className | append: " aspect-h-3 aspect-w-4"
+  endif
+
+  if aspect == "portrait"
+    assign className = className | append: " aspect-h-11 aspect-w-7"
+  endif
+
+  if aspect == "square"
+    assign className = className | append: " aspect-h-1 aspect-w-1"
+  endif
+
+  if aspect == "wide"
+    assign className = className | append: " aspect-h-9 aspect-w-16"
+  endif
+-%}
+
+<div
+  class="{{ className }}"
+  data-src="{{ src }}"
+  data-alt="{{ alt }}"
+>
+  <img
+    class="block z-1 {% if fill or aspect %}w-full h-full object-{{ fit }} absolute inset-0{% else %}w-full relative{% endif %}"
+    {%- if image -%}
+    src="{{ image | image_url: width: 100 }}"
+    {%- endif -%}
+    alt="{{ alt }}"
+    width="{{ width }}"
+    height="{{ height }}"
+    loading="lazy"
+  >
+</div>

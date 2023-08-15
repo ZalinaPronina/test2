@@ -1,0 +1,29 @@
+{%- liquid
+  assign label = label | default: blank
+  assign name = name | default: blank
+  assign value = value | default: ""
+  assign attributes = attributes | default: blank
+  assign checked = checked | default: false
+  assign disabled = disabled | default: false
+-%}
+
+<div class="Radio flex items-center">
+  <input
+    class="sr-only"
+    {% if label %}id="{{ label }}"{% endif %}
+    type="radio"
+    {% if name %}name="{{ name }}"{% endif %}
+    value="{{ value }}"
+    {% if attributes %}{{ attributes }}{% endif %}
+    {% if checked %}checked{% endif %}
+    {% if disabled %}disabled{% endif %}
+  >
+    <label
+      class="flex items-center justify-center text-12 font-semibold px-4 h-8 w-full text-center"
+      for="{{ label }}"
+      title="{{ label }}"
+      {% if is_color %}style="background-color: {{ label | downcase }};"{% endif %}
+    >
+      <span class="{% if is_color %}sr-only{% endif %}">{{ label }}</span>
+    </label>
+</div>

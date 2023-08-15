@@ -1,0 +1,7 @@
+.Footer {
+  .rte {
+    a {
+      @apply no-underline hover:underline;
+    }
+  }
+}

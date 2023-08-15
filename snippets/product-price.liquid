@@ -1,0 +1,106 @@
+{% liquid
+  assign highest_price = highest_price | default: false
+  assign type = type | default: 'main-product'
+%}
+
+{% if type == 'main-product' %}
+  {% liquid
+    assign compare_at_price = product.compare_at_price
+    assign price = product.price
+
+    if highest_price
+      assign compare_at_price = product.compare_at_price_max
+      assign price = product.price_max
+    endif
+  %}
+
+  <div class="PriceList font-bold flex items-center space-x-3" data-price>
+    {% if compare_at_price > price %}
+      <span class="Price Price--compare-at text-16 text-brand-red uppercase line-through">
+        was {{ compare_at_price | money_without_trailing_zeros }}
+      </span>
+
+      <span class="Price Price--highlight text-24">
+        {{ price | money_without_trailing_zeros }}
+      </span>
+    {% elsif product.price_varies %}
+      {%- capture formatted_min_price -%}{{ product.price_min | money }}{%- endcapture -%}
+      {%- capture formatted_max_price -%}{{ product.price_max | money }}{%- endcapture -%}
+
+      <span class="Price">
+        {{ 'collections.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}
+      </span>
+    {% else %}
+      <span class="Price text-24">
+        {{ price | money_without_trailing_zeros }}
+      </span>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="PriceList font-bold font-heading flex items-center space-x-4" data-price>
+    {% if highest_price %}
+      {% liquid
+        assign compare_at_price_max = product.compare_at_price_max
+        assign price_max = product.price_max
+
+        if enable_discount
+          assign discount_value = discount | divided_by: 100.0
+          assign discounted_price_max = product.price_max | times: discount_value
+
+          assign compare_at_price_max = product.price_max
+          assign price_max = product.price_max | minus: discounted_price_max
+        endif
+      %}
+
+      {% if compare_at_price_max > price_max %}
+        <span class="Price Price--compare-at text-20 text-brand-red uppercase line-through">
+          was {{ compare_at_price_max | money_without_trailing_zeros }}
+        </span>
+
+        <span class="Price Price--highlight text-50">
+          {{ price_max | divided_by: 100 | round | times: 100 | money_without_trailing_zeros }}
+        </span>
+      {% else %}
+        <span class="Price text-50">
+          {{ price_max | divided_by: 100 | round | times: 100 | money_without_trailing_zeros }}
+        </span>
+      {% endif %}
+    {% else %}
+      {% liquid
+        assign compare_at_price = product.compare_at_price
+        assign price = product.price
+
+        if enable_discount
+          assign discount_value = discount | divided_by: 100.0
+          assign discounted_price = product.price | times: discount_value
+
+          assign compare_at_price = product.price
+          assign price = product.price | minus: discounted_price
+        endif
+      %}
+
+      {% if compare_at_price > price %}
+        <span class="Price Price--compare-at text-20 text-brand-red uppercase line-through">
+          was {{ compare_at_price | money_without_trailing_zeros }}
+        </span>
+
+        <span class="Price Price--highlight text-50">
+          {{ price | divided_by: 100 | round | times: 100 | money_without_trailing_zeros }}
+        </span>
+      {% elsif product.price_varies %}
+        {%- capture formatted_min_price -%}{{ product.price_min | money }}{%- endcapture -%}
+        {%- capture formatted_max_price -%}{{ product.price_max | money }}{%- endcapture -%}
+
+        <span class="Price">
+          {{ 'collections.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}
+        </span>
+      {% else %}
+        <span class="Price text-50">
+          {{ price | divided_by: 100 | round | times: 100 | money_without_trailing_zeros }}
+        </span>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}
+
+
